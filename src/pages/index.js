@@ -11,12 +11,11 @@ import { rhythm } from "../utils/typography"
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const siteDescription = data.site.siteMetadata.description
     const posts = data.allMdx.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} description={siteDescription}>
         <SEO
           title={siteDescription}
           keywords={[
@@ -71,7 +70,6 @@ export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
         description
       }
     }

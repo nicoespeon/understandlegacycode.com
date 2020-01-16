@@ -12,11 +12,11 @@ import CTA from "../components/cta"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteDescription = this.props.data.site.siteMetadata.description
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} description={siteDescription}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -72,8 +72,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
-        author
+        description
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
