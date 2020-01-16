@@ -3,16 +3,17 @@ backend:
   repo: nicoespeon/understandlegacycode.com
 
 media_folder: static/assets
-public_folder: assets
+public_folder: /assets
+show_preview_links: true
 
 collections:
   - name: blog
     label: Blog
     folder: content/blog
+    preview_path: "blog/{{slug}}"
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description }
+      - { name: date, label: Date, widget: date }
+      - { name: description, label: Description, required: false }
       - { name: body, label: Body, widget: markdown }
