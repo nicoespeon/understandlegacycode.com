@@ -135,6 +135,10 @@ const Wrapper = styled.div`
   .gatsby-resp-image-link {
     box-shadow: none !important;
   }
+
+  small {
+    font-size: 75%;
+  }
 `
 
 const Footer = styled.footer`
