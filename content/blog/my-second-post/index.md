@@ -1,5 +1,4 @@
 ---
-path: /blog/my-second-post/
 date: "2015-05-06T23:46:37.121Z"
 title: My Second Post!
 description: Test of a second post
