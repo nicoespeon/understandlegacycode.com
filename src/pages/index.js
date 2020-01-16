@@ -12,11 +12,20 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const siteDescription = data.site.siteMetadata.description
     const posts = data.allMdx.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Home" keywords={[`vscode`, `tips`, `blog`]} />
+        <SEO
+          title={siteDescription}
+          keywords={[
+            `legacy code`,
+            `technical debt`,
+            `refactoring`,
+            `documentation`,
+          ]}
+        />
         <CTA />
         <h2>Latest articles</h2>
         <ul style={{ margin: "20px 0 40px" }}>
@@ -63,6 +72,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
