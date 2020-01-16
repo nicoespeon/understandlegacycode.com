@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Understand Legacy Code`,
     author: `Nicolas Carlo`,
-    description: `Learn how to work with untested, undocumented, ugly code so you won't be afraid of breaking things anymore.`,
+    description: `Change Messy Software Without Breaking It`,
     siteUrl: `https://understandlegacycode.com`,
     social: {
       twitter: `nicoespeon`,
