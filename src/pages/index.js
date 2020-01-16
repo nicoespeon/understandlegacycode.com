@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
 import CTA from "../components/cta"
-import { rhythm, colors } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class IndexPage extends React.Component {
   render() {
