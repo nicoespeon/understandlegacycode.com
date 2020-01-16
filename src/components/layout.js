@@ -109,10 +109,19 @@ const Wrapper = styled.div`
     margin-top: -0.75rem;
   }
 
-  ul > li {
+  ul > li,
+  ol > li {
     list-style-type: none;
     margin-left: 20px;
     position: relative;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  ol > li {
+    counter-increment: step-counter;
   }
 
   ul > li::before {
@@ -127,7 +136,32 @@ const Wrapper = styled.div`
     transform: rotate(-5deg);
   }
 
-  ul > li:nth-of-type(2n + 1)::before {
+  ol > li::before {
+    content: counter(step-counter);
+    margin-right: 1em;
+    line-height: 1;
+    background-color: ${colors.primary};
+    box-shadow: 0.2em 0.2em 0 rgba(128, 128, 128, 0.2);
+    color: #fff;
+    padding: 2px 0;
+    width: 2.7em;
+    height: 1.2em;
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    margin-left: -62px;
+    margin-top: -3px;
+    top: 5px;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: normal;
+    font-family: sharp-sans, sans-serif;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum";
+  }
+
+  ul > li:nth-of-type(2n + 1)::before,
+  ol > li:nth-of-type(2n + 1)::before {
     transform: rotate(4deg);
   }
 
