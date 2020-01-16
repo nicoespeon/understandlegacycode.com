@@ -31,18 +31,7 @@ class Layout extends React.Component {
               <small style={{ color: colors.primary }}>Understand</small>
               <br />
               Legacy Code
-              <small
-                style={{
-                  display: "block",
-                  marginTop: "1.5rem",
-                  fontWeight: 200,
-                  lineHeight: "1rem",
-                  letterSpacing: "-0.05rem",
-                  fontSize: "28px",
-                }}
-              >
-                {description}
-              </small>
+              <Description>{description}</Description>
             </Link>
           </h1>
         </>
@@ -65,18 +54,7 @@ class Layout extends React.Component {
           >
             <span style={{ color: colors.primary }}>Understand</span> Legacy
             Code
-            <small
-              style={{
-                display: "block",
-                marginTop: "1.5rem",
-                fontWeight: 200,
-                lineHeight: "1rem",
-                letterSpacing: "-0.05rem",
-                fontSize: "28px",
-              }}
-            >
-              {description}
-            </small>
+            <Description>{description}</Description>
           </Link>
         </h3>
       )
@@ -101,6 +79,15 @@ class Layout extends React.Component {
     )
   }
 }
+
+const Description = styled.small`
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+  font-size: 28px !important;
+`
 
 const Wrapper = styled.div`
   min-height: 100vh;
