@@ -44,7 +44,7 @@ function Bio() {
               <a href="https://www.meetup.com/fr-FR/Software-Crafters-Montreal">
                 Software Crafters Montreal
               </a>{" "}
-              community which focuses on building maintainable softwares.
+              community which cares about building maintainable softwares.
             </p>
           </Container>
         )
