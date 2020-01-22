@@ -22,7 +22,9 @@ In his book [Working Effectively With Legacy Code](https://www.goodreads.com/boo
 
 This is an insight from years of experience.
 
-Why is Feathers saying that? Because without tests, it's usually very hard to know everything a code can do. If you need to understand what the code is doing, you need to read it carefully, play the computer in your head and envision all the possible scenarios. You can also test it manually to see what it does. In the end, code without tests is indeed hard to understand. Especially if you didn't write it.
+Why is Feathers saying that? Because without tests, it's usually very hard to know everything a code can do.
+
+If you need to understand what the code is doing, you need to read it carefully, play the computer in your head and envision all the possible scenarios. You can also test it manually to see what it does. Generally, code without tests is tricky to change without introducing a regression somewhere.
 
 I like this definition. But I think it's not complete.
 
@@ -42,8 +44,8 @@ Maybe you're looking for the root cause of a bug. Or maybe you're figuring out w
 You need to realize a few things:
 
 - **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn't write is Legacy Code. Or that code you wrote because you can't remember the hell you had in mind when you did. Yes, our past self often does silly mistakes. Don't tell your future self 🤫
-- **Good tests will make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
-- **It got better after few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
+- **Good tests make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
+- **It gets better after few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
 - **Most of the code is terrible** because it's the result of many people working on it, over a long period of time, with conflicting requirements, under time pressure. Legacy Code Recipe™. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That's VERY common. Eventually, you'll reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
 
 Hear me out again:

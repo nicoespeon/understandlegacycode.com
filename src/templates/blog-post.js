@@ -115,6 +115,11 @@ const Wrapper = styled.div`
     h1 {
       font-size: 3.5rem;
     }
+
+    blockquote {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
   }
 
   blockquote > p {
