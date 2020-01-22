@@ -63,6 +63,42 @@ class BlogPostTemplate extends React.Component {
 }
 
 const Wrapper = styled.div`
+  blockquote > p {
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+
+  h1 {
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: ${colors.primary};
+    font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell,
+      Helvetica Neue, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 600px) {
+    p,
+    li {
+      font-size: 19px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    blockquote {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
   @media (min-width: 1100px) {
     h1,
     h2,
@@ -104,42 +140,6 @@ const Wrapper = styled.div`
       font-family: "Helvetica Neue", Helvetica, serif;
       top: 0.15em;
     }
-  }
-
-  @media (min-width: 600px) {
-    p,
-    li {
-      font-size: 19px;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-    }
-
-    blockquote {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-  }
-
-  blockquote > p {
-    font-size: 1.5em;
-    line-height: 1.3em;
-  }
-
-  h1 {
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    text-transform: uppercase;
-    text-rendering: optimizeLegibility;
-    color: ${colors.primary};
-    font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell,
-      Helvetica Neue, sans-serif;
-    letter-spacing: -0.01em;
   }
 `
 
