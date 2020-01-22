@@ -6,7 +6,7 @@ import styled from "styled-components"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm, colors } from "../utils/typography"
 import CTA from "../components/cta"
 
 class BlogPostTemplate extends React.Component {
@@ -21,9 +21,11 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <CTA />
+        <Wrapper>
+          <h1>{post.frontmatter.title}</h1>
+          <MDXRenderer>{post.body}</MDXRenderer>
+          <CTA />
+        </Wrapper>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -59,6 +61,82 @@ class BlogPostTemplate extends React.Component {
     )
   }
 }
+
+const Wrapper = styled.div`
+  @media (min-width: 1100px) {
+    h1,
+    h2,
+    blockquote {
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      left: -3em;
+      width: calc(100% + 3em);
+      height: 0.3em;
+      bottom: 0;
+      background: ${colors.background};
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      position: absolute;
+      left: -3.5em;
+      width: 3em;
+      top: 0;
+      bottom: 0;
+      background: ${colors.background};
+    }
+
+    blockquote {
+      border-color: transparent;
+    }
+
+    blockquote::after {
+      content: "“";
+      position: absolute;
+      left: -0.3em;
+      font-size: 5em;
+      color: hsla(280, 85%, 55%, 0.7);
+      font-family: "Helvetica Neue", Helvetica, serif;
+      top: 0.15em;
+    }
+  }
+
+  @media (min-width: 600px) {
+    p,
+    li {
+      font-size: 19px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
+  blockquote > p {
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+
+  h1 {
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: ${colors.primary};
+    font-family: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell,
+      Helvetica Neue, sans-serif;
+    letter-spacing: -0.01em;
+  }
+`
 
 const Li = styled.li`
   &&::before {
