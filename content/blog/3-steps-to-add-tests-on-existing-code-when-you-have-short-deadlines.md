@@ -99,13 +99,25 @@ You might end up with a test looking like that:
 
 ```js
 it("should update quality", () => {
-  expect(doUpdateQuality("foo", 0, 0)).toMatchSnapshot()
-  expect(doUpdateQuality("foo", 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality("foo", 0, 2)).toMatchSnapshot()
-  expect(doUpdateQuality("Aged Brie", 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality("Aged Brie", 0, 50)).toMatchSnapshot()
-  expect(doUpdateQuality("Sulfuras", 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality("Sulfuras", -1, 1)).toMatchSnapshot()
+  expect(updateQuality("foo", 0, 0)).toMatchSnapshot()
+  expect(updateQuality("foo", 0, 1)).toMatchSnapshot()
+  expect(updateQuality("foo", 0, 2)).toMatchSnapshot()
+  expect(updateQuality("Aged Brie", 0, 1)).toMatchSnapshot()
+  expect(updateQuality("Aged Brie", 0, 50)).toMatchSnapshot()
+  expect(updateQuality("Sulfuras", 0, 1)).toMatchSnapshot()
+  expect(updateQuality("Sulfuras", -1, 1)).toMatchSnapshot()
+})
+```
+
+If you're using Jest, you can use [jest-extended-snapshot](https://www.npmjs.com/package/jest-extended-snapshot). It's a free library I created to simplify previous code into:
+
+```js
+it("should update quality", () => {
+  expect(updateQuality).toVerifyAllCombinations(
+    ["foo", "Aged Brie", "Sulfuras"],
+    [-1, 0],
+    [0, 1, 2, 50]
+  )
 })
 ```
 
