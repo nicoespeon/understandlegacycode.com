@@ -5,6 +5,7 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 show_preview_links: true
+publish_mode: editorial_workflow
 
 collections:
   - name: blog
@@ -12,7 +13,6 @@ collections:
     folder: content/blog
     preview_path: "blog/{{slug}}"
     create: true
-    publish_mode: editorial_workflow
     fields:
       - { name: title, label: Title }
       - { name: date, label: Date, widget: datetime, dateFormat: "YYYY-MM-DD" }
