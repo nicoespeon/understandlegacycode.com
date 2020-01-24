@@ -2,26 +2,30 @@
 title: 3 steps to add tests on existing code when you have short deadlines
 date: 2020-01-24T02:15:57.830Z
 description: >-
-  Here's a recipe you can follow when you want to add tests on Legacy Code, but
-  you don't have much time to do so.
+  Here's a recipe you can follow when you want to add tests on Legacy Code, but you don't have much time to do so.
 ---
-The code requires significant changes to support unit tests. I have deadlines to meet!
+
+> The code requires significant changes to support unit tests. I have deadlines to meet!
 
 ![Ain't nobody got time for that](/assets/time-for-dat.jpg)
 
-You have that pile of Legacy Code you need to change. Of course, there are no tests. Deep in your heart, you know that you should add tests before touching this code. People on the Internet told you so. "First, you should add tests" they said.
+You have that pile of Legacy Code you need to change.
 
-But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford spending *days* to write the tests that should be here in the first place.
+Of course, there are no tests. Deep in your heart, you know that you should add tests before touching this code. People on the Internet told you so. "First, you should add tests" they said.
 
-BUT you know that you should. If you don't, you're making things worse. If you don't write the tests, you may even break something and you won't realize.
+But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford spending _days_ to write the tests that should be here in the first place.
+
+BUT you know that you should. If you don't, you're making things worse! If you don't write the tests, you may even break something and you won't realize!!! 🙀
 
 **You want to add tests, but you don't have time to!**
 
-If that's you, I do have a solution for you. It's not a pretty one, but it works. It did saved me many times when I was in a hurry. It can help you too.
+If that's you, I do have a solution for you!
+
+It's not a pretty one, but *it works*™. It did save me many times when I was in a hurry. It can help you too.
 
 ## The 3-steps recipe to add tests when you don't have time to 🚀
 
-What you're looking for is called "*Approval Testing*". Some people call that "*Characterization Testing*". 
+What you're looking for is called "_Approval Testing_". Some people call that "_Characterization Testing_".
 
 Here's how it goes:
 
@@ -29,9 +33,9 @@ Here's how it goes:
 2. ✅ Use test coverage to find all input combinations
 3. 👽 Use mutations to verify your snapshots
 
-Follow that and you'll get your thing under tests *super fast*!
+Follow that and you'll get your thing under tests _super fast_!
 
-Let's see how you do that in details.
+Let's see how you do that in detail.
 
 ### 1. 📸 Generate an output you can snapshot
 
@@ -41,7 +45,7 @@ You need to find a way to capture what the code is doing, in a serialized way. P
 
 Call the code from a test file. Provide the simplest inputs you need to get it running.
 
-You can face 3 scenario:
+You can face 3 scenarios:
 
 1. **What you're testing returns a value**. That's your output. Easy!
 2. **What you're testing performs side-effects** (e.g. it calls an HTTP endpoint). You should intercept that and capture the parameters that are used. You'll probably need a spy/stub/mock to do so.
@@ -51,13 +55,13 @@ Go figure out how to get that output. What you need is a string that proves the 
 
 When you got that string, write it in a file. **That's your snapshot**.
 
-Some testing libraries will give you utilities to do that for you. For example, in JavaScript, jest has [a guide to snapshot testing](https://jestjs.io/docs/en/snapshot-testing).
+Some testing libraries will give you utilities to do that for you. For example, in JavaScript, _Jest_ has [a guide to snapshot testing](https://jestjs.io/docs/en/snapshot-testing).
 
-Here's an example of snapshot test with jest:
+Here's an example of a snapshot test with Jest:
 
 ```js
-it('should update quality', () => {
-  expect(updateQuality('foo', 0, 0)).toMatchSnapshot()
+it("should update quality", () => {
+  expect(updateQuality("foo", 0, 0)).toMatchSnapshot()
 })
 ```
 
@@ -71,7 +75,7 @@ Probably not all of it.
 
 That's where test coverage is useful: it will tell you **what you're not testing yet**.
 
-Here's an example of test coverage report:
+Here's an example of a test coverage report:
 
 ![Example of test coverage](/assets/test-coverage-gilded-rose.png)
 
@@ -94,20 +98,20 @@ Repeat that until you cover every line.
 You might end up with a test looking like that:
 
 ```js
-it('should update quality', () => {
-  expect(doUpdateQuality('foo', 0, 0)).toMatchSnapshot()
-  expect(doUpdateQuality('foo', 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality('foo', 0, 2)).toMatchSnapshot()
-  expect(doUpdateQuality('Aged Brie', 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality('Aged Brie', 0, 50)).toMatchSnapshot()
-  expect(doUpdateQuality('Sulfuras', 0, 1)).toMatchSnapshot()
-  expect(doUpdateQuality('Sulfuras', -1, 1)).toMatchSnapshot()
+it("should update quality", () => {
+  expect(doUpdateQuality("foo", 0, 0)).toMatchSnapshot()
+  expect(doUpdateQuality("foo", 0, 1)).toMatchSnapshot()
+  expect(doUpdateQuality("foo", 0, 2)).toMatchSnapshot()
+  expect(doUpdateQuality("Aged Brie", 0, 1)).toMatchSnapshot()
+  expect(doUpdateQuality("Aged Brie", 0, 50)).toMatchSnapshot()
+  expect(doUpdateQuality("Sulfuras", 0, 1)).toMatchSnapshot()
+  expect(doUpdateQuality("Sulfuras", -1, 1)).toMatchSnapshot()
 })
 ```
 
 ### 3. 👽 Use mutations to verify your snapshots
 
-Everything is now covered with snapshots. 
+Everything is now covered with snapshots.
 
 **But 100% test coverage doesn't mean you actually test the code.**
 
@@ -115,18 +119,20 @@ There's a simple way to verify you're safe: introduce mutations!
 
 And by "introduce mutations" I really mean:
 
-* deliberately change each line of code to introduce a silly mistake (I like to comment out the code)
-* verify a test is failing
-* revert the silly mistake
-* celebrate internally (yay!)
+- deliberately change each line of code to introduce a silly mistake (I like to comment out the code)
+- verify a test is failing
+- revert the silly mistake
+- celebrate internally (yay!)
 
 For every line you mutate and see a failing snapshot, your confidence in the tests grows.
 
-**If no test fails, you need to add another input combinations**. Revert the silly mistake, find the correct combination that will exercise this line and try again. You want to see a failing test.
+**If no test fails, you need to add other input combinations**. Revert the silly mistake, find the correct combination that will exercise this line and try again. You want to see a failing test.
 
 When you reach the end of the code, you're done!
 
-![](/assets/self-high-five.gif)
+<p style="text-align: center">
+ <img src="/assets/self-high-five.gif" />
+</p>
 
 ## Why is it the fastest technique to add tests?
 
@@ -134,15 +140,16 @@ Because you don't have to write comprehensive unit tests of the existing code.
 
 Instead, you take it as a black box. You execute the code, whatever it does. And you capture the output.
 
-**It's the fastest way to put regression tests on an existing code.**
+**It's the fastest way to put regression tests on existing code.**
 
 With this technique, I already put monstrous lumps of code under tests within a couple of hours.
 
-## Wait, why don't we *always* use that kind of tests then?
+## Why don't we _always_ use that kind of test?
 
 As sexy as this approach is, it has downsides:
-- you capture existing behaviour, bugs included
-- tests will fail whenever you change the behaviour, even if it's intended
+
+- you capture existing behavior, bugs included
+- tests will fail whenever you change the behavior, even if it's intended
 - you can't read the tests and understand what the code does
 
 That's my secret weapon to add tests when we're in a hurry. That's a pragmatic compromise. But it's a temporary solution until we have time to write better, helpful tests on the code.
