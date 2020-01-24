@@ -12,8 +12,9 @@ collections:
     folder: content/blog
     preview_path: "blog/{{slug}}"
     create: true
+    publish_mode: editorial_workflow
     fields:
       - { name: title, label: Title }
-      - { name: date, label: Date, widget: date }
+      - { name: date, label: Date, widget: datetime, dateFormat: "YYYY-MM-DD" }
       - { name: description, label: Description, required: false }
       - { name: body, label: Body, widget: markdown }
