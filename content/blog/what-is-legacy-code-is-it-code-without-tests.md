@@ -3,10 +3,9 @@ title: What is Legacy Code? Is it code without tests?
 date: 2020-01-22T01:47:28.963Z
 description: Here's a useful definition of "Legacy Code" you can refer to.
 ---
+*"Legacy Code"*.
 
-_"Legacy Code"_.
-
-If you work in IT, that's a term you'll hear often in your career. Developers talk about it _a lot_. Usually with a lot of negative connotations.
+If you work in IT, that's a term you'll hear often in your career. Developers talk about it *a lot*. Usually with a lot of negative connotations.
 
 But what exactly do they call "Legacy Code"? Is it just old code? Or someone else's code? In any case, you understood that it's not "good code".
 
@@ -39,14 +38,14 @@ This is my definition of Legacy Code. Let me repeat that differently:
 
 **Legacy Code is the code you need to change and you struggle to understand.**
 
-Maybe you're looking for the root cause of a bug. Or maybe you're figuring out where to insert your feature. You want to change the code, but you have a hard time doing so because you don't know how not to break existing behavior. _This is Legacy Code._
+Maybe you're looking for the root cause of a bug. Or maybe you're figuring out where to insert your feature. You want to change the code, but you have a hard time doing so because you don't know how not to break existing behavior. *This is Legacy Code.*
 
 You need to realize a few things:
 
-- **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn't write is Legacy Code. Or that code you wrote because you can't remember the hell you had in mind when you did. Yes, our past self often does silly mistakes. Don't tell your future self 🤫
-- **Good tests make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
-- **It gets better after few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
-- **Most of the code is terrible** because it's the result of many people working on it, over a long period of time, with conflicting requirements, under time pressure. Legacy Code Recipe™. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That's VERY common. Eventually, you'll reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
+* **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn't write is Legacy Code. Or that code you wrote because you can't remember the hell you had in mind when you did. Yes, our past self often does silly mistakes. Don't tell your future self 🤫
+* **Good tests make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
+* **It gets better after few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
+* **Most of the code is terrible** because it's the result of many people working on it, over a long period of time, with conflicting requirements, under time pressure. Legacy Code Recipe™. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That's VERY common. Eventually, you'll reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
 
 Hear me out again:
 
@@ -56,12 +55,14 @@ Why is that definition useful? Because it states something people fail to realiz
 
 It depends on **your** understanding of the code. And **your** feeling about changing it.
 
-Some code might be a challenge for every developer of the team. Some code might feel complex to you because _you_ don't understand it yet. Some code you might understand, but you still don't feel comfortable changing. 🤷
+Some code might be a challenge for every developer of the team. Some code might feel complex to you because *you* don't understand it yet. Some code you might understand, but you still don't feel comfortable changing. 🤷
 
 Hopefully, there are techniques to get familiar with Legacy Code faster!
 
 **Learning to understand Legacy Code is essential to be productive.**
 
+![Legacy Code, Legacy Code everywhere](/assets/legacy code everywhere.jpg)
+
 There are a lot of Legacy Code out there! Every codebase you'll work on will mostly be Legacy. You can try to avoid it and feel bad when you're stuck with it…
 
-Or you can see this as an opportunity to develop valuable skills that will make you stand out as a _great_ developer.
+Or you can see this as an opportunity to develop valuable skills that will make you stand out as a *great* developer.
