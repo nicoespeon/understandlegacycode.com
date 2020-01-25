@@ -28,6 +28,7 @@ function SEO({
             title
             description
             author
+            siteUrl
             social {
               twitter
             }
@@ -37,9 +38,9 @@ function SEO({
     `
   )
 
-  const url = `${site.siteMetadata.url}${slug}`
+  const url = `${site.siteMetadata.siteUrl}${slug}`
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = `${site.siteMetadata.url}${image}`
+  const metaImage = `${site.siteMetadata.siteUrl}${image}`
 
   return (
     <Helmet
