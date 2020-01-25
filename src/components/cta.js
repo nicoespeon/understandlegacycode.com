@@ -41,7 +41,12 @@ function CTA() {
             required
           />
           {botsHoneypot}
-          <Button type="submit">Subscribe 📨</Button>
+          <Button type="submit">
+            Subscribe{" "}
+            <span role="img" aria-label="Inbox">
+              📨
+            </span>
+          </Button>
         </Container>
         <p>I won't spam you. I won't share your email. Unsubscribe anytime.</p>
       </Form>
