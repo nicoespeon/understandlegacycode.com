@@ -9,8 +9,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import profilePic from "../../content/assets/profile-pic.png"
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  slug,
+  image = profilePic,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,13 +28,18 @@ function SEO({ description, lang, meta, keywords, title }) {
             title
             description
             author
+            social {
+              twitter
+            }
           }
         }
       }
     `
   )
 
+  const url = `${site.siteMetadata.url}${slug}`
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = `${site.siteMetadata.url}${image}`
 
   return (
     <Helmet
@@ -33,11 +47,15 @@ function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`${site.siteMetadata.title}: %s`}
+      titleTemplate={`%s — ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: "og:url",
+          content: url,
         },
         {
           property: `og:title`,
@@ -57,7 +75,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@${site.siteMetadata.social.twitter}`,
         },
         {
           name: `twitter:title`,
@@ -74,6 +92,20 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `keywords`,
                 content: keywords.join(`, `),
               }
+            : []
+        )
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: "og:image",
+                  content: metaImage,
+                },
+                {
+                  name: "twitter:image",
+                  content: metaImage,
+                },
+              ]
             : []
         )
         .concat(meta)}
