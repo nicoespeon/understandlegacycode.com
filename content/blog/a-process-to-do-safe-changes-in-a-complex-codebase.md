@@ -40,6 +40,7 @@ In a complex codebase, small changes quickly become an elephant. If you address 
 Instead, chop down the elephant into small pieces.
 
 Concretely, here's the *Mikado Method* process you can follow:
+
 1. **Grab a piece of paper**. Sometimes low-tech is better. This is such time.
 2. **Set a goal**. Write it down on paper. Put it at the top or at the center, it doesn't really matter. Just keep space for other items.
 3. **Try to achieve the goal within a timebox**. 2min, 5min, 10min, as you wish. Keep it relatively short.
@@ -54,6 +55,9 @@ Concretely, here's the *Mikado Method* process you can follow:
         - **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
 
 TK: concrete example presented before, steps illustrated with pictures.
+
 TK: benefits of baby steps => always shippable.
+
 TK: that's the implicit technique used behind the "Refactoring" book. 
+
 TK: why is it called Mikado
