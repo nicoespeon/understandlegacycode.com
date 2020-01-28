@@ -61,3 +61,7 @@ TK: benefits of baby steps => always shippable.
 TK: that's the implicit technique used behind the "Refactoring" book. 
 
 TK: why is it called Mikado
+
+TK: Grammarly
+
+TK: double-check with https://livebook.manning.com/book/the-mikado-method/chapter-3/92
