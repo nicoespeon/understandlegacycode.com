@@ -15,10 +15,38 @@ function CTA() {
     </div>
   )
 
+  const form = React.createRef()
+
+  const url =
+    "https://nicoespeon.us4.list-manage.com/subscribe/post?u=ca05d369ee1b4a4e803dce32c&amp;id=2fd39e1501"
+
+  const trackAndSubmit = event => {
+    event.preventDefault()
+
+    /* eslint-disable no-undef */
+    if (typeof ga === "function") {
+      ga(
+        "send",
+        "event",
+        "Subscribe",
+        "Click",
+        "page",
+        window.location.pathname
+      )
+    }
+    /* eslint-enable no-undef */
+
+    if (form.current) {
+      form.current.submit()
+    }
+  }
+
   return (
     <Wrapper>
       <Form
-        action="https://nicoespeon.us4.list-manage.com/subscribe/post?u=ca05d369ee1b4a4e803dce32c&amp;id=2fd39e1501"
+        ref={form}
+        onSubmit={trackAndSubmit}
+        action={url}
         method="post"
         name="mc-embedded-subscribe-form"
         target="_blank"
