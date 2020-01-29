@@ -23,9 +23,8 @@ function CTA() {
   const trackAndSubmit = event => {
     event.preventDefault()
 
-    /* eslint-disable no-undef */
-    if (typeof ga === "function") {
-      ga(
+    if (typeof window.ga === "function") {
+      window.ga(
         "send",
         "event",
         "Subscribe",
@@ -34,7 +33,6 @@ function CTA() {
         window.location.pathname
       )
     }
-    /* eslint-enable no-undef */
 
     if (form.current) {
       form.current.submit()
