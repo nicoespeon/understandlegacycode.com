@@ -5,6 +5,7 @@ description: >-
   When a codebase is large and complex, it's risky to big changes. Here's a
   structured way to approach the problem.
 ---
+
 > You've inherited a 300k lines of spaghetti code. What do you do now?
 
 Large, untested, poorly documented codebases are tricky to work with. They're very hard to reason about.
@@ -25,9 +26,9 @@ Quickly you find yourself sinking into quicksand: **whenever you fix 1 problem, 
 
 The project doesn't compile anymore. It has been few hours since you committed the code. "I'm still working on it, I just need to fix a few things" is what your standup sounds like for a few days now…
 
-If you're here, you're not alone!
+**If you're here, you're not alone!**
 
-And there's a way to avoid the quicksand. I'm about to teach you: *The Mikado Method*.
+And there's a way to avoid the quicksand. I'm about to teach you: _The Mikado Method_.
 
 ## A structured way to make valuable changes
 
@@ -35,29 +36,34 @@ The gist of it will sound like common sense:
 
 > There is only one way to eat an elephant: a bite at a time.
 
-In a complex codebase, small changes quickly become an elephant. If you address them upfront, chances are you'll hit a wall. It will be painful. You will be late. Clients and management will be upset. Trust will erode and without trust, there are few chances you can get management support for necessary refactorings.
+In a complex codebase, small changes quickly become an elephant.
 
-Instead, chop down the elephant into small pieces.
+If you address them upfront, chances are you'll hit a wall. It will be painful. You will be late. Clients and management will be upset. Trust will erode and without trust, there are few chances you can get management support for necessary refactorings.
 
-Concretely, here's the *Mikado Method* process you can follow:
+Instead, chop down the elephant into small pieces 🐘
+
+### The process
+
+Concretely, here's the _Mikado Method_ process you can follow:
 
 1. **Grab a piece of paper**. Sometimes low-tech is better. This is such time.
 2. **Set a goal**. Write it down on paper. Put it at the top or at the center, it doesn't really matter. Just keep space for other items.
-3. **Try to achieve the goal within a timebox**. 2min, 5min, 10min, as you wish. Keep it relatively short.
+3. **Try to achieve the goal within a timebox**. 5min, 10min, 15min, as you wish. Keep it relatively short.
 
-   * If you failed:
+   - If you failed:
 
-     * **Revert your changes**. Undo what you did during the timebox. This is important to start fresh.
-     * **Think about what's missing**. What do you need to change to make the goal easier. That's your subgoal.
-     * **Write it down on your paper** and attach it to the goal you tried to achieve.
-     * **Start over from 3) with your subgoal**.
-   * If you succeeded:
+     - **Revert your changes**. Undo what you did during the timebox. This is important to start fresh.
+     - **Think about what's missing**. What do you need to change to make the goal easier. That's your subgoal.
+     - **Write it down on your paper** and attach it to the goal you tried to achieve.
+     - **Start over from 3) with your subgoal**.
 
-     * **Commit**. You'll certainly finish before the end of the timebox, that's fine, stop the timer.
-     * **Check the goal you achieved on paper**. Celebrate internally.
-     * **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
+   - If you succeeded:
 
-### What it looks like
+     - **Commit**. You'll certainly finish before the end of the timebox, that's fine, stop the timer.
+     - **Check the goal you achieved on paper**. Celebrate internally.
+     - **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
+
+### What it looks like for real
 
 Let's go back to our ORM dependency upgrade.
 
@@ -67,11 +73,13 @@ First, write down the goal on a piece of paper. Draw 2 circles around. That's yo
 
 You try to do so. You upgrade the dependency and realize the project doesn't compile anymore. Damn, you should have read the changelog before!
 
-Ok so you read the changelog and understand you have to change few calls. And frankly, that's a lot of changes for a single timebox!
+Ok, so you read the changelog and understand you have to change few calls. Frankly, that's a lot of changes for a single timebox!
 
-**Revert your changes**. Really. Undo them. Then write down what needs to be done first.
+**Revert your changes**. Really. Undo it. It matters. 🔥
 
-How to change few calls within a little timebox? Easy: isolate the change so you don't have much places to change. Make it so the upgrade in itself will be quick!
+Then, write down what needs to be done _before_.
+
+How to change few calls within a little timebox? Easy: extract the calls, so you don't have much places to change. Make it so the upgrade in itself would be quick!
 
 ![2 new goals: "Extract .query()" and "Extract .dump()"](/assets/mikado-method-step2.jpg)
 
@@ -83,38 +91,46 @@ Hopefully, there are just a few calls and they all look alike. You can complete 
 
 ![Goal "Extract .dump()" checked](/assets/mikado-method-step3.jpg)
 
-Now try to address the other call. You start doing so but it doesn't go as smooth as the previous one.
+Now try to address the other call. You start doing so, but it doesn't go as smooth as the previous one 😩
 
-After few minutes, just stop and think. What's missing? What would make it easier to do that change like the previous one?
+After few minutes, just stop and think. What's missing? What would make it easier to do that change, like the previous one?
 
-Maybe you first need to make each call look alike, one call at a time.
+Maybe you first need to make each call look alike.
 
-**Revert your changes**. Again. Then write down the new subgoals.
+**Revert your changes**. Again. I'm serious.
+
+Then write down the new subgoals.
 
 ![2 new subgoals: "Adapt calls in booking" and "Adapt calls in cart"](/assets/mikado-method-step4.jpg)
 
 Start over with one of the leaf. Iterate.
 
-When every leaf is checked, tackling a goal should be easy. In the end, you'll make the main goal easy.
+When every of its subgoal is checked, tackling a goal should be easy. In the end, **you'll make the main goal easy**.
 
 Then, just do it. Upgrade your ORM dependency.
 
 ![Finally, everything is checked, including the main goal!](/assets/mikado-method-step5.jpg)
 
+Congrats! You just implemented an ambitious change without getting stuck in the quicksand of the codebase.
+
 ## 3 advices to master the Mikado Method
 
 1. **Make your timebox short**. That way, it will be easier to revert your changes. It's a critical step to avoid the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost). I find **10min** to be a pragmatic compromise.
-2. **Commit when you check a goal**. It's a checkpoint that gets you closer to the main goal. That means you can stop anytime, open a PR and ship the improvements. You may not be done, but you made it easier.
+2. **Commit when you check a goal**. It's a checkpoint that gets you closer to the main goal. It means you can stop anytime, open a PR and ship the improvements. You may not be done with the task, but you made it easier.
 3. **Use this when you start an ambitious refactoring**. Doing baby steps and keeping the code in a shippable state gives you incredible productivity.
 
 ## Why is it called "Mikado"?
 
 It's a reference to [the Mikado pick-up sticks game](https://en.wikipedia.org/wiki/Mikado_%28game%29).
 
-The *Stick* you want to remove is your ORM dependency upgrade.
+The _Stick_ you want to remove is your ORM dependency upgrade.
 
 It's tangled with dozens of other sticks: annoying dependencies and tweaks you need to make, so the code still work.
 
-The strategy is to remove the easy sticks first. The ones that are not tangled. Progressively, you untangle your *Stick*. Until you can reach it without breaking anything 🎉
+The strategy is to remove the easy sticks first. The ones that are not tangled. Progressively, you untangle your _Stick_. Until you can reach it without breaking anything 🎉
 
-With a bit of practice, you'll become good at it. And you'll become a much more efficient developer!
+![](/assets/mikado-game.jpg)
+
+With a bit of practice, you'll become good at it.
+
+And you'll become **a much more efficient developer!**
