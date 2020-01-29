@@ -5,9 +5,10 @@ description: >-
   When a codebase is large and complex, it's risky to big changes. Here's a
   structured way to approach the problem.
 ---
+
 > You've inherited a 300k lines of spaghetti code. What do you do now?
 
-Large, untested, poorly documented codebases are tricky to work with. They're very hard to reason about. 
+Large, untested, poorly documented codebases are tricky to work with. They're very hard to reason about.
 
 **You can't move fast in a complex codebase.**
 
@@ -19,7 +20,7 @@ Maybe you decided that you'll address the technical debt and refactor that legac
 
 But any valuable change takes you down to a path of failures 😩
 
-Say you want to upgrade this dependency. You start doing so, but you quickly realize TK: find concrete example. 
+Say you want to upgrade your ORM dependency. You start doing so, but you quickly realize that there are some breaking changes. So you need to change some function calls across the codebase. To make it easier, you decide to refactor and extract them somewhere, so you only have one place to change. But to do so, you need to adapt each call first…
 
 Quickly you find yourself sinking into quicksand: **whenever you fix 1 problem, 2 more arise**.
 
@@ -27,7 +28,7 @@ The project doesn't compile anymore. It has been few hours since you committed t
 
 If you're here, you're not alone!
 
-And there's a way to avoid the quicksand. I'm about to teach you: *The Mikado Method*.
+And there's a way to avoid the quicksand. I'm about to teach you: _The Mikado Method_.
 
 ## A structured way to make valuable changes
 
@@ -39,29 +40,79 @@ In a complex codebase, small changes quickly become an elephant. If you address 
 
 Instead, chop down the elephant into small pieces.
 
-Concretely, here's the *Mikado Method* process you can follow:
+Concretely, here's the _Mikado Method_ process you can follow:
 
 1. **Grab a piece of paper**. Sometimes low-tech is better. This is such time.
 2. **Set a goal**. Write it down on paper. Put it at the top or at the center, it doesn't really matter. Just keep space for other items.
 3. **Try to achieve the goal within a timebox**. 2min, 5min, 10min, as you wish. Keep it relatively short.
-    - If you failed:
-        - **Revert your changes**. Undo what you did during the timebox. This is important to start fresh. 
-        - **Think about what's missing**. That's your subgoal. 
-        - **Write it down on your paper** and attach it to the goal you tried to achieve.
-        -  **Start over from 3) with your subgoal**. 
-    - If you succeeded:
-        - **Commit**. You'll certainly finish before the end of the timebox, that's fine, stop the timer.
-        - **Check the goal you achieved on paper**. Celebrate internally.
-        - **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
+   - If you failed:
+     - **Revert your changes**. Undo what you did during the timebox. This is important to start fresh.
+     - **Think about what's missing**. What do you need to change to make the goal easier. That's your subgoal.
+     - **Write it down on your paper** and attach it to the goal you tried to achieve.
+     - **Start over from 3) with your subgoal**.
+   - If you succeeded:
+     - **Commit**. You'll certainly finish before the end of the timebox, that's fine, stop the timer.
+     - **Check the goal you achieved on paper**. Celebrate internally.
+     - **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
 
-TK: concrete example presented before, steps illustrated with pictures.
+### What it looks like
 
-TK: benefits of baby steps => always shippable.
+Let's go back to our ORM dependency upgrade.
 
-TK: that's the implicit technique used behind the "Refactoring" book. 
+First, write down the goal on a piece of paper. Draw 2 circles around. That's your main goal!
 
-TK: why is it called Mikado
+TK: picture of drawing step 1
 
-TK: Grammarly
+You try to do so. You upgrade the dependency and realize the project doesn't compile anymore. Damn, you should have read the changelog before!
 
-TK: double-check with https://livebook.manning.com/book/the-mikado-method/chapter-3/92
+Ok so you read the changelog and understand you have to change few calls. And frankly, that's a lot of changes for a single timebox!
+
+**Revert your changes**. Really. Undo them. Then write down what needs to be done first.
+
+How to change few calls within a little timebox? Easy: isolate the change so you don't have much places to change. Make it so the upgrade in itself will be quick!
+
+TK: picture of drawing step 2
+
+Start over. Try to extract the first method within the timebox.
+
+Hopefully, there are just a few calls and they all look alike. You can complete that task within few minutes. Congrats!
+
+**Commit your work, check that subgoal** and pat yourself on the back. You got closer to your main goal.
+
+TK: picture of drawing step 3
+
+Now try to address the other call. You start doing so but it doesn't go as smooth as the previous one.
+
+After few minutes, just stop and think. What's missing? What would make it easier to do that change like the previous one?
+
+Maybe you first need to make each call look alike, one call at a time.
+
+**Revert your changes**. Again. Then write down the new subgoals.
+
+TK: picture of drawing step 3
+
+Start over with one of the leaf. Iterate.
+
+When every leaf is checked, tackling a goal should be easy. In the end, you'll make the main goal easy.
+
+Then, just do it. Upgrade your ORM dependency.
+
+TK: picture of drawing final step
+
+## 3 advices to master the Mikado Method
+
+1. **Make your timebox short**. That way, it will be easier to revert your changes. It's a critical step to avoid the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost). I find **10min** to be a pragmatic compromise.
+2. **Commit when you check a goal**. It's a checkpoint that gets you closer to the main goal. That means you can stop anytime, open a PR and ship the improvements. You may not be done, but you made it easier.
+3. **Use this when you start an ambitious refactoring**. Doing baby steps and keeping the code in a shippable state gives you incredible productivity.
+
+## Why is it called "Mikado"?
+
+It's a reference to [the Mikado pick-up sticks game](https://en.wikipedia.org/wiki/Mikado_%28game%29).
+
+The _Stick_ you want to remove is your ORM dependency upgrade.
+
+It's tangled with dozens of other sticks: annoying dependencies and tweaks you need to make, so the code still work.
+
+The strategy is to remove the easy sticks first. The ones that are not tangled. Progressively, you untangle your _Stick_. Until you can reach it without breaking anything 🎉
+
+With a bit of practice, you'll become good at it. And you'll become a much more efficient developer!
