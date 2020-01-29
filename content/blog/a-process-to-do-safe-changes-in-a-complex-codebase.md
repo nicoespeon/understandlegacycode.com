@@ -24,7 +24,7 @@ Say you want to upgrade your ORM dependency. You start doing so, but you quickly
 
 Quickly you find yourself sinking into quicksand: **whenever you fix 1 problem, 2 more arise**.
 
-The project doesn't compile anymore. It has been few hours since you committed the code. "I'm still working on it, I just need to fix a few things" is what your standup sounds like for a few days now…
+The project doesn't compile anymore. It has been a few hours since you committed the code. "I'm still working on it, I just need to fix a few things" is what your standup sounds like for a few days now…
 
 **If you're here, you're not alone!**
 
@@ -46,14 +46,14 @@ Instead, chop down the elephant into small pieces 🐘
 
 Concretely, here's the _Mikado Method_ process you can follow:
 
-1. **Grab a piece of paper**. Sometimes low-tech is better. This is such time.
+1. **Grab a piece of paper**. Sometimes low-tech is better. This is such a time.
 2. **Set a goal**. Write it down on paper. Put it at the top or at the center, it doesn't really matter. Just keep space for other items.
 3. **Try to achieve the goal within a timebox**. 5min, 10min, 15min, as you wish. Keep it relatively short.
 
    - If you failed:
 
      - **Revert your changes**. Undo what you did during the timebox. This is important to start fresh.
-     - **Think about what's missing**. What do you need to change to make the goal easier. That's your subgoal.
+     - **Think about what's missing**. What do you need to change to make the goal easier? That's your subgoal.
      - **Write it down on your paper** and attach it to the goal you tried to achieve.
      - **Start over from 3) with your subgoal**.
 
@@ -73,19 +73,19 @@ First, write down the goal on a piece of paper. Draw 2 circles around. That's yo
 
 You try to do so. You upgrade the dependency and realize the project doesn't compile anymore. Damn, you should have read the changelog before!
 
-Ok, so you read the changelog and understand you have to change few calls. Frankly, that's a lot of changes for a single timebox!
+Ok, so you read the changelog and understand you have to change some calls. Frankly, that's a lot of changes for a single timebox!
 
 **Revert your changes**. Really. Undo it. It matters. 🔥
 
 Then, write down what needs to be done _before_.
 
-How to change few calls within a little timebox? Easy: extract the calls, so you don't have much places to change. Make it so the upgrade in itself would be quick!
+How to change a few calls within a little timebox? Easy: extract the calls, so you don't have many places to change. Make it so the upgrade in itself would be quick!
 
 ![2 new goals: "Extract .query()" and "Extract .dump()"](/assets/mikado-method-step2.jpg)
 
 Start over. Try to extract the first method within the timebox.
 
-Hopefully, there are just a few calls and they all look alike. You can complete that task within few minutes. Congrats!
+Hopefully, there are just a few calls and they all look alike. You can complete that task within a few minutes. Congrats!
 
 **Commit your work, check that subgoal** and pat yourself on the back. You got closer to your main goal.
 
@@ -93,7 +93,7 @@ Hopefully, there are just a few calls and they all look alike. You can complete 
 
 Now try to address the other call. You start doing so, but it doesn't go as smooth as the previous one 😩
 
-After few minutes, just stop and think. What's missing? What would make it easier to do that change, like the previous one?
+After a couple of minutes, just stop and think. What's missing? What would make it easier to do that change, like the previous one?
 
 Maybe you first need to make each call look alike.
 
@@ -103,9 +103,9 @@ Then write down the new subgoals.
 
 ![2 new subgoals: "Adapt calls in booking" and "Adapt calls in cart"](/assets/mikado-method-step4.jpg)
 
-Start over with one of the leaf. Iterate.
+Start over with one of the leaves. Iterate.
 
-When every of its subgoal is checked, tackling a goal should be easy. In the end, **you'll make the main goal easy**.
+When each of its subgoals is checked, tackling a goal should be easy. In the end, **you'll make the main goal easy**.
 
 Then, just do it. Upgrade your ORM dependency.
 
@@ -113,7 +113,7 @@ Then, just do it. Upgrade your ORM dependency.
 
 Congrats! You just implemented an ambitious change without getting stuck in the quicksand of the codebase.
 
-## 3 advices to master the Mikado Method
+## 3 advice to master the Mikado Method
 
 1. **Make your timebox short**. That way, it will be easier to revert your changes. It's a critical step to avoid the [sunk cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost). I find **10min** to be a pragmatic compromise.
 2. **Commit when you check a goal**. It's a checkpoint that gets you closer to the main goal. It means you can stop anytime, open a PR and ship the improvements. You may not be done with the task, but you made it easier.
@@ -125,7 +125,7 @@ It's a reference to [the Mikado pick-up sticks game](https://en.wikipedia.org/wi
 
 The _Stick_ you want to remove is your ORM dependency upgrade.
 
-It's tangled with dozens of other sticks: annoying dependencies and tweaks you need to make, so the code still work.
+It's tangled with dozens of other sticks: annoying dependencies and tweaks you need to make, so the code still works.
 
 The strategy is to remove the easy sticks first. The ones that are not tangled. Progressively, you untangle your _Stick_. Until you can reach it without breaking anything 🎉
 
