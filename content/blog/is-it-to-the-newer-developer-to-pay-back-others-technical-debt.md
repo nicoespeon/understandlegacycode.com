@@ -21,7 +21,7 @@ But after a few weeks digging into the Legacy Code to implement a feature, you m
 
 I get it. Maybe the developers who wrote the code are still in the company. Maybe they're now working on new, _exciting_ projects!
 
-And there you are, thinking that editing someone else's code doesn't feel as cool as writing something new. Wondering if it's the best use of your skills when more experienced developers could refactor the code in no time.
+And there you are, thinking that editing someone else's code doesn't feel as cool as writing something new. Wondering if it's the best use of your skills when more experienced developers could refactor the code in no time. 😩
 
 Maybe you're a junior developer or an intern and you think it's natural to get the bitch work nobody else wants.
 
@@ -53,7 +53,7 @@ You're learning the system, tools, and code. You are giving it a fresh pair of e
 
 **Regardless of your seniority**, you're the best person to point out the things that are not clear! And clarify them.
 
-### Initiatives you can take already
+### Initiatives you can take already 🤠
 
 - Some concepts you don't understand? Ask your colleagues and **write that knowledge somewhere**. Anything would do.
 - **Build a glossary** of the jargon used within the team.
