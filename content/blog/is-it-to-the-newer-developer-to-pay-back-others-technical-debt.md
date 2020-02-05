@@ -11,6 +11,10 @@ As you get used to your new colleagues, you also discover the codebase they're w
 
 But after a few weeks digging into the Legacy Code to implement a feature, you might feel despair.
 
+<p style="text-align: center">
+ <img src="/assets/frustrated.gif" />
+</p>
+
 > "It's taken me a month so far and I'm still not done…"
 
 > "The one who wrote the code I'm refactoring could get it all done in a day!"
