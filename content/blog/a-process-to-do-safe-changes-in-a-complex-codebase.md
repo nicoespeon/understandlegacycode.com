@@ -1,5 +1,5 @@
 ---
-title: A process to do safe changes in a complex codebase
+title: A simple technique to do safe changes in a complex codebase
 date: 2020-01-28T12:18:27.306Z
 description: >-
   When a codebase is large and complex, it's risky to big changes. Here's a
