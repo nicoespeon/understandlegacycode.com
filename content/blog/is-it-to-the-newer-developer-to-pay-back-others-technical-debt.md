@@ -31,7 +31,7 @@ Or maybe you're an experienced developer who knows that it's part of the job, yo
 
 First of all, that feeling of struggle is normal. Even after a few weeks.
 
-It's [the nature of Legacy Code](./what-is-legacy-code-is-it-code-without-tests).
+It's [the nature of Legacy Code](/blog/what-is-legacy-code-is-it-code-without-tests).
 
 > Legacy Code is the code you need to change and you struggle to understand.
 
