@@ -1,5 +1,5 @@
 ---
-title: Is it to the newer developer to pay back others' technical debt?
+title: Is it up to the newer developer to pay back others' technical debt?
 date: 2020-02-03T03:23:12.338Z
 description: >-
   And what you can do about it if you find yourself in such situation.
