@@ -15,7 +15,60 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
+    {
+      resolve: "gatsby-plugin-feed-mdx",
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map(edge => {
+                const url = `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`
+
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url,
+                  guid: url,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              }),
+            query: `
+              {
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            match: "^/blog/",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
