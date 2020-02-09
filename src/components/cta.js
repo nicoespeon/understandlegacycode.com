@@ -23,20 +23,18 @@ function CTA() {
   const trackAndSubmit = event => {
     event.preventDefault()
 
-    if (typeof window.ga === "function") {
-      window.ga(
-        "send",
-        "event",
-        "Subscribe",
-        "Click",
-        "page",
-        window.location.pathname
-      )
-    }
-
-    if (form.current) {
-      form.current.submit()
-    }
+    window.ga("send", {
+      hitType: "event",
+      eventCategory: "Subscribe",
+      eventAction: "submit",
+      eventLabel: "page",
+      eventValue: window.location.pathname,
+      hitCallback: createFunctionWithTimeout(() => {
+        if (form.current) {
+          form.current.submit()
+        }
+      }),
+    })
   }
 
   return (
@@ -78,6 +76,21 @@ function CTA() {
       </Form>
     </Wrapper>
   )
+}
+
+function createFunctionWithTimeout(callback, opt_timeout) {
+  let called = false
+
+  function fn() {
+    if (!called) {
+      called = true
+      callback()
+    }
+  }
+
+  setTimeout(fn, opt_timeout || 1000)
+
+  return fn
 }
 
 const rotation = "1.5deg"
