@@ -27,8 +27,7 @@ function CTA() {
       hitType: "event",
       eventCategory: "Subscribe",
       eventAction: "submit",
-      eventLabel: "page",
-      eventValue: window.location.pathname,
+      eventLabel: window.location.pathname,
       hitCallback: createFunctionWithTimeout(() => {
         if (form.current) {
           form.current.submit()
