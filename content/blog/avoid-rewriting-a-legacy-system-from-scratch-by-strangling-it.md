@@ -1,15 +1,16 @@
 ---
-title: 'Avoid rewriting a legacy system from scratch, by strangling it'
+title: "Avoid rewriting a legacy system from scratch, by strangling it"
 date: 2020-02-10T21:06:13.397Z
 description: >-
   When application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
 ---
-As we speak about *legacy projects*, it common to reach a point where there's so much technical debt that you can't implement new features anymore.
+
+As we speak about _legacy projects_, it common to reach a point where there's so much technical debt that you can't implement new features anymore.
 
 The code was hacked around repeatedly. And you've reached the **point of no return**.
 
-## You try to find a solution to move on!
+## You need a solution to move on!
 
 Maybe you tried to rework parts of the app, but every refactoring pulls the rest of the app. 😫
 
@@ -21,11 +22,11 @@ Maybe you think that you should just freeze the app and stop touching it anymore
 
 ## Why "rewriting from scratch" doesn't work
 
-Sometimes, code is  **risky to change** and **expensive to refactor**.
+Sometimes, code is **risky to change** and **expensive to refactor**.
 
 In such situation, a seemingly good idea would be to rewrite it.
 
-From scratch. 
+_From scratch._
 
 Here's how it goes:
 
@@ -42,43 +43,47 @@ Sounds fictional? Or familiar?
 
 Don't be shamed, **it's a very common mistake**.
 
-### In my current project, we're dealing with exactly that!
+### In my current project, we're dealing with that!
 
 We have 2 systems working in parallel: a `cart` and a `booking`. In fact, `booking` was supposed to replace `cart`.
 
-The project started 3 years ago. But it was never finished! `booking` is *better* than `cart`, but it's not as *complete*. Some purchase flows use `booking`, but a lot still use `cart`. 
+The project started 3 years ago. But it was never finished! `booking` is _better_ than `cart`, but it's not as _complete_. Some purchase flows use `booking`, but a lot still use `cart`.
 
 Now, new features cost twice the time to implement.
 
 And here's the fun part: because `cart` is not designed to support the new features we want and `booking` is too out-of-date, it was suggested to "rewrite the `cart` properly" 😏
 
-![](/assets/never.gif)
+<p style="text-align: center">
+ <img src="/assets/no-way.gif" />
+</p>
 
 If we go there, you can bet we'll soon have 3 systems running in parallel in a few months.
 
-Hopefully, **we won't go there**. 
+But, **we won't go there**. Because I know an efficient technique to work around a legacy system.
 
-I know an efficient technique to work around a legacy system. The technique is **to strangle it**.
+The technique is **to strangle it**.
 
 ## How to strangle a legacy code
 
-> Progressively delete the old code base in favour of a new one.
+The strategy is simple:
+
+> Progressively delete the old code base, in favour of a new one.
 
 Here's the plan:
 
-* **Have the new code acts as a proxy** for the old code. Users use the new system, but it just redirects to the old one.
-* **Re-implement each behavior to the new codebase**, with no change from end-user perspective. 
-* **Progressively fade away the old code** by making users consume the new behavior. Delete the old, unused code.
+- **Have the new code acts as a proxy** for the old code. Users use the new system, but it just redirects to the old one.
+- **Re-implement each behavior to the new codebase**, with no change from end-user perspective.
+- **Progressively fade away the old code** by making users consume the new behavior. Delete the old, unused code.
 
 TK: schema cart & booking plan with/without rewrite
 
-The best part of it is that you solve the problem of delivering new features during the rewrite.
+The best part of it is that you solve the problem of delivering new features _during_ the rewrite.
 
 With this technique, you're not duplicating the code. You don't need to implement new features twice!
 
 Also, you put the new system in production as soon as possible. You get feedback sooner, which means **less work** and **less risk of breaking things**.
 
-Finally, you can roll-out the rewrite progressively. No need to freeze code.
+Finally, you can roll-out the rewrite progressively. No need to freeze code for 6 months.
 
 TK: Strangle Fig pattern by Martin Fowler in reference to the tree
 
