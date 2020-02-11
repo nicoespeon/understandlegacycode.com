@@ -5,25 +5,29 @@ description: >-
   When application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
 ---
-As we speak about legacy project, it common to reach a point where there's so much technical debt that you can't implement new features anymore.
+As we speak about *legacy projects*, it common to reach a point where there's so much technical debt that you can't implement new features anymore.
 
 The code was hacked around repeatedly. And you've reached the **point of no return**.
 
-## Facing the beast, you try to find a solution to move on!
+## You try to find a solution to move on!
 
-Maybe you tried to rework parts of the app, but every refactoring pulls the rest of the app. 😭
+Maybe you tried to rework parts of the app, but every refactoring pulls the rest of the app. 😫
 
-Maybe you tried to write unit tests before you can do change, but that code wasn't designed to be testable in the first place! 😬
+Maybe you tried to write unit tests before you can do change, but that code wasn't designed to be testable in the first place! 😭
 
-Maybe you think that you should just freeze the app and stop touching it anymore… 😫
+Maybe you think that you should just freeze the app and stop touching it anymore… 😬
 
 > What to do if you need to change code that's impossible to maintain, without making it worse?
 
-## Is rewriting from scratch a good idea?
+## Why "rewriting from scratch" doesn't work
 
 Sometimes, code is  **risky to change** and **expensive to refactor**.
 
-In such situation, a seemingly good idea would be to rewrite it, from scratch. Here's how it goes:
+In such situation, a seemingly good idea would be to rewrite it.
+
+From scratch. 
+
+Here's how it goes:
 
 1. You discuss with management about the strategy of stopping new features for some time, while you rewrite the existing app.
 2. You estimate the rewrite will take 6 months to cover what the existing app does.
@@ -40,13 +44,15 @@ Don't be shamed, **it's a very common mistake**.
 
 ### In my current project, we're dealing with exactly that!
 
-We have 2 systems working in parallel: a `cart` and a `booking`. `booking` was supposed to replace `cart`.
+We have 2 systems working in parallel: a `cart` and a `booking`. In fact, `booking` was supposed to replace `cart`.
 
 The project started 3 years ago. But it was never finished! `booking` is *better* than `cart`, but it's not as *complete*. Some purchase flows use `booking`, but a lot still use `cart`. 
 
 Now, new features cost twice the time to implement.
 
-And here's the fun part: because `cart` is not designed to support the new features we want and `booking` is too out-of-date, it was proposed to "rewrite `cart` properly" 😏
+And here's the fun part: because `cart` is not designed to support the new features we want and `booking` is too out-of-date, it was suggested to "rewrite the `cart` properly" 😏
+
+![](/assets/never.gif)
 
 If we go there, you can bet we'll soon have 3 systems running in parallel in a few months.
 
