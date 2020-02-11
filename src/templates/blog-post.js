@@ -102,6 +102,10 @@ const Content = styled.div`
     letter-spacing: -0.01em;
   }
 
+  code {
+    font-size: 1em;
+  }
+
   @media (min-width: 600px) {
     p,
     li {
