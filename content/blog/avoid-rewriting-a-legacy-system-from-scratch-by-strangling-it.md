@@ -56,7 +56,23 @@ I know an efficient technique to work around a legacy system. The technique is *
 
 ## How to strangle a legacy code
 
-TK: schema
+> Progressively delete the old code base in favour of a new one.
+
+Here's the plan:
+
+* **Have the new code acts as a proxy** for the old code. Users use the new system, but it just redirects to the old one.
+* **Re-implement each behavior to the new codebase**, with no change from end-user perspective. 
+* **Progressively fade away the old code** by making users consume the new behavior. Delete the old, unused code.
+
+TK: schema cart & booking plan with/without rewrite
+
+The best part of it is that you solve the problem of delivering new features during the rewrite.
+
+With this technique, you're not duplicating the code. You don't need to implement new features twice!
+
+Also, you put the new system in production as soon as possible. You get feedback sooner, which means **less work** and **less risk of breaking things**.
+
+Finally, you can roll-out the rewrite progressively. No need to freeze code.
 
 TK: Strangle Fig pattern by Martin Fowler in reference to the tree
 
