@@ -2,7 +2,7 @@
 title: "Avoid rewriting a legacy system from scratch, by strangling it"
 date: 2020-02-10T21:06:13.397Z
 description: >-
-  When application becomes impossible to maintain, a rewrite is very tempting.
+  When an application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
 ---
 
@@ -24,7 +24,7 @@ Maybe you think that you should just freeze the app and stop touching it anymore
 
 Sometimes, code is **risky to change** and **expensive to refactor**.
 
-In such situation, a seemingly good idea would be to rewrite it.
+In such a situation, a seemingly good idea would be to rewrite it.
 
 _From scratch._
 
@@ -32,12 +32,12 @@ Here's how it goes:
 
 1. You discuss with management about the strategy of stopping new features for some time, while you rewrite the existing app.
 2. You estimate the rewrite will take 6 months to cover what the existing app does.
-3. Few months in, a nasty bug is discovered and ABSOLUTELY needs to be fixed in the old code. So you patch the old code and the new one too.
-4. Few months later, a new feature has been sold to the client. It HAS TO BE implemented in the old code—the new version is not ready yet! You need to go back to the old code but also add a TODO to implement this in the new version.
+3. A few months in, a nasty bug is discovered and ABSOLUTELY needs to be fixed in the old code. So you patch the old code and the new one too.
+4. A few months later, a new feature has been sold to the client. It HAS TO BE implemented in the old code—the new version is not ready yet! You need to go back to the old code but also add a TODO to implement this in the new version.
 5. After 5 months, you realize the project will be late. The old app was doing way more things than expected. You start hustling more.
 6. After 7 months, you start testing the new version. QA raises up a lot of things that should be fixed.
 7. After 9 months, the business can't stand "not developing features" anymore. Leadership is not happy with the situation, you are tired. You start making changes to the old, painful code while trying to keep up with the rewrite.
-8. Eventually, you end up with the 2 systems in production. Long-term goal is to get rid of the old one, but the new one is not ready yet. Every feature needs to be implemented twice.
+8. Eventually, you end up with the 2 systems in production. The long-term goal is to get rid of the old one, but the new one is not ready yet. Every feature needs to be implemented twice.
 
 Sounds fictional? Or familiar?
 
@@ -67,12 +67,12 @@ The technique is **to strangle it**.
 
 The strategy is simple:
 
-> Progressively delete the old code base, in favour of a new one.
+> Progressively delete the old code base, in favor of a new one.
 
 Here's the plan:
 
 - **Have the new code acts as a proxy** for the old code. Users use the new system, but it just redirects to the old one.
-- **Re-implement each behavior to the new codebase**, with no change from end-user perspective.
+- **Re-implement each behavior to the new codebase**, with no change from the end-user perspective.
 - **Progressively fade away the old code** by making users consume the new behavior. Delete the old, unused code.
 
 ### How it looks like, in practice
@@ -147,12 +147,12 @@ The _Wrap Class_ technique is a way to add new behavior to the system, without c
 
 It puts some distance between new responsibilities and old ones.
 
-It can be a first step towards a better design when the old code is particularly hard to work with.
+It can be the first step towards a better design when the old code is particularly hard to work with.
 
 **If you are into _Domain Driven Design_ (DDD)**, this approach is also recommended to phase out a legacy system.
 
 You consider the legacy system as a black box. You create a Bubble Context in which you start applying the DDD principles. This Bubble Context interacts with the old legacy system, through an Anticorruption Layer.
 
-Progressively, new features gets implemented in the growing Bubble Context. Meanwhile, the legacy system will be less involved in the business.
+Progressively, new features get implemented in the growing Bubble Context. Meanwhile, the legacy system will be less involved in the business.
 
 Until one day, you will be able to switch it off _for good_. 🙌
