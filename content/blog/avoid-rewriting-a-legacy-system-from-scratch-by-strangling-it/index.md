@@ -6,7 +6,7 @@ description: >-
   But it could make things worse.
 ---
 
-As we speak about _legacy projects_, it common to reach a point where there's so much technical debt that you can't implement new features anymore.
+As we speak about _legacy projects_, it's common to reach a point where there's so much technical debt that you can't implement new features anymore.
 
 The code was hacked around repeatedly. And you've reached the **point of no return**.
 
@@ -63,7 +63,7 @@ But, **we won't go there**. Because I know an efficient technique to work around
 
 The technique is **to strangle it**.
 
-## How to strangle a legacy code
+## How to strangle a legacy codebase
 
 The strategy is simple:
 
@@ -75,9 +75,51 @@ Here's the plan:
 - **Re-implement each behavior to the new codebase**, with no change from end-user perspective.
 - **Progressively fade away the old code** by making users consume the new behavior. Delete the old, unused code.
 
-TK: schema cart & booking plan with/without rewrite
+### How it looks like, in practice
 
-The best part of it is that you solve the problem of delivering new features _during_ the rewrite.
+Consider our system. We had a `cart` module that used to handle payments.
+
+<p style="text-align: center">
+ <img src="./1-cart.svg" />
+</p>
+
+A rewrite was attempted. The idea was to create a new and shiny `booking` that will handle payments way better than `cart`.
+
+But this project wasn't delivered 100%. It took too much time to do the rewrite and we had to develop new features on the old `cart`.
+
+Eventually, we ended up with the 2 modules in production.
+
+<p style="text-align: center">
+ <img src="./2-rewrite-attempt.svg" />
+</p>
+
+Let's try that again, **strangling the `cart` module instead**.
+
+Instead, we can introduce the new `booking` module as a proxy.
+
+<p style="text-align: center">
+ <img src="./3-strangle-with-booking.svg" />
+</p>
+
+It would be quite easy to set up. Quickly, we could have it delivered in production, without duplicating the payment processing logic.
+
+Then, progressively, we could start migrating the payment logic to the new `booking` module.
+
+<p style="text-align: center">
+ <img src="./4-progressive-strangling.svg" />
+</p>
+
+As we migrate the logic, we get rid of the unused code on the `cart` module.
+
+This can take time. But we progressively move toward the goal of replacing the old, unmaintainable `cart` with the new, shiny `booking`.
+
+<p style="text-align: center">
+ <img src="./5-booking.svg" />
+</p>
+
+### Strangle, instead of rewrite
+
+The best part of this is that you solve the problem of delivering new features _during_ the rewrite.
 
 With this technique, you're not duplicating the code. You don't need to implement new features twice!
 
@@ -85,10 +127,32 @@ Also, you put the new system in production as soon as possible. You get feedback
 
 Finally, you can roll-out the rewrite progressively. No need to freeze code for 6 months.
 
-TK: Strangle Fig pattern by Martin Fowler in reference to the tree
+### It ain't new
 
-![A Strangler fig tree](/assets/david-clode-y_l5tep9wxI-unsplash.jpg)
+This technique I'm referring to has been coined as the "Strangler Fig" pattern by Martin Fowler.
 
-TK: Wrap method/class in Working Effectively with Legacy Code by M. Feathers
+It refers to:
 
-TK: DDD by Eric Evans propose to approach existing non-DDD app like that
+> [the huge strangler figs that] grow into fantastic and beautiful shapes, meanwhile strangling and killing the tree that was their host.
+
+<p style="text-align: center">
+ <img src="/assets/strangler-fig.jpg" alt="A strangler fig tree" />
+</p>
+
+While "strangle" might have a violent connotation, the idea of the metaphor is really the one of slowly taking rid of the old system. This is less risky than a complete cut-over.
+
+**If you look in the wild**, this is also advocated by Michael Feathers in "_Working Effectively with Legacy Code_".
+
+The _Wrap Class_ technique is a way to add new behavior to the system, without changing existing code. You wrap existing code into a new class, to add behavior around.
+
+It puts some distance between new responsibilities and old ones.
+
+It can be a first step towards a better design when the old code is particularly hard to work with.
+
+**If you are into _Domain Driven Design_ (DDD)**, this approach is also recommended to phase out a legacy system.
+
+You consider the legacy system as a black box. You create a Bubble Context in which you start applying the DDD principles. This Bubble Context interacts with the old legacy system, through an Anticorruption Layer.
+
+Progressively, new features gets implemented in the growing Bubble Context. Meanwhile, the legacy system will be less involved in the business.
+
+Until one day, you will be able to switch it off _for good_. 🙌
