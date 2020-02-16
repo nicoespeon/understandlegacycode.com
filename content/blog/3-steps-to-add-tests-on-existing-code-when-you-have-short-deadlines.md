@@ -4,6 +4,8 @@ date: 2020-01-24T02:15:57.830Z
 description: >-
   Here's a recipe you can follow when you want to add tests on Legacy Code, but
   you don't have much time to do so.
+tags:
+  - approval tests
 ---
 
 > The code requires significant changes to support unit tests. I have deadlines to meet!
