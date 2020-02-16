@@ -5,6 +5,7 @@ description: >-
   Here's a recipe you can follow when you want to add tests on Legacy Code, but
   you don't have much time to do so.
 ---
+
 > The code requires significant changes to support unit tests. I have deadlines to meet!
 
 ![Ain't nobody got time for that](/assets/time-for-dat.jpg)
@@ -13,7 +14,7 @@ You have that pile of Legacy Code you need to change.
 
 Of course, there are no tests. Deep in your heart, you know that you should add tests before touching this code. People on the Internet told you so. "First, you should add tests" they said.
 
-But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford spending *days* to write the tests that should be here in the first place.
+But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford spending _days_ to write the tests that should be here in the first place.
 
 BUT you know that you should. If you don't, you're making things worse! If you don't write the tests, you may even break something and you won't realize!!! 🙀
 
@@ -25,7 +26,7 @@ It's not a pretty one, but *it works*™. It did save me many times when I was i
 
 ## The 3-steps recipe to add tests when you don't have time to 🚀
 
-What you're looking for is called "*Approval Testing*". Some people call that "*Characterization Testing*".
+What you're looking for is called "_Approval Testing_". Some people call that "_Characterization Testing_".
 
 Here's how it goes:
 
@@ -33,7 +34,7 @@ Here's how it goes:
 2. ✅ Use test coverage to find all input combinations
 3. 👽 Use mutations to verify your snapshots
 
-Follow that and you'll get your thing under tests *super fast*!
+Follow that and you'll get your thing under tests _super fast_!
 
 Let's see how you do that in detail.
 
@@ -55,7 +56,7 @@ Go figure out how to get that output. What you need is a string that proves the 
 
 When you got that string, write it in a file. **That's your snapshot**.
 
-Some testing libraries will give you utilities to do that for you. For example, in JavaScript, *Jest* has [a guide to snapshot testing](https://jestjs.io/docs/en/snapshot-testing).
+Some testing libraries will give you utilities to do that for you. For example, in JavaScript, _Jest_ has [a guide to snapshot testing](https://jestjs.io/docs/en/snapshot-testing).
 
 Here's an example of a snapshot test with Jest:
 
@@ -131,10 +132,10 @@ There's a simple way to verify you're safe: introduce mutations!
 
 And by "introduce mutations" I really mean:
 
-* deliberately change each line of code to introduce a silly mistake (I like to comment out the code)
-* verify a test is failing
-* revert the silly mistake
-* celebrate internally (yay!)
+- deliberately change each line of code to introduce a silly mistake (I like to comment out the code)
+- verify a test is failing
+- revert the silly mistake
+- celebrate internally (yay!)
 
 For every line you mutate and see a failing snapshot, your confidence in the tests grows.
 
@@ -156,15 +157,15 @@ Instead, you take it as a black box. You execute the code, whatever it does. And
 
 With this technique, I already put monstrous lumps of code under tests within a couple of hours.
 
-## Why don't we *always* use that kind of test?
+## Why don't we _always_ use that kind of test?
 
 As sexy as this approach is, it has downsides:
 
-* you capture existing behavior, bugs included
-* tests will fail whenever you change the behavior, even if it's intended
-* you can't read the tests and understand what the code does
+- you capture existing behavior, bugs included
+- tests will fail whenever you change the behavior, even if it's intended
+- you can't read the tests and understand what the code does
 
-These kind of tests can be really noisy. If you notice people just update them when they fail, they don't provide any value. **Delete them**. 
+These kind of tests can be really noisy. If you notice people just update them when they fail, they don't provide any value. **Delete them**.
 
 It's fine to delete useless tests afterwards. They were useful when you had to change the code. They're not here to replace proper tests in your codebase!
 
