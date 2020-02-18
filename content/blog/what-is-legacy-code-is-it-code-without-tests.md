@@ -26,7 +26,7 @@ Why is Feathers saying that? Because without tests, it's usually very hard to kn
 
 If you need to understand what the code is doing, you need to read it carefully, play the computer in your head and envision all the possible scenarios. You can also test it manually to see what it does. Generally, code without tests is tricky to change without introducing a regression somewhere.
 
-I like this definition. It's a working one. More often than not, tests are missing. So that's a good start. 
+I like this definition. It's a working one. More often than not, tests are missing. So that's a good start.
 
 But I think it's not complete.
 
@@ -66,6 +66,6 @@ Hopefully, there are techniques to get familiar with Legacy Code faster!
 
 ![Legacy Code, Legacy Code everywhere](/assets/legacy-code-everywhere.jpg)
 
-There are a lot of Legacy Code out there! Every codebase you'll work on will mostly be Legacy. You can try to avoid it and feel bad when you're stuck with it…
+There is a lot of Legacy Code out there! Every codebase you'll work on will mostly be Legacy. You can try to avoid it and feel bad when you're stuck with it…
 
 Or you can see this as an opportunity to develop valuable skills that will make you stand out as a _great_ developer.
