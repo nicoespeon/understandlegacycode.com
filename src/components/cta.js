@@ -71,7 +71,10 @@ function CTA() {
             </span>
           </Button>
         </Container>
-        <p>I won't spam you. I won't share your email. Unsubscribe anytime.</p>
+        <p>
+          No spam. No pixel tracking. No sharing of your email. Unsubscribe
+          anytime.
+        </p>
       </Form>
     </Wrapper>
   )
