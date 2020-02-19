@@ -5,15 +5,16 @@ description: >-
   If you think that management wouldn't let you refactor Legacy Code, use these
   5 arguments to convince them
 ---
+
 > Management won't let me refactor Legacy Code!
 
-Do you recognize your current situation here? How *frustrating* is that!
+Do you recognize your current situation here? How _frustrating_ is that!
 
-As a developer, it's quite common to be confronted with managers who don't seem interested in fixing what's already here. 
+As a developer, it's quite common to be confronted with managers who don't seem interested in fixing what's already here.
 
 New features. Emergency releases. Bug fixes! There's always an excuse to postpone the refactoring of that messy codebase. 😭
 
-Even when you explain the merits and benefits of clean code, they still not seem to understand, or care. Focus is always on *cost* and *time* instead of **quality**. And there you are, feeling powerless to address the accumulating technical debt.
+Even when you explain the merits and benefits of clean code, they still not seem to understand, or care. Focus is always on _cost_ and _time_ instead of **quality**. And there you are, feeling powerless to address the accumulating technical debt.
 
 > It feels like a lost cause!
 
@@ -25,7 +26,7 @@ This is what pushed the good developers to pack up and leave the company. Now it
 
 ## Managers aren't engineers
 
-TK: talk about refactoring and clean code, maybe use the tech debt analogy and that sounds nice. But in the end, there are impatient customers to serve. Also, you're an expert, you're supposed to do good code from the beginning right? 
+TK: talk about refactoring and clean code, maybe use the tech debt analogy and that sounds nice. But in the end, there are impatient customers to serve. Also, you're an expert, you're supposed to do good code from the beginning right?
 
 You need to help management understand **the impact of bad code quality on the business**.
 
@@ -61,7 +62,7 @@ TK: How much does it cost to replace a leaving employee
 
 TK: Propose a plan to reduce the number of support issues, make it easier for support to handle more issues without the need of development / time spent on helping Support
 
-## But in the end, *they* decide
+## But in the end, _they_ decide
 
 Right?
 
