@@ -19,6 +19,7 @@ function SEO({
   title,
   slug,
   image = profilePic,
+  type = "website",
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -68,7 +69,7 @@ function SEO({
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type,
         },
         {
           name: `twitter:card`,

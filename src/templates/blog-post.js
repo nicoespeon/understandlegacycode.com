@@ -23,6 +23,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
           slug={this.props.uri}
+          type="article"
           image={post.frontmatter.image || profilePic}
         />
         <Title>{post.frontmatter.title}</Title>
