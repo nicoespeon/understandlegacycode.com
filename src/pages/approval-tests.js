@@ -69,8 +69,8 @@ class IndexPage extends React.Component {
           something breaks…
         </p>
         <p>
-          This is a scenario I frequently faced. And I learn better ways to work
-          with such Legacy Code.
+          This is a scenario I frequently faced. And I learned better ways to
+          work with such Legacy Code.
         </p>
         <p>
           In this session, I'll show you how to write tests on existing code,
