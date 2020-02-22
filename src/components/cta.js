@@ -50,8 +50,8 @@ function CTA() {
           Learn to <em>understand</em> Legacy Code
         </h2>
         <p>
-          Every week I share <strong>practical tips</strong> to help people work
-          with Legacy Code.
+          Every Wednesday I share <strong>practical tips</strong> to help people
+          work with Legacy Code.
           <br />
           Drop your email below and receive my advices for FREE.
         </p>
