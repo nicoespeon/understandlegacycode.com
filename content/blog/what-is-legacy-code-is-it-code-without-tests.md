@@ -2,6 +2,7 @@
 title: What is Legacy Code? Is it code without tests?
 date: 2020-01-22T01:47:28.963Z
 description: Here's a useful definition of "Legacy Code" you can refer to.
+image: /assets/legacy-code-everywhere.jpg
 ---
 
 _"Legacy Code"_.

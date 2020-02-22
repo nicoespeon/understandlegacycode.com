@@ -4,6 +4,7 @@ date: 2020-02-10T21:06:13.397Z
 description: >-
   When an application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
+image: /assets/strangler-fig.jpg
 ---
 
 As we speak about _legacy projects_, it's common to reach a point where there's so much technical debt that you can't implement new features anymore.

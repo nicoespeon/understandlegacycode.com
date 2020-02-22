@@ -6,6 +6,7 @@ description: >-
   you don't have much time to do so.
 tags:
   - approval tests
+image: /assets/time-for-dat.jpg
 ---
 
 > The code requires significant changes to support unit tests. I have deadlines to meet!
