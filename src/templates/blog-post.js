@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import CTA from "../components/cta"
 import Title from "../components/title"
 import { rhythm, colors } from "../utils/typography"
+import profilePic from "../../content/assets/profile-pic.png"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
           slug={this.props.uri}
+          image={post.frontmatter.image || profilePic}
         />
         <Title>{post.frontmatter.title}</Title>
         <Content>
@@ -166,6 +168,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image
       }
     }
   }

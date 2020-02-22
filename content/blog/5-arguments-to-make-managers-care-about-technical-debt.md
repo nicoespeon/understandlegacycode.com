@@ -4,6 +4,7 @@ date: 2020-02-18T02:00:02.828Z
 description: >-
   If you think that management wouldn't let you refactor Legacy Code, use these
   5 arguments to convince them.
+image: /assets/dev-office-help.jpg
 ---
 
 > Management won't let me refactor Legacy Code!
