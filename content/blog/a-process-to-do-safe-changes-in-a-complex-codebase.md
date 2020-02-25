@@ -1,10 +1,10 @@
 ---
 title: A simple technique to do safe changes in a complex codebase
 date: 2020-01-28T12:18:27.306Z
+image: /assets/mikado-game.jpg
 description: >-
   When a codebase is large and complex, it's risky to big changes. Here's a
   structured way to approach the problem.
-image: /assets/mikado-game.jpg
 ---
 
 > You've inherited a 300k lines of spaghetti code. What do you do now?
