@@ -1,7 +1,7 @@
 ---
 title: "Avoid rewriting a legacy system from scratch, by strangling it"
 date: 2020-02-10T21:06:13.397Z
-image: /assets/strangler-fig.jpg
+image: /assets/strangler-fig.jpg
 description: >-
   When an application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
