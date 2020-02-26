@@ -3,6 +3,7 @@ title: >-
   The key points of Working Effectively with Legacy Code
 date: 2020-02-21T02:05:52.092Z
 description: "This book is a reference. Here's my review of its salient points so you understand why it's so recommended."
+image: /assets/wewlc.jpeg
 ---
 
 > "Legacy Code is code without tests"
