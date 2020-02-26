@@ -74,7 +74,7 @@ To test your code, you need to **break these dependencies** in the tests.
 
 Therefore, you need to identify **Seams**.
 
-> A Seam is a place to alter program behavior, without changing the code.
+> "A Seam is a place to alter program behavior, without changing the code."
 
 There are different types of Seams. The gist of it is to identify how you can change the code behavior without touching the source code.
 
@@ -134,7 +134,7 @@ Now, sometimes it's really hard to write such tests because you don't even _unde
 
 Before you can refactor the code, you need tests. But writing these tests can be challenging. Especially when code is hard to understand.
 
-> A characterization test is a test that characterizes the actual behavior of a piece of code.
+> "A characterization test is a test that characterizes the actual behavior of a piece of code."
 
 Instead of writing comprehensive unit tests, you capture the current behavior of the code. You take a snapshot of what it does.
 
@@ -372,7 +372,7 @@ Let's conclude that review on a cautionary tale…
 
 ## Don't make your code depend on libraries' implementation
 
-> Avoid littering direct calls to library classes in your code. You might think that you’ll never change them, but that can become a self-fulfilling prophecy.
+> "Avoid littering direct calls to library classes in your code. You might think that you’ll never change them, but that can become a self-fulfilling prophecy."
 
 I wanted to highlight this advice because it's a very common mistake. I've seen that a lot!
 
