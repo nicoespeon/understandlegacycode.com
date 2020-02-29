@@ -26,6 +26,18 @@ class IndexPage extends React.Component {
           ]}
         />
         <CTA />
+        <h2>Helpful Guides</h2>
+        <ul style={{ margin: "20px 0 40px" }}>
+          <Li key="approval-tests">
+            <Link style={{ fontSize: "21px" }} to={`approval-tests`}>
+              Approval Testing
+            </Link>
+            <p>
+              Techniques to quickly put Legacy Code under tests, so you can
+              refactor it safely.
+            </p>
+          </Li>
+        </ul>
         <h2>Latest articles</h2>
         <ul style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
