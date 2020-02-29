@@ -2,7 +2,7 @@
 title: >-
   The key points of Working Effectively with Legacy Code
 date: 2020-02-21T02:05:52.092Z
-description: "This book is a reference. Here's my review of its salient points so you understand why it's so recommended."
+description: "This book is a reference. Here's my summary of its salient points so you understand why it's so recommended."
 image: /assets/wewlc.jpeg
 ---
 
@@ -24,7 +24,7 @@ When there's a thread about Legacy Code, it doesn't take long for someone to dro
 
 If that's you, I got your back!
 
-Here's my review of the salient points of the book and how they can help you deal with your existing codebase.
+Here's my summary of the salient points of the book and how they can help you deal with your existing codebase.
 
 ## First, add tests, then do your changes
 
@@ -368,7 +368,7 @@ If you do that, then you can do unsafe changes!
 
 Play with the code as much as you want. Extract functions, simplify code, rename variables… Get to know the code. Once you do, revert your changes and start over with proper tests.
 
-Let's conclude that review on a cautionary tale…
+Let's conclude our review on a cautionary tale…
 
 ## Don't make your code depend on libraries' implementation
 
@@ -388,6 +388,8 @@ Think about all the ORM code, monitoring libs, utility packages that you use. Do
 
 **Of course, you should.**
 
+While I have given you an overview of the advice in the book, there is many more examples and approaches in the book itself!
+
 You have to deal with Legacy Code every day. This is one of the most actionable resources you can find on the topic.
 
 You might have read (or listed) other books such as Clean Code and Refactoring. These are must-reads too. But I'd recommend starting with Working Effectively with Legacy Code.
@@ -403,9 +405,9 @@ But that's OK for 2 reasons:
 1. Legacy Code is not always easy to read, so that's actually relevant. It's a skill you need to practice.
 2. Java code is object-oriented code that you should be able to understand, even if you don't know the language.
 
-This review gives you a good overview of what kind of advice is in the book. **There are more!**
+So, again: this summary gives you a good overview of what kind of advice are in the book. **But there are more!**
 
-The book goes in detail into _how_ you apply that on different use-cases. If you liked this review, you'll enjoy the book.
+The book goes in detail into _how_ you can apply these advice through different use-cases. If you liked this summary, you'll enjoy [the book](https://www.google.com/search?q=working+effectively+with+legacy+code).
 
 Aaaaand you'll _love_ the content I publish every week! 🤠
 
