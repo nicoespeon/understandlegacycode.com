@@ -48,7 +48,7 @@ However, you can see that everything starts when you click on the "Select" butto
 
 ![Illustration of clicking on the "select" button](./click-on-button.gif)
 
-The first thing you can do is searching for the button in the code. How do you find it if you don't know the codebase? Look for things that are unique.
+The first thing you can do is searching for the button in the code. How do you find it if you don't know the codebase? Look for unique things.
 
 In the case of a web application, you have a Graphic User Interface. Thus, you have a text (which is not data). Use it to find the button.
 
