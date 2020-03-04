@@ -18,7 +18,7 @@ You also certainly know that **communication is key**!
 
 Even if the author is long gone, it's always a great idea to talk to other developers, Product Managers, end-users, etc. When you talk to them, you learn what they know about it. Knowledge is gold. Having different points of view helps.
 
-If you didn't asked anyone yet, start with that!
+If you didn't ask anyone yet, start with that!
 
 ## Start with an existing feature
 
