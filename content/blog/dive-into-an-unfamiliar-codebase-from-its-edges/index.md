@@ -1,6 +1,7 @@
 ---
 title: Dive into an unfamiliar codebase from its edges
 date: 2020-03-03T02:47:33.298Z
+image: /assets/dangerous-to-go-alone.png
 description: >-
   Do you feel paralyzed, wondering how to approach a legacy codebase? Try to start from the system edges.
 ---
