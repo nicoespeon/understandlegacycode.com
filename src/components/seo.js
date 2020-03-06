@@ -15,7 +15,7 @@ function SEO({
   description,
   lang,
   meta,
-  keywords,
+  keywords = [],
   title,
   slug,
   image = profilePic,
@@ -95,15 +95,11 @@ function SEO({
           name: "twitter:image",
           content: metaImage,
         },
+        {
+          name: "keywords",
+          content: keywords.join(`, `),
+        }
       ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
         .concat(meta)}
     />
   )
