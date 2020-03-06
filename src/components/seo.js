@@ -16,7 +16,7 @@ function SEO({
   lang,
   keywords = [],
   title,
-  slug,
+  slug = "",
   image = profilePic,
   type = "website",
 }) {
