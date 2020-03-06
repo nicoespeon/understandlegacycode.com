@@ -20,12 +20,15 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} description={siteDescription}>
         <SEO
           title="Approval Tests"
+          description="A technique to quickly put Legacy Code under tests, so you can refactor it"
+          date="2020-02-27"
+          slug="/approval-tests"
           keywords={[
-            `legacy code`,
-            `approval tests`,
-            `characterization tests`,
-            `snapshot tests`,
-            `golden master`,
+            "legacy code",
+            "approval tests",
+            "characterization tests",
+            "snapshot tests",
+            "golden master",
           ]}
         />
 
@@ -61,7 +64,7 @@ class IndexPage extends React.Component {
           &nbsp;Synopsis
         </h2>
         <p style={{ textAlign: "center" }}>
-          <img src="/assets/confoo-2019.jpg" />
+          <img src="/assets/confoo-2019.jpg" alt="" />
         </p>
         <p>
           Have you ever felt helpless, facing some cryptic code you had to

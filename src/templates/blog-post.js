@@ -22,6 +22,7 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          date={post.frontmatter.date}
           slug={this.props.uri}
           type="article"
           image={post.frontmatter.image || profilePic}

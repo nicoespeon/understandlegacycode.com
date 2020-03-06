@@ -14,10 +14,10 @@ import profilePic from "../../content/assets/profile-pic.png"
 function SEO({
   description,
   lang,
-  meta,
-  keywords,
+  date,
+  keywords = [],
   title,
-  slug,
+  slug = "",
   image = profilePic,
   type = "website",
 }) {
@@ -49,7 +49,7 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s — ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -72,6 +72,10 @@ function SEO({
           content: type,
         },
         {
+          property: "og:image",
+          content: metaImage,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -87,31 +91,53 @@ function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "twitter:image",
+          content: metaImage,
+        },
+        {
+          name: "keywords",
+          content: keywords.join(`, `),
+        },
+      ]}
+    >
+      {/* Validate with https://search.google.com/structured-data/testing-tool/ */}
+      <script type="application/ld+json">
+        {`{
+  "@context": "https://schema.org",
+  "@type": "${type === "article" ? "TechArticle" : "Website"}",
+  "publisher": {
+      "@type": "Organization",
+      "name": "${site.siteMetadata.title} | ${site.siteMetadata.description}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "${profilePic}"
+      }
+  },
+  "author": {
+      "@type": "Person",
+      "name": "${site.siteMetadata.author}",
+      "image": "${profilePic}",
+      "url": "https://nicoespeon.com",
+      "sameAs": [
+          "https://twitter.com/nicoespeon",
+          "https://github.com/nicoespeon"
       ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: "og:image",
-                  content: metaImage,
-                },
-                {
-                  name: "twitter:image",
-                  content: metaImage,
-                },
-              ]
-            : []
-        )
-        .concat(meta)}
-    />
+  },
+  "headline": "${title} | ${site.siteMetadata.title}",
+  "url": "${url}",
+  "description": "${metaDescription}",
+  "image": "${metaImage}",
+  "keywords": "${keywords.join(", ")}",
+  "datePublished": "${date}",
+  "dateModified": "${date}",
+  "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "${site.siteMetadata.siteUrl}"
+  }
+}`}
+      </script>
+    </Helmet>
   )
 }
 

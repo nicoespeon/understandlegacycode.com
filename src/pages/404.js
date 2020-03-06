@@ -11,10 +11,9 @@ class NotFoundPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteDescription}>
-        <SEO title="Oops, couldn't find that article" />
+        <SEO title="Oops, couldn't find that article" date="2020-01-13" />
         <h1>Not Found</h1>
         <p>You just hit a page that doesn&#39;t exist... the sadness.</p>
-        {/* TODO: add list of latest articles */}
       </Layout>
     )
   }
