@@ -14,7 +14,6 @@ import profilePic from "../../content/assets/profile-pic.png"
 function SEO({
   description,
   lang,
-  meta,
   keywords = [],
   title,
   slug,
@@ -98,10 +97,9 @@ function SEO({
         {
           name: "keywords",
           content: keywords.join(`, `),
-        }
-      ]
-        .concat(meta)}
-    />
+        },
+      ]}
+    ></Helmet>
   )
 }
 
