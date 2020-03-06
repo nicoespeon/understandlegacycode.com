@@ -20,6 +20,7 @@ class IndexPage extends React.Component {
       <Layout location={this.props.location} description={siteDescription}>
         <SEO
           title="Approval Tests"
+          date="2020-02-27"
           keywords={[
             "legacy code",
             "approval tests",

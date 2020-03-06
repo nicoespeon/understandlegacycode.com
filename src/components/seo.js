@@ -14,6 +14,7 @@ import profilePic from "../../content/assets/profile-pic.png"
 function SEO({
   description,
   lang,
+  date,
   keywords = [],
   title,
   slug = "",
