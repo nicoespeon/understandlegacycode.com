@@ -21,11 +21,11 @@ class IndexPage extends React.Component {
         <SEO
           title="Approval Tests"
           keywords={[
-            `legacy code`,
-            `approval tests`,
-            `characterization tests`,
-            `snapshot tests`,
-            `golden master`,
+            "legacy code",
+            "approval tests",
+            "characterization tests",
+            "snapshot tests",
+            "golden master",
           ]}
         />
 

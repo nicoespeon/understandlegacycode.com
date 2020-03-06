@@ -19,10 +19,10 @@ class IndexPage extends React.Component {
         <SEO
           title={siteDescription}
           keywords={[
-            `legacy code`,
-            `technical debt`,
-            `refactoring`,
-            `documentation`,
+            "legacy code",
+            "technical debt",
+            "refactoring",
+            "documentation",
           ]}
         />
         <CTA />
