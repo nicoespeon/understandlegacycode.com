@@ -61,7 +61,7 @@ class IndexPage extends React.Component {
           &nbsp;Synopsis
         </h2>
         <p style={{ textAlign: "center" }}>
-          <img src="/assets/confoo-2019.jpg" />
+          <img src="/assets/confoo-2019.jpg" alt="" />
         </p>
         <p>
           Have you ever felt helpless, facing some cryptic code you had to
