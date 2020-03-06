@@ -100,7 +100,44 @@ function SEO({
           content: keywords.join(`, `),
         },
       ]}
-    ></Helmet>
+    >
+      {/* Validate with https://search.google.com/structured-data/testing-tool/ */}
+      <script type="application/ld+json">
+        {`{
+  "@context": "https://schema.org",
+  "@type": "${type === "article" ? "TechArticle" : "Website"}",
+  "publisher": {
+      "@type": "Organization",
+      "name": "${site.siteMetadata.title} | ${site.siteMetadata.description}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "${profilePic}"
+      }
+  },
+  "author": {
+      "@type": "Person",
+      "name": "${site.siteMetadata.author}",
+      "image": "${profilePic}",
+      "url": "https://nicoespeon.com",
+      "sameAs": [
+          "https://twitter.com/nicoespeon",
+          "https://github.com/nicoespeon"
+      ]
+  },
+  "headline": "${title} | ${site.siteMetadata.title}",
+  "url": "${url}",
+  "description": "${metaDescription}",
+  "image": "${metaImage}",
+  "keywords": "${keywords.join(", ")}",
+  "datePublished": "${date}",
+  "dateModified": "${date}",
+  "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "${site.siteMetadata.siteUrl}"
+  }
+}`}
+      </script>
+    </Helmet>
   )
 }
 
