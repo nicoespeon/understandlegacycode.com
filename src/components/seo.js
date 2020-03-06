@@ -72,6 +72,10 @@ function SEO({
           content: type,
         },
         {
+          property: "og:image",
+          content: metaImage,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -87,6 +91,10 @@ function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "twitter:image",
+          content: metaImage,
+        },
       ]
         .concat(
           keywords.length > 0
@@ -94,20 +102,6 @@ function SEO({
                 name: `keywords`,
                 content: keywords.join(`, `),
               }
-            : []
-        )
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: "og:image",
-                  content: metaImage,
-                },
-                {
-                  name: "twitter:image",
-                  content: metaImage,
-                },
-              ]
             : []
         )
         .concat(meta)}
