@@ -52,10 +52,6 @@ function SEO({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
           property: "og:url",
           content: url,
         },
