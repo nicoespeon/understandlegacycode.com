@@ -100,6 +100,7 @@ function SEO({
         },
       ]}
     >
+      <link rel="canonical" href={url} />
       {/* Validate with https://search.google.com/structured-data/testing-tool/ */}
       <script type="application/ld+json">
         {`{
