@@ -60,10 +60,12 @@ function SEO({
           content: url,
         },
         {
+          name: "title",
           property: `og:title`,
           content: title,
         },
         {
+          name: "description",
           property: `og:description`,
           content: metaDescription,
         },
@@ -72,6 +74,7 @@ function SEO({
           content: type,
         },
         {
+          name: "image",
           property: "og:image",
           content: metaImage,
         },
