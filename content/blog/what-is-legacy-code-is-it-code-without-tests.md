@@ -40,7 +40,7 @@ But I think it's not complete.
 
 This is my definition of Legacy Code. Let me repeat that differently:
 
-**Legacy Code is the code you need to change and you struggle to understand.**
+**Legacy Code is valuable code you're afraid to change.**
 
 Maybe you're looking for the root cause of a bug. Or maybe you're figuring out where to insert your feature. You want to change the code, but you have a hard time doing so because you don't know how not to break existing behavior. _This is Legacy Code._
 
@@ -48,7 +48,7 @@ You need to realize a few things:
 
 - **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn't write is Legacy Code. Or that code you wrote because you can't remember the hell you had in mind when you did. Yes, our past self often does silly mistakes. Don't tell your future self 🤫
 - **Good tests make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
-- **It gets better after few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
+- **It gets better after a few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
 - **Most of the code is terrible** because it's the result of many people working on it, over a long period of time, with conflicting requirements, under time pressure. Legacy Code Recipe™. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That's VERY common. Eventually, you'll reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
 
 Hear me out again:
