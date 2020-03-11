@@ -2,6 +2,9 @@
 title: 5 coding exercises to practice refactoring Legacy Code
 date: 2020-03-09T01:12:33.000Z
 description: "Feeling overwhelmed by your legacy codebase? These katas will help you learn how to tackle it."
+image: ./trip-service.jpg
+tags:
+  - approval tests
 ---
 
 It's great to learn how to write clean code… but in my current job, I'm often battling against Legacy Code!
