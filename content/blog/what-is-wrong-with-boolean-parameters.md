@@ -309,7 +309,7 @@ You can do so in a few steps:
 1. Change the function signature to put `verifyCategories` at the end. This is necessary because we'll make it optional. In JS, optional arguments can't appear before the required ones.
 2. Replace `verifyCategories` by a `verify` function
 3. Provide a default implementation that always returns `true`
-4. Replace `baseCorrectAmount` with a call to `verify`.
+4. Replace `baseCorrectAmount` with a call to `verify`
 5. Pass it `numPassengers` because this variable is only computed inside `validatePrices()`
 6. Drop the `baseCorrectAmount` variable
 7. Adapt the callers to provide their own implementation of the function
@@ -345,7 +345,7 @@ function validatePrices(
 }
 ```
 
-Which lead to the following code:
+Which leads to the following code:
 
 ```js
 function validatePrices(sourcePassengers, prices, verify = () => true) {
