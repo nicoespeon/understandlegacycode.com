@@ -80,8 +80,8 @@ class Transaction {
   // … some irrelevant code
 
   addRefundRequest(reference) {
--    this.details.refundRequests.add(reference);
-+    this.details.addRefundRequest(reference);
+-    this.details.refundRequests.add(reference)
++    this.details.addRefundRequest(reference)
   }
 }
 ```
