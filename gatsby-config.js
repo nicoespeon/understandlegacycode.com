@@ -34,7 +34,9 @@ module.exports = {
           {
             serialize: ({ query: { site, allMdx } }) =>
               allMdx.edges.map(edge => {
-                const url = `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`
+                // Remove trailing slash or Feedly don't use the item link
+                const slug = edge.node.fields.slug.slice(0, -1)
+                const url = `${site.siteMetadata.siteUrl}/blog${slug}`
 
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.excerpt,
