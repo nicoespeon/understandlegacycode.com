@@ -26,7 +26,7 @@ The mistake is to think that code maintainability is related to the count of lin
 
 **Don't use LOC as a metric for code maintainability.**
 
-### Short code isn't more readable.
+## Short code isn't more readable.
 
 If you have a doubt about it, then you should take a look at [Code Golf](https://en.wikipedia.org/wiki/Code_golf).
 
