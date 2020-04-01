@@ -8,7 +8,7 @@ description: >-
 
 > "How do you justify more code being written by following clean code practices?"
 
-This is a question I see asked now and then, when people try to apply [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) principles to their existing codebase.
+This is a question I see asked now and then when people try to apply [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) principles to their existing codebase.
 
 I think it's a legitimate one.
 
@@ -47,7 +47,7 @@ Math.random()*100|0
 
 But of course, **this is a strawman argument!**
 
-I'm sure you don't mean to code golf your production code.
+I'm sure you don't mean to code-golf your production code.
 
 However, there's an important principle you need to keep in mind:
 
@@ -58,9 +58,9 @@ In short: **write code for other people to read.**
 
 Easy-to-understand code is easy-to-maintain code.
 
-Still, aren't we smart enough to read long functions? What's good in adding a bunch of use-once helper functions for readability sake?
+Still, aren't we smart enough to read long functions? What's good in adding a bunch of use-once helper functions for readability's sake?
 
-If these questions resonate with you, there's a secret I need tell you…
+If these questions resonate with you, there's a secret you need know…
 
 ## Premature refactoring is the root of many bad things
 
@@ -74,19 +74,19 @@ No, you shouldn't extract everything into "use-once helper functions for readabi
 
 What you should do, is **to create the correct abstractions**.
 
-Correct abstractions correctly separates responsibilities. They clarify the intent of the code. They prevent code duplication.
+Correct abstractions correctly separate responsibilities. They clarify the intent of the code. They prevent code duplication.
 
 When you find the correct abstractions, you can feel these 4 classes are actually simpler to maintain than the original 30 lines of code.
 
-But finding correct abstractions is really hard. Therefore, that's what you should focus on.
+But finding the correct abstractions is really hard. Therefore, that's what you should focus on.
 
 ### Bad abstraction is worse than duplication
 
 Have you heard about [Don't Repeat Yourself (DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principle?
 
-It's a common development wisdom, and it's very valid. It's also often misunderstood.
+It's a pearl of common development wisdom, and it's very valid. It's also often misunderstood.
 
-2 pieces of code can look the same, still represent different concepts. Different abstractions. In such case, duplication is accidental. Keeping the duplication _is_ better.
+2 pieces of code can look the same, still represent different concepts. Different abstractions. In such a case, duplication is accidental. Keeping the duplication _is_ better.
 
 > "Duplication is far cheaper than the wrong abstraction"
 >
@@ -120,4 +120,4 @@ Prefer duplication over the wrong abstraction. Don't create an abstraction for t
 
 If your abstraction is bad, you'll have to bend its implementation with [boolean parameters](../what-is-wrong-with-boolean-parameters) and `if` statements to cover new use cases. That's a hint, a warning that you're not going in the right direction.
 
-It's also fine if you don't find the abstraction already. You can still refactor it later, when you have more context. Just wait for it!
+It's also fine if you don't find the abstraction already. You can still refactor it later when you have more context. Just wait for it!
