@@ -165,7 +165,17 @@ Let's decompose the command quickly, so you understand it:
 - `sort -r` to sort the result in descending order
 - `head -50` to keep the 50 most changed files only
 
-Tweak it if you need to ignore some patterns (e.g. XML or JSON files).
+If you need to ignore some patterns (say JSON files) you can pipe another `egrep` in the mix to filter them. For example:
+
+```shell
+git log --format=format: --name-only --since=12.month \
+ | egrep -v '^$' \
+ | egrep -v '\.json$' \
+ | sort \
+ | uniq -c \
+ | sort -r \
+ | head -50
+```
 
 That's it, you're done.
 
