@@ -102,6 +102,10 @@ class IndexPage extends React.Component {
               </Li>
             )
           })}
+          <Li key="all-articles">
+            Or you want more, check{" "}
+            <Link to={`all-articles`}>all the published articles</Link>
+          </Li>
         </Ul>
         <hr
           style={{
