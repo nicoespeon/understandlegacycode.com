@@ -3,10 +3,10 @@ title: 3 steps to add tests on existing code when you have short deadlines
 date: 2020-01-24T02:15:57.830Z
 image: /assets/time-for-dat.jpg
 description: >-
-  Here's a recipe you can follow when you want to add tests on Legacy Code, but
-  you don't have much time to do so.
+  Here's a recipe you can follow when you want to add tests on Legacy Code, but you don't have much time to do so.
 tags:
   - approval tests
+  - changing untested code
 ---
 
 > The code requires significant changes to support unit tests. I have deadlines to meet!

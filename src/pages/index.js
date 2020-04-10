@@ -48,11 +48,13 @@ class IndexPage extends React.Component {
               are a few resources that will help.
             </p>
           </Li>
-          <Li key="approval-tests">
-            <LargeLink to={`approval-tests`}>Approval Testing</LargeLink>
+          <Li key="changing-untested-code">
+            <LargeLink to={`changing-untested-code`}>
+              Changing untested code without breaking it
+            </LargeLink>
             <p>
-              Techniques to quickly put Legacy Code under tests, so you can
-              refactor it safely.
+              Without tests, every code change is risky. But how to put tests on
+              a code that wasn't design for it?
             </p>
           </Li>
           <Li key="code-feels-impossible-to-maintain">
@@ -63,6 +65,16 @@ class IndexPage extends React.Component {
               Sometimes, you seem to hit a point of no return and that the best
               strategy would be to burn it all and start over. Are there
               alternatives?
+            </p>
+          </Li>
+        </Ul>
+        <h2>🥋 Specific techniques</h2>
+        <Ul>
+          <Li key="approval-tests">
+            <LargeLink to={`approval-tests`}>Approval Testing</LargeLink>
+            <p>
+              Techniques to quickly put Legacy Code under tests, so you can
+              refactor it safely.
             </p>
           </Li>
         </Ul>
@@ -97,6 +109,10 @@ const Li = styled.li`
   &&::before {
     top: 16px;
   }
+`
+
+const Ul = styled.ul`
+  margin: "20px 0 40px";
 `
 
 const LargeLink = props => <Link style={{ fontSize: "21px" }} {...props} />

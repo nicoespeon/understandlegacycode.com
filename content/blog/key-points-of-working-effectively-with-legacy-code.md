@@ -4,6 +4,9 @@ title: >-
 date: 2020-02-21T02:05:52.092Z
 description: "This book is a reference. Here's my summary of its salient points so you understand why it's so recommended."
 image: /assets/wewlc.jpeg
+tags:
+  - book review
+  - changing untested code
 ---
 
 > "Legacy Code is code without tests"
