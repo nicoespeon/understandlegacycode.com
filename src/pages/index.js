@@ -27,6 +27,19 @@ class IndexPage extends React.Component {
             "documentation",
           ]}
         />
+        <p>
+          When I say "Legacy Code" I mean{" "}
+          <Link to={"/blog/what-is-legacy-code-is-it-code-without-tests/"}>
+            valuable code you're afraid to change
+          </Link>
+          .
+        </p>
+        <p>We all have to deal with Legacy Code. But it's damn hard to!</p>
+        <p>
+          Here you'll find answers to your questions. I'm sharing{" "}
+          <strong>useful tips and concrete advice</strong> that will help you
+          tame the legacy codebase you've inherited.
+        </p>
         <CTA />
         <h2>📖 Helpful Guides</h2>
         <Ul>
