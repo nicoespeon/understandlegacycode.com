@@ -187,6 +187,38 @@ const Wrapper = styled.div`
   small {
     font-size: 75%;
   }
+
+  blockquote > p {
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+
+  @media (min-width: 600px) {
+    blockquote {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    blockquote {
+      position: relative;
+    }
+
+    blockquote {
+      border-color: transparent;
+    }
+
+    blockquote::after {
+      content: "“";
+      position: absolute;
+      left: -0.3em;
+      font-size: 5em;
+      color: hsla(280, 85%, 55%, 0.7);
+      font-family: "Helvetica Neue", Helvetica, serif;
+      top: 0.15em;
+    }
+  }
 `
 
 const Footer = styled.footer`

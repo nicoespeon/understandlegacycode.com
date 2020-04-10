@@ -69,11 +69,6 @@ class BlogPostTemplate extends React.Component {
 }
 
 const Content = styled.div`
-  blockquote > p {
-    font-size: 1.5em;
-    line-height: 1.3em;
-  }
-
   h3 {
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
@@ -96,17 +91,11 @@ const Content = styled.div`
     h1 {
       font-size: 3.5rem;
     }
-
-    blockquote {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
   }
 
   @media (min-width: 1100px) {
     h1,
-    h2,
-    blockquote {
+    h2 {
       position: relative;
     }
 
@@ -129,20 +118,6 @@ const Content = styled.div`
       top: 0;
       bottom: 0;
       background: ${colors.background};
-    }
-
-    blockquote {
-      border-color: transparent;
-    }
-
-    blockquote::after {
-      content: "“";
-      position: absolute;
-      left: -0.3em;
-      font-size: 5em;
-      color: hsla(280, 85%, 55%, 0.7);
-      font-family: "Helvetica Neue", Helvetica, serif;
-      top: 0.15em;
     }
   }
 `
