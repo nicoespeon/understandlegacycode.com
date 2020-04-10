@@ -82,8 +82,8 @@ class IndexPage extends React.Component {
           <Li key="approval-tests">
             <LargeLink to={`approval-tests`}>Approval Testing</LargeLink>
             <p>
-              Techniques to quickly put Legacy Code under tests, so you can
-              refactor it safely.
+              A technique to quickly put tests on Legacy Code, so you can
+              refactor safely.
             </p>
           </Li>
         </Ul>

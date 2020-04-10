@@ -21,13 +21,16 @@ function Page(props) {
           "golden master",
         ]}
       />
-      <Title>I need to change this code, but it has no test!</Title>
+      <Title>Approval Testing</Title>
+      <blockquote>
+        <p>I need to change this code, but it has no test!</p>
+      </blockquote>
       <p>
-        This is a 45min talk I gave at{" "}
+        This is the title of a talk I gave at{" "}
         <ExtLink href="https://confoo.ca/en/yul2020/session/i-need-to-change-this-code-but-it-has-no-test">
           ConFoo 2020
         </ExtLink>
-        .
+        . Can you relate?
       </p>
       <p>I present a technique known under different names:</p>
       <ul>
