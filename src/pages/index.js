@@ -67,6 +67,15 @@ class IndexPage extends React.Component {
               alternatives?
             </p>
           </Li>
+          <Li key="making-others−care-about-it">
+            <LargeLink to={`making-others−care-about-it`}>
+              Making others care about it
+            </LargeLink>
+            <p>
+              What you can do when it seems that no-one cares about the
+              technical debt that's piling up.
+            </p>
+          </Li>
         </Ul>
         <h2>🥋 Specific techniques</h2>
         <Ul>

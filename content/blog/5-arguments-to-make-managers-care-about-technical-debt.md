@@ -5,6 +5,8 @@ description: >-
   If you think that management wouldn't let you refactor Legacy Code, use these
   5 arguments to convince them.
 image: /assets/dev-office-help.jpg
+tags:
+  - making others care about it
 ---
 
 > Management won't let me refactor Legacy Code!
