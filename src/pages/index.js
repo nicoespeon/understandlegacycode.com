@@ -63,6 +63,19 @@ class IndexPage extends React.Component {
               refactor it safely.
             </p>
           </Li>
+          <Li key="code-feels-impossible-to-maintain">
+            <Link
+              style={{ fontSize: "21px" }}
+              to={`code-feels-impossible-to-maintain`}
+            >
+              Code feels impossible to maintain
+            </Link>
+            <p>
+              Sometimes, you seem to hit a point of no return and that the best
+              strategy would be to burn it all and start over. Are there
+              alternatives?
+            </p>
+          </Li>
         </ul>
         <h2>Latest articles</h2>
         <ul style={{ margin: "20px 0 40px" }}>
