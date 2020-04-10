@@ -3,6 +3,8 @@ title: What is wrong with boolean parameters?
 date: 2020-03-16T01:47:28.963Z
 description: And 4 ways to fix their usage in Legacy Code.
 image: /assets/left-or-right.jpg
+tags:
+  - best practice or code smell?
 ---
 
 Working with Legacy Code, it's not uncommon to come across boolean parameters. Consider this JavaScript code:

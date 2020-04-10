@@ -3,6 +3,8 @@ title: Are functions that simply call another function a bad design choice?
 date: 2020-03-22T01:47:28.963Z
 description: Let's see how you end up with these while trying to refactor Legacy Code and what you can do about that.
 image: /assets/legacy-code-not-a-problem.jpg
+tags:
+  - best practice or code smell?
 ---
 
 Consider this line of code:

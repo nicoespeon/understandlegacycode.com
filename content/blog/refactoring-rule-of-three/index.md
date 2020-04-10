@@ -4,6 +4,8 @@ date: 2020-03-30T21:47:33.298Z
 image: /assets/overwhelmed.jpg
 description: >-
   If you worry that following clean code practices create more code to maintain, here's a way out.
+tags:
+  - best practice or code smell?
 ---
 
 > "How do you justify more code being written by following clean code practices?"
