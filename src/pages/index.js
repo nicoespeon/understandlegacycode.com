@@ -30,6 +30,18 @@ class IndexPage extends React.Component {
         <CTA />
         <h2>Helpful Guides</h2>
         <ul style={{ margin: "20px 0 40px" }}>
+          <Li key="getting-into-large-codebase">
+            <Link
+              style={{ fontSize: "21px" }}
+              to={`getting-into-large-codebase`}
+            >
+              Getting into a large codebase
+            </Link>
+            <p>
+              Diving into a large, undocumented codebase is overwhelming. Let's
+              see some techniques to approach it.
+            </p>
+          </Li>
           <Li key="best-practice-or-code-smell">
             <Link
               style={{ fontSize: "21px" }}
