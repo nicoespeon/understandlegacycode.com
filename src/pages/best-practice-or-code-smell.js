@@ -1,20 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
 
-import Layout from "../components/layout"
+import Guide from "../components/guide"
 import SEO from "../components/seo"
-import Bio from "../components/bio"
-import CTA from "../components/cta"
 import Title from "../components/title"
-import { rhythm } from "../utils/typography"
 
-function Page({ data, location }) {
-  const siteDescription = data.site.siteMetadata.description
-  const posts = data.allMdx.edges
-
+function Page(props) {
   return (
-    <Layout location={location} description={siteDescription}>
+    <Guide {...props}>
       <SEO
         title="Is it a best practice or a code smell?"
         description="Not sure if a pattern will make the code more maintainable? Here are a few resources that will help."
@@ -22,7 +14,6 @@ function Page({ data, location }) {
         slug="/best-practice-or-code-smell"
         keywords={["legacy code", "code smell", "design pattern", "refactor"]}
       />
-
       <Title>Is it a best practice or a code smell?</Title>
       <p>
         There are plenty of patterns you can apply to code to make it more
@@ -37,45 +28,9 @@ function Page({ data, location }) {
         If you feel confused about what direction to take to address technical
         debt, here are a few resources that will help.
       </p>
-      <h2>
-        <span role="img" aria-label="mortar board">
-          🎓
-        </span>
-        &nbsp;Related articles
-      </h2>
-      <ul style={{ margin: "20px 0 40px" }}>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <Li key={node.fields.slug}>
-              <Link style={{ fontSize: "19px" }} to={`blog${node.fields.slug}`}>
-                {title}
-              </Link>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </Li>
-          )
-        })}
-      </ul>
-      <CTA />
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
-      <Bio />
-    </Layout>
+    </Guide>
   )
 }
-
-const Li = styled.li`
-  &&::before {
-    top: 16px;
-  }
-`
 
 export default Page
 
