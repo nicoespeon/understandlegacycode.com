@@ -6,7 +6,7 @@ description: >-
   Tips and advice on dealing with Legacy Code from 5 great speakers at this remote conference I organized for the community.
 ---
 
-On April 1st, 2020, I co-organized with [Adrian Bolboacă](https://twitter.com/adibolb?lang=fr) a remote conference on my favorite topic of all: **Legacy Code**.
+On April 1st, 2020, I co-organized with [Adrian Bolboacă](https://twitter.com/adibolb) a remote conference on my favorite topic of all: **Legacy Code**.
 
 ![The Legacy of SoCraTes](/assets/legacy-of-socrates-1st-edition.jpeg)
 ![by Nicolas Carlo and Adrian Bolboacă](/assets/legacy-of-socrates-organizers.png)
