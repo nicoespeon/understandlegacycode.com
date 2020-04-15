@@ -59,7 +59,7 @@ I find it really fascinating how Carola can analyze the state of a Legacy codeba
 
 [J.B. Rainsberger](https://twitter.com/jbrains) describes himself has a "Swede stuck in a Canadian's body, barista, 5-pin Bowler, Trusted adviser, Agile Coach, but actually Agile and actually a Coach".
 
-I was lucky enough to meet J.B. when he came to Montreal in 2019. I set up a special meetup with him. He presented us with the universal traits of great software architecture. But that's a topic for another day…
+I was lucky enough to meet J.B. when he came to Montreal in 2019. We set up a special meetup together where he presented us with the universal traits of great software architecture. But that's a topic for another day…
 
 So the thing is: most programmers focus on adding tests as a primary way to reduce the cost of working with Legacy Code.
 
@@ -71,7 +71,7 @@ In this talk, J.B. would like to offer a few alternative skills to practice that
 
 [Khaled](https://twitter.com/khaledsouf) is a passionate Globe-trotter developer from Tunisia. He likes to speak about DDD, crafting software, clean code, XP and DevOps practices.
 
-I know Khaled very much as he's the co-organizer of [the Software Crafters Montréal community](https://www.meetup.com/fr-FR/Software-Crafters-Montreal/) I founded.
+I know Khaled very much as we co-organize [the Software Crafters Montréal community](https://www.meetup.com/fr-FR/Software-Crafters-Montreal/) together.
 
 Would you like to apply Domain-Driven Design to your old code? You don't know how? This talk is for you. Khaled introduces a few techniques and heuristics based on his experience dealing with Legacy Code and applying DDD concepts on it.
 
