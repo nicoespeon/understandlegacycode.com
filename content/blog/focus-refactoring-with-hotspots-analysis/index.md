@@ -147,7 +147,7 @@ git log --format=format: --name-only --since=12.month \
  | egrep -v '^$' \
  | sort \
  | uniq -c \
- | sort -r \
+ | sort -nr \
  | head -50
 ```
 
@@ -162,7 +162,7 @@ Let's decompose the command quickly, so you understand it:
 - `egrep -v '^$'` removes all empty lines from the output
 - `sort` to sort file names alphabetically
 - `uniq -c` to count individual file names occurrences
-- `sort -r` to sort the result in descending order
+- `sort -nr` to sort the result in descending order
 - `head -50` to keep the 50 most changed files only
 
 If you need to ignore some patterns (say JSON files) you can pipe another `egrep` in the mix to filter them. For example:
@@ -173,7 +173,7 @@ git log --format=format: --name-only --since=12.month \
  | egrep -v '\.json$' \
  | sort \
  | uniq -c \
- | sort -r \
+ | sort -nr \
  | head -50
 ```
 
