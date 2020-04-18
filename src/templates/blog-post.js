@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 
@@ -96,12 +96,6 @@ const Content = styled.div`
       bottom: 0;
       background: ${colors.background};
     }
-  }
-`
-
-const Li = styled.li`
-  &&::before {
-    display: none;
   }
 `
 
