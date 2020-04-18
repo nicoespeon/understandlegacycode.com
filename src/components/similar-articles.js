@@ -38,6 +38,11 @@ export default props => (
         )
         .filter(article => article.fields.slug !== slug)
         .filter(article => !!article.frontmatter.image)
+        // Shuffle again
+        .map(a => ({ sort: Math.random(), value: a }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(a => a.value)
+        // Keep the first 4
         .filter((_, index) => index < 4)
 
       if (relatedArticles.length === 0) return null
