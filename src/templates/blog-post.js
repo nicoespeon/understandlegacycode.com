@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 
+import SimilarArticles from "../components/similar-articles"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -38,6 +39,8 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
+
+        <SimilarArticles tags={post.frontmatter.tags} />
 
         <ul
           style={{
@@ -146,6 +149,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         image
+        tags
       }
     }
   }
