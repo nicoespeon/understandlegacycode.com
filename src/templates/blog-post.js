@@ -16,7 +16,6 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteDescription = this.props.data.site.siteMetadata.description
-    const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} description={siteDescription}>
@@ -41,31 +40,6 @@ class BlogPostTemplate extends React.Component {
         <Bio />
 
         <SimilarArticles tags={post.frontmatter.tags} />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <Li>
-            {previous && (
-              <Link to={`blog${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </Li>
-          <Li>
-            {next && (
-              <Link to={`blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </Li>
-        </ul>
       </Layout>
     )
   }
