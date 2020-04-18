@@ -4,6 +4,9 @@ date: 2020-04-06T18:18:27.306Z
 image: /assets/churn-complexity-graph-trend.png
 description: >-
   Here's a way to prioritize refactoring when you have to deal with a large, unmaintainable codebase.
+tags:
+  - code feels impossible to maintain
+  - not sure where to start refactoring
 ---
 
 Did you ever have to deal with a codebase that felt unmaintainable?

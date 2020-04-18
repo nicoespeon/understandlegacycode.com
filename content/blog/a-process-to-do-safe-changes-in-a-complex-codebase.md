@@ -6,6 +6,7 @@ description: >-
   When a codebase is large and complex, it's risky to big changes. Here's a structured way to approach the problem.
 tags:
   - changing untested code
+  - not sure where to start refactoring
 ---
 
 > You've inherited a 300k lines of spaghetti code. What do you do now?
