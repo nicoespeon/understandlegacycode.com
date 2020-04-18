@@ -26,7 +26,12 @@ class IndexPage extends React.Component {
             "documentation",
           ]}
         />
-        <h2>💡 All articles</h2>
+        <h2>
+          <span role="img" aria-label="Lightbulb">
+            💡
+          </span>{" "}
+          All articles
+        </h2>
         <Ul>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

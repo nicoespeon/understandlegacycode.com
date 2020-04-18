@@ -41,7 +41,12 @@ class IndexPage extends React.Component {
           tame the legacy codebase you've inherited.
         </p>
         <CTA />
-        <h2>📖 Helpful Guides</h2>
+        <h2>
+          <span role="img" aria-label="Open book">
+            📖
+          </span>{" "}
+          Helpful Guides
+        </h2>
         <Ul>
           <Li key="getting-into-large-codebase">
             <LargeLink to={`getting-into-large-codebase`}>
@@ -90,7 +95,12 @@ class IndexPage extends React.Component {
             </p>
           </Li>
         </Ul>
-        <h2>🥋 Specific techniques</h2>
+        <h2>
+          <span role="img" aria-label="Kimono">
+            🥋
+          </span>{" "}
+          Specific techniques
+        </h2>
         <Ul>
           <Li key="approval-tests">
             <LargeLink to={`approval-tests`}>Approval Testing</LargeLink>
@@ -100,7 +110,12 @@ class IndexPage extends React.Component {
             </p>
           </Li>
         </Ul>
-        <h2>💡 Latest articles</h2>
+        <h2>
+          <span role="img" aria-label="Lightbulb">
+            💡
+          </span>{" "}
+          Latest articles
+        </h2>
         <Ul>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
