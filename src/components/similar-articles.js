@@ -26,7 +26,9 @@ export default props => (
       }
     `}
     render={data => {
-      const { tags = [] } = props
+      const { tags, slug } = props
+      if (!tags) return null
+
       const relatedArticles = data.posts.edges
         .map(({ node }) => node)
         .filter(
@@ -34,6 +36,7 @@ export default props => (
             otherArticle.frontmatter.tags &&
             otherArticle.frontmatter.tags.some(tag => tags.includes(tag))
         )
+        .filter(article => article.fields.slug !== slug)
         .filter(article => !!article.frontmatter.image)
         .filter((_, index) => index < 4)
 
@@ -55,17 +58,11 @@ export default props => (
                   to={`blog${article.fields.slug}`}
                   style={{ display: "flex", boxShadow: "none" }}
                 >
-                  <div
+                  <Image
                     style={{
-                      height: "200px",
-                      width: "100%",
-                      marginBottom: "0.5rem",
-                      background: `url("${article.frontmatter.image}")`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      borderRadius: "8px",
+                      backgroundImage: `url("${article.frontmatter.image}")`,
                     }}
-                  ></div>
+                  />
                 </Link>
                 <Content>
                   <p style={{ fontWeight: "bold", marginBottom: "0.5em" }}>
@@ -103,4 +100,13 @@ const Content = styled.div`
       min-height: 170px;
     }
   }
+`
+
+const Image = styled.div`
+  height: 200px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
 `
