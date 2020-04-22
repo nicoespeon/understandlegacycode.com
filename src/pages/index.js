@@ -132,7 +132,7 @@ class IndexPage extends React.Component {
           })}
           <Li key="all-articles">
             If you want more, check{" "}
-            <Link to={`all-articles`}>all the published articles</Link>
+            <Link to={`all-articles`}>all my published articles</Link>
           </Li>
         </Ul>
         <hr
