@@ -3,7 +3,7 @@ title: Is it fine to use "AND" in a function name?
 date: 2020-04-19T21:18:27.306Z
 image: /assets/left-or-right-pedestrian.jpg
 description: >-
-  TK: fill
+  Finding a better name for a function is hard, especially when people seem to have contradictory opinions on what a good name looks like…
 tags:
   - best practice or code smell?
 ---
