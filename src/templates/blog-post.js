@@ -55,6 +55,40 @@ const Content = styled.div`
     letter-spacing: -0.01em;
   }
 
+  .title-anchor {
+    position: absolute;
+    margin-left: -0.3em;
+    padding: 0 1em;
+    opacity: 0;
+    box-shadow: none !important;
+    transition: all 0.25s linear;
+    transition-delay: 0;
+  }
+
+  h2,
+  h3 {
+    transition: all 0.25s linear;
+    transition-delay: 0.15s;
+  }
+
+  h2:hover,
+  h3:hover {
+    padding-left: 1.3em;
+    transition-delay: 0;
+
+    & > .title-anchor {
+      opacity: 1;
+      margin-left: -2.2em !important;
+      transition-delay: 0.15s;
+
+      &:hover svg,
+      &:focus svg,
+      &:active svg {
+        fill: ${colors.primary};
+      }
+    }
+  }
+
   code {
     font-size: 1em;
   }
