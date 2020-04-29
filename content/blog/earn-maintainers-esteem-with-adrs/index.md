@@ -29,7 +29,7 @@ If you document what you know, that will surely help future maintainers!
 
 **But documentation needs to be maintained**. It's generally not synced with the code, so it has the annoying tendency to get out of date. Maintaining it takes time and energy. It's dispiriting.
 
-Hopefully, there's something simple you can do to ease future maintainers life that doesn't require to be maintained.
+Hopefully, there's something simple you can do to ease future maintainers' life that doesn't require to be maintained.
 
 ## Architecture Decision Records (ADRs)
 
@@ -43,14 +43,14 @@ Across the project lifecycle, many decisions are taken:
 - delegating code formatting to a specific tool
 - etc.
 
-The problem is that we don't remember _why_ these decisions were taken. Why the code is like that. Thus, it's hard to revisit these decisions.
+The problem is that you don't know _why_ these decisions were taken. Or you don't remember. Thus, it's hard to revisit these decisions.
 
-Maintainers typically have 2 approaches to the problem:
+Maintainers typically have 2 approaches to address this problem:
 
 1. Changing the way it works, taking the risk of unknown unknowns and breaking things
 2. Keeping it the way it works and living with it
 
-ADRs give context around the decision that was taken.
+ADRs give context around the decisions that were taken, so you can revisit them.
 
 And they are **dead simple to write!**
 
@@ -62,7 +62,7 @@ It's a standard format that can hold hyperlinks and images. Of course, you can g
 
 I recommend you **to version ADRs along with your code**. Create an `adrs/` folder at the top of your project and start capturing important decisions you take.
 
-Finally, the naming convention for ADRs is `0001-some-decision-taken.md`. This is convenient to naturally sort them by creation date.
+Prefix ADRs names with an incremented number: `0001-some-decision-taken.md`. It's easy to maintain and conveniently sort them by creation date.
 
 ### An ADR has 5 essential elements
 
@@ -70,9 +70,9 @@ Finally, the naming convention for ADRs is `0001-some-decision-taken.md`. This i
 
 1. **The title**. A short sentence to recap the decision taken.
 2. **The date**. That's helpful to give context.
-3. **The context**. This is where you'll explain _why_ you took that decision. Detail your constraints, the things that you know that make this decision the best you can take today.
+3. **The context**. This is where you'll explain _why_ you took that decision. Detail your constraints. Tell the reasons that make this decision be the best one available today.
 4. **The decision**. That's the main point of the document: make that decision explicit for future maintainers.
-5. **The consequences**. Based on the decision taken, what will change? Detail the upsides and compromise you're committing to.
+5. **The consequences**. Based on the decision taken, what will change? Detail the upsides and compromises you're committing to.
 
 That's it! 👐
 
@@ -82,7 +82,7 @@ However, the status becomes really interesting when you need to revisit a decisi
 
 ### Revisit a past decision = a new ADR
 
-The point of ADRs is to help you understand quickly why a decision was made. With this context, you may realize you have more knowledge/budget/tooling to take a different decision today.
+The point of ADRs is to help you understand quickly why a decision was made. With this context, you may realize that you have more knowledge/budget/tooling to take a different decision today.
 
 Document that in a new ADR. It will supersede the previous decision.
 
@@ -97,7 +97,7 @@ Doing so makes it easy to follow the evolution of the decisions.
 
 ### What kind of decisions?
 
-ADRs are not just for major architecture decisions. I wouldn't recommend writing an ADR because you renamed a class.
+ADRs are not just for major architecture decisions. Athough I wouldn't recommend writing an ADR just because you renamed a class.
 
 Find the middle ground. Be aware of the decisions you take.
 
