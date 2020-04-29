@@ -15,7 +15,7 @@ A common trait of Legacy Code is **knowledge loss**.
 
 Legacy systems are many years old, sometimes many decades. That's more than the typical turnover for developers.
 
-When the previous devels left, they bring with them their hard-won functional knowledge of the system. And there you are, left with a vast accumulation of undocumented sludge.
+When the previous devs left, they bring with them their hard-won functional knowledge of the system. And there you are, left with a vast accumulation of undocumented sludge.
 
 > Would you say that your system is well documented?
 
