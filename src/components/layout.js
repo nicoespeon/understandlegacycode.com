@@ -135,7 +135,7 @@ const Wrapper = styled.div`
     width: 14px;
     height: 5px;
     position: absolute;
-    top: 10px;
+    top: 13px;
     left: -26px;
     transform: rotate(-5deg);
   }
@@ -155,7 +155,7 @@ const Wrapper = styled.div`
     box-sizing: border-box;
     margin-left: -62px;
     margin-top: -3px;
-    top: 5px;
+    top: 8px;
     text-align: center;
     font-size: 0.9em;
     font-style: normal;
