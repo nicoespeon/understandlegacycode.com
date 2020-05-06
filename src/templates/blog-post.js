@@ -46,6 +46,10 @@ class BlogPostTemplate extends React.Component {
 }
 
 const Content = styled.div`
+  .vscode-highlight-code {
+    background-color: transparent;
+  }
+
   h3 {
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
