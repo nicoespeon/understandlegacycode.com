@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 
@@ -40,6 +40,7 @@ class BlogPostTemplate extends React.Component {
         <Bio />
 
         <SimilarArticles tags={post.frontmatter.tags} slug={post.fields.slug} />
+        <Link to="/">← Go back to the home page</Link>
       </Layout>
     )
   }
