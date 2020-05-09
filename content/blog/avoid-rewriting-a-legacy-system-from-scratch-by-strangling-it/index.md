@@ -7,6 +7,7 @@ description: >-
   But it could make things worse.
 tags:
   - code feels impossible to maintain
+ctaTitle: What if you knew exactly how to refactor your codebase?
 ---
 
 As we speak about _legacy projects_, it's common to reach a point where there's so much technical debt that you can't implement new features anymore.

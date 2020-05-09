@@ -7,6 +7,7 @@ description: >-
 tags:
   - approval tests
   - changing untested code
+ctaTitle: Become confident in changing any code you come across!
 ---
 
 > The code requires significant changes to support unit tests. I have deadlines to meet!

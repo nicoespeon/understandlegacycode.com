@@ -7,6 +7,7 @@ image: /assets/wewlc.jpeg
 tags:
   - book review
   - changing untested code
+ctaTitle: Receive more summaries of the best resources on Legacy Code!
 ---
 
 > "Legacy Code is code without tests"

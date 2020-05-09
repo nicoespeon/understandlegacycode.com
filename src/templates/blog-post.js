@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
         <Content>
           <MDXRenderer>{post.body}</MDXRenderer>
         </Content>
-        <CTA />
+        <CTA title={post.frontmatter.ctaTitle} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -160,6 +160,7 @@ export const pageQuery = graphql`
         description
         image
         tags
+        ctaTitle
       }
     }
   }
