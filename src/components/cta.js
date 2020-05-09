@@ -3,7 +3,27 @@ import styled from "styled-components"
 
 import { colors } from "../utils/typography"
 
-function CTA() {
+function CTA({ title, body }) {
+  // Callers may pass empty strings so fallback with if statement.
+  if (!title) {
+    title = (
+      <>
+        Learn to <em>understand</em> Legacy Code
+      </>
+    )
+  }
+
+  if (!body) {
+    body = (
+      <>
+        Every Wednesday I share <strong>practical tips</strong> to help people
+        work with Legacy Code.
+        <br />
+        Drop your email below and receive my advice for FREE.
+      </>
+    )
+  }
+
   const botsHoneypot = (
     <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
       <input
@@ -46,15 +66,8 @@ function CTA() {
         name="mc-embedded-subscribe-form"
         target="_blank"
       >
-        <h2>
-          Learn to <em>understand</em> Legacy Code
-        </h2>
-        <p>
-          Every Wednesday I share <strong>practical tips</strong> to help people
-          work with Legacy Code.
-          <br />
-          Drop your email below and receive my advices for FREE.
-        </p>
+        <h2>{title}</h2>
+        <p>{body}</p>
         <Container>
           <Input type="name" placeholder="First name" name="FNAME" />
           <Input
