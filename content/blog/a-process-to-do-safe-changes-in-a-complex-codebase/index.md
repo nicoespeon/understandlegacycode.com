@@ -132,6 +132,8 @@ It's tangled with dozens of other sticks: annoying dependencies and tweaks you n
 
 The strategy is to remove the easy sticks first. The ones that are not tangled. Progressively, you untangle your _Stick_. Until you can reach it without breaking anything 🎉
 
+There's even a book that goes deep in detailing this process: [The Mikado Method](https://www.manning.com/books/the-mikado-method).
+
 ![](/assets/mikado-game.jpg)
 
 With a bit of practice, you'll become good at it.
