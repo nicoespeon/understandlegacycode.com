@@ -1,5 +1,5 @@
 ---
-title: A quick way to add tests when code is doing side-effects
+title: A quick way to add tests when code has database or HTTP calls
 date: 2020-05-09T21:47:33.298Z
 image: /assets/code-in-time.jpg
 description: >-
