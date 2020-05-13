@@ -1,5 +1,5 @@
 ---
-title: A simple technique to do safe changes in a complex codebase
+title: Use the Mikado Method to do safe changes in a complex codebase
 date: 2020-01-28T12:18:27.306Z
 image: /assets/mikado-game.jpg
 description: >-
@@ -68,7 +68,7 @@ Concretely, here's the _Mikado Method_ process you can follow:
 
 ### What it looks like for real
 
-Let's go back to our ORM dependency upgrade.
+Let's go back to our ORM dependency upgrade.
 
 First, write down the goal on a piece of paper. Draw 2 circles around. That's your main goal!
 
