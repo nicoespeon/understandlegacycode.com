@@ -145,11 +145,11 @@ Repeat that for every problematic side-effect until you get your code under test
 
 You probably have questions. Let me tackle the usual ones.
 
-### If we're overriding, are we even testing?
+### If I'm overriding, am I even testing?
 
 Yes!
 
-We're not testing _everything_ as it works in production. But we're testing **all the rest of the logic**. That's better than nothing!
+You're not testing _everything_ as it works in production. But you're testing **all the rest of the logic**. That's better than nothing!
 
 Keep in mind that just one very important call to a database function can ruin your easy and simple plan of adding tests.
 
