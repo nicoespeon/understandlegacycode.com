@@ -58,6 +58,8 @@ Copy-paste the body of [the code][the-code] in the tool.
 
 ![](./word-counter.png)
 
+_⚠️ You might not want / be allowed to send your code to such an online tool. In this situation, find a script you can run locally (here's [one in JavaScript](https://github.com/fengyuanchen/wordcounter)). You can also write your own (here's [a tutorial in Python](https://codeburst.io/python-basics-11-word-count-filter-out-punctuation-dictionary-manipulation-and-sorting-lists-3f6c55420855)). Thanks [Steve (Gadget) Barnes](https://github.com/GadgetSteve) for pointing this out!_
+
 The information that matters is **keyword density**.
 
 The tool is not case-sensitive, but it doesn't matter much.
