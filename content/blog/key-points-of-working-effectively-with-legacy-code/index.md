@@ -388,7 +388,7 @@ Therefore, their implementation leaks across our codebase! All of our code quick
 
 Think about all the ORM code, monitoring libs, utility packages that you use. Do you control them? Or do you depend on them?
 
-## Should you read that book, it still look old?
+## Should you read that book, it still looks old?
 
 **Of course, you should.**
 
