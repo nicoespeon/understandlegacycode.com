@@ -124,9 +124,9 @@ function SEO({
           "https://github.com/nicoespeon"
       ]
   },
-  "headline": "${title.replace('"', "'")} | ${site.siteMetadata.title}",
+  "headline": "${title.replace(/"/g, "'")} | ${site.siteMetadata.title}",
   "url": "${url}",
-  "description": "${metaDescription.replace('"', "'")}",
+  "description": "${metaDescription.replace(/"/g, "'")}",
   "image": "${metaImage}",
   "keywords": "${keywords.join(", ")}",
   "datePublished": "${date}",
