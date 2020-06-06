@@ -32,7 +32,7 @@
     "serve": "gatsby serve"
   },
   "engines": {
-    "node": "~13.5.0"
+    "node": "~13.7.0"
   },
   "devDependencies": {
     "husky": "^3.1.0",
