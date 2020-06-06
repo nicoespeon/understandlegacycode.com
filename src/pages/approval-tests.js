@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Guide from "../components/guide"
 import SEO from "../components/seo"
