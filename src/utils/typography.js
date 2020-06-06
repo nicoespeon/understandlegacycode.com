@@ -22,6 +22,7 @@ export default typography
 export const rhythm = typography.rhythm
 export const scale = typography.scale
 export const colors = {
+  white: "#fff",
   primary: "hsla(280, 85%, 55%, 1)",
   background: "hsla(280, 85%, 65%, 0.25)",
   backgroundLightest: "hsla(280, 85%, 65%, 0.15)",

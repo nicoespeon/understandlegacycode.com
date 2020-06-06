@@ -146,7 +146,7 @@ const Wrapper = styled.div`
     line-height: 1;
     background-color: ${colors.primary};
     box-shadow: 0.2em 0.2em 0 rgba(128, 128, 128, 0.2);
-    color: #fff;
+    color: ${colors.white};
     padding: 2px 0;
     width: 2.7em;
     height: 1.2em;
