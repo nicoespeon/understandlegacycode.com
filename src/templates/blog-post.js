@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
+import { Twitter, Facebook, Reddit, Mail } from "react-social-sharing"
 
 import SimilarArticles from "../components/similar-articles"
 import Bio from "../components/bio"
@@ -13,9 +14,18 @@ import { rhythm, colors } from "../utils/typography"
 import profilePic from "../../content/assets/profile-pic.png"
 
 class BlogPostTemplate extends React.Component {
+  state = { clapped: false }
+
+  clap() {
+    this.setState({ clapped: true })
+  }
+
   render() {
     const post = this.props.data.mdx
     const siteDescription = this.props.data.site.siteMetadata.description
+
+    const link = this.props.location.href
+    const message = post.frontmatter.title
 
     return (
       <Layout location={this.props.location} description={siteDescription}>
@@ -32,12 +42,43 @@ class BlogPostTemplate extends React.Component {
           <MDXRenderer>{post.body}</MDXRenderer>
         </Content>
         <CTA title={post.frontmatter.ctaTitle} />
-        <hr
+        <div
           style={{
-            marginBottom: rhythm(1),
+            marginTop: rhythm(2),
+            textAlign: "center",
           }}
-        />
-        <Bio />
+        >
+          <Cheers
+            className={this.state.clapped ? "is-clapped" : ""}
+            onClick={() => this.clap()}
+          >
+            <Hidden>Cheers!</Hidden>
+            {this.state.clapped && (
+              <div className="share">
+                {/* 📕 https://react-social-sharing.now.sh/#/linkedin */}
+                <p>
+                  Glad you liked this post!{" "}
+                  <span role="img" aria-label="Wine">
+                    🍷
+                  </span>
+                  <br />
+                  Mind to share it where it can be helpful?
+                </p>
+                <Twitter solid small message={message} link={link} />
+                <Facebook solid small link={link} />
+                <Reddit solid small link={link} />
+                <Mail solid small subject={message} link={link} />
+              </div>
+            )}
+          </Cheers>
+        </div>
+        <div
+          style={{
+            marginBottom: rhythm(3),
+          }}
+        >
+          <Bio />
+        </div>
 
         <SimilarArticles tags={post.frontmatter.tags} slug={post.fields.slug} />
         <Link to="/">← Go back to the home page</Link>
@@ -45,6 +86,122 @@ class BlogPostTemplate extends React.Component {
     )
   }
 }
+
+const Cheers = styled.button`
+  position: relative;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  border-width: 0;
+  margin-bottom: 5.5em; // 3.5 (base) + 2
+  background: ${colors.white};
+  box-shadow: inset 0 0 0 0.25em ${colors.primary},
+    inset 0 0 0 2em ${colors.white}, inset 0 0 0 6em ${colors.primary};
+  transition: box-shadow 0.5s, margin 1s;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "+1";
+    font-weight: bold;
+    font-size: 2em;
+    color: ${colors.white};
+    opacity: 0;
+    transition: opacity 0;
+  }
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "💡 Kudos!";
+    padding-top: 0.25em;
+    font-size: 1.25em;
+  }
+
+  &:hover,
+  &.is-clapped {
+    // Don't visual outline at this point (still accessible on focus)
+    outline: none;
+
+    cursor: pointer;
+    box-shadow: inset 0 0 0 6.25em ${colors.primary};
+    transition-duration: 1.2s;
+
+    &::before {
+      opacity: 1;
+      transition-delay: 0.2s;
+      transition-duration: 0.8s;
+    }
+  }
+
+  .share {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(1.5em, -50%);
+    width: 300px;
+    text-align: left;
+    display: none;
+    opacity: 0;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      margin-top: 0.25em;
+      box-shadow: none;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.is-clapped {
+    .share {
+      display: block;
+      opacity: 1;
+      animation: appear 1s cubic-bezier(0.99, 0.02, 0.38, 0.99);
+    }
+
+    // Keep the whole thing centered
+    margin-left: -300px;
+
+    // Hide Kudos
+    margin-bottom: 3.5em;
+
+    &::after {
+      content: "";
+    }
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`
+
+const Hidden = styled.span`
+  // Accessible way to hide content visually
+  // https://webaim.org/techniques/css/invisiblecontent/
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+`
 
 const Content = styled.div`
   .vscode-highlight-code {
