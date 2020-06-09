@@ -71,7 +71,7 @@ const Button = styled.button`
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    content: "💡 Kudos!";
+    content: "👏 Kudos!";
     padding-top: 0.25em;
     font-size: 1.25em;
   }
