@@ -167,7 +167,7 @@ touch gulpfile.js
 
 Fill it with basic configuration:
 
-```jsx
+```js
 require("code-forensics").configure({
   repository: {
     // Relative path to the `docker/compose` repository
@@ -178,7 +178,7 @@ require("code-forensics").configure({
 
 #### 6) Create a server to see your HTML reports
 
-Update you `package.json` scripts to add a `start` command:
+Update your `package.json` scripts to add a `start` command:
 
 ```json
 {
