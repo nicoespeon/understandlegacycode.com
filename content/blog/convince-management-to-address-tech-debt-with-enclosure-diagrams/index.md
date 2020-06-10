@@ -41,7 +41,7 @@ Treemaps are the most popular kind of enclosure diagrams. If you ever generated 
 
 ![](webpack-chart.png)
 
-Enclosure diagrams to identify Hotspots of a system is an idea I discovered reading [Software Design X-Rays](https://pragprog.com/titles/atevol/) from [Adam Thornhill](https://www.adamtornhill.com/). This is an **excellent** book that showcases techniques to understand Legacy Code based on behavioral analysis. I will write a summary of its salient parts someday…
+Enclosure diagrams to identify Hotspots of a system is an idea I discovered reading [Software Design X-Rays](https://pragprog.com/titles/atevol/) from [Adam Tornhill](https://www.adamtornhill.com/). This is an **excellent** book that showcases techniques to understand Legacy Code based on behavioral analysis. I will write a summary of its salient parts someday…
 
 The great news is: an enclosure diagram will help you explain to non-technical people the impact and importance of your system Hotspots.
 
@@ -49,7 +49,7 @@ And here's the greater news: **you can generate one for your codebase within a f
 
 ## Using `code-forensics` to generate Hotspots enclosure diagrams
 
-Adam Thornhill created a tool to generate the diagrams: [code-maat](https://github.com/adamtornhill/code-maat).
+Adam Tornhill created a tool to generate the diagrams: [code-maat](https://github.com/adamtornhill/code-maat).
 
 That's great stuff, but [Silvio Montanari](https://github.com/smontanari) built a tool on top to make the process even easier: [code-forensics](https://github.com/smontanari/code-forensics).
 
