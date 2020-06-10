@@ -34,6 +34,7 @@ class BlogPostTemplate extends React.Component {
         </Content>
         <div
           style={{
+            marginTop: rhythm(2),
             marginBottom: rhythm(2),
           }}
         >
