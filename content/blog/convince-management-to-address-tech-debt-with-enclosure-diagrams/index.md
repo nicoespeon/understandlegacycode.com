@@ -1,5 +1,5 @@
 ---
-title: Convince management to address Tech Debt with Enclosure Diagrams
+title: Convince managers to address Tech Debt with Enclosure Diagrams
 date: 2020-06-08T22:31:28.963Z
 image: /assets/enclosure-diagram.png
 description: "How to come up with a plan that will resonate with non-technical people, in 7 concrete steps."
