@@ -25,6 +25,10 @@ const Form = styled.div`
     padding: 20px 40px !important;
   }
 
+  .formkit-modal {
+    transform: rotate(1.5deg);
+  }
+
   .formkit-background {
     opacity: 0.25;
   }
