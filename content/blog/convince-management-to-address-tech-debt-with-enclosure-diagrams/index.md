@@ -63,7 +63,7 @@ Here's the [docker/compose](https://github.com/docker/compose) codebase.
 
 I've chosen this one for 3 reasons:
 
-1. It's very popular. Regardless of what language you're working with, you may have used (or heard) of Docker already.
+1. It's very popular. Regardless of what language you're working with, you may have used (or heard of) Docker already.
 2. I'm not familiar with the codebase. I bet you're not. Yet, we'll get insights within minutes out of it.
 3. It seems big enough to gather interesting data.
 
