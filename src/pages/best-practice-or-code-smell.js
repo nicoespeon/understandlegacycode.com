@@ -9,13 +9,13 @@ function Page(props) {
   return (
     <Guide {...props}>
       <SEO
-        title="Is it a best practice or a code smell?"
+        title="I don't want to make things worse!"
         description="Not sure if a pattern will make the code more maintainable? Here are a few resources that will help."
         date="2020-04-10"
         slug="/best-practice-or-code-smell"
         keywords={["legacy code", "code smell", "design pattern", "refactor"]}
       />
-      <Title>Is it a best practice or a code smell?</Title>
+      <Title>I don't want to make things worse!</Title>
       <p>
         There are plenty of patterns you can apply to code to make it more
         maintainable.
