@@ -130,7 +130,10 @@ function Page() {
         <p>
           You'll learn how to concretely start turning a codebase into a
           testable, easy-to-read, well-designed system — while shipping features
-          and fixes 😉🍷
+          and fixes{" "}
+          <span role="img" aria-label="Cheers">
+            😉🍷
+          </span>
         </p>
       </LandingPageLayout>
       <Section>
