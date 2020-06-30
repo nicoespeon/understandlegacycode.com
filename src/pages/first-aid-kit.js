@@ -88,7 +88,7 @@ function Page() {
           When you have short deadlines, trying to refactor the code is a risky
           move… unless you know <u>exactly</u> what you're doing.
         </p>
-        <h2>Refactor code in no time with my first aid kit.</h2>
+        {/* <h2>Refactor code in no time with my first aid kit.</h2>
         <p>
           Learn 12 moves to get your Legacy Code under control with my e-book.
         </p>
@@ -118,7 +118,7 @@ function Page() {
           Simply start with the next issue you have to work with, buy my kit,
           and you'll finally start making confident changes to your code in no
           time.
-        </p>
+        </p> */}
         <h2>
           The <span class="highlight">Legacy Code: First Aid Kit</span> is
           coming soon.
@@ -141,14 +141,14 @@ function Page() {
   )
 }
 
-const CheckedLi = styled.li`
-  &::before {
-    content: " ✅" !important;
-    background: initial !important;
-    transform: rotate(0) !important;
-    top: 0 !important;
-  }
-`
+// const CheckedLi = styled.li`
+//   &::before {
+//     content: " ✅" !important;
+//     background: initial !important;
+//     transform: rotate(0) !important;
+//     top: 0 !important;
+//   }
+// `
 
 const Section = styled.div`
   margin-top: 15rem;
