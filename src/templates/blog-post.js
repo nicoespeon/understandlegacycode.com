@@ -1,7 +1,9 @@
-import React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
+import { toClipboard } from "copee"
 
 import SimilarArticles from "../components/similar-articles"
 import Bio from "../components/bio"
@@ -12,6 +14,54 @@ import Title from "../components/title"
 import Cheers from "../components/cheers"
 import { rhythm, colors } from "../utils/typography"
 import profilePic from "../../content/assets/profile-pic.png"
+
+function parseHighlightedCode(chunks) {
+  // Unwrap the code that has been splitted and nested
+  // inside React components for syntax highlighting
+  if (typeof chunks === "string") return chunks
+  if ("props" in chunks) return parseHighlightedCode(chunks.props.children)
+
+  return chunks.map(parseHighlightedCode).join("")
+}
+
+const CopyCode = ({ code }) => {
+  const [notificationActive, setNotificationActive] = useState(false)
+
+  const handleCopy = () => {
+    toClipboard(code)
+    setNotificationActive(true)
+
+    setTimeout(() => {
+      setNotificationActive(false)
+    }, 3000)
+  }
+
+  return (
+    <button
+      style={{ position: "absolute", right: "16px" }}
+      onClick={() => handleCopy()}
+    >
+      {notificationActive ? "Copied" : "Copy"}
+    </button>
+  )
+}
+
+const Code = ({ children, classes, code }) => {
+  return (
+    <div style={{ position: "relative" }} className={classes}>
+      <CopyCode code={parseHighlightedCode(code)} />
+      {children}
+    </div>
+  )
+}
+
+const components = {
+  code: props => (
+    <Code code={props.children} classes={props.className}>
+      {props.children}
+    </Code>
+  ),
+}
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -30,7 +80,9 @@ class BlogPostTemplate extends React.Component {
         />
         <Title>{post.frontmatter.title}</Title>
         <Content>
-          <MDXRenderer>{post.body}</MDXRenderer>
+          <MDXProvider components={components}>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </MDXProvider>
         </Content>
         <div
           style={{
