@@ -123,6 +123,15 @@ class IndexPage extends React.Component {
               refactor safely.
             </p>
           </Li>
+          <Li key="behavioral-analysis">
+            <LargeLink to={`behavioral-analysis`}>
+              Behavioral Analysis
+            </LargeLink>
+            <p>
+              A technique to get insights from large codebases, using VCS
+              information.
+            </p>
+          </Li>
         </Ul>
         <h2>
           <span role="img" aria-label="Lightbulb">
