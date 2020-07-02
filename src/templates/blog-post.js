@@ -63,6 +63,11 @@ const Content = styled.div`
     background-color: transparent;
   }
 
+  .grvsc-line-highlighted {
+    background-color: ${colors.background};
+    box-shadow: inset 4px 0 0 0 ${colors.primary};
+  }
+
   h3 {
     text-transform: uppercase;
     text-rendering: optimizeLegibility;

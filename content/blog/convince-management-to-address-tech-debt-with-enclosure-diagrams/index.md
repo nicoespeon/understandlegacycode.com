@@ -141,7 +141,7 @@ npm install --save-exact code-forensics gulp@4.0.2
 
 Here's what my `package.json` looks like now:
 
-```json
+```json{12-15}
 {
   "name": "code-forensics-analysis",
   "version": "1.0.0",
@@ -181,7 +181,7 @@ require("code-forensics").configure({
 
 Update your `package.json` scripts to add a `start` command:
 
-```json
+```json{7}
 {
   "name": "code-forensics-analysis",
   "version": "1.0.0",
@@ -210,7 +210,7 @@ Scripts can be run with Gulp. As we installed it locally, we can access it from 
 
 Add this `hotspot` script to your `package.json` scripts:
 
-```json
+```json{8}
 {
   "name": "code-forensics-analysis",
   "version": "1.0.0",
