@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import { toClipboard } from "copee"
+import ColorHash from "color-hash"
 
 import SimilarArticles from "../components/similar-articles"
 import Bio from "../components/bio"
@@ -46,21 +47,83 @@ const CopyCode = ({ code }) => {
   )
 }
 
-const Code = ({ children, classes, code }) => {
+const colorHash = new ColorHash({
+  lightness: 0.6,
+  saturation: 0.4,
+})
+
+export const getColourFromString = item => {
+  const tagHsl = colorHash.hsl(item)
+  console.log(item, tagHsl)
+  const tagColor = `hsla(${tagHsl[0]}, ${tagHsl[1] * 100}%, ${tagHsl[2] *
+    100}%, 1)`
+  return tagColor
+}
+
+const CodeLabel = ({ language }) => {
+  if (!language) {
+    return null
+  }
+
   return (
-    <div style={{ position: "relative" }} className={classes}>
-      <CopyCode code={parseHighlightedCode(code)} />
-      {children}
+    <div
+      style={{
+        position: "absolute",
+        top: "-16px",
+        left: "16px",
+        fontFamily: "monospace",
+        fontSize: "1rem",
+        color: "white",
+        backgroundColor: getColourFromString(language),
+        textTransform: "uppercase",
+        padding: "8px 4px",
+        lineHeight: 1,
+        borderRadius: "0 0 4px 4px",
+        userSelect: "none",
+        height: "auto",
+      }}
+    >
+      {language}
     </div>
   )
 }
 
+const Code = ({ children, classes, code, language, index }) => {
+  return (
+    <pre className={classes} data-language={language} data-index={index}>
+      <div
+        style={{
+          position: "relative",
+          borderRadius: "4px 4px 0 0",
+          bg: "background",
+          padding: "8px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <CodeLabel language={language} />
+        <CopyCode code={parseHighlightedCode(code)} />
+      </div>
+      <div style={{ marginTop: "16px" }}>{children}</div>
+    </pre>
+  )
+}
+
 const components = {
-  code: props => (
-    <Code code={props.children} classes={props.className}>
-      {props.children}
-    </Code>
-  ),
+  pre: props => {
+    console.log({ props })
+    return (
+      <Code
+        code={props.children}
+        classes={props.className}
+        language={props["data-language"]}
+        index={props["data-index"]}
+      >
+        {props.children}
+      </Code>
+    )
+  },
 }
 
 class BlogPostTemplate extends React.Component {
