@@ -7,6 +7,7 @@ tags:
   - making others care about it
   - code feels impossible to maintain
   - not sure where to start refactoring
+  - behavioral analysis
 ctaTitle: Learn more techniques like that
 ---
 

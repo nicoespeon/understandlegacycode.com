@@ -8,6 +8,7 @@ tags:
   - book review
   - getting into a large codebase
   - code feels impossible to maintain
+  - behavioral analysis
 ---
 
 How do you analyze a very large Legacy codebase?

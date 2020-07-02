@@ -7,6 +7,7 @@ description: >-
 tags:
   - code feels impossible to maintain
   - not sure where to start refactoring
+  - behavioral analysis
 ---
 
 Did you ever have to deal with a codebase that felt unmaintainable?
