@@ -19,6 +19,7 @@ import profilePic from "../../content/assets/profile-pic.png"
 function parseHighlightedCode(chunks) {
   // Unwrap the code that has been splitted and nested
   // inside React components for syntax highlighting
+  if (!chunks) return ""
   if (typeof chunks === "string") return chunks
   if ("props" in chunks) return parseHighlightedCode(chunks.props.children)
 
