@@ -146,7 +146,7 @@ Also, you don't really need to retrieve the history since the beginning of the p
 
 If you're using git, the following command will get you what you need:
 
-```shell
+```sh
 git log --format=format: --name-only --since=12.month \
  | egrep -v '^$' \
  | sort \
@@ -171,7 +171,7 @@ Let's decompose the command quickly, so you understand it:
 
 If you need to ignore some patterns (say JSON files) you can pipe another `egrep` in the mix to filter them. For example:
 
-```shell
+```sh
 git log --format=format: --name-only --since=12.month \
  | egrep -v '^$' \
  | egrep -v '\.json$' \
