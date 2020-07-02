@@ -55,7 +55,6 @@ const colorHash = new ColorHash({
 
 export const getColourFromString = item => {
   const tagHsl = colorHash.hsl(item)
-  console.log(item, tagHsl)
   const tagColor = `hsla(${tagHsl[0]}, ${tagHsl[1] * 100}%, ${tagHsl[2] *
     100}%, 1)`
   return tagColor
@@ -113,7 +112,6 @@ const Code = ({ children, classes, code, language, index }) => {
 
 const components = {
   pre: props => {
-    console.log({ props })
     return (
       <Code
         code={props.children}
