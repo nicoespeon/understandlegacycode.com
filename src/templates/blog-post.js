@@ -61,6 +61,27 @@ class BlogPostTemplate extends React.Component {
 const Content = styled.div`
   .grvsc-code {
     background-color: transparent;
+    counter-reset: line;
+  }
+
+  // If there's a language set, add line count in the gutter
+  .grvsc-container[data-language]:not([data-language=""]) .grvsc-line {
+    &::before {
+      counter-increment: line;
+      content: counter(line);
+      margin-right: 16px;
+      margin-left: -8px;
+      -webkit-user-select: none;
+      user-select: none;
+      text-align: right;
+      width: 16px;
+      display: inline-block;
+    }
+
+    // Except if there's only one line
+    &:first-of-type:last-of-type::before {
+      content: "";
+    }
   }
 
   .grvsc-line-highlighted {
