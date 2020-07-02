@@ -59,7 +59,7 @@ class BlogPostTemplate extends React.Component {
 }
 
 const Content = styled.div`
-  .vscode-highlight-code {
+  .grvsc-code {
     background-color: transparent;
   }
 
