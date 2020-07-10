@@ -282,6 +282,10 @@ That allows you to identify organizational misalignments with your architecture.
 
 The limit of this analysis depends on your commit strategy. **If you can't trust the git commit author, then don't use it.** For example, a squash-and-merge strategy drops the contributions of multiple authors. In this case, focus on the "Teams" view or limit your analyses to technical ones (Hotspots).
 
+If you want to learn how to generate these, I presented the technique in details:
+
+- [Identify who to ask for help with Knowledge Maps](../identify-who-to-ask-with-knowledge-maps/)
+
 ## Conclusion
 
 As you can see, Adam Tornhill gives a bunch of techniques to get precious information out of large codebases.
