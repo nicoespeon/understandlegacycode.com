@@ -291,3 +291,5 @@ Imagine what you can do with this skill on the codebase you're working with ever
 Picture yourself presenting clear diagrams to management and win their support for the most foundational refactoring work you can do to improve your system.
 
 Now, open your eyes and go generate the Hotspots diagram of your Legacy codebase! 👍
+
+If you want to go further, run a [Knowledge Map analysis](../identify-who-to-ask-with-knowledge-maps/) to find out who to ask for help for the refactoring work.
