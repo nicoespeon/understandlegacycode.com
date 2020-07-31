@@ -18,8 +18,7 @@ function Page() {
           slug="/first-aid-kit"
           keywords={["legacy code", "refactoring", "deadline"]}
         />
-        <Title>Should I start refactoring, risking the deadline?</Title>
-        <h2>How do you feel about your codebase?</h2>
+        <Title>How do you feel about your codebase?</Title>
         <p>
           <strong>Worried</strong>, because you don't know if you'll break
           anything once you release this change you've been working on for a
@@ -63,22 +62,16 @@ function Page() {
           You know Clean Code would be a breeze to work with… but you don't know
           where to start, and you certainly don't have enough time to get there.
         </p>
-        <h2>
-          Imagine applying proven recipes to clean up Legacy Code as you go.
-        </h2>
-        <p>
-          What if you had a catalog of techniques to bring your codebase under
-          tests?
-        </p>
+        <h2>Imagine cleaning up Legacy Code as you go.</h2>
         <p>
           If you know the moves, you can give your code first aid that will stop
-          its hemorrhage. Imagine how proud and relieved you'll feel as you put
-          it back into a healthier shape.
+          its hemorrhage. Imagine how proud and relieved you will feel as you
+          put it back into a healthier shape.
         </p>
         <p>
-          Refactoring would become second nature to you. Your reflexes will make
-          you clean up Legacy Code in no time! You'll consistently meet clients'
-          expectations and delight your peers.
+          <strong>Refactoring would become second nature to you</strong>. Your
+          reflexes will make you clean up Legacy Code in no time! You'll
+          consistently meet clients' expectations and delight your peers.
         </p>
         <p>
           You can start making this codebase a better place — the next time you
