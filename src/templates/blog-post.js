@@ -166,7 +166,7 @@ class BlogPostTemplate extends React.Component {
           <Bio />
         </div>
         <SimilarArticles tags={post.frontmatter.tags} slug={post.fields.slug} />
-        <Link to="/">← Go back to the home page</Link>
+        <Link to="/">← Find more tips to work with Legacy Code</Link>
       </Layout>
     )
   }
