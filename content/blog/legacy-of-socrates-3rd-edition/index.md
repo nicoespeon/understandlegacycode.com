@@ -27,8 +27,6 @@ I like this talk because it shows the technique in action, on concrete code.
 
 Also, [Gilded Rose is an exercise I recommend doing](../5-coding-exercises-to-practice-refactoring-legacy-code/#1-the-gilded-rose) if you want to get better at refactoring existing code.
 
-TK: code before/after images
-
 Watch him get the code under test in no-time:
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1bJzZvGLVzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
