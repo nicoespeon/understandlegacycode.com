@@ -15,7 +15,7 @@ Let's face it: we spend most of our time changing existing code. Usually, we did
 
 You'd love to change any part of the code with confidence… but you never have time! This change has been estimated as a 2-day task and there are many others to ship before the end of the Sprint/demo to the client/delivery/_<insert your deadline here\>_. Nightmare!
 
-But what if you had a secret weapon? Techniques to approach this Legacy efficiently, reach your goal without getting distracting with all the Technical Debt? You could regain control of this project and make it easier to maintain, each iteration!
+But what if you had a secret weapon? Techniques to approach this Legacy efficiently, reach your goal without getting distracted with all the Technical Debt? You could regain control of this project and make it easier to maintain, each iteration!
 
 Working on Legacy Code is indeed no fun… but it could be.
 
