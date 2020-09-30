@@ -41,8 +41,8 @@ export default props => (
         // Shuffle, depending on the date (it rotates every day)
         .map((a, index) => ({
           sort:
-            ((new Date().getDate() % relatedArticles.length) + index) %
-            relatedArticles.length,
+            ((new Date().getDate() % data.posts.edges.length) + index) %
+            data.posts.edges.length,
           value: a,
         }))
         .sort((a, b) => a.sort - b.sort)
