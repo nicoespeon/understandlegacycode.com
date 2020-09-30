@@ -38,8 +38,13 @@ export default props => (
         )
         .filter(article => article.fields.slug !== slug)
         .filter(article => !!article.frontmatter.image)
-        // Shuffle again
-        .map(a => ({ sort: Math.random(), value: a }))
+        // Shuffle, depending on the date (it rotates every day)
+        .map((a, index) => ({
+          sort:
+            ((new Date().getDate() % relatedArticles.length) + index) %
+            relatedArticles.length,
+          value: a,
+        }))
         .sort((a, b) => a.sort - b.sort)
         .map(a => a.value)
         // Keep the first 4
