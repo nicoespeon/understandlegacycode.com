@@ -57,8 +57,8 @@ export default props => (
               justifyContent: "space-between",
             }}
           >
-            {relatedArticles.map(article => (
-              <RelatedArticle key={article.fields.slug}>
+            {relatedArticles.map((article, index) => (
+              <RelatedArticle key={index}>
                 <Link
                   to={`blog${article.fields.slug}`}
                   style={{ display: "flex", boxShadow: "none" }}
