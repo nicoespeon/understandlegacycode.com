@@ -58,7 +58,7 @@ export default props => (
             }}
           >
             {relatedArticles.map(article => (
-              <RelatedArticle>
+              <RelatedArticle key={article.fields.slug}>
                 <Link
                   to={`blog${article.fields.slug}`}
                   style={{ display: "flex", boxShadow: "none" }}
