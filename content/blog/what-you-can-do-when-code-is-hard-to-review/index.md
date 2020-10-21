@@ -3,6 +3,8 @@ title: What you can do when code is really hard to review
 date: 2020-10-20T06:17:00.000Z
 image: /assets/dont-panic.jpg
 description: "5 advice you can try when you feel paralyzed with a change that's too risky to merge, but too long to verify."
+tags:
+  - no time to clean code
 ---
 
 Code reviews are one way to improve the quality of the code by having more than one pair of eyes on the code. When you're dealing with a Legacy codebase, it's a helpful practice to spread knowledge, get more people familiar with the codebase, and reduce risks of breaking things.
