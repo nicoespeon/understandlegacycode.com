@@ -56,22 +56,31 @@ function SEO({
           content: url,
         },
         {
-          name: "title",
           property: `og:title`,
           content: title,
         },
         {
-          name: "description",
-          property: `og:description`,
+          name: "title",
+          content: title,
+        },
+        {
+          property: "og:description",
           content: metaDescription,
         },
         {
-          property: `og:type`,
+          name: "description",
+          content: metaDescription,
+        },
+        {
+          property: "og:type",
           content: type,
         },
         {
-          name: "image",
           property: "og:image",
+          content: metaImage,
+        },
+        {
+          name: "image",
           content: metaImage,
         },
         {
