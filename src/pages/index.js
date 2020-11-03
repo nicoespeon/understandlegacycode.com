@@ -158,6 +158,35 @@ class IndexPage extends React.Component {
             <Link to={`all-articles`}>all my published articles</Link>
           </Li>
         </Ul>
+        <h2>
+          <span role="img" aria-label="Headphones">
+            🎧
+          </span>{" "}
+          Podcasts
+        </h2>
+        <Ul>
+          <Li key="rails-with-jason">
+            <LargeExternalLink to="https://www.codewithjason.com/rails-with-jason-podcast/nicolas-carlo/">
+              Tips for Working with Legacy Code
+            </LargeExternalLink>
+            <p>
+              I talk with Jason Swett about working with legacy code, adding
+              tests to legacy code, how to safely make changes to legacy
+              applications, and more.
+            </p>
+          </Li>
+          <Li key="maintainable">
+            <LargeExternalLink to="https://maintainable.fm/episodes/nicolas-carlo-changing-messy-software-without-breaking-it">
+              Changing Messy Software Without Breaking It
+            </LargeExternalLink>
+            <p>
+              I talk with Robby Russell about practices like feature toggling or
+              sustainability weeks to work on improving things. I also give
+              advice for listeners who struggle to get stakeholder buy-in on
+              dealing with technical debt challenges.
+            </p>
+          </Li>
+        </Ul>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -187,6 +216,16 @@ const Callout = styled.div`
 `
 
 const LargeLink = props => <Link style={{ fontSize: "21px" }} {...props} />
+const LargeExternalLink = props => (
+  <a
+    style={{ fontSize: "21px" }}
+    href={props.to}
+    target="_blank"
+    rel="noopener"
+  >
+    {props.children}
+  </a>
+)
 
 export default IndexPage
 
