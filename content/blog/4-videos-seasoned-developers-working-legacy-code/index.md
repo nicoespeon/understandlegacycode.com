@@ -6,7 +6,7 @@ description: >-
   Practice working with code you've never seen before helps make it easier. Here's my selection of videos that will expose you to seasoned developers doing that!
 tags:
   - getting into a large codebase
-  - changing untested code without breaking it
+  - changing untested code
 ---
 
 > I'm wondering how my way of working through legacy code may be different from someone more seasoned…
