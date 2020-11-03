@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 class CTA extends React.Component {
   componentDidMount() {
-    const uid = "1c42a88117"
+    const uid = this.props.uid || "1c42a88117"
 
     const script = document.createElement("script")
     script.async = true

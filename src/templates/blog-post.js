@@ -152,7 +152,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(2),
           }}
         >
-          <CTA title={post.frontmatter.ctaTitle} />
+          <CTA title={post.frontmatter.ctaTitle} uid={post.frontmatter.ctaId} />
         </div>
         <Cheers
           link={this.props.location.href}
@@ -313,6 +313,7 @@ export const pageQuery = graphql`
         image
         tags
         ctaTitle
+        ctaId
       }
     }
   }
