@@ -27,7 +27,7 @@ If that's you, I have a technique for you that will preserve your speed and make
 
 ![Mario speedrun](./speedrun.gif)
 
-If you're versioning your code, you already have the tool you need. If you're not, I suggest [you install git](Thttps://git-scm.com/downloads), run `git init` in your source code repository, commit everything, and start from here.
+If you're versioning your code, you already have the tool you need. If you're not, I suggest [you install git](https://git-scm.com/downloads), run `git init` in your source code repository, commit everything, and start from here.
 
 ## How overcommitting can help
 
