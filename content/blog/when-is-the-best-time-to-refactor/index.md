@@ -1,7 +1,7 @@
 ---
 title: When is it the best time to refactor?
 date: 2020-11-10T20:07:28.963Z
-image: /assets/risky-choice.jpeg
+image: /assets/risky-choice.jpg
 description: Should you plan time for refactoring during Sprints? Refactor before you release new features? After? Here's my suggestion…
 tags:
   - not sure where to start refactoring
