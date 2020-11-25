@@ -221,7 +221,7 @@ const LargeExternalLink = props => (
     style={{ fontSize: "21px" }}
     href={props.to}
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
   >
     {props.children}
   </a>
