@@ -19,25 +19,26 @@ function Cheers(props) {
       <Button className={clapped ? "is-clapped" : ""} onClick={clap}>
         <Confettis className={clapped ? "animate" : ""} />
         <Hidden>Cheers!</Hidden>
-        {clapped && (
-          <div className="share">
-            {/* 📕 https://react-social-sharing.now.sh/#/linkedin */}
-            <p>
-              Glad you liked this post!{" "}
-              <span role="img" aria-label="Wine">
-                🍷
-              </span>
-              <br />
-              Mind to share it where it can be helpful?
-            </p>
-            <Twitter solid small message={message} link={link} />
-            <Facebook solid small link={link} />
-            <Reddit solid small link={link} />
-            <Mail solid small subject={message} link={link} />
-          </div>
-        )}
+        {clapped && <SocialMedia message={message} link={link} />}
       </Button>
     </div>
+  )
+}
+
+function SocialMedia({ text = "Glad you liked this post! 🍷", message, link }) {
+  return (
+    <Share className="share">
+      {/* 📕 https://react-social-sharing.now.sh/#/linkedin */}
+      <p>
+        {text}
+        <br />
+        Share it with others who could learn from it.
+      </p>
+      <Twitter solid small message={message} link={link} />
+      <Facebook solid small link={link} />
+      <Reddit solid small link={link} />
+      <Mail solid small subject={message} link={link} />
+    </Share>
   )
 }
 
@@ -101,19 +102,6 @@ const Button = styled.button`
     text-align: left;
     display: none;
     opacity: 0;
-
-    p {
-      margin-bottom: 0;
-    }
-
-    a {
-      margin-top: 0.25em;
-      box-shadow: none;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-    }
   }
 
   &.is-clapped {
@@ -140,6 +128,24 @@ const Button = styled.button`
     }
     to {
       opacity: 1;
+    }
+  }
+`
+
+const Share = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  a {
+    margin-top: 0.25em;
+    box-shadow: none;
+
+    &:first-of-type {
+      margin-left: 0;
     }
   }
 `
@@ -283,4 +289,4 @@ const Hidden = styled.span`
   position: absolute;
 `
 
-export default Cheers
+export { Cheers, SocialMedia }

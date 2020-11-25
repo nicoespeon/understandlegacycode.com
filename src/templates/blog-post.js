@@ -12,7 +12,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CTA from "../components/cta"
 import Title from "../components/title"
-import Cheers from "../components/cheers"
+import { SocialMedia } from "../components/cheers"
 import { rhythm, colors } from "../utils/typography"
 import profilePic from "../../content/assets/profile-pic.png"
 
@@ -154,7 +154,8 @@ class BlogPostTemplate extends React.Component {
         >
           <CTA title={post.frontmatter.ctaTitle} uid={post.frontmatter.ctaId} />
         </div>
-        <Cheers
+        <SocialMedia
+          text="I hope this was useful for you! 🍷"
           link={this.props.location.href}
           message={post.frontmatter.title}
         />
