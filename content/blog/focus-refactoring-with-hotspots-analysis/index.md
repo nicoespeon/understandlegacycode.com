@@ -181,6 +181,8 @@ git log --format=format: --name-only --since=12.month \
  | head -50
 ```
 
+Side-note: if you're more into SQL, [Patrick DeVivo](https://twitter.com/patrickdevivo) has created [AskGit](https://github.com/augmentable-dev/askgit), a tool that can do [similar queries using SQL expressions](https://augmentable.medium.com/identifying-code-churn-with-askgit-sql-1b91680f6349).
+
 That's it, you're done.
 
 ### Create a Churn vs. Complexity graph
