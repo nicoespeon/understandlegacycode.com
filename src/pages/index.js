@@ -12,7 +12,8 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const siteDescription = data.site.siteMetadata.description
-    const posts = data.allMdx.edges
+    const posts = data.articles.edges
+    const books = data.books.edges
 
     return (
       <Layout location={this.props.location} description={siteDescription}>
@@ -148,7 +149,7 @@ class IndexPage extends React.Component {
           <span role="img" aria-label="Headphones">
             🎧
           </span>{" "}
-          Podcasts
+          Podcasts I've talked to
         </h2>
         <Ul>
           <Li key="rails-with-jason">
@@ -172,6 +173,27 @@ class IndexPage extends React.Component {
               dealing with technical debt challenges.
             </p>
           </Li>
+        </Ul>
+        <h2>
+          <span role="img" aria-label="Books">
+            📚
+          </span>{" "}
+          Books I recommend
+        </h2>
+        <Ul>
+          {books.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Li key={node.fields.slug}>
+                <LargeLink to={`blog${node.fields.slug}`}>{title}</LargeLink>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </Li>
+            )
+          })}
         </Ul>
         <hr
           style={{
@@ -222,7 +244,28 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
+    articles: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 5
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+    books: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: ["book review"] } } }
+    ) {
       edges {
         node {
           excerpt
