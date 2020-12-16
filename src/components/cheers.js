@@ -26,7 +26,7 @@ function Cheers(props) {
 }
 
 function SocialMedia({ text = "Glad you liked this post! 🍷", message, link }) {
-  if (!link) {
+  if (!link && typeof window !== "undefined") {
     // For some reason, in prod, sometimes link isn't resolved.
     // Default on the current page since it's what we want to share.
     link = window.location.href
