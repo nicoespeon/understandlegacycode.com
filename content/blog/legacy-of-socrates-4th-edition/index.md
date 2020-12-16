@@ -83,7 +83,7 @@ In short: you are part of a system and you mutually influence each other. Your t
 
 Finally, I had the pleasure to host [David Bernstein](https://twitter.com/ToBeAgile)!
 
-David is the author of "Beyond Legacy Code", a great book [for which I did a summary of the salient points already](../key-points-of-beyond-legacy-code/).
+David is the author of "Beyond Legacy Code", a great book [for which I did a summary of the salient points](../key-points-of-beyond-legacy-code/).
 
 David trains teams to work more efficiently with existing software. This talk is an excerpt of his wisdom that you could find in his book or courses. He goes back to the basics of unit testing and shows how you can leverage it not just to prevent regressions, but to drive future changes you have to do!
 
