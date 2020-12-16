@@ -4,6 +4,8 @@ date: 2020-04-12T12:15:57.830Z
 image: /assets/legacy-of-socrates-1st-edition.jpeg
 description: >-
   Tips and advice on dealing with Legacy Code from 5 great speakers at this remote conference I organized for the community.
+tags:
+  - conference
 ---
 
 On April 1st, 2020, I co-organized with [Adrian Bolboacă](https://twitter.com/adibolb) a remote conference on my favorite topic of all: **Legacy Code**.

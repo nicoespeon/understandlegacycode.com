@@ -5,6 +5,7 @@ image: /assets/legacy-of-socrates-3rd-edition.png
 description: >-
   5 great talks on Legacy Code that I the pleasure to host. Learn how to test existing code and approach unfamiliar codebases.
 tags:
+  - conference
   - approval tests
 ---
 
