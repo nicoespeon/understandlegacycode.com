@@ -3,7 +3,7 @@ title: "Refactoring, Unit Tests, and Symmathesy"
 date: 2020-12-14T20:05:57.830Z
 image: /assets/legacy-of-socrates-4th-edition.png
 description: >-
-  5 great talks on Legacy Code that I the pleasure to host. Learn how to progressively migrate existing codebase towards a better state.
+  5 great talks on Legacy Code that I had the pleasure to host. Learn how to progressively migrate existing codebase towards a better state.
 tags:
   - conference
   - approval tests

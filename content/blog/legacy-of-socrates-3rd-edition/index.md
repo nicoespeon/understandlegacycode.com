@@ -3,7 +3,7 @@ title: "Approval Tests, TCR, and Menders"
 date: 2020-09-21T12:15:57.830Z
 image: /assets/legacy-of-socrates-3rd-edition.png
 description: >-
-  5 great talks on Legacy Code that I the pleasure to host. Learn how to test existing code and approach unfamiliar codebases.
+  5 great talks on Legacy Code that I had the pleasure to host. Learn how to test existing code and approach unfamiliar codebases.
 tags:
   - conference
   - approval tests
