@@ -28,6 +28,20 @@ class IndexPage extends React.Component {
             "documentation",
           ]}
         />
+        <Callout>
+          Frustrated of not having enough time to refactor Legacy Code?
+          <br />
+          <span role="img" aria-label="Rescue Worker Helmet">
+            ⛑
+          </span>{" "}
+          I'm building up{" "}
+          <strong>
+            <Link to={`first-aid-kit`}>
+              a kit to help you rescue your codebase
+            </Link>
+            !
+          </strong>
+        </Callout>
         <p>
           When I say "Legacy Code" I mean{" "}
           <Link to={"/blog/what-is-legacy-code-is-it-code-without-tests/"}>
