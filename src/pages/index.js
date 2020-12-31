@@ -163,7 +163,7 @@ class IndexPage extends React.Component {
           <span role="img" aria-label="Headphones">
             🎧
           </span>{" "}
-          Podcasts I've talked to
+          If you prefer podcasts
         </h2>
         <Ul>
           <Li key="rails-with-jason">
@@ -192,7 +192,7 @@ class IndexPage extends React.Component {
           <span role="img" aria-label="Books">
             📚
           </span>{" "}
-          Books I recommend
+          Useful books on Legacy Code
         </h2>
         <Ul>
           {books.map(({ node }) => {
