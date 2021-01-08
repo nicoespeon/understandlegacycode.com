@@ -26,8 +26,8 @@ I must admit that seeing developers who rack up mountains of technical debt get 
 
 But the truth is: you've been honing extremely valuable skills across these months working on this legacy codebase. What you need now is:
 
-1. To realize what are these skills
-2. To learn how to communicate that to non-technical people
+1. To realize what these skills are
+2. To learn how to communicate them to non-technical people
 
 Let's go through this together.
 
@@ -123,6 +123,7 @@ My final advice would be to get in touch with other developers like you. You'll 
 
 - The [Software Crafters community](https://slack.softwarecrafters.org/)
 - The [Legacy Code Rocks community](https://www.legacycode.rocks/community)
+- The [WeDoTDD community](https://join.slack.com/t/wedotdd/shared_invite/zt-kq3cuils-tg6sS2eNoRIPjfPlsJJRoA)
 
 If you join there, come and say hi to me 👋
 
