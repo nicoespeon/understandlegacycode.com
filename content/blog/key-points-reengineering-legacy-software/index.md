@@ -18,7 +18,7 @@ Quickly, you feel like you have been sent to battle [the Hydra of Lerna](https:/
 
 Hopefully, there are techniques to get that under control. I can only recommend you to have a look at [the Mikado Method](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase/) if you don't know how to use it already.
 
-But there's more. And this is where "[Re-Engineering Legacy Software](https://www.manning.com/books/re-engineering-legacy-software)" shines in my opinion! I like how [Chris Birchall](https://twitter.com/cbirchall), the author, focuses on _how to get started,_ concretely. It's not a well-known book, which is surprising considering how common and difficult working with Legacy systems is, and how few books exist to help you do that.
+But there's more. And this is where "[Re-Engineering Legacy Software](https://shortener.manning.com/E26o)" shines in my opinion! I like how [Chris Birchall](https://twitter.com/cbirchall), the author, focuses on _how to get started,_ concretely. It's not a well-known book, which is surprising considering how common and difficult working with Legacy systems is, and how few books exist to help you do that.
 
 ![](/assets/re-engineering-legacy-software.png)
 
@@ -158,8 +158,18 @@ Progressively automate what you find doing manually over and over will save you 
 
 ## Conclusion
 
-"[Re-Engineering Legacy Software](https://www.manning.com/books/re-engineering-legacy-software)" was a great surprise for me. Besides the usual recommendations on working with Legacy Code, it contains useful examples of techniques you can use in your day-to-day work.
+"[Re-Engineering Legacy Software](https://shortener.manning.com/E26o)" was a great surprise for me. Besides the usual recommendations on working with Legacy Code, it contains useful examples of techniques you can use in your day-to-day work.
 
 I gave you a glimpse of what really stroke me, but there's more in the book. If you use tools like Ant, Fabric, Vagrant, or Ansible, then you will have a lot of concrete examples. Chris illustrates the theory with a simulated story where you start working on a Legacy project. This is cool as you can follow along and write Ansible scripts with him ⚙
 
 This is a good book on working with Legacy software.
+
+### A 35% discount on Manning books
+
+After I published this book review, Manning Publications proposed me to share with you a promo code. That should give you 35% off their books.
+
+If you want to get a copy of "Re-Engineering Legacy Software", I think that will be handy. It also works with any of their products, in all formats. 
+
+Here it is: `brnica35` 🏷 
+
+Enjoy, read books, and take care of yourself!
