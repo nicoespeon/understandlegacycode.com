@@ -14,6 +14,10 @@ class NotFoundPage extends React.Component {
         <SEO title="Oops, couldn't find that article" date="2020-01-13" />
         <h1>Not Found</h1>
         <p>You just hit a page that doesn&#39;t exist... the sadness.</p>
+        <p>
+          Hopefully, you should find what you're looking for{" "}
+          <a href="../">on the home page</a>!
+        </p>
       </Layout>
     )
   }
