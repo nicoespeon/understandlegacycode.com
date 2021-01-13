@@ -168,7 +168,7 @@ This is a good book on working with Legacy software.
 
 After I published this book review, Manning Publications proposed me to share with you a promo code. That should give you 35% off their books.
 
-If you want to get a copy of "Re-Engineering Legacy Software", I think that will be handy. It also works with any of their products, in all formats. 
+If you want to [get a copy of "Re-Engineering Legacy Software"](https://shortener.manning.com/E26o), I think that will be handy. It also works with any of their products, in all formats. 
 
 Here it is: `brnica35` 🏷 
 
