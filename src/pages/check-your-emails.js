@@ -17,7 +17,10 @@ function Page(props) {
       </p>
       <p>
         Now, go check that. I'll send you a confirmation email when you're all
-        set 👍
+        set{" "}
+        <span role="img" aria-label="Thumbs up">
+          👍
+        </span>
       </p>
       <p>
         <em>P.S: if you're using GMail, check the "Promotions" tab!</em>
