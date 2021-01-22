@@ -7,9 +7,14 @@ function Page(props) {
   return (
     <Layout
       location={props.location}
-      description="Almost there, one last step…"
+      description="Hooray!! Almost there, just one last step…"
     >
-      <h1>Check your emails!</h1>
+      <h1>
+        Check your emails!{" "}
+        <span role="img" aria-label="Wink">
+          😉
+        </span>
+      </h1>
       <p>
         If you're reading this, it means you have subscribed to my newsletter,
         but I can't send you articles until you{" "}
