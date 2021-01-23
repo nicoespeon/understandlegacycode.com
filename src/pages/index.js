@@ -188,7 +188,7 @@ class IndexPage extends React.Component {
             </p>
           </Li>
         </Ul>
-        <h2>
+        <h2 id="books">
           <span role="img" aria-label="Books">
             📚
           </span>{" "}
