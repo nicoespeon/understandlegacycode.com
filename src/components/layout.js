@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Helmet from "react-helmet"
 
 import { rhythm, scale, colors } from "../utils/typography"
 
@@ -61,6 +62,14 @@ class Layout extends React.Component {
     }
     return (
       <Wrapper>
+        <Helmet>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Understand Legacy Code"
+            href="https://understandlegacycode.com/rss.xml"
+          />
+        </Helmet>
         <div
           style={{
             marginLeft: `auto`,
