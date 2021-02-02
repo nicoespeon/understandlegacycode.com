@@ -26,7 +26,7 @@ One of the techniques is building proper abstractions. Reduce the number of deta
 - Functional Programming minimizes these details, by limiting mutations and side-effects strictly to the edge of the system.
 - Object-Oriented Programming encapsulates these, so mutations are limited within objects and not propagated across the codebase.
 
-Refactoring towards a better design helps. But if your codebase was already there, you wouldn't be struggling. Thus, you need something to deal with not-well-designed software—until you make it better.
+Refactoring towards a better design helps. But if your codebase was already well designed, you wouldn't be struggling here. Thus, you need something to deal with your not-so-well-designed software until you make it better.
 
 ## In a Legacy application
 
