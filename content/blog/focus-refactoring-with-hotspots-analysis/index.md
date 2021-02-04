@@ -181,9 +181,27 @@ git log --format=format: --name-only --since=12.month \
  | head -50
 ```
 
-Side-note: if you're more into SQL, [Patrick DeVivo](https://twitter.com/patrickdevivo) has created [AskGit](https://github.com/augmentable-dev/askgit), a tool that can do [similar queries using SQL expressions](https://augmentable.medium.com/identifying-code-churn-with-askgit-sql-1b91680f6349).
-
 That's it, you're done.
+
+#### If you're more into SQL
+
+[Patrick DeVivo](https://twitter.com/patrickdevivo) has created [AskGit](https://github.com/augmentable-dev/askgit), a tool that can do [similar queries using SQL expressions](https://augmentable.medium.com/identifying-code-churn-with-askgit-sql-1b91680f6349).
+
+This is how you would get the same information with AskGit:
+
+```sql
+SELECT  file,
+        COUNT(*)
+FROM    stats
+        JOIN commits
+          ON stats.commit_id = commits.id
+WHERE   commits.author_when > DATE('now', '-12 month')
+        AND commits.parent_count < 2 -- ignore merge commits
+        AND stats.file NOT LIKE '%.json'
+GROUP   BY file
+ORDER   BY COUNT(*) DESC
+LIMIT   50
+```
 
 ### Create a Churn vs. Complexity graph
 
