@@ -52,10 +52,14 @@ function SEO({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          // Seems required for LinkedIn to acknowledge the og tag
+          prefix: "og: http://ogp.me/ns#",
           property: "og:url",
           content: url,
         },
         {
+          // Seems required for LinkedIn to acknowledge the og tag
+          prefix: "og: http://ogp.me/ns#",
           property: `og:title`,
           content: title,
         },
@@ -64,6 +68,8 @@ function SEO({
           content: title,
         },
         {
+          // Seems required for LinkedIn to acknowledge the og tag
+          prefix: "og: http://ogp.me/ns#",
           property: "og:description",
           content: metaDescription,
         },
@@ -72,10 +78,14 @@ function SEO({
           content: metaDescription,
         },
         {
+          // Seems required for LinkedIn to acknowledge the og tag
+          prefix: "og: http://ogp.me/ns#",
           property: "og:type",
           content: type,
         },
         {
+          // Seems required for LinkedIn to acknowledge the og tag
+          prefix: "og: http://ogp.me/ns#",
           property: "og:image",
           content: metaImage,
         },
