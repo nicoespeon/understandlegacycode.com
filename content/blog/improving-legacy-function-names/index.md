@@ -133,7 +133,7 @@ Let me reconcile the advice for you…
 
 ## It's fine to use "AND", but your journey doesn't stop here
 
-Hopefully, these conflicting advice are different faces of the same truth: [naming is a process](https://www.digdeeproots.com/articles/on/naming-as-a-process/).
+Hopefully, these conflicting advice are different faces of the same truth: [naming is a process](https://www.digdeeproots.com/articles/naming-as-a-process/).
 
 In this series, [Arlo Belshee](https://twitter.com/arlobelshee) presents a 6-steps guide to naming things.
 
