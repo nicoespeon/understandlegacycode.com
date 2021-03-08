@@ -17,7 +17,7 @@ Where do you start when your system is distributed across dozens of micro-servic
 
 How do you identify development bottlenecks and prioritize refactoring?
 
-In his book [Software Design X-Rays](https://www.google.com/search?q=software+design+x-rays&oq=soft, Adam Tornhill presents a very unique approach to answer these questions. It's a mix of software architecture and human psychology that generates powerful techniques to tackle large codebases.
+In his book [Software Design X-Rays](https://www.google.com/search?q=software+design+x-rays&oq=soft), Adam Tornhill presents a very unique approach to answer these questions. It's a mix of software architecture and human psychology that generates powerful techniques to tackle large codebases.
 
 Yet, I realized it's not a very known book.
 
