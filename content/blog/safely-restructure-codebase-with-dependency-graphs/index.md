@@ -7,6 +7,7 @@ description: >-
 tags:
   - getting into a large codebase
   - not sure where to start refactoring
+  - dependency graph
 ---
 
 As an application grows, the quality of its design will impact its maintenance: if everything is tangled and anything can be mutated from anywhere, any change is a challenge.

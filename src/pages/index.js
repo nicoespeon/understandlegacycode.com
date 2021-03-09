@@ -133,6 +133,12 @@ class IndexPage extends React.Component {
               information.
             </p>
           </Li>
+          <Li key="dependency-graphs">
+            <LargeLink to={`dependency-graphs`}>
+              Draw Dependency Graphs
+            </LargeLink>
+            <p>A technique to understand the structure of a codebase.</p>
+          </Li>
         </Ul>
         <h2>
           <span role="img" aria-label="Lightbulb">

@@ -7,6 +7,7 @@ description: >-
 tags:
   - changing untested code
   - not sure where to start refactoring
+  - dependency graph
 ---
 
 > You've inherited a 300k lines of spaghetti code. What do you do now?
