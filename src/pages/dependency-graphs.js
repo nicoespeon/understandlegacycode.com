@@ -83,6 +83,10 @@ function Page(props) {
           developers
         </li>
         <li>
+          <ExtLink href="https://sourcespy.com/">SourceSpy</ExtLink> for Java
+          developers (it also allows creating manual diagrams)
+        </li>
+        <li>
           <ExtLink href="https://github.com/sensiolabs-de/deptrac">
             deptrac
           </ExtLink>{" "}
