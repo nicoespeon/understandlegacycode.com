@@ -44,7 +44,7 @@ Let's face it: trying to jump in and understand the code by reading it from top 
 
 Sure you can try. But you probably can't afford that. It's unproductive.
 
-You need a technique to make sense out of the code rapidly. This technique is described by Jonathan Boccara in [The Legacy Code Programmer's Toolbox](https://www.amazon.fr/Legacy-Code-Programmers-Toolbox-Developers-ebook/dp/B07Y6T2VN1) and it doesn't require any fancy tool!
+You need a technique to make sense out of the code rapidly. This technique is described by Jonathan Boccara in [The Legacy Code Programmer's Toolbox](https://understandlegacycode.com/blog/key-points-of-legacy-code-programmer-toolbox/) and it doesn't require any fancy tool!
 
 It's a 3-step recipe:
 
@@ -58,7 +58,7 @@ Copy-paste the body of [the code][the-code] in the tool.
 
 ![](./word-counter.png)
 
-_⚠️ You might not want / be allowed to send your code to such an online tool. In this situation, find a script you can run locally (here's [one in JavaScript](https://github.com/fengyuanchen/wordcounter)). You can also write your own (here's [a tutorial in Python](https://codeburst.io/python-basics-11-word-count-filter-out-punctuation-dictionary-manipulation-and-sorting-lists-3f6c55420855)). Thanks [Steve (Gadget) Barnes](https://twitter.com/gadget_steve) for pointing this out!_
+_⚠️ You might not want / be allowed to send your code to such an online tool. In this situation, find a script you can run locally (here are [example in many languages](https://rosettacode.org/wiki/Word_frequency)). You can also write your own (here's [a tutorial in Python](https://codeburst.io/python-basics-11-word-count-filter-out-punctuation-dictionary-manipulation-and-sorting-lists-3f6c55420855)). Thanks [Steve (Gadget) Barnes](https://twitter.com/gadget_steve) for pointing this out!_
 
 The information that matters is **keyword density**.
 
@@ -133,7 +133,7 @@ You can probably extract that into a honest `setReqUrlAndHash(TLRPC.WebPage webp
 
 #### Trying it with `windowmanager`
 
-This one is interesting because it reveals [a good chunk](https://github.com/DrKLO/Telegram/blob/master/TMessagesProj/src/main/java/org/telegram/ui/ArticleViewer.java#L4509-L4539) that seems to only deal with the Window Manager.
+This one is interesting because it reveals [a good chunk](https://github.com/DrKLO/Telegram/blob/ae0d24ebf214110f4e6691f54d5867331d7d9158/TMessagesProj/src/main/java/org/telegram/ui/ArticleViewer.java#L4509-L4539) that seems to only deal with the Window Manager.
 
 ![](./window-manager.png)
 
@@ -157,4 +157,4 @@ Spend 10-15min applying this technique and see what you learn from it… When yo
 
 And [let me know](https://twitter.com/nicoespeon), I love to hear successes from the trenches 🤠
 
-[the-code]: https://github.com/DrKLO/Telegram/blob/master/TMessagesProj/src/main/java/org/telegram/ui/ArticleViewer.java#L4379-L4587
+[the-code]: https://github.com/DrKLO/Telegram/blob/ae0d24ebf214110f4e6691f54d5867331d7d9158/TMessagesProj/src/main/java/org/telegram/ui/ArticleViewer.java#L4379-L4587
