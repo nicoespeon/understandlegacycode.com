@@ -33,6 +33,22 @@ class ComingSoonCTA extends React.Component {
   }
 }
 
+class FirstAidKitEmailCTA extends React.Component {
+  componentDidMount() {
+    const uid = "084305275e"
+
+    const script = document.createElement("script")
+    script.async = true
+    script.src = `https://understandlegacycode.ck.page/${uid}/index.js`
+    script.setAttribute("data-uid", uid)
+    this.signupForm.appendChild(script)
+  }
+
+  render() {
+    return <div ref={el => (this.signupForm = el)}></div>
+  }
+}
+
 const Form = styled.div`
   .formkit-form {
     transform: rotate(-1.5deg);
@@ -58,4 +74,4 @@ const Form = styled.div`
 `
 
 export default CTA
-export { ComingSoonCTA }
+export { ComingSoonCTA, FirstAidKitEmailCTA }
