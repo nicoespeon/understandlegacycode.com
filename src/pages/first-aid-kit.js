@@ -15,6 +15,7 @@ function Page() {
         description=""
         date="2020-06-19"
         slug="/first-aid-kit"
+        image="/assets/first-aid-kit-cover.png"
         keywords={["legacy code", "refactoring", "deadline"]}
       />
       <FirstAidKitParity />
