@@ -844,6 +844,7 @@ const Author = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    padding: 0;
 
     img {
       margin-right: 2rem;
