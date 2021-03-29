@@ -644,12 +644,12 @@ const Content = styled.div`
   max-width: 768px;
   margin: auto;
   padding: 2rem;
-  font-style: 1rem;
+  font-size: 1rem;
 
   @media (min-width: 768px) {
     padding-left: 0;
     padding-right: 0;
-    font-style: 1.25rem;
+    font-size: 1.25rem;
   }
 `
 
