@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { BookCover } from "book-cover-3d"
+import { getCssForSettings } from "book-cover-3d"
 
 import SEO from "../components/seo"
 import { FirstAidKitEmailCTA } from "../components/cta"
@@ -43,12 +43,14 @@ function Page() {
             </p>
           </HeaderText>
           <HeaderBook>
-            <BookCover thickness={50} height={480} width={300}>
-              <img
-                src="/assets/first-aid-kit-cover.png"
-                alt="Legacy Code: First Aid Kit"
-              />
-            </BookCover>
+            <div className="book-container-lcfak">
+              <div className="book">
+                <img
+                  src="/assets/first-aid-kit-cover.png"
+                  alt="Legacy Code: First Aid Kit"
+                />
+              </div>
+            </div>
           </HeaderBook>
         </Header>
       </SectionAlt>
@@ -516,6 +518,19 @@ const Layout = styled.div`
       background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z' fill='%23ed1b2e' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
     }
   }
+
+  ${getCssForSettings("lcfak", {
+    rotate: 30,
+    rotateHover: 0,
+    perspective: 600,
+    transitionDuration: 1,
+    radius: 2,
+    thickness: 50,
+    bgColor: "#01060f",
+    height: 480,
+    width: 300,
+    pagesOffset: 3,
+  })}
 `
 
 const NumberedList = styled.ol`
