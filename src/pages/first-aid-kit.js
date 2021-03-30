@@ -439,7 +439,7 @@ function Page() {
               <p>
                 If you want to do so, please suggest your teammates purchase
                 their own individual copies. Maybe you can get your
-                client/employer cover the expense.
+                client/employer to cover the expense.
               </p>
             </dd>
           </div>
