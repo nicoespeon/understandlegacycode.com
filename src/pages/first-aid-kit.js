@@ -413,7 +413,7 @@ function Page() {
                 functional.
               </p>
               <p>
-                The concepts are invalid independently of the language. I use
+                The concepts are valid independently of the language. I use
                 JavaScript for the examples so I can illustrate both OOP and FP
                 styles.
               </p>
