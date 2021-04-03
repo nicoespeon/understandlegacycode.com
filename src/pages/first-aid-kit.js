@@ -394,8 +394,8 @@ function Page() {
             <dd>
               <p>
                 When you purchase, you get a zip file containing PDF, EPUB, and
-                KPF formats. You also get printable cheat sheets to practice the
-                techniques.
+                MOBI formats. You also get printable cheat sheets to practice
+                the techniques.
               </p>
             </dd>
           </div>
