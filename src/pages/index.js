@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Bio from "../components/bio"
 import CTA from "../components/cta"
 import { rhythm, colors } from "../utils/typography"
+import { colors as firstAidKitColors } from "./first-aid-kit"
 
 class IndexPage extends React.Component {
   render() {
@@ -29,18 +30,17 @@ class IndexPage extends React.Component {
           ]}
         />
         <Callout>
-          Frustrated of not having enough time to refactor Legacy Code?
+          Are you struggling with Legacy Code and not enough time to clean it
+          up?
           <br />
           <span role="img" aria-label="Rescue Worker Helmet">
             ⛑
           </span>{" "}
-          I'm building up{" "}
           <strong>
-            <Link to={`first-aid-kit`}>
-              a kit to help you rescue your codebase
-            </Link>
-            !
-          </strong>
+            <Link to={`first-aid-kit`}>Check my First Aid Kit</Link>
+          </strong>{" "}
+          to help you rescue a codebase <strong>quickly</strong> and{" "}
+          <strong>safely</strong>!
         </Callout>
         <p>
           When I say "Legacy Code" I mean{" "}
@@ -239,8 +239,8 @@ const Ul = styled.ul`
 const Callout = styled.div`
   margin: 3rem 0;
   padding: 1rem;
-  border: 3px ${colors.primary} solid;
-  background: ${colors.backgroundLightest};
+  border: 3px ${firstAidKitColors.primary} solid;
+  background: ${firstAidKitColors.backgroundLightest};
 `
 
 const LargeLink = props => <Link style={{ fontSize: "21px" }} {...props} />

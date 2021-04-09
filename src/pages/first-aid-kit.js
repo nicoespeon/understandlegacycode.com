@@ -461,6 +461,7 @@ export const colors = {
   dark: "hsla(354.6, 70%, 20%, 1)",
   background: "hsla(354.6, 85.4%, 51.8%, 0.3)",
   backgroundLight: "hsla(354.6, 90%, 60%, 0.8)",
+  backgroundLightest: "hsla(354.6, 90%, 60%, 0.2)",
   gray: "rgb(78, 97, 108)",
   grayLight: "rgb(107, 114, 128)",
 }
