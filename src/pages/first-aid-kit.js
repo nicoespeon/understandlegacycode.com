@@ -386,7 +386,7 @@ function Page() {
           <div>
             <dt>How long is the book?</dt>
             <dd>
-              <p>The book is 195 pages long.</p>
+              <p>The book is 201 pages long.</p>
             </dd>
           </div>
           <div>
@@ -416,6 +416,16 @@ function Page() {
                 The concepts are valid independently of the language. I use
                 JavaScript for the examples so I can illustrate both OOP and FP
                 styles.
+              </p>
+            </dd>
+          </div>
+          <div>
+            <dt>Can I pay with PayPal?</dt>
+            <dd>
+              <p>
+                Sure! It's not automated yet but reach me out at
+                nicolas@understandlegacycode.com and I'll create a PayPal
+                invoice for you.
               </p>
             </dd>
           </div>
