@@ -6,8 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
 import CTA from "../components/cta"
-import { rhythm, colors } from "../utils/typography"
-import { colors as firstAidKitColors } from "./first-aid-kit"
+import { rhythm } from "../utils/typography"
+import { FirstAidKitCallout } from "./first-aid-kit"
 
 class IndexPage extends React.Component {
   render() {
@@ -29,19 +29,7 @@ class IndexPage extends React.Component {
             "documentation",
           ]}
         />
-        <Callout>
-          Are you struggling with Legacy Code and not enough time to clean it
-          up?
-          <br />
-          <span role="img" aria-label="Rescue Worker Helmet">
-            ⛑
-          </span>{" "}
-          <strong>
-            <Link to={`first-aid-kit`}>Check my First Aid Kit</Link>
-          </strong>{" "}
-          to help you rescue a codebase <strong>quickly</strong> and{" "}
-          <strong>safely</strong>!
-        </Callout>
+        <FirstAidKitCallout />
         <p>
           When I say "Legacy Code" I mean{" "}
           <Link to={"/blog/what-is-legacy-code-is-it-code-without-tests/"}>
@@ -234,13 +222,6 @@ const Li = styled.li`
 
 const Ul = styled.ul`
   margin: "20px 0 40px";
-`
-
-const Callout = styled.div`
-  margin: 3rem 0;
-  padding: 1rem;
-  border: 3px ${firstAidKitColors.primary} solid;
-  background: ${firstAidKitColors.backgroundLightest};
 `
 
 const LargeLink = props => <Link style={{ fontSize: "21px" }} {...props} />

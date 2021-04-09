@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import { getCssForSettings } from "book-cover-3d"
 
@@ -455,7 +455,22 @@ function Page() {
   )
 }
 
-export const colors = {
+export const FirstAidKitCallout = () => (
+  <Callout>
+    Are you struggling with Legacy Code and not enough time to clean it up?
+    <br />
+    <span role="img" aria-label="Rescue Worker Helmet">
+      ⛑
+    </span>{" "}
+    <strong>
+      <Link to={`first-aid-kit`}>Check my First Aid Kit</Link>
+    </strong>{" "}
+    to help you rescue a codebase <strong>quickly</strong> and{" "}
+    <strong>safely</strong>!
+  </Callout>
+)
+
+const colors = {
   // #ed1b2e
   primary: "hsla(354.6, 85.4%, 51.8%, 1)",
   dark: "hsla(354.6, 70%, 20%, 1)",
@@ -465,6 +480,13 @@ export const colors = {
   gray: "rgb(78, 97, 108)",
   grayLight: "rgb(107, 114, 128)",
 }
+
+const Callout = styled.div`
+  margin: 3rem 0;
+  padding: 1rem;
+  border: 3px ${colors.primary} solid;
+  background: ${colors.backgroundLightest};
+`
 
 const Layout = styled.div`
   color: rgb(12, 30, 41);
