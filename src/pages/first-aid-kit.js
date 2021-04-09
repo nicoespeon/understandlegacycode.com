@@ -455,14 +455,15 @@ function Page() {
   )
 }
 
-// #ed1b2e
-const mainColor = "hsla(354.6, 85.4%, 51.8%, 1)"
-const mainColorDark = "hsla(354.6, 70%, 20%, 1)"
-const mainBackground = "hsla(354.6, 85.4%, 51.8%, 0.3)"
-const mainBackgroundLight = "hsla(354.6, 90%, 60%, 0.8)"
-
-const gray = "rgb(78, 97, 108)"
-const grayLight = "rgb(107, 114, 128)"
+export const colors = {
+  // #ed1b2e
+  primary: "hsla(354.6, 85.4%, 51.8%, 1)",
+  dark: "hsla(354.6, 70%, 20%, 1)",
+  background: "hsla(354.6, 85.4%, 51.8%, 0.3)",
+  backgroundLight: "hsla(354.6, 90%, 60%, 0.8)",
+  gray: "rgb(78, 97, 108)",
+  grayLight: "rgb(107, 114, 128)",
+}
 
 const Layout = styled.div`
   color: rgb(12, 30, 41);
@@ -478,7 +479,7 @@ const Layout = styled.div`
     background-image: linear-gradient(
       180deg,
       transparent 70%,
-      ${mainBackground} 0
+      ${colors.background} 0
     );
     transition: box-shadow 0.2s;
   }
@@ -487,7 +488,7 @@ const Layout = styled.div`
   a:focus,
   a:active {
     background: 0 0;
-    box-shadow: inset 0 -1.3em 0 ${mainBackground};
+    box-shadow: inset 0 -1.3em 0 ${colors.background};
   }
 
   h1,
@@ -498,7 +499,7 @@ const Layout = styled.div`
 
     & .highlight {
       font-style: normal;
-      color: ${mainColor};
+      color: ${colors.primary};
     }
   }
 
@@ -551,7 +552,7 @@ const NumberedList = styled.ol`
       content: counter(step-counter);
       margin-right: 1em;
       line-height: 1;
-      background-color: ${mainColor};
+      background-color: ${colors.primary};
       box-shadow: 0.2em 0.2em 0 rgba(128, 128, 128, 0.2);
       color: white;
       padding: 2px 0;
@@ -579,7 +580,7 @@ const NumberedList = styled.ol`
 
 const TopBar = styled.div`
   height: 0.5rem !important;
-  background-color: ${mainColor};
+  background-color: ${colors.primary};
 `
 
 const SectionAlt = styled.div`
@@ -592,7 +593,7 @@ const SectionAlt = styled.div`
 `
 
 const SectionColored = styled.div`
-  background-color: ${mainBackgroundLight};
+  background-color: ${colors.backgroundLight};
   padding: 5rem 3rem;
 
   h2 {
@@ -624,7 +625,7 @@ const HeaderText = styled.div`
     font-size: 2.5rem;
 
     em {
-      color: ${mainColor};
+      color: ${colors.primary};
     }
   }
 
@@ -632,7 +633,7 @@ const HeaderText = styled.div`
     font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 400;
-    color: ${gray};
+    color: ${colors.gray};
   }
 
   .formkit-form > div {
@@ -703,8 +704,8 @@ const PriceCardTitle = styled.h3`
   text-transform: uppercase;
   font-size: 0.875em;
   font-weight: 600;
-  color: ${mainColorDark};
-  background-color: ${mainBackground};
+  color: ${colors.dark};
+  background-color: ${colors.background};
   font-family: Inter var, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -720,7 +721,7 @@ const Price = styled.div`
 `
 
 const Currency = styled.span`
-  color: ${grayLight};
+  color: ${colors.grayLight};
   line-height: 2rem;
   font-size: 1.5rem;
   font-weight: 500;
@@ -770,7 +771,7 @@ const PriceListIcon = () => (
 )
 
 const PriceListItem = styled.p`
-  color: ${gray};
+  color: ${colors.gray};
   margin-left: 0.75rem;
   line-height: 1.5rem;
   font-size: 1rem;
@@ -786,14 +787,14 @@ const PriceLink = styled.a`
   display: block;
   border-width: 1px;
   border-color: transparent;
-  background: ${mainColor};
+  background: ${colors.primary};
   color: white !important;
 
   &:hover,
   &:focus,
   &:active {
     cursor: pointer;
-    background: ${mainBackgroundLight} !important;
+    background: ${colors.backgroundLight} !important;
     box-shadow: none !important;
   }
 `
@@ -802,7 +803,7 @@ const CheckedLi = styled.li`
   position: relative;
   margin-left: 1rem;
   padding-left: 26px;
-  color: ${gray};
+  color: ${colors.gray};
 
   &::before {
     content: "";
@@ -835,7 +836,7 @@ const DictList = styled.dl`
   }
 
   p {
-    color: ${gray};
+    color: ${colors.gray};
     line-height: 1.5rem;
     font-size: 1rem;
     margin-bottom: 0.5rem;
