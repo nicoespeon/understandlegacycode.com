@@ -463,9 +463,9 @@ export const FirstAidKitCallout = () => (
       ⛑
     </span>{" "}
     <strong>
-      <Link to={`first-aid-kit`}>Check my First Aid Kit</Link>
+      <Link to={`first-aid-kit`}>My First Aid Kit</Link>
     </strong>{" "}
-    to help you rescue a codebase <strong>quickly</strong> and{" "}
+    can help you rescue any codebase <strong>quickly</strong> and{" "}
     <strong>safely</strong>!
   </Callout>
 )
@@ -476,7 +476,7 @@ const colors = {
   dark: "hsla(354.6, 70%, 20%, 1)",
   background: "hsla(354.6, 85.4%, 51.8%, 0.3)",
   backgroundLight: "hsla(354.6, 90%, 60%, 0.8)",
-  backgroundLightest: "hsla(354.6, 90%, 60%, 0.2)",
+  backgroundLightest: "hsla(354.6, 90%, 70%, 0.15)",
   gray: "rgb(78, 97, 108)",
   grayLight: "rgb(107, 114, 128)",
 }
