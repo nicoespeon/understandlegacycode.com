@@ -15,6 +15,7 @@ import Title from "../components/title"
 import { SocialMedia } from "../components/cheers"
 import { rhythm, colors } from "../utils/typography"
 import profilePic from "../../content/assets/profile-pic.png"
+import { FirstAidKitCallout } from "../pages/first-aid-kit"
 
 function parseHighlightedCode(chunks) {
   // Unwrap the code that has been splitted and nested
@@ -141,6 +142,7 @@ class BlogPostTemplate extends React.Component {
           image={post.frontmatter.image || profilePic}
         />
         <Title>{post.frontmatter.title}</Title>
+        <FirstAidKitCallout />
         <Content>
           <MDXProvider components={components}>
             <MDXRenderer>{post.body}</MDXRenderer>
