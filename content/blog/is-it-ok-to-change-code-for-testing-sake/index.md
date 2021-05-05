@@ -57,7 +57,7 @@ The rationale here is the following:
 
 When it comes to Legacy Code, it's very easy to be paralyzed by the amount of work that is required to put things back on track. Ideally, you'd refactor the whole thing for a design that makes more sense. Maybe you'd rewrite all of it! In real life, you don't have time for that.
 
-I've learned that you can't afford to not do anything because it wouldn't be perfect. That's not productive.
+I've learned that you can't afford doing nothing because it wouldn't be perfect. That's not productive.
 
 > Don't make it perfect. Make it a little bit better, every day.
 
