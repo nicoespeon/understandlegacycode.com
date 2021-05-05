@@ -48,7 +48,7 @@ Usually, the question pops at some point in your head. I think it's an important
 
 ## Yes, it's fine to change code for the sake of testing
 
-For once, I don't have an "it depends" answer to give here. I've experienced both approaches enough times to have a good opinion on this. Yes, it's OK to do the change so you can test the code. Even if it looks works _for now_.
+For once, I don't have an "it depends" answer to give here. I've experienced both approaches enough times to have a good opinion on this. Yes, it's OK to do the change so you can test the code. Even if it looks worse _for now_.
 
 The rationale here is the following:
 
