@@ -109,7 +109,7 @@ Actually, it doesn't just look worse. _It is worse._ The intermediate result is 
 
 ![Sandi explaining intermediate refactorings increase code complexity until it drops suddenly](./sandi-talk.png)
 
-And here's the gist of it: you need to know (or believe) that the intermediates refactorings will lead you to simplicity to keep moving towards that direction. Otherwise, you won't dare do the necessary changes, because they seem to make the code worse. You can't see it's only temporary.
+And here's the gist of it: you need to know (or believe) that the intermediates refactorings will lead you to simplicity to keep moving towards that direction. Otherwise, you won't dare to do the necessary changes, because they seem to make the code worse. You can't see it's only temporary.
 
 At this point, here is the advice that helped me the most:
 
