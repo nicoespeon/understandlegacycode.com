@@ -114,8 +114,8 @@ And here's the gist of it: you need to know (or believe) that the intermediates 
 At this point, here is the advice that helped me the most:
 
 1. **Practice in a safe playground**. Use a coding exercise to practice refactoring techniques and experience how it feels—[I've listed 5 great exercises here](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code).
-2. **Clarify the end goal.** Especially when working with a team. Explain what's the intention behind the intermediate refactoring, and how you plan to get here roughly. Explain how the things that look worse, for now, will ultimately be simplified (e.g. responsibilities will be split, so this code will only compose other, well-tested functions).
+2. **Clarify the end goal.** Especially when working with a team. Explain what's the intention behind the intermediate refactoring, and how you plan to get there (roughly). Explain how the things that look worse, for now, will ultimately be simplified (e.g. responsibilities will be split, so this code will only compose other, well-tested functions).
 3. **Keep track of the work**. Have an open issue for the remaining work. That helps to realize you already have work in progress before you decide to start another refactoring.
-4. **Make little refactorings part of your daily habits**. Once you trust yourself that will move the needle towards the end goal every time you touch the code, you don't need to keep track of the work so much. That takes time and practice, but ultimately makes working with legacy codebases less frustrating.
+4. **Make little refactorings part of your daily habits**. Once you trust yourself that you will move the needle towards the end goal every time you touch the code, you don't need to keep track of the work so much. It takes time and practice, but ultimately makes working with legacy codebases less frustrating.
 
 Give them a try, they may help you too 👍
