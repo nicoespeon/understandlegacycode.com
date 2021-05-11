@@ -11,6 +11,10 @@ tags:
 
 _🇫🇷 Si tu souhaites lire cet article en français, je l’ai écris à l’origine [en tant qu’article invité sur jesuisundev.com](https://www.jesuisundev.com/7-techniques-pour-reprendre-le-controle-de-ton-legacy-code/)._
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f3B8CqL1Pbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+_☝ Here's the recorded talk. If you prefer to read, go ahead with the article below._
+
 Let's face it: we spend most of our time changing existing code. Usually, we didn't even write that code in the first place. Often, there's no test. Sometimes, the authors of the code are long gone! And yet, we have to understand and modify this code – without introducing any bug, thank you.
 
 You'd love to change any part of the code with confidence… but you never have time! This change has been estimated as a 2-day task and there are many others to ship before the end of the Sprint/demo to the client/delivery/_<insert your deadline here\>_. Nightmare!
