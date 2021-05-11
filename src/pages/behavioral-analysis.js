@@ -34,12 +34,12 @@ function Page(props) {
       <p>This approach has been detailed by Adam Tornhill in his books:</p>
       <ul>
         <li>
-          <ExtLink href="https://www.google.com/search?q=software+design+x-rays">
+          <ExtLink href="https://www.google.com/search?q=your+code+as+a+crime+scene">
             Your Code as a Crime Scene
           </ExtLink>
         </li>
         <li>
-          <ExtLink href="https://www.google.com/search?q=your+code+as+a+crime+scene">
+          <ExtLink href="https://www.google.com/search?q=software+design+x-rays">
             Software Design X-Rays
           </ExtLink>
         </li>
