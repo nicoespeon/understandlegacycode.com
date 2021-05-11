@@ -60,11 +60,11 @@ Advice on working with existing and untested codebase are scattered around. I've
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f3B8CqL1Pbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-If you are looking for more, I've written a survival kit with 14 detailed techniques for when tests are missing and deadlines are short: [understandlegacycode.com/first-aid-kit](https://understandlegacycode.com/first-aid-kit)
+If you are looking for more, I've written a survival kit with 14 detailed techniques for when tests are missing and deadlines are short: [understandlegacycode.com/first-aid-kit](https://understandlegacycode.com/first-aid-kit) ⛑
 
 ## Refactoring Superpowers
 
-Finally, [Clare Macrae](https://twitter.com/ClareMacraeUK) presented a topic that's overlooked by developers in my experience: using your tools to do the work for you!
+Finally, [Clare Macrae](https://twitter.com/ClareMacraeUK) presented a topic that is overlooked by developers (in my experience): letting tools do the work for you!
 
 You see, when the code you need to change has no test, any change is risky. But sometimes, you first need to change the code before you can even add tests! That's the paradox of Legacy Code.
 
@@ -74,7 +74,7 @@ Clare shows you a couple of examples of what you can achieve. Of course, it depe
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UJEABZKII_w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-☝ Oh, by the way! If you're doing JavaScript/TypeScript and you use VS Code, I'm building an extension to help you do that. Check it out: [Abracadabra, refactor this!](https://marketplace.visualstudio.com/items?itemName=nicoespeon.abracadabra)
+☝ Oh, by the way! If you're doing JS/TS and you use VS Code, I'm building an extension to help you do that. Check it out: [Abracadabra](https://marketplace.visualstudio.com/items?itemName=nicoespeon.abracadabra).
 
 ## "These talks are really great! Can I have more?"
 

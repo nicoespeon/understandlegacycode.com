@@ -13,7 +13,7 @@ _🇫🇷 Si tu souhaites lire cet article en français, je l’ai écris à l�
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f3B8CqL1Pbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-_☝ Here's the recorded talk. If you prefer to read, go ahead with the article below._
+_☝ Here's the recorded talk. If you prefer to read, go ahead with the article._
 
 Let's face it: we spend most of our time changing existing code. Usually, we didn't even write that code in the first place. Often, there's no test. Sometimes, the authors of the code are long gone! And yet, we have to understand and modify this code – without introducing any bug, thank you.
 
