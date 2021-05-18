@@ -275,6 +275,33 @@ function Page() {
           </span>
         </p>
       </Content>
+
+      <SectionAlt style={{ position: "relative", overflow: "hidden" }}>
+        <Content>
+          <QuoteBackground />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyItems: "center",
+            }}
+          >
+            <QuoteMedia src="/assets/avatar-tof.jpg" alt="Christophe Thibaut" />
+            <Quote>
+              <p>
+                It's a survival kit. It doesn't exist elsewhere. People don't
+                read books, but a survival kit is fine. I hang out with teams
+                that could use this kit right away and benefit from it.
+              </p>
+              <footer>
+                <a href="https://twitter.com/ToF_" rel="noopener noreferrer">
+                  Christophe Thibaut
+                </a>
+              </footer>
+            </Quote>
+          </div>
+        </Content>
+      </SectionAlt>
       <SectionColored>
         <Content>
           <h2 id="buy">Get the book</h2>
@@ -411,7 +438,34 @@ function Page() {
           </div>
         </Author>
       </Content>
-      <hr style={{ marginBottom: "0" }} />
+      <SectionAlt style={{ position: "relative", overflow: "hidden" }}>
+        <Content>
+          <QuoteBackground />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyItems: "center",
+            }}
+          >
+            <QuoteMedia src="/assets/avatar-gul.jpg" alt="GUL" />
+            <Quote>
+              <p>
+                Every developer should work with this First Aid Kit next to
+                him/her.
+              </p>
+              <footer>
+                <a
+                  href="https://twitter.com/GUL_THE_TWITTO/status/1377524928132567041"
+                  rel="noopener noreferrer"
+                >
+                  GUL
+                </a>
+              </footer>
+            </Quote>
+          </div>
+        </Content>
+      </SectionAlt>
       <Content style={{ fontSize: "1rem", marginBottom: "6rem" }}>
         <h2>Frequently Asked Questions</h2>
         <DictList>
