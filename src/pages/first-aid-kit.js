@@ -333,6 +333,38 @@ function Page() {
           </PricingContainer>
         </Content>
       </SectionColored>
+      <SectionAlt style={{ position: "relative", overflow: "hidden" }}>
+        <Content>
+          <QuoteBackground />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyItems: "center",
+            }}
+          >
+            <QuoteMedia
+              src="/assets/avatar-chris-hartjes.jpg"
+              alt="Chris Hartjes"
+            />
+            <Quote>
+              <p>
+                I just bought @nicoespeon’s “Legacy Code: First Aid Kit” — his
+                newsletter is great and his tips have helped tame some code in
+                my work at UFSC
+              </p>
+              <footer>
+                <a
+                  href="https://twitter.com/grmpyprogrammer/status/1377746778150350851"
+                  rel="noopener noreferrer"
+                >
+                  Chris Hartjes
+                </a>
+              </footer>
+            </Quote>
+          </div>
+        </Content>
+      </SectionAlt>
       <Content>
         <h2>About the author</h2>
         <Author>
@@ -881,6 +913,132 @@ const DictList = styled.dl`
     }
   }
 `
+
+const QuoteBackground = () => (
+  <QuoteBackgroundContainer>
+    <svg
+      style={{
+        position: "absolute",
+        top: "100%",
+        right: "100%",
+        transform: "translateX(95%) translateY(-100%)",
+        color: colors.backgroundLight,
+      }}
+      width="192"
+      height="192"
+      fill="none"
+      viewBox="0 0 192 192"
+      role="img"
+    >
+      <defs>
+        <pattern
+          id="ad119f34-7694-4c31-947f-5c9d249b21f3"
+          x="0"
+          y="0"
+          width="20"
+          height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="4"
+            height="4"
+            fill={colors.backgroundLight}
+          ></rect>
+        </pattern>
+      </defs>
+      <rect
+        width="404"
+        height="404"
+        fill="url(#ad119f34-7694-4c31-947f-5c9d249b21f3)"
+      ></rect>
+    </svg>
+    <svg
+      style={{
+        position: "absolute",
+        top: "0",
+        left: "100%",
+        transform: "translateX(-90%) translateY(5%)",
+        color: colors.backgroundLight,
+      }}
+      width="192"
+      height="192"
+      fill="none"
+      viewBox="0 0 192 192"
+      role="img"
+    >
+      <defs>
+        <pattern
+          id="ad119f34-7694-4c31-947f-5c9d249b21f3"
+          x="0"
+          y="0"
+          width="20"
+          height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="4"
+            height="4"
+            fill={colors.backgroundLight}
+          ></rect>
+        </pattern>
+      </defs>
+      <rect
+        width="404"
+        height="404"
+        fill="url(#ad119f34-7694-4c31-947f-5c9d249b21f3)"
+      ></rect>
+    </svg>
+  </QuoteBackgroundContainer>
+)
+
+const QuoteBackgroundContainer = styled.div`
+  display: none;
+
+  @media (min-width: 600px) {
+    display: block;
+  }
+`
+
+const QuoteMedia = styled.img`
+  border-radius: 9999px;
+  height: 5rem;
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+`
+
+const Quote = styled.blockquote`
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  p {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    line-height: 1.25em;
+  }
+
+  footer {
+    text-align: center;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 600px) {
+    p {
+      font-size: 2rem;
+      padding: 0 1.5rem;
+      line-height: 1.25em;
+    }
+  }
+`
+
 const Author = styled.div`
   display: flex;
   justify-content: center;
