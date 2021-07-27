@@ -134,7 +134,7 @@ Are you working on a Legacy system you inherited that's lacking documentation?
 Here's what you can do when you get back at work:
 
 1. Install [`adr-tools` CLI][adr-tools]
-2. Run `adr new adrs`
+2. Run `adr init`
 3. Open a Pull-Request
 4. Add the link to this article in your PR description
 5. Discuss with your team the benefits of using ADRs
