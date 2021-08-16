@@ -61,7 +61,7 @@ I prefer "Approval" because it suggests the behavior has been _approved_ by a hu
 
 ### The (unknown) importance of a good Printer
 
-In September 2020, Emily Bache gave a talk on Approval Testing.
+In September 2020, [Emily Bache](https://twitter.com/emilybache) gave a talk on Approval Testing.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0ZVKcFsEp-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
