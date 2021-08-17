@@ -1,8 +1,8 @@
 ---
 title: >-
-  What's the difference between Characterization Tests and Approval Tests?
+  What's the difference between Regression Tests, Characterization Tests, and Approval Tests?
 date: 2021-08-11T09:15:00.000Z
-description: "You may have heard one or the other. Now you're confused: is there a difference? Nope! Let me explain…"
+description: "You may have heard one or the others. Now you're confused: is there a difference? Nope! Let me explain…"
 image: /assets/choice-paralysis.jpg
 tags:
   - approval tests
@@ -21,13 +21,15 @@ Sometimes, people are familiar with [Working Effectively with Legacy Code](https
 
 > Yeah, I've heard about Approval Tests. Is this the same as Characterization Tests? Asking for a friend…
 
+For people who never read Feathers' book, "Regression Tests" seems to be a common name for approaching code that isn't tested. Is there a subtle difference? 🤔
+
 ![](/assets/choice-paralysis.jpg)
 
-And since I've been answering this question a few times already, I'm saving it here so we can all share it with our confused fellows 😉
+Since I've been answering this question a few times already, I'm saving it here so we can all share it with our confused fellows 😉
 
 ## Yes, Approval and Characterization Tests are the same thing
 
-The reason for the different names is because there is no recognized standard—so far. Different people came up with different names for the same technique.
+The reason for the different names is because there is no recognized standard—so far. Different people came up with different names for the same technique. In fact, [most people seem to be using "Regression Tests"](https://trends.google.com/trends/explore/TIMESERIES/1629219000?hl=en-US&tz=-120&q=approval+tests,characterization+tests,regression+tests&sni=3) to refer to it!
 
 What matters is the spirit of it.
 
