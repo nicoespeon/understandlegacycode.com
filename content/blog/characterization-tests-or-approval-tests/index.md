@@ -107,6 +107,8 @@ I would use this one over the other because the name leads you to convenient too
 
 The "Approvals Tests" project has a lot of resources and documentation. It is implemented in a dozen of languages.
 
+Going further than the `approvaltests` library, you may find products like [Touca](https://touca.io/) which aim to simplify the process for you. It supports applying Approval Testing at scale, fixing the typical issues you'd have collaborating with the captured outputs.
+
 ## Call them "Approval Tests"
 
 Now you know that the technique of capturing existing code behavior into tests has different names:
@@ -115,6 +117,8 @@ Now you know that the technique of capturing existing code behavior into tests h
 - Approval Tests
 - Golden Master
 - Snapshot Tests
+- Locking Tests (thanks [Maaret](https://twitter.com/maaretp))
+- Regression Tests (that's how [Touca](https://touca.io/) describe itself)
 
 Among all, I recommend referring to it as "Approval Tests". Acknowledge other names refer to the same technique.
 
