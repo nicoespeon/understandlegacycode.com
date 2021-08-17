@@ -39,6 +39,8 @@ function Page(props) {
         <li>Characterization Tests</li>
         <li>Golden Master</li>
         <li>Snapshot Tests</li>
+        <li>Locking Tests</li>
+        <li>Regression Tests</li>
       </ul>
       <p>
         The purpose of the technique is to{" "}
@@ -115,6 +117,12 @@ function Page(props) {
             Emily Bache's Gilded Rose kata starter
           </ExtLink>{" "}
           in many, many languages
+        </li>
+        <li>
+          <ExtLink href="https://touca.io/">
+            Touca
+          </ExtLink>{" "}
+          is a continuous regression testing tool that help you do that!
         </li>
       </ul>
     </Guide>
