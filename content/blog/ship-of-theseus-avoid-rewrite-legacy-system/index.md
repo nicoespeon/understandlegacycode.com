@@ -1,7 +1,7 @@
 ---
-title: "Avoid rewriting a legacy system from scratch, by strangling it"
+title: "The Ship of Theseus to NOT rewrite a legacy system from scratch"
 date: 2020-02-10T21:06:13.397Z
-image: /assets/strangler-fig.jpg
+image: /assets/ship-of-theseus.jpg
 description: >-
   When an application becomes impossible to maintain, a rewrite is very tempting.
   But it could make things worse.
@@ -65,13 +65,23 @@ If we go there, you can bet we'll soon have 3 systems running in parallel in a f
 
 But, **we won't go there**. Because I know an efficient technique to work around a legacy system.
 
-The technique is **to strangle it**.
+Hopefully, one of the oldest Western philosophy can help you there. Have you heard of the ship of Theseus? ⛵
 
-## How to strangle a legacy codebase
+## How to rewrite a legacy codebase
 
 The strategy is simple:
 
 > Progressively delete the old code base, in favor of a new one.
+
+I call that "The Ship of Theseus pattern", in reference to [this old thought experiment](https://en.wikipedia.org/wiki/Ship_of_Theseus) on the notion of identity.
+
+![](/assets/ship-of-theseus.jpg)
+
+If the ship parts are progressively replaced as they rot, would the ship remain the same after it was completely replaced?
+
+If you progressively replace your codebase, can your users tell?
+
+The goal of course is to avoid the pitfall of a never-ending rewrite. Instead, you'll go with an incremental approach.
 
 Here's the plan:
 
@@ -97,7 +107,7 @@ Eventually, we ended up with the 2 modules in production.
  <img src="./2-rewrite-attempt.svg" />
 </p>
 
-Let's try that again, **strangling the `cart` module instead**.
+Let's try that again, **progressively replacing the `cart` module instead**.
 
 Instead, we can introduce the new `booking` module as a proxy.
 
@@ -121,7 +131,7 @@ This can take time. But we progressively move toward the goal of replacing the o
  <img src="./5-booking.svg" />
 </p>
 
-### Strangle, instead of rewrite
+### Phase out, instead of rewrite
 
 The best part of this is that you solve the problem of delivering new features _during_ the rewrite.
 
@@ -143,7 +153,13 @@ It refers to:
  <img src="/assets/strangler-fig.jpg" alt="A strangler fig tree" />
 </p>
 
-While "strangle" might have a violent connotation, the idea of the metaphor is really the one of slowly taking rid of the old system. This is less risky than a complete cut-over.
+The idea of the metaphor is really the one of slowly taking rid of the old system. This is less risky than a complete cut-over.
+
+I used that term for a while. Then I came across the Ship of Theseus suggestion, and I fall in love with it. ❤️
+
+Words matter. Although the Strangler Fig is a very botanic term, most people would miss the "Fig" and think about the action of "strangling".
+
+Personally, I prefer to use the alternative that's about ship and philosophy 🤷‍♂️
 
 **If you look in the wild**, this is also advocated by Michael Feathers in "_Working Effectively with Legacy Code_".
 
