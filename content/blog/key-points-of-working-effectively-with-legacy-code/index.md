@@ -159,7 +159,7 @@ Having short deadlines is a very common situation. When you are in a hurry, it's
 
 Big lumps of code have a gravitational force. They _attract_ more code.
 
-It's the Broken Window theory: a little disorder calls for more serious crimes. If the class is already 2,000 lines-long, who cares that you add 3 more `if` statements?
+A little disorder calls for more. If the class is already 2,000 lines-long, who cares that you add 3 more `if` statements?
 
 Well, you should. Now you have to maintain a 2,0**10** lines-long class!
 
