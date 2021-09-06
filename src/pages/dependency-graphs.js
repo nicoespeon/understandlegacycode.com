@@ -106,6 +106,12 @@ function Page(props) {
           <ExtLink href="https://github.com/pahen/madge">madge</ExtLink> for
           JavaScript developers
         </li>
+        <li>
+          <ExtLink href="https://github.com/sverweij/dependency-cruiser">
+            dependency-cruiser
+          </ExtLink>{" "}
+          is also a great (and versatile) one for JavaScript developers
+        </li>
       </ul>
     </Guide>
   )
