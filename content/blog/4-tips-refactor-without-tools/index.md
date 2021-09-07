@@ -14,13 +14,13 @@ How do you refactor a complex legacy application when you can't rely on automati
 
 We're talking about untested, undocumented legacy codebase here. The kind that nobody knows exactly how it works—not even your client/employer!
 
-Maybe it's running on some old stack you're not familiar with. Some language like [ColdFusion](https://en.wikipedia.org/wiki/Adobe_ColdFusion) or [lucee](https://www.lucee.org/) just looks exotic to you. People who wrote that code don't work here anymore.
+Maybe it's running on some old stack you're not familiar with. Some language like [ColdFusion](https://en.wikipedia.org/wiki/Adobe_ColdFusion) or [lucee](https://www.lucee.org/) just look exotic to you. People who wrote that code don't work here anymore.
 
 > I wish I could just re-engineer the whole thing!
 
 Yeah, but we are talking about 13 years of business knowledge serving customers in production. A big bang rewrite is NOT an option.
 
-Unfortunately, there is no tool that can help you refactoring the app with such a stack… You'd be lucky to find one that could at least help with _understanding_ the app, [such as NDepend](https://understandlegacycode.com/blog/safely-restructure-codebase-with-dependency-graphs/#using-automated-tools-like-ndepend-to-save-your-day). At least .NET developers have some great tooling available. But not you. Sadness. 😓
+Unfortunately, there is no tool that can help you refactor the app with such a stack… You'd be lucky to find one that could at least help with _understanding_ the app, [such as NDepend](https://understandlegacycode.com/blog/safely-restructure-codebase-with-dependency-graphs/#using-automated-tools-like-ndepend-to-save-your-day). At least .NET developers have some great tooling available. But not you. Sadness. 😓
 
 There you are. Tooling sucks. You can't rewrite from scratch. The thing "runs" in production but pulling a string on one end makes everything break on the other one #fun
 
