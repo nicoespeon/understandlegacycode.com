@@ -83,7 +83,7 @@ If you're dealing with a web application, I suggest you take a look at [Cypress]
 
 That's for the large picture. Another, tremendously useful, technique for covering some code with tests is called [Approval Testing](https://understandlegacycode.com/approval-tests).
 
-The gist of Approval Testing is to capture _what the system does_ instead of writing the tests _you think it does._
+The gist of Approval Testing is to capture _what the system does_ instead of writing the tests for _what you think it does._
 
 You may have done this already, without knowing the name of the technique:
 
