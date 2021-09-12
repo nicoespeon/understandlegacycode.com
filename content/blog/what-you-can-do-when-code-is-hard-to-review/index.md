@@ -9,7 +9,7 @@ tags:
 
 Code reviews are one way to improve the quality of the code by having more than one pair of eyes on the code. When you're dealing with a Legacy codebase, it's a helpful practice to spread knowledge, get more people familiar with the codebase, and reduce risks of breaking things.
 
-But sometimes, you may stumble upon a _very hard_ code review. Maybe the pull-request is big, or the change involves many parts of the code.
+But sometimes, you may stumble upon a _very hard_ code review. Maybe the pull request is big, or the change involves many parts of the code.
 
 Maybe the change isn't really big, but **it's a risky one**!
 
@@ -30,7 +30,7 @@ First, if you feel the change is so difficult that you won't have time to review
 
 "Merge and cross fingers nothing bad happens" is a notoriously bad idea. When doing so, you rely on luck. When you're out of luck, you fail. Some day, you fail badly.
 
-Think about it: if the code is hard to review now, it will harder to maintain in 6 months! You'll lose the context around the decisions that were taken here. Changes without context stay untouched because we're afraid of unintended consequences! Hopefully, [there's a simple solution for that](../earn-maintainers-esteem-with-adrs).
+Think about it: if the code is hard to review now, it will be harder to maintain in 6 months! You'll lose the context around the decisions that were taken here. Changes without context stay untouched because we're afraid of unintended consequences! Hopefully, [there's a simple solution for that](../earn-maintainers-esteem-with-adrs).
 
 Yet, it's hard to come up with a different approach when you're under the pressure to ship.
 
@@ -64,7 +64,7 @@ If there is no test, ask for them.
 
 If there are automated tests along with the change, make sure you understand what they verify. It's easy to write tests for the sake of it and overlook their readability. Good tests will help you understand what the code is supposed to do. They act as living documentation of the software.
 
-What if code needs a lot of changes to be testable and you don't have time? If you don't know how to do better, go on survival mode: do the best review you can do, and fall back on manual tests. But you should make a top priority for the next iterations to address this issue.
+What if the code needs a lot of changes to be testable and you don't have time? If you don't know how to do better, go on survival mode: do the best review you can do, and fall back on manual tests. But you should make a top priority for the next iterations to address this issue.
 
 Among all the technical debt you want to pay off, being able to write automated tests on the codebase is one of the most important ones! It's the one that will save you time and make deadlines easier to hit:
 
@@ -86,9 +86,9 @@ It will also make previous points easier. That's less room for mistakes!
 
 ### 5. Speed up the process with a synchronous code review
 
-Here's the secret trick if you can't afford spending days on this review: take notes and go through the review with the author **synchronously**. Do it IRL or schedule a call, share your screen, and go through it together.
+Here's the secret trick if you can't afford to spend days on this review: take notes and go through the review with the author **synchronously**. Do it IRL or schedule a call, share your screen, and go through it together.
 
-It will help you understand the logic faster. It will help you discuss the trade-offs. It will help you explain what is critical to be changed vs. what is merely a nice to have.
+It will help you understand the logic faster. It will help you discuss the trade-offs. It will help you explain what is critical to be changed vs. what is merely a nice-to-have.
 
 Having a synchronous code review is a great way to save all the waiting time between each back-and-forth of asynchronous comments. The discussion is smoother and the end result is much more productive! You will come up with a concrete plan to get this merged safely.
 

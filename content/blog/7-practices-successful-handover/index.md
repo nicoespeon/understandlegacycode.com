@@ -1,5 +1,5 @@
 ---
-title: 7 practices you should follow for a successful code handover
+title: 7 practices for a successful code handover
 date: 2020-05-26T20:50:12.338Z
 image: /assets/sailing.jpg
 description: >-
@@ -7,13 +7,13 @@ description: >-
 ctaTitle: Keep it under control after the handover!
 ---
 
-Usually you would skim around this blog to learn tips and techniques to deal with some Legacy Code you inherited. In general, the original developers are long gone…
+Usually, you would skim around this blog to learn tips and techniques to deal with some Legacy Code you inherited. In general, the original developers are long gone…
 
 But, sometimes, you can be in a very particular position: **a code handover!**
 
 Maybe you're inheriting a project from a different team and there's a dedicated knowledge transfer budgeted. Or maybe the original developer is still working with you, but he will leave soon.
 
-Well you might even be the one who's handing over a Legacy codebase and you want to give the best chances to your successor!
+Well, you might even be the one who's handing over a Legacy codebase and you want to give the best chances to your successor!
 
 ## Deadlines, deadlines, deadlines
 
@@ -56,7 +56,7 @@ Make sure this is DONE before moving on!
 
 You don't have infinite time for this transition.
 
-A great transition will make a tremendous difference in the new team productivity. That's crucial for the business!
+A great transition will make a tremendous difference in the new team's productivity. That's crucial for the business!
 
 Make sure that you get management on your side. Ask them to **prioritize the knowledge transfer** over "just fixing those last few bugs before they leave".
 

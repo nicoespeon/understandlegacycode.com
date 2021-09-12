@@ -18,15 +18,15 @@ You have that pile of Legacy Code you need to change.
 
 Of course, there are no tests. Deep in your heart, you know that you should add tests before touching this code. People on the Internet told you so. "First, you should add tests" they said.
 
-But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford spending _days_ to write the tests that should be here in the first place.
+But you also have deadlines to meet. Time is flying. Maybe the project is already late. You can't afford to spend _days_ writing the tests that should be here in the first place.
 
-BUT you know that you should. If you don't, you're making things worse! If you don't write the tests, you may even break something and you won't realize!!! 🙀
+BUT you know that you should. If you don't, you're making things worse! If you don't write the tests, you may even break something and you won't realize it!!! 🙀
 
 **You want to add tests, but you don't have time to!**
 
 If that's you, I do have a solution for you!
 
-It's not a pretty one, but *it works*™. It did save me many times when I was in a hurry. It can help you too.
+It's not a pretty one but *it works*™. It did save me many times when I was in a hurry. It can help you too.
 
 ## The 3-steps recipe to add tests when you don't have time to 🚀
 
@@ -56,7 +56,7 @@ You can face 3 scenarios:
 2. **What you're testing performs side-effects** (e.g. it calls an HTTP endpoint). You should intercept that and capture the parameters that are used. You'll probably need a spy/stub/mock to do so.
 3. **What you're testing does both**. That's fine, you can test each side-effect and the return value separately.
 
-Go figure out how to get that output. What you need is a string that proves the code has executed.
+Go figure out how to get that output. What you need is a string that proves the code has been executed.
 
 When you got that string, write it in a file. **That's your snapshot**.
 
@@ -70,7 +70,7 @@ it("should update quality", () => {
 })
 ```
 
-You get your snapshot? Sweet! You're almost done 👍
+Do you get your snapshot? Sweet! You're almost done 👍
 
 ### 2. ✅ Use test coverage to find all input combinations
 
@@ -143,7 +143,7 @@ And by "introduce mutations" I really mean:
 
 For every line you mutate and see a failing snapshot, your confidence in the tests grows.
 
-**If no test fails, you need to add other input combinations**. Revert the silly mistake, find the correct combination that will exercise this line and try again. You want to see a failing test.
+**If no test fails, you need to add other input combinations**. Revert the silly mistake, find the correct combination that will exercise this line, and try again. You want to see a failing test.
 
 When you reach the end of the code, you're done!
 
@@ -163,15 +163,15 @@ With this technique, I already put monstrous lumps of code under tests within a 
 
 ## Why don't we _always_ use that kind of test?
 
-As sexy as this approach is, it has downsides:
+As tempting as this approach is, it has downsides:
 
 - you capture existing behavior, bugs included
 - tests will fail whenever you change the behavior, even if it's intended
 - you can't read the tests and understand what the code does
 
-These kind of tests can be really noisy. If you notice people just update them when they fail, they don't provide any value. **Delete them**.
+These kinds of tests can be really noisy. If you notice people just update them when they fail, they don't provide any value. **Delete them**.
 
-It's fine to delete useless tests afterwards. They were useful when you had to change the code. They're not here to replace proper tests in your codebase!
+It's fine to delete useless tests afterward. They were useful when you had to change the code. They're not here to replace proper tests in your codebase!
 
 That's my secret weapon to add tests when we're in a hurry. That's a pragmatic compromise. But it's a temporary solution until we have time to write better, helpful tests on the code.
 
