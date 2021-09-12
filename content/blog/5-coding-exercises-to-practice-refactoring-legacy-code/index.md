@@ -33,7 +33,7 @@ There are even [kata-logs](https://kata-log.rocks/) of exercises you can try out
 
 But if you tried a couple of katas, you might have realized they have one shortcoming: **none of them seem to allow you to practice refactoring bad code!**
 
-That's true, the vast majority of katas makes you code from scratch…
+That's true, the vast majority of katas make you code from scratch…
 
 However, there are a few which are specifically tailored for practicing refactoring Legacy Code. Katas where [Michael Feathers' techniques](../key-points-of-working-effectively-with-legacy-code) would shine.
 
@@ -41,7 +41,7 @@ Here's my shortlist of katas you should try out.
 
 ## 5 katas to help you practice working with existing code
 
-Real-life codebases generally have so many issues at the same time, it's overwhelming. Where should you start when you're dealing with a 500k lines of spaghetti code?! You just want to _start_ cleaning the code, but you're already playing in hardcore mode.
+Real-life codebases generally have so many issues at the same time, it's overwhelming. Where should you start when you're dealing with 500k lines of spaghetti code?! You just want to _start_ cleaning the code, but you're already playing in hardcore mode.
 
 What you need, is **dirty code at a smaller scale**.
 
