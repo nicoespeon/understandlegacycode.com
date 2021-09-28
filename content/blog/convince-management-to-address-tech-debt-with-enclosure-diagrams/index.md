@@ -8,6 +8,7 @@ tags:
   - code feels impossible to maintain
   - not sure where to start refactoring
   - behavioral analysis
+  - documentation
 ctaTitle: Learn more techniques like that
 ---
 

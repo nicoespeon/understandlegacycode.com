@@ -1,7 +1,7 @@
 ---
 title: "Design Patterns, Empathy, and Reading Complex Code"
 date: 2021-08-24T20:15:00.000Z
-image: /assets/legacy-of-socrates-5th-edition.png
+image: /assets/legacy-of-socrates-6th-edition.png
 description: >-
   4 great talks on Legacy Code that I had the pleasure to host. A focus on empathy and getting into complex codebases.
 tags:
