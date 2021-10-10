@@ -211,7 +211,7 @@ I don't know your context. I can't tell you what you should do to tame that Lega
 
 I can only give you advice based on my experience. I can share with you techniques that solve specific problems, under specific circumstances. You can probably adapt them to your situation.
 
-> When helping others adapt to their context.
+> When helping others, adapt to their context.
 
 It's not just a legacy codebase you are working with: it's a legacy culture. There are people involved and you should factor them in your approach.
 
