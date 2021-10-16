@@ -112,6 +112,12 @@ function Page(props) {
           </ExtLink>{" "}
           is also a great (and versatile) one for JavaScript developers
         </li>
+        <li>
+          <ExtLink href="https://www.sapling-extension.com/">
+            Sapling
+          </ExtLink>{" "}
+          is useful if you work with React in VS Code
+        </li>
       </ul>
     </Guide>
   )
