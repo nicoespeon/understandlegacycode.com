@@ -187,7 +187,12 @@ Here are some of the tools I know:
 - Facebook's [jscodeshift](https://github.com/facebook/jscodeshift) for transforming JS codebases
 - Specific to React, you have [react-codemod](https://github.com/reactjs/react-codemod)
 - If you're dealing with PHP, have a look at [Rector](https://getrector.org/)
+- [Scalafix](https://scalacenter.github.io/scalafix/) can migrate your Scala code
+- In Haskel, you can use [Retrie](https://github.com/facebookincubator/retrie/)
+- For C#, there is [Roslynator](https://github.com/JosefPihrt/Roslynator)
 - _if you know more tools, let me know 🙏_
+
+_Thank you [Matteo](https://twitter.com/matteobaglini) for sharing the tools you knew!_
 
 When using such a tool, I recommend you:
 
