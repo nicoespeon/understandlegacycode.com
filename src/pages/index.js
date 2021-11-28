@@ -161,7 +161,7 @@ class IndexPage extends React.Component {
         </h2>
         <Ul>
           <Li key="rails-with-jason">
-            <LargeExternalLink to="https://www.codewithjason.com/rails-with-jason-podcast/nicolas-carlo/">
+            <LargeExternalLink to="https://www.codewithjason.com/podcast/9478269-046-tips-for-working-with-legacy-code-with-nicolas-carlo/">
               Tips for Working with Legacy Code
             </LargeExternalLink>
             <p>
