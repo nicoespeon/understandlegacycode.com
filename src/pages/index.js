@@ -43,7 +43,6 @@ class IndexPage extends React.Component {
           <strong>useful tips and concrete advice</strong> that will help you
           tame the legacy codebase you've inherited.
         </p>
-        <CTA />
         <h2>
           <span role="img" aria-label="Open book">
             📖
@@ -208,6 +207,7 @@ class IndexPage extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
+        <CTA />
         <Bio />
       </Layout>
     )
