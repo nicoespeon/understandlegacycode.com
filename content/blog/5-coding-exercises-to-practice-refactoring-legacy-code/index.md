@@ -5,6 +5,9 @@ description: "Feeling overwhelmed by your legacy codebase? These katas will help
 image: /assets/trip-service-kata.jpg
 tags:
   - approval tests
+  - coding exercises
+  - refactoring
+  - changing untested code
 ---
 
 It's great to learn how to write clean code… but in my current job, I'm often battling against Legacy Code!
