@@ -17,7 +17,7 @@ function Page(props) {
       </h1>
       <p>You won't receive emails about it anymore! No more noise.</p>
       <p>
-        But <strong>you'll still receive my weekly tips & tricks</strong> to
+        But <strong>you'll still receive my monthly tips & tricks</strong> to
         deal with Legacy Code! Of course, you can unsubscribe anytime too.{" "}
         <span role="img" aria-label="Thumbs up">
           👍

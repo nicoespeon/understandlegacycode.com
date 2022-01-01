@@ -92,4 +92,4 @@ Everything is FREE. Attending is the opportunity to directly ask questions to th
 
 If that's something you want to hear about, **subscribe to my newsletter** below 👇
 
-I publish my weekly tips on Legacy Code here. I also foretell my subscribers about the conference agenda, so they don't miss out. Join them!
+I publish my monthly tips on Legacy Code here. I also foretell my subscribers about the conference agenda, so they don't miss out. Join them!

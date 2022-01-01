@@ -10,7 +10,7 @@ ctaId: f6c53ee096
 
 ![Comic that recaps the content of this post](./overcommitting-preview.png)
 
-_Get this comic in SVG + high-res PNG by subscribing to my weekly newsletter at the bottom of this post 👇_
+_Get this comic in SVG + high-res PNG by subscribing to my monthly newsletter at the bottom of this post 👇_
 
 <hr />
 
