@@ -208,3 +208,13 @@ I can only encourage you to get some time to come back and clean the code. Refac
 The good news is: you'll have tests to get your back when you do so!
 
 So go ahead and get that Legacy Code under tests 🤠
+
+## What it looks like in a codebase
+
+Khalil Stemmler recorded a short video to present how he tests JavaScript code that is coupled to APIs & Databases.
+
+I think the video is _really_ good. That's how I would do it myself.
+
+If you have 20min, give it a watch:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ajfZqzeHp1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
