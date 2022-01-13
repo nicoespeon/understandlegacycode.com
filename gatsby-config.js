@@ -126,12 +126,16 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-39957541-5`,
-      },
-    },
+    // I don't like much GA in general. It has GDPR issues (need consent).
+    // I would rather use an alternative… but I don't really need analytics
+    // What eventually matters is the number of subscribers and/or sales.
+    // => just disable it
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-39957541-5`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
