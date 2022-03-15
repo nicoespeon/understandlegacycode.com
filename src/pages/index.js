@@ -207,7 +207,9 @@ class IndexPage extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <CTA />
+        <div id="subscribe">
+          <CTA />
+        </div>
         <Bio />
       </Layout>
     )
