@@ -176,3 +176,9 @@ You consider the legacy system as a black box. You create a Bubble Context in wh
 Progressively, new features get implemented in the growing Bubble Context. Meanwhile, the legacy system will be less involved in the business.
 
 Until one day, you will be able to switch it off _for good_. 🙌
+
+## A concrete example
+
+If you are looking for an example from the trenches, I had the pleasure to host this talk from [Adrianna Chang](https://twitter.com/adriannakchang) who applied this at Shopify 🪖
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zZ95_5y_iPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
