@@ -1,11 +1,10 @@
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Bio from "../components/bio"
 import CTA from "../components/cta"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { FirstAidKitCallout } from "./first-aid-kit"
 
@@ -15,6 +14,7 @@ class IndexPage extends React.Component {
     const siteDescription = data.site.siteMetadata.description
     const posts = data.articles.edges
     const books = data.books.edges
+    const talks = data.talks.edges
 
     return (
       <Layout location={this.props.location} description={siteDescription}>
@@ -181,6 +181,39 @@ class IndexPage extends React.Component {
             </p>
           </Li>
         </Ul>
+        <h2>
+          <span role="img" aria-label="Mic">
+            🎤
+          </span>{" "}
+          If you prefer talks
+        </h2>
+        <Ul>
+          <Li key="mendercon-2021">
+            <LargeExternalLink to="https://youtu.be/6KUUbV0NcA8">
+              7 techniques to tame a Legacy Codebase
+            </LargeExternalLink>
+            <p>
+              You spend most of our time changing existing code that is not
+              documented, nor tested! It's painful because you're always in a
+              hurry to ship new features and bug fixes… What if you had a secret
+              weapon to make things better as you go? Here are 7 concrete
+              techniques that will help you regain control of your Legacy.
+            </p>
+          </Li>
+          {talks.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Li key={node.fields.slug}>
+                <LargeLink to={`blog${node.fields.slug}`}>{title}</LargeLink>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </Li>
+            )
+          })}
+        </Ul>
         <h2 id="books">
           <span role="img" aria-label="Books">
             📚
@@ -268,6 +301,24 @@ export const pageQuery = graphql`
     books: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: ["book review"] } } }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+    talks: allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: ["conference"] } } }
     ) {
       edges {
         node {
