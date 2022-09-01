@@ -22,7 +22,7 @@ function Page(props) {
           "databases",
         ]}
       />
-      <Title>Approval Testing</Title>
+      <Title>Types at the edges of your system</Title>
       <blockquote>
         <p>Find and fix your TypeScript blind spots</p>
       </blockquote>
