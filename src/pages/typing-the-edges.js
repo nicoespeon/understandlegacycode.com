@@ -41,6 +41,13 @@ function Page(props) {
         simple way for you to fix them.
       </p>
 
+      <p style={{ textAlign: "center" }}>
+        <img
+          src="/assets/typing-the-edges.png"
+          alt="Mazda head units got bricked by a local NPR station in Seattle in February 2022. Better validation at the edges would have save them a lot of trouble (and money)."
+        />
+      </p>
+
       <h2>
         <span role="img" aria-label="toolbox">
           🧰
