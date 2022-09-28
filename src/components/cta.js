@@ -35,7 +35,7 @@ class ComingSoonCTA extends React.Component {
 
 class FirstAidKitEmailCTA extends React.Component {
   componentDidMount() {
-    const uid = "084305275e"
+    const uid = this.props.uid ?? "084305275e"
 
     const script = document.createElement("script")
     script.async = true

@@ -1,5 +1,5 @@
 import { getCssForSettings } from "book-cover-3d"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
@@ -11,11 +11,11 @@ function Page() {
   return (
     <Layout>
       <SEO
-        title="Legacy Code: First Aid Kit"
+        title="Legacy Code: Premiers Soins"
         description=""
-        date="2020-06-19"
-        slug="/first-aid-kit"
-        image="/assets/first-aid-kit-cover.png"
+        date="2022-09-27"
+        slug="/premiers-soins"
+        image="/assets/premiers-soins-cover.png"
         keywords={["legacy code", "refactoring", "deadline"]}
       />
       <FirstAidKitParity />
@@ -24,31 +24,34 @@ function Page() {
         <Header>
           <HeaderText>
             <h1>
-              Rescue your Legacy codebase <em>quickly and safely.</em> 
+              Secourez votre Legacy <em>rapidement et sereinement.</em> 
               <span role="img" aria-label="Rescue Helmet">
                 ⛑
               </span>
             </h1>
             <p>
-              Learn how to refactor an existing codebase as you go using
-              specific techniques to incrementally make it easier to maintain.
+              Apprenez les techniques pour refactor du code non testé et mal
+              documenté, tout en livrant continuellement de la valeur à vos
+              utilisateurs.
             </p>
             <p>
-              Sign up for my newsletter to get{" "}
-              <strong>a free chapter preview</strong> on performing incremental
-              refactorings so you can stop and ship at any time.
+              Inscrivez-vous à ma newsletter et recevez{" "}
+              <strong>un chapitre gratuit</strong>, extrait de mon guide, sur
+              les Refactorings Incrémentaux qui vous permettent de vous arrêter
+              et de livrer à tout instant.
             </p>
-            <FirstAidKitEmailCTA />
+            <FirstAidKitEmailCTA uid="45bef52aca" />
             <p>
-              Or <a href="#buy">buy it now</a> if you're already convinced!
+              Ou bien <a href="#buy">achetez le guide dès maintenant</a> si vous
+              êtes déjà convaincus !
             </p>
           </HeaderText>
           <HeaderBook>
             <div className="book-container-lcfak">
               <div className="book">
                 <img
-                  src="/assets/first-aid-kit-cover.png"
-                  alt="Legacy Code: First Aid Kit"
+                  src="/assets/premiers-soins-cover.png"
+                  alt="Legacy Code: Premiers Soins"
                 />
               </div>
             </div>
@@ -57,221 +60,263 @@ function Page() {
       </SectionAlt>
       <Content>
         <h2 className="quote">
-          I wish we had more time to refactor this code!
+          J’aimerais avoir assez de temps pour refactor ce code !
         </h2>
         <p>
-          Every week it's the same story: you <em>have</em> to change that
-          codebase. Maybe it's to fix a bug, to tweak some behavior, or to
-          implement a new shiny feature.
+          Chaque semaine c’est la même histoire : vous <em>devez</em> toucher à
+          ce code. Pour fixer un bug, ou pour changer un comportement, voire
+          peut-être pour ajouter une toute nouvelle fonctionnalité.
         </p>
-        <p>You didn't write that code!</p>
+        <p>Mais ce n’est pas vous qui avez écrit ce code !</p>
         <p>
-          It's an undocumented tangled mess. You would love to refactor this
-          code before you change it. <strong>But it has no test!</strong>{" "}
-          Without tests, you're afraid to break something while you refactor—you
-          got burned already, not twice!
-        </p>
-        <p>
-          OK, so you <em>could</em> start by writing the tests. But you're
-          worried that won't have enough time to meet "the deadline" that was
-          imposed on you…
+          C’est un bordel sans nom et mal documenté. Vous aimeriez bien refactor
+          le code avant de le changer.{" "}
+          <strong>Mais il n’y a aucun test !</strong> Et donc vous n’avez pas
+          trop envie de vous risquer à casser quelque chose en le refactorant…
+          Vous vous êtes déjà fait avoir une fois, pas deux !
         </p>
         <p>
-          And there you are: paralyzed because you don't know where to start.
-          Should you begin a huge cleanup and risk the deadline? How can you add
-          tests on a code that was definitely not written to be testable?!
+          Alors oui, vous <em>pourriez</em> commencer par écrire les tests. Mais
+          vous n’avez pas le temps ! Vous avez déjà trop de choses à faire dans
+          le peu de temps qui vous a été imposé…
+        </p>
+        <p>
+          Et vous y voilà donc : vous êtes bloqué, parce que vous ne savez pas
+          par quel bout le prendre. Devriez-vous commencer par nettoyer le code,
+          quitte à risquer la deadline ? Et comment allez-vous faire pour écrire
+          des tests sur du code qui n’a clairement pas été écrit pour être
+          testé ?
         </p>
         <h2 class="quote">
-          Wherever I start refactoring, it pulls the rest of the app!
+          Quand je commence à refactor un bout, y’a tout qui vient !
         </h2>
-        <p>You try to unwind the mess and the string just keeps on coming.</p>
         <p>
-          It is getting better, but you can't stop because{" "}
-          <em>it is not working yet</em>… but it's 9pm now, and your loved ones
-          are mad at you! 
+          Vous avez déjà essayé de nettoyer le code, mais tout est complètement
+          emmêlé !
+        </p>
+        <p>
+          Vous avez fait des progrès mais <em>plus rien ne fonctionne</em>. Vous
+          ne pouvez donc pas vous arrêter maintenant… sauf qu’il est déjà 21h et
+          votre famille vous attend !
           <span role="img" aria-label="Angry face">
             😡
           </span>
         </p>
-        <p>You know what happens next…</p>
+        <p>Vous connaissez la suite…</p>
         <p>
-          You stop trying to make sense out of this mayhem. You just Make It
-          Work™. It's not pretty. It's not that bad. There are worse hacks in
-          this spaghetti! You get the job done while making the code worse.
+          Vous n’essayez même plus de comprendre ce chaos. Vous vous contentez
+          de faire en sorte que Ça Marche©. C’est sale. Ce n’est pas si mal non
+          plus. Vous avez croisé bien pire dans ce tas de code. Vous faites le
+          boulot, quitte à aggraver la situation. Il faut livrer.
         </p>
         <p>
-          You wish you could just start everything over, but you can't.{" "}
-          <strong>No time, no budget.</strong>
+          Vous aimeriez bien pouvoir tout recommencer à zéro. Mais ce serait
+          difficile à négocier. <strong>Pas de temps, ni d’argent</strong> pour
+          ce genre de projet.
         </p>
         <p>
-          You are not proud of this code—how could you? But you're getting used
-          to it. Clients are pressing you for "more features" and your
-          colleagues don't seem to care.
+          Vous n’êtes pas très fier de cette base de code que vous maintenez.
+          Mais bon, vous vous y habituez. Les clients demandent toujours plus de
+          fonctionnalités, et vos collègues n’ont pas l’air de s’intéresser à la
+          qualité du code. Vous avez l’impression de faire votre travail. Mais
+          vous savez que vous pourriez faire mieux.
         </p>
         <p>
-          Your boss doesn't understand <em>why</em> it takes you longer and
-          longer to finish tasks. You raised the point already, but deadlines
-          are still too short and the focus is always on cost and time. No-one
-          cares that your eyes bleed while reading the code!
+          Cela dit, votre chef ne comprend pas <em>pourquoi</em> ça vous prend
+          si longtemps de faire les changements demandés. Vous avez déjà essayé
+          de lui expliquer, mais les deadlines sont toujours trop courtes et la
+          priorité est toujours donnée à la livraison de nouvelles
+          fonctionnalités. Tout le monde se fiche bien que vos yeux saignent en
+          lisant ce code !
         </p>
         <p>
-          Exhausting! 
+          C’est fatigant ! 
           <span role="img" aria-label="Tired face">
             😫
           </span>
         </p>
-        <h2>If you could at least stop the bleed…</h2>
+        <h2>Si vous pouviez au moins arrêter l’hémorragie…</h2>
         <p>
-          You know what would be great? Working with clean, well-tested code.
-          That would be a breeze to work with…
+          Vous savez ce qui serait chouette ? Travailler avec du code propre et
+          bien testé. Pas de mauvaise surprise, facile à modifier. Le rêve… That
+          would be a breeze to work with…
         </p>
         <p>
-          But this codebase is a minefield. How could you stop making it worse
-          when it would take YEARS to address the Technical Debt!?
+          Mais votre base de code à vous, c’est un champ de mine. Comment
+          pourriez-vous espérer déminer des ANNÉES de Dette Technique ?!
         </p>
         <p>
-          What if there was a way to refactor the code AND consistently meeting
-          the deadlines?
+          Et si je vous disais qu’il existe des manières de refactor le code ET
+          de respecter les deadlines ?
         </p>
         <p>
-          Imagine you could refactor as you go, steadily turning the codebase
-          into a testable, easy-to-read, well-designed system! 
+          Imaginez que vous puissiez refactor le code tout en livrant des
+          fonctionnalités. Imaginez que vous amélioriez l’état du code au fur et
+          à mesure que vous revenez dessus, pour en faire un système facile à
+          tester et à maintenir !
           <span role="img" aria-label="Seed">
             🌱
           </span>
         </p>
         <p>
-          <strong>If you know the moves</strong>, you can give your code first
-          aid that will stop its hemorrhage. How proud and relieved would you
-          feel as you put it back into a healthier shape?
+          <strong>Si vous connaissez les bons gestes</strong>, vous pouvez
+          apporter les premiers soins à votre code et arrêter le massacre. À
+          quel point seriez-vous fier de vous et soulagé de pouvoir redonner des
+          couleurs à votre code ?
         </p>
         <p>
-          Sure, this system you're maintaining is broken everywhere. It seems to
-          work, but it only really survives with heavy machinery and clever
-          hacks. It looks like it would better to let it go and build a fresh
-          one instead…
-        </p>
-        <p>But what if you knew the techniques to rescue it?</p>
-        <h2>Imagine cleaning up Legacy Code as you go.</h2>
-        <p>
-          Regardless of the state of your codebase, you will always know where
-          to start. Consistently applying the proper techniques, you can stop
-          the carnage and <strong>avoid a costly rewrite</strong>.
+          Bien sûr, le système que vous maintenez en ce moment est rempli de
+          problèmes. Il a l’air de fonctionner, mais il ne survit vraiment qu’à
+          travers des hacks et des patchs plus ou moins tordus. Parfois, vous
+          vous demandez si ce ne serait pas plus simple de tout recommencer à
+          zéro…
         </p>
         <p>
-          Most of all, you will keep shipping bug fixes and features as you go.
+          Mais qu’en serait-il si vous découvriez des techniques qui vous
+          permettraient de le sauver ?
+        </p>
+        <h2>
+          Imaginez pouvoir nettoyer votre Code Legacy à chaque fois que vous y
+          touchez.
+        </h2>
+        <p>
+          Peu importe l’état de votre code, vous saurez toujours par où
+          commencer. En appliquant constamment les bonnes techniques, vous
+          pourrez arrêter le carnage et{" "}
+          <strong>éviter une refonte très coûteuse</strong>.
+        </p>
+        <p>
+          Mais surtout, vous continuerez de corriger des bugs et d’ajouter des
+          fonctionnalités sans arrêt.
         </p>
         <p>
           <strong>
-            You don't need to ask permission to refactor when you can do it on
-            the fly!
+            Vous n’avez pas à demander la permission de refactor quand vous êtes
+            capable de le faire à la volée !
           </strong>
         </p>
         <p>
-          Refactoring would become second nature to you. Your reflexes will make
-          you clean up Legacy Code in no time! You will consistently meet
-          clients' expectations and inspire your peers.
+          Le Refactoring deviendra une deuxième nature pour vous. Vos réflexes
+          vous permettront de nettoyer n’importe quel Legacy plus rapidement que
+          n’importe lequel de vos collègues ! Vous répondrez constamment aux
+          attentes de vos clients et inspirerez vos pairs.
         </p>
         <p>
-          You can start making this codebase a better place the very next time
-          you touch it. 
+          En fait, vous pouvez commencer à améliorer cette base de code la
+          prochaine fois que vous y touchez. 
           <span role="img" aria-label="Sparkles">
             ✨
           </span>
         </p>
         <p>
-          When you have short deadlines, trying to refactor the code is a risky
-          move… unless you know <u>exactly</u> what you're doing.
+          Quand les deadlines sont serrées, il est risqué d’essayer de refactor
+          le code… à moins de savoir <u>exactement</u> ce que vous faites.
         </p>
         <h2>
-          Refactor code in <em>no time</em> with this First Aid Kit.
+          Grâce à ce guide de Premiers Soins, vous allez apprendre à refactor
+          sans risque et <em>rapidement</em>.
         </h2>
         <p>
-          I've built a toolbox of techniques that will help you get your Legacy
-          Code under control. These are the tricks that work the best for me
-          when working with a real-life codebase, with missing tests and short
-          deadlines—sounds familiar, right?
+          J’ai collecté pour vous un ensemble de techniques qui vous aideront à
+          reprendre le contrôle de votre code Legacy. Ce sont les trucs et
+          astuces qui fonctionnent le mieux pour moi. Je les utilise quand je
+          travaille sur des projets en production qui manquent (évidemment) de
+          tests et de docs (ça vous semble familier ?).
         </p>
-        <p>These 14 moves will help you:</p>
+        <p>Ces 14 mouvements vous aideront à :</p>
         <ul style={{ listStyleType: "none", marginTop: 0 }}>
-          <CheckedLi>optimize your work to have the maximum impact</CheckedLi>
           <CheckedLi>
-            identify <strong>what makes code difficult to test</strong>
+            optimiser votre travail pour avoir le maximum d’impact
           </CheckedLi>
           <CheckedLi>
-            <strong>quickly deploy a safety net</strong> around the code you
-            need to touch
+            identifier <strong>ce qui rend le code difficile à tester</strong>
           </CheckedLi>
           <CheckedLi>
-            raise up code quality <strong>incrementally</strong>
+            <strong>rapidement installer un filet de sécurité</strong> sur le
+            code que vous devez toucher
           </CheckedLi>
-          <CheckedLi>ship anytime!</CheckedLi>
+          <CheckedLi>
+            améliorer la qualité du code <strong>progressivement</strong>
+          </CheckedLi>
+          <CheckedLi>livrer à chaque instant !</CheckedLi>
         </ul>
       </Content>
       <SectionAlt style={{ paddingTop: 0, paddingBottom: 0 }}>
         <Content>
           <h2>
-            What's inside the{" "}
-            <em class="highlight">Legacy Code: First Aid Kit</em>?
+            Ce qu’il y a dans le{" "}
+            <em class="highlight">Legacy Code: Premiers Soins</em>?
           </h2>
           <p>
-            It's an e-book of approximately 200 pages. It comes with a light and
-            a dark theme.
+            Il s’agit d’un e-book qui comporte environ 200 pages. Il y a une
+            version avec un thème sombre et une avec un thème clair.
           </p>
           <p>
-            It's a collection of <strong>14 techniques</strong> to work with
-            Legacy Code:
+            C’est une collection de <strong>14 techniques</strong> pour
+            travailler sur du Code Legacy :
           </p>
           <NumberedList>
-            <li>Identify Hotspots</li>
-            <li>Draw Dependency Graphs</li>
-            <li>The Mikado Method & The Parking</li>
+            <li>Identifier les Hotspots</li>
+            <li>Dessiner les Graphes de Dépendances</li>
+            <li>La Méthode Mikado & le Parking</li>
             <li>Micro-committing</li>
-            <li>Exploratory Refactoring</li>
-            <li>3 Automated Refactorings</li>
-            <li>Incremental Refactorings</li>
-            <li>Proximity Refactoring</li>
-            <li>Decouple Core from Infrastructure</li>
+            <li>Refactoring Exploratoire</li>
+            <li>3 Refactorings Automatisés</li>
+            <li>Refactorings Incrémentaux</li>
+            <li>Refactoring de Proximité</li>
+            <li>Découpler le Core de l’Infrastructure</li>
             <li>Approval Testing</li>
             <li>Subclass & Override</li>
             <li>Move Function to Delegate</li>
             <li>Wrap & Sprout</li>
-            <li>Progressive Naming</li>
+            <li>Nommage Progressif</li>
           </NumberedList>
           <p>
-            Each technique comes with concrete examples for when and how to use
-            it. On top of that, I detail <em>why it works</em>: the philosophy
-            behind each approach, so you can adapt to any situation.
+            Chaque technique est présentée avec des exemples concrets, ainsi que
+            des conseils sur quand et comment l’appliquer. De plus, je vous
+            explique <em>pourquoi ça fonctionne</em> : la philosophie derrière
+            chaque approche, afin que vous puissiez vous adapter à toute
+            situation.
           </p>
           <p>
-            Finally, the kit comes with a few printable sheets you can keep next
-            to you.
+            Enfin, le kit contient quelques feuilles à imprimer et garder près
+            de vous. Elles vous aideront à vous rappeler les techniques et à les
+            appliquer rapidement.
           </p>
         </Content>
       </SectionAlt>
       <Content>
-        <h2>This kit is designed for the battlefield.</h2>
-        <p>Go through the book to get a sense of what's inside.</p>
+        <h2>Ce kit a été élaboré pour le terrain.</h2>
         <p>
-          Then, keep it within easy reach. The next time you touch your legacy
-          codebase, pick a technique and try it.{" "}
-          <strong>Soon enough, you'll make that code a better place!</strong>
+          Commencez par parcourir le guide rapidement, afin d’avoir une idée
+          globale de ce qu’il contient.
         </p>
         <p>
-          Working with your codebase should become an exciting challenge again:
-          how much can you improve now? What will you leave for later? How can
-          you make this code a little bit better AND deliver value now? Can you
-          feel the code becoming easier to work with?
+          Puis, gardez-le à portée de main. La prochaine fois que vous touchez à
+          du code Legacy, utilisez l’une des techniques qui se prête le mieux à
+          la situation.{" "}
+          <strong>
+            Très rapidement vous verrez les résultats sur votre base de code !
+          </strong>
         </p>
         <p>
-          Finally, you'll start turning a spaghetti codebase into a testable,
-          easy-to-read, well-designed system — while shipping features and fixes{" "}
+          Travailler sur votre code devrait redevenir un challenge excitant :
+          que pouvez-vous améliorer maintenant ? Qu’allez-vous reporter ?
+          Comment pouvez-vous rendre ce code un petit peu meilleur ET livrer de
+          la valeur rapidement ? Sentez-vous que le code devient de plus en plus
+          facile à maintenir ?
+        </p>
+        <p>
+          Finalement, vous allez pouvoir transformer ce gros tas de spaghetti en
+          système bien construit, facile à lire et à tester, tout en livrant
+          fonctionnalités et correctifs.{" "}
           <span role="img" aria-label="Cheers">
             😉🍷
           </span>
         </p>
         <p>
-          … and these precious skills will make you VERY valuable. 
+          … et ce sont de précieuses compétences qui vous rendront TRÈS
+          demandé. 
           <span role="img" aria-label="Gem">
             💎
           </span>
@@ -291,9 +336,10 @@ function Page() {
             <QuoteMedia src="/assets/avatar-tof.jpg" alt="Christophe Thibaut" />
             <Quote>
               <p>
-                It's a survival kit. It doesn't exist elsewhere. People don't
-                read books, but a survival kit is fine. I hang out with teams
-                that could use this kit right away and benefit from it.
+                C’est un kit de survie. Ça n’existe nulle part ailleurs. Les
+                gens ne lisent pas de livres, mais un kit de survie oui. J’ai
+                travaillé avec des équipes qui pourraient utiliser ce kit dès
+                maintenant pour se sortir du pétrin.
               </p>
               <footer>
                 <a href="https://twitter.com/ToF_" rel="noopener noreferrer">
@@ -306,13 +352,13 @@ function Page() {
       </SectionAlt>
       <SectionColored>
         <Content>
-          <h2 id="buy">Get the book</h2>
+          <h2 id="buy">Procurez-vous votre guide</h2>
           <PricingContainer>
             <Pricing>
               <PriceCard>
                 <PriceCardTop>
                   <div>
-                    <PriceCardTitle>First Aid Kit</PriceCardTitle>
+                    <PriceCardTitle>Premiers Soins</PriceCardTitle>
                   </div>
                   <Price>
                     $39
@@ -324,42 +370,43 @@ function Page() {
                     <li>
                       <PriceListIcon />
                       <PriceListItem>
-                        <strong>14 techniques</strong> to quickly and safely
-                        rescue a codebase
+                        <strong>14 techniques</strong> pour secourir votre base
+                        de code rapidement et sereinement
+                      </PriceListItem>
+                    </li>
+                    <li>
+                      <PriceListIcon />
+                      <PriceListItem>Formats PDF, ePub et Kindle</PriceListItem>
+                    </li>
+                    <li>
+                      <PriceListIcon />
+                      <PriceListItem>~200 pages de contenu</PriceListItem>
+                    </li>
+                    <li>
+                      <PriceListIcon />
+                      <PriceListItem>Thèmes Clair & Sombre</PriceListItem>
+                    </li>
+                    <li>
+                      <PriceListIcon />
+                      <PriceListItem>3 cheatsheets à imprimer</PriceListItem>
+                    </li>
+                    <li>
+                      <PriceListIcon />
+                      <PriceListItem>
+                        1 feuille d’exercices à imprimer
                       </PriceListItem>
                     </li>
                     <li>
                       <PriceListIcon />
                       <PriceListItem>
-                        PDF, ePub, and Kindle formats
-                      </PriceListItem>
-                    </li>
-                    <li>
-                      <PriceListIcon />
-                      <PriceListItem>~200 pages of content</PriceListItem>
-                    </li>
-                    <li>
-                      <PriceListIcon />
-                      <PriceListItem>Light & Dark themes</PriceListItem>
-                    </li>
-                    <li>
-                      <PriceListIcon />
-                      <PriceListItem>3 printable cheatsheets</PriceListItem>
-                    </li>
-                    <li>
-                      <PriceListIcon />
-                      <PriceListItem>1 printable exercise sheet</PriceListItem>
-                    </li>
-                    <li>
-                      <PriceListIcon />
-                      <PriceListItem>
-                        <span role="img">🇫🇷</span> La version Française du guide
+                        <span role="img">🇬🇧</span> The English version of the
+                        book
                       </PriceListItem>
                     </li>
                   </ul>
                   <div>
-                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-first-aid-kit">
-                      Get your First Aid Kit
+                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-premiers-soins">
+                      Prenez votre kit de survie
                     </PriceLink>
                   </div>
                 </PriceCardContent>
@@ -401,7 +448,7 @@ function Page() {
         </Content>
       </SectionAlt>
       <Content>
-        <h2>About the author</h2>
+        <h2>À propos de l’auteur</h2>
         <Author>
           <img src="/assets/profile.jpg" alt="Nicolas Carlo" />
           <div
@@ -410,7 +457,7 @@ function Page() {
             }}
           >
             <p>
-              Hey, I'm{" "}
+              Salut, je suis{" "}
               <a
                 href="https://twitter.com/nicoespeon"
                 target="_blank"
@@ -424,23 +471,26 @@ function Page() {
               </span>
             </p>
             <p>
-              I have been a web developer, freelancer, consultant, and Tech
-              Lead. Every single time, I had to work with existing code I was
-              afraid to change. I realized that Legacy Code runs the world… but
-              developers aren't prepared to maintain it!
+              J’ai été développeur web, freelance, consultant et Tech Lead. À
+              chaque fois, j’ai eu à travailler avec du code existant que je
+              craignais de toucher. Je me suis rendu compte que le Code Legacy
+              était partout… mais que nous, développeurs, ne sommes pas préparés
+              à le maintenir !
             </p>
             <p>
-              I collect tips & tricks to deal with legacy systems on{" "}
+              Depuis, je collectionne les meilleures techniques pour travailler
+              avec des systèmes legacy sur mon blog{" "}
               <a href="https://understandlegacycode.com">
                 understandlegacycode.com
               </a>
             </p>
             <p>
-              I also develop{" "}
+              Je crée aussi des{" "}
               <a href="https://github.com/sponsors/nicoespeon">
-                open-source tools
+                outils open-source
               </a>{" "}
-              to help developers work with legacy codebases.
+              pour aider les développeurs à travailler avec leurs bases de code
+              legacy.
             </p>
             <p>— Nicolas</p>
           </div>
@@ -475,125 +525,95 @@ function Page() {
         </Content>
       </SectionAlt>
       <Content style={{ fontSize: "1rem", marginBottom: "6rem" }}>
-        <h2>Frequently Asked Questions</h2>
+        <h2>Questions Fréquentes</h2>
         <DictList>
           <div>
-            <dt>How long is the book?</dt>
+            <dt>Ça fait combien de pages ?</dt>
             <dd>
-              <p>The book is 201 pages long.</p>
+              <p>Le guide contient 219 pages.</p>
             </dd>
           </div>
           <div>
-            <dt>What's the format of the book?</dt>
+            <dt>Quel est le format du guide ?</dt>
             <dd>
               <p>
-                When you purchase, you get a zip file containing PDF, EPUB, and
-                MOBI formats. You also get printable cheat sheets to practice
-                the techniques.
-              </p>
-            </dd>
-          </div>
-          <div>
-            <dt>Are the techniques specific to a programming language?</dt>
-            <dd>
-              <p>
-                11 techniques are valid regardless of the language you are
-                working with. 3 of them have better tooling support in
-                statically typed languages.
-              </p>
-              <p>
-                3 techniques are presented with object-oriented JavaScript code.
-                For these, I also show you what to do if the code was
-                functional.
-              </p>
-              <p>
-                The concepts are valid independently of the language. I use
-                JavaScript for the examples so I can illustrate both OOP and FP
-                styles.
+                Le guide que vous recevez est un fichier zip qui contient un
+                PDF, un EPUB et un MOBI. Vous obtenez également des fichiers
+                PDFs à imprimer pour pratiquer certaines techniques.
               </p>
             </dd>
           </div>
           <div>
-            <dt>Can I pay with PayPal?</dt>
+            <dt>Est-ce que les techniques sont spécifiques à un langage ?</dt>
             <dd>
               <p>
-                Sure! It's not automated yet but reach me out at
-                nicolas@understandlegacycode.com and I'll create a PayPal
-                invoice for you.
+                11 des techniques sont valides, peu importe le langage avec
+                lequel vous travaillez. 3 d’entre elles ont un meilleur
+                outillage avec les langages au typage statique.
+              </p>
+              <p>
+                3 techniques sont présentées avec une approche orientée-objet,
+                en JavaScript. Pour celles-ci, je vous montre également quoi
+                faire si vous travaillez plutôt avec une approche fonctionnelle.
+              </p>
+              <p>
+                Les concepts sont valides peu importe le langage. J’utilise
+                JavaScript pour illustrer les exemples afin de pouvoir montrer à
+                la fois un style OOP et un style FP.
+              </p>
+            </dd>
+          </div>
+          <div>
+            <dt>Puis-je payer via PayPal ?</dt>
+            <dd>
+              <p>
+                Bien entendu ! Je ne l’ai pas automatisé, mais vous pouvez me
+                contacter à nicolas@understandlegacycode.com et je vous enverrai
+                un lien pour payer via PayPal.
               </p>
             </dd>
           </div>
           <div>
             <dt>
-              What if I buy it and don't like it? Can I get my money back?
+              Quid si j’achète et que je suis déçu ? Est-ce que je peux
+              récupérer mon argent ?
             </dt>
             <dd>
               <p>
-                Sure. I offer a 100% no-questions-asked money-back guarantee.
+                Oui. Je vous offre une garantie de remboursement à 100%, sans
+                poser de question.
               </p>
               <p>
-                My goal is to help you work with Legacy codebases. I wish this
-                book saves you time, money, and sanity.
+                Voyez-vous, mon but est de vous aider à travailler avec du code
+                Legacy. Je suis convaincu que mon guide vous aidera à gagner du
+                temps, de l’argent, et de la santé mentale.
               </p>
             </dd>
           </div>
           <div>
-            <dt>Can I share this book with my team?</dt>
+            <dt>Est-ce que je peux partager ce guide avec mon équipe ?</dt>
             <dd>
               <p>
-                You can buy multiple copies of the guide. It's a way to tell me
-                "thank you Nicolas", and I appreciate that!
+                Vous pouvez payer plusieurs copies du guide lors de votre achat.
+                C’est une manière de me dire merci pour mon travail, et c’est
+                fort apprécié.
               </p>
               <p>
-                Now, there is nothing preventing you from sharing the guide with
-                your colleagues. Maybe also your client/employer could cover the
-                cost as a professional expense.
+                Maintenant, rien ne vous empêche de partager le guide avec vos
+                collègues. Peut-être aussi que votre client/employeur pourrait
+                couvrir la dépense en frais professionnels.
               </p>
             </dd>
           </div>
           <div>
-            <dt>What if I have another question?</dt>
+            <dt>Et si j’ai d’autres questions ?</dt>
             <dd>
-              <p>Send me an email at nicolas@understandlegacycode.com</p>
+              <p>Contactez-moi via nicolas@understandlegacycode.com</p>
             </dd>
           </div>
         </DictList>
       </Content>
     </Layout>
-  )
-}
-
-export const FirstAidKitCallout = () => {
-  const userLang = navigator.language || navigator.userLanguage
-  const isFrench = userLang.startsWith("fr")
-
-  return isFrench ? (
-    <Callout>
-      Peinez-vous à maintenir du Code Legacy sans avoir assez de temps pour le
-      nettoyer ?
-      <br />
-      <span role="img" aria-label="Rescue Worker Helmet">
-        ⛑
-      </span>{" "}
-      <strong>
-        <Link to={`first-aid-kit`}>Mon kit de Premiers Soins</Link>
-      </strong>{" "}
-      vous aidera à secourir votre code <strong>rapidement</strong> et{" "}
-      <strong>sereinement</strong> !
-    </Callout>
-  ) : (
-    <Callout>
-      Are you struggling with Legacy Code and not enough time to clean it up?
-      <br />
-      <span role="img" aria-label="Rescue Worker Helmet">
-        ⛑
-      </span>{" "}
-      <strong>
-        <Link to={`first-aid-kit`}>My First Aid Kit</Link>
-      </strong>{" "}
-      can help you rescue any codebase <strong>quickly</strong> and{" "}
-      <strong>safely</strong>!
-    </Callout>
   )
 }
 
