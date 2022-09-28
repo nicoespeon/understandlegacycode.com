@@ -578,7 +578,7 @@ export const FirstAidKitCallout = () => {
         ⛑
       </span>{" "}
       <strong>
-        <Link to={`premiers-soins`}>Mon kit de Premiers Soins</Link>
+        <Link to="premiers-soins">Mon kit de Premiers Soins</Link>
       </strong>{" "}
       vous aidera à secourir votre code <strong>rapidement</strong> et{" "}
       <strong>sereinement</strong> !
@@ -591,7 +591,7 @@ export const FirstAidKitCallout = () => {
         ⛑
       </span>{" "}
       <strong>
-        <Link to={`first-aid-kit`}>My First Aid Kit</Link>
+        <Link to="first-aid-kit">My First Aid Kit</Link>
       </strong>{" "}
       can help you rescue any codebase <strong>quickly</strong> and{" "}
       <strong>safely</strong>!
