@@ -572,8 +572,7 @@ export const FirstAidKitCallout = () => {
 
   return isFrench ? (
     <Callout>
-      Peinez-vous à maintenir du Code Legacy sans avoir assez de temps pour le
-      nettoyer ?
+      Trop de code Legacy à maintenir et pas assez de temps pour le nettoyer ?
       <br />
       <span role="img" aria-label="Rescue Worker Helmet">
         ⛑
@@ -581,8 +580,8 @@ export const FirstAidKitCallout = () => {
       <strong>
         <Link to={`first-aid-kit`}>Mon kit de Premiers Soins</Link>
       </strong>{" "}
-      vous aidera à secourir votre code <strong>rapidement</strong> et{" "}
-      <strong>sereinement</strong> !
+      peut vous aider à secourir votre code <strong>rapidement</strong> et{" "}
+      <strong>sereinement</strong> !
     </Callout>
   ) : (
     <Callout>
