@@ -580,7 +580,7 @@ export const FirstAidKitCallout = () => {
       <strong>
         <Link to={`premiers-soins`}>Mon kit de Premiers Soins</Link>
       </strong>{" "}
-      peut vous aider à secourir votre code <strong>rapidement</strong> et{" "}
+      vous aidera à secourir votre code <strong>rapidement</strong> et{" "}
       <strong>sereinement</strong> !
     </Callout>
   ) : (
