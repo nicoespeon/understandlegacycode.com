@@ -564,7 +564,7 @@ function Page() {
 }
 
 export const FirstAidKitCallout = () => {
-  const userLang = navigator.language || navigator.userLanguage
+  const userLang = window.navigator.language || window.navigator.userLanguage
   const isFrench = userLang.startsWith("fr")
 
   return isFrench ? (
