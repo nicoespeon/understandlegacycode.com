@@ -405,7 +405,7 @@ function Page() {
                     </li>
                   </ul>
                   <div>
-                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-premiers-soins">
+                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-first-aid-kit">
                       Prenez votre kit de survie
                     </PriceLink>
                   </div>
