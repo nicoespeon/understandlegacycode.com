@@ -3,7 +3,7 @@ title: Another way of refactoring untested code
 date: 2022-10-11T15:00:00.000Z
 image: /assets/refactoring-time-2.jpg
 description: >-
-  You need to change code that's not tested. How do you know you didn't break something? Here is <em>another</em> concrete way to tackle the problem.
+  You need to change code that's not tested. How do you know you didn't break something? Here is ANOTHER concrete way to tackle the problem.
 tags:
   - changing untested code
   - refactoring
