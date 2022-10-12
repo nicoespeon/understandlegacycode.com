@@ -361,6 +361,6 @@ Or rather: I gave you _one_ recipe!
 
 I told you earlier that I was experimenting with 2 different approaches. This is the first and most classic one.
 
-Next time, I will show you **another way of tackling this exercise**. We will compare together what are the pros and cons of both approaches. Interested? Subscribe to my newsletter below and I'll send that right away into your inbox once it's ready 👍
+[In the next post](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), I show you **another way of tackling this exercise**. Then, we will compare together what are the pros and cons of both approaches.
 
 With more tools in your belt, I hope you will have more options the next time you face some gnarly, untested code out there!
