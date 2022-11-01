@@ -360,10 +360,7 @@ function Page() {
                   <div>
                     <PriceCardTitle>Premiers Soins</PriceCardTitle>
                   </div>
-                  <Price>
-                    $39
-                    <Currency>USD</Currency>
-                  </Price>
+                  <Price>39 €</Price>
                 </PriceCardTop>
                 <PriceCardContent>
                   <ul>
@@ -405,7 +402,7 @@ function Page() {
                     </li>
                   </ul>
                   <div>
-                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-first-aid-kit">
+                    <PriceLink href="https://understandlegacycode.ck.page/products/legacy-code-premiers-soins">
                       Prenez votre kit de survie
                     </PriceLink>
                   </div>
