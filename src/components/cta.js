@@ -13,7 +13,11 @@ class CTA extends React.Component {
   }
 
   render() {
-    return <TiltedForm ref={el => (this.signupForm = el)} />
+    return this.props.uid ? (
+      <div ref={el => (this.signupForm = el)} />
+    ) : (
+      <TiltedForm ref={el => (this.signupForm = el)} />
+    )
   }
 }
 
