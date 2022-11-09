@@ -13,7 +13,7 @@ class CTA extends React.Component {
   }
 
   render() {
-    return <Form ref={el => (this.signupForm = el)}></Form>
+    return <TiltedForm ref={el => (this.signupForm = el)} />
   }
 }
 
@@ -49,7 +49,7 @@ class FirstAidKitEmailCTA extends React.Component {
   }
 }
 
-const Form = styled.div`
+const TiltedForm = styled.div`
   .formkit-form {
     transform: rotate(-1.5deg);
   }
