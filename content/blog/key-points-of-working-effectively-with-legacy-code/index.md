@@ -8,6 +8,7 @@ tags:
   - book review
   - changing untested code
 ctaTitle: Receive more summaries of the best resources on Legacy Code!
+ctaId: 93abb108c5
 ---
 
 > "Legacy Code is code without tests"
