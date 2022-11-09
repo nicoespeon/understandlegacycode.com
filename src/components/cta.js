@@ -14,7 +14,7 @@ class CTA extends React.Component {
 
   render() {
     return this.props.uid ? (
-      <div ref={el => (this.signupForm = el)} />
+      <Form ref={el => (this.signupForm = el)} />
     ) : (
       <TiltedForm ref={el => (this.signupForm = el)} />
     )
@@ -52,6 +52,13 @@ class FirstAidKitEmailCTA extends React.Component {
     return <div ref={el => (this.signupForm = el)}></div>
   }
 }
+
+const Form = styled.div`
+  @media (min-width: 1100px) {
+    width: 740px;
+    margin: auto;
+  }
+`
 
 const TiltedForm = styled.div`
   .formkit-form {
