@@ -12,7 +12,7 @@ tags:
 _This is concluding a 3-post series. You can read:_
 
 - [Part 1](https://understandlegacycode.com/blog/one-way-of-refactoring-untested-code/), _where I presented you with a first approach (Test First)_
-- [Part 2](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), _where I present you with another approach (Refactor First)_
+- [Part 2](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), _where I presented you with another approach (Refactor First)_
 
 **Untested code.**
 
