@@ -9,6 +9,11 @@ tags:
   - refactoring
 ---
 
+_This is Part 2 of a 3-post series. You can read:_
+
+- [Part 1](https://understandlegacycode.com/blog/one-way-of-refactoring-untested-code/), _where I presented you with a first approach (Test First)_
+- [Part 3](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/), _where I compare both approaches_
+
 **Untested code.**
 
 You are not the one who wrote it. Yet, it’s your job today to change it. It should support some new behavior. The question is: how do you make the change without breaking anything? 🤔
@@ -543,4 +548,4 @@ Once we have these tests in place, we can refactor further if we need. We can al
 
 If your feature doesn’t touch the I/O much (like in this kata), it’s quite easy to do.
 
-I’ve presented you with 2 approaches to tackle untested legacy code. Next time, I’ll take a step back and write up a detailed comparison of both (pros and cons, which to use and when…). Until then, try to practice this one, and [let me know how you feel about it](https://twitter.com/nicoespeon)!
+I’ve presented you with 2 approaches to tackle untested legacy code. [In the next post](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/), I take a step back and compare of both (pros and cons, which to use and when…). Until then, try to practice this one, and [let me know how you feel about it](https://twitter.com/nicoespeon)!

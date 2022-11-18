@@ -9,6 +9,11 @@ tags:
   - refactoring
 ---
 
+_This is part of a 3-post series. You can read:_
+
+- [Part 2](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), _where I present you with another approach (Refactor First)_
+- [Part 3](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/), _where I compare both approaches_
+
 **Untested code.**
 
 You are not the one who wrote it. Yet, it's your job today to change it. It should support some new behavior. The question is: how do you make the change without breaking anything? 🤔
@@ -361,6 +366,6 @@ Or rather: I gave you _one_ recipe!
 
 I told you earlier that I was experimenting with 2 different approaches. This is the first and most classic one.
 
-[In the next post](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), I show you **another way of tackling this exercise**. Then, we will compare together what are the pros and cons of both approaches.
+[In the next post](https://understandlegacycode.com/blog/another-way-of-refactoring-untested-code/), I show you **another way of tackling this exercise**. Then, [I compare the pros and cons of both approaches](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/).
 
 With more tools in your belt, I hope you will have more options the next time you face some gnarly, untested code out there!
