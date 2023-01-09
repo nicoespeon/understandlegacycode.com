@@ -97,7 +97,7 @@ git clone git@github.com:docker/compose.git
 #### 2) Create a local repository where to host your analysis
 
 ```bash
-make code-forensics-analysis && cd code-forensics-analysis
+mkdir code-forensics-analysis && cd code-forensics-analysis
 ```
 
 You should have this structure:
