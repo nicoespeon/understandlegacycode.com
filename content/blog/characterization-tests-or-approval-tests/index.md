@@ -80,7 +80,7 @@ A good Printer will scrub irrelevant and flaky data, and format the output in a 
 
 For example, here's the output captured by an approval test [in the Supermarket Refactoring kata](https://github.com/emilybache/SupermarketReceipt-Refactoring-Kata/blob/6c2fbe7ca8a8aea593fd16f12e3418dc2df1867c/java/src/test/java/dojo/supermarket/ReceiptPrinterTest.discounts.approved.txt):
 
-```txt
+```
 ----------------------------------------
 Receipt date:           [date]
 ----------------------------------------

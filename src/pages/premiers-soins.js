@@ -396,8 +396,10 @@ function Page() {
                     <li>
                       <PriceListIcon />
                       <PriceListItem>
-                        <span role="img">🇬🇧</span> The English version of the
-                        book
+                        <span role="img" aria-label="England flag">
+                          🇬🇧
+                        </span>{" "}
+                        The English version of the book
                       </PriceListItem>
                     </li>
                   </ul>
@@ -624,13 +626,6 @@ const colors = {
   gray: "rgb(78, 97, 108)",
   grayLight: "rgb(107, 114, 128)",
 }
-
-const Callout = styled.div`
-  margin: 3rem 0;
-  padding: 1rem;
-  border: 3px ${colors.primary} solid;
-  background: ${colors.backgroundLightest};
-`
 
 const Layout = styled.div`
   color: rgb(12, 30, 41);
@@ -885,13 +880,6 @@ const Price = styled.div`
   font-weight: 800;
   align-items: baseline;
   display: flex;
-`
-
-const Currency = styled.span`
-  color: ${colors.grayLight};
-  line-height: 2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
 `
 
 const PriceCardContent = styled.div`

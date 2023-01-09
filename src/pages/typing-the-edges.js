@@ -27,22 +27,32 @@ function Page(props) {
         <p>Find and fix your TypeScript blind spots</p>
       </blockquote>
       <p>
-        <span role="img">😃</span> Coding with TypeScript feels safe, the
-        compiler has your back.
+        <span role="img" aria-label="">
+          😃
+        </span>
+         Coding with TypeScript feels safe, the compiler has your back.
       </p>
       <p>
-        <span role="img">😨</span> But today, you got a critical issue in prod:
-        payments are failing! A quick check of the logs left you puzzled:{" "}
+        <span role="img" aria-label="">
+          😨
+        </span>
+         But today, you got a critical issue in prod: payments are failing! A
+        quick check of the logs left you puzzled:{" "}
         <code>TypeError: discount.toFixed is not a function</code>.
       </p>
       <p>
-        <span role="img">😕</span> Wait… Isn't <code>discount</code> supposed to
-        be a number here? How did that happen? Why didn't TS catch it before?!
-        Worry no more.
+        <span role="img" aria-label="">
+          😕
+        </span>
+         Wait… Isn't <code>discount</code> supposed to be a number here? How did
+        that happen? Why didn't TS catch it before?! Worry no more.
       </p>
       <p>
-        <span role="img">🤠</span> In this talk, I will show you where your
-        blind spots are, and a simple way for you to fix them.
+        <span role="img" aria-label="">
+          🤠
+        </span>
+         In this talk, I will show you where your blind spots are, and a simple
+        way for you to fix them.
       </p>
 
       <p style={{ textAlign: "center" }}>
