@@ -1,7 +1,7 @@
 ---
 title: Fake it until you automate it
 date: 2023-01-09T00:00:00.000Z
-image: /assets/fake-it.png
+image: /assets/fake-it.jpg
 description: "A pragmatic way for you to start automating deployments of a Legacy system."
 tags:
   - not sure where to start refactoring
