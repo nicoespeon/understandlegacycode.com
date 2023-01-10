@@ -361,7 +361,7 @@ Now, we have a new command to run: `yarn deploy`
 
 It sounds like a command that will do the deployment for us! Except it only spits out the same instructions, step by step.
 
-![](./fake-it-until-you-automate-it-yarn.jpeg)
+![](./fake-it-until-automate-it-yarn.jpeg)
 
 Is that really worth it?
 
