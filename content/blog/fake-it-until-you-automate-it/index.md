@@ -48,7 +48,8 @@ A technique that will help us break the status quo. Something you can realistica
 
 **Fake it, until you automate it.**
 
-![](./fake-it.gif)
+<!-- TODO: enable after we have fewer traffic, to reduce $$$ -->
+<!-- ![](./fake-it.gif) -->
 
 ## How to “fake it”
 
