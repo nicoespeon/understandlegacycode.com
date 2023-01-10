@@ -123,6 +123,12 @@ module.exports = {
               elements: [`h2`, `h3`],
             },
           },
+          {
+            resolve: `gatsby-remark-images-native-lazy-load`,
+            options: {
+              loading: "lazy",
+            },
+          },
         ],
       },
     },
