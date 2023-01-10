@@ -359,7 +359,13 @@ We used to have some outdated instructions for backend deployments in our README
 
 Now, we have a new command to run: `yarn deploy`
 
-It sounds like a command that will do the deployment for us! Except it only spits out the same instructions, step by step. Is that really worth it? In my experience, yes, for X reasons:
+It sounds like a command that will do the deployment for us! Except it only spits out the same instructions, step by step.
+
+![](./fake-it-until-you-automate-it-meme.jpeg)
+
+Is that really worth it?
+
+In my experience, it is. For 3 reasons:
 
 1. It gets people into the habit of running a single command to initiate deployments
 2. It’s a more obvious source of truth for putting the deployment instructions
