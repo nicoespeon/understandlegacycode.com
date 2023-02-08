@@ -388,6 +388,20 @@ At some point, I couldn’t remember the git syntax to push the tags to that spe
 
 Well, thank you Rubberduck 👍 🦆
 
+## How is it different than ChatGPT? Ponicode?
+
+It's **very similar** to what ChatGPT could do. The main difference to me is the UX:
+
+1. No need to get out of my editor is nice
+2. No fear of ChatGPT website being unavailable at the moment
+3. No hassle crafting up the perfect prompt to get the answers I need (Rubberduck crafts the prompt under the hood)
+4. And no little annoyances like AI stopping the prompt in the middle or messing up the code formatting
+5. Oh, and 💯 for the diff view + "Apply" button
+
+As for Ponicode, the experience is very different. [Ponicode wasn't capable of generating useful unit tests](https://understandlegacycode.com/blog/ai-test-generation-for-legacy-code/) on random code (and the code was simpler). The generated tests didn't help me figure out the different parameters I could use… It was also less versatile.
+
+To be fair, OpenAI did bring a lot of new opportunities when they released their API. Their model is powerful, and the results are (finally) kinda usable on actual legacy codebases!
+
 ## AI can help you write missing tests faster…
 
 > But don’t turn your brain off!
@@ -402,5 +416,5 @@ As a bonus, it gave me easy input to query OpenAI, right from my editor. I was a
 
 I would conclude this article with 2 thoughts:
 
-1. [Rubberduck is open-source](https://github.com/rubberduck-ai/rubberduck-vscode). I encourage you to give it a try, report bugs and suggest improvements.
+1. [Rubberduck is open-source](https://github.com/rubberduck-ai/rubberduck-vscode). I encourage you to give it a try, report bugs and suggest improvements. I'm now contributing to the tool myself, it's really cool!
 2. I have used Rubberduck to help me write missing tests on existing code… But now I’m curious about what it can do to help me **refactor** the code! So that will be the topic of my next post about it. Stay tuned!
