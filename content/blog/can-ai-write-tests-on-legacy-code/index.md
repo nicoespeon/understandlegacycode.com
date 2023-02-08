@@ -48,7 +48,9 @@ It says it can help you:
 
 Right from VS Code.
 
-Well, let’s try it out and find out what it can really do.
+Interestingly, [its source code is open](https://github.com/rubberduck-ai/rubberduck-vscode)! Thus, **I've started to contribute**.
+
+But here, I'll be using Rubberduck from my end-user point of view. So let’s try and find out what it can really do…
 
 ## The Lift Pass Pricing refactoring kata
 
@@ -193,7 +195,7 @@ There are also some errors:
 
 At this point, I have 2 options:
 
-1. Tell Rubberduck about the changes I want, so he can refine the suggestion.
+1. Tell Rubberduck about the changes I want, so it can refine the suggestion.
 2. Apply the suggestion and do the manual tweaks myself.
 
 On real code, I would go for option #2 since it would be faster—the AI still takes a few seconds to generate the code and I _feel_ I can do the change faster myself because I won’t wait. It also comforts me with the idea of using AI to assist me, but still own the changes and finalizes what needs to be done.
@@ -338,7 +340,7 @@ I replace all “day” occurrences with “1jour” and run the tests again:
 
 Well, well, well… When looking closer, there are some obvious mistakes in the generated tests.
 
-One test isn’t testing what they say they are testing:
+One test isn’t testing what it says it is testing:
 
 ![](./11-incorrect-expect.png)
 
