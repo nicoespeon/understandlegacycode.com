@@ -10,8 +10,6 @@ tags:
   - ai
 ---
 
-# Can AI help me write tests on legacy code?
-
 AI has become a hot topic in the past few months. Tools like [ChatGPT](https://chat.openai.com/chat) have been released for the world to play with, and this has raised a lot of interesting questions about how it will change the way we work.
 
 My interest is piqued when it comes to **legacy code**.
