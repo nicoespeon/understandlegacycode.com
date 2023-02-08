@@ -7,6 +7,7 @@ description: >-
 tags:
   - testing tools
   - approval tests
+  - ai
 ---
 
 A tool recently grabbed my attention: [Ponicode](https://www.ponicode.com/).
