@@ -56,7 +56,7 @@ Well, let’s try it out and find out what it can really do.
 
 For testing Rubberduck, I will tackle the TypeScript version.
 
-The very step is to run a tool like Prettier to standardize the shape of the code. No more noise in follow-up changes: [rbd-1-prettier](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-1-prettier)
+The very first step is to run a tool like Prettier to standardize the shape of the code. No more noise in follow-up changes: [rbd-1-prettier](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-1-prettier)
 
 The end goal of the exercise is to change the API so the endpoint that returns lift pass prices can return the price for several passes instead of just one.
 
@@ -232,7 +232,7 @@ A quick search in [testcontainers docs](https://github.com/testcontainers/testco
 
 I change the code and run `yarn test` again:
 
-![](./7-generate-tests.png)
+![](./5-tests-pass.png)
 
 Success!
 
