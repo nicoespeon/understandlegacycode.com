@@ -274,7 +274,7 @@ This is something that will be faster to do with automated refactorings. 100% gu
 
 This will instantly create the function, resolving the parameters. It’s fast and relatively safe to do, even without tests.
 
-But for the sake of the exercise, let’s ask Rubberduck:
+But for the sake of the exercise, let’s [select this code](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/blob/358d4b2a13ab360c25453cdb4ef300d48a20b7a1/typescript/src/prices.ts#L31-L82) and ask Rubberduck:
 
 > 👨‍💻 _Extract in a function named computePrice_
 
