@@ -35,7 +35,7 @@ It works… but not always. I’ve found it creates friction during my developme
 - Sometimes, [the returned code formatting breaks down](https://www.reddit.com/r/ChatGPT/comments/zhraup/i_wrote_some_code_that_made_the_chatgpt_response/). It happened to me a few times already and that’s annoying.
 - It requires me to switch context: get out of my editor to use my browser. It’s not a _big_ deal (browsing answers is probably the 2nd most common development activity after reading code), but it would be nice to have that from my editor…
 
-And then, I saw [Lars Grammel’s tweet](https://twitter.com/lgrammel/status/1620734494071480324?s=20&t=b8SYniIweOisuXehosTarw) about his new project: [Rubberduck](https://marketplace.visualstudio.com/items?itemName=Rubberduck.rubberduck-vscode), an AI-powered coding assistant for VS Code.
+And then, I saw [Lars Grammel’s tweet](https://twitter.com/lgrammel/status/1620734494071480324?s=20&t=b8SYniIweOisuXehosTarw) about his new project: [Rubberduck](https://rubberduck.ai/), an AI-powered coding assistant for VS Code.
 
 It says it can help you:
 
@@ -58,7 +58,7 @@ But here, I'll be using Rubberduck from my end-user point of view. So let’s tr
 
 For testing Rubberduck, I will tackle the TypeScript version.
 
-The very first step is to run a tool like Prettier to standardize the shape of the code. No more noise in follow-up changes: [rbd-1-prettier](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-1-prettier)
+The very first step is to run a tool like Prettier to standardize the shape of the code. No more noise in follow-up changes: [rbd-1-prettier](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-1-prettier/typescript)
 
 The end goal of the exercise is to change the API so the endpoint that returns lift pass prices can return the price for several passes instead of just one.
 
@@ -244,7 +244,7 @@ I think it’s important to find a way to _verify_ the suggested code soon after
 
 That being said, the suggested syntax was fine and it helped my lookup for the relevant docs. If I wasn’t familiar with `testcontainers` API, that would have saved me quite some time!
 
-Commit, push, and we are here: [rbd-2-testcontainers](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-2-testcontainers)
+Commit, push, and we are here: [rbd-2-testcontainers](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-2-testcontainers/typescript)
 
 ## Then, write the high-level tests
 
@@ -376,7 +376,7 @@ With this base, I would then use test coverage to see parts of the code that are
 
 From my experience, Rubberduck generates better tests when the source code doesn’t depend on external sources, like a database or a 3rd-party service. And yet, this was helpful to give me ideas and get me started. It may come in handy when dealing with unfamiliar code that I want to write tests for 👍
 
-The final code is here: [rbd-3-tests](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-3-tests)
+The final code is here: [rbd-3-tests](https://github.com/nicoespeon/Refactoring-Kata-Lift-Pass-Pricing/tree/rbd-3-tests/typescript)
 
 ## Extra: Rubberduck helped me with a random question
 
@@ -417,4 +417,6 @@ As a bonus, it gave me easy input to query OpenAI, right from my editor. I was a
 I would conclude this article with 2 thoughts:
 
 1. [Rubberduck is open-source](https://github.com/rubberduck-ai/rubberduck-vscode). I encourage you to give it a try, report bugs and suggest improvements. I'm now contributing to the tool myself, it's really cool!
-2. I have used Rubberduck to help me write missing tests on existing code… But now I’m curious about what it can do to help me **refactor** the code! So that will be the topic of my next post about it. Stay tuned!
+2. I have used Rubberduck to help me write missing tests on existing code… But now I’m curious about what it can do to help me **refactor** the code!
+
+So I did that and challenged Rubberduck to refactor the code faster than I could. Did it work? Surprisingly better than I expected! [Read it here](https://understandlegacycode.com/blog/can-ai-write-tests-on-legacy-code/) 👀
