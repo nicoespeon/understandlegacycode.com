@@ -67,7 +67,7 @@ That's what Adam Tornhill calls the **Principle of Proximity** in [Software Desi
 
 This principle should trump any other kind of code organization or convention. It's how your brain works best. Therefore, there's on small refactoring you can apply to any part of the code you're working with.
 
-## Proximity Refactoring
+## Proximity Refactoring in code
 
 When you identify a variable that is declared at the top of the function but is only used 10 lines below, move it closer from its usage! It makes the code easier to read. It makes it simpler to identify chunks of code that could be extracted into their own functions.
 
@@ -78,6 +78,30 @@ It's a [Slide Statement](https://www.refactoring.com/catalog/slideStatements.htm
 It prepares the ground for more ambitious refactoring. I suggest you do that when you're reading code, just like you would rename variables to improve code readability.
 
 I recommend you ship this refactoring **independently from other changes** to avoid messing up the Pull Request diff. It keeps the change simple to review and low-risk.
+
+## Proximity Refactoring in software architecture
+
+The concept can be transposed to how you organize files.
+
+It's common to organize code based on technical concerns: a folder for Controllers, a folder for Models, a folder for Tests, etc. Then, you need to modify existing behavior. This is when you realize things are all over the place! You have to modify 12 files spread across the project.
+
+This is [Shotgun Surgery](https://refactoring.guru/smells/shotgun-surgery). You can see the symptoms in the diff: commits and PRs with a lot of small changes in many places. The risk is to forget one spot. And the difficulty in reasoning about the feature as a whole.
+
+A solution to this is to apply the Proximity Rule here again:
+
+> What changes together should be close together.
+
+![](./proximity-refactoring-files.gif)
+
+It's about cohesion. Instead of tracing boundaries around technical concerns, focus on the use-cases you are solving (see [Screaming Architecture](https://levelup.gitconnected.com/what-is-screaming-architecture-f7c327af9bb2)).
+
+On legacy codebases, you can infer these boundaries from version control metadata. For example:
+
+- [code-forensics](https://github.com/smontanari/code-forensics/wiki/Coupling-analysis) can analyze temporal coupling in your codebase
+- [tumbleweed](https://github.com/redgreenio/tumbleweed) can do that on Java codebases
+- [CodeScene](https://codescene.com/blog/software-revolution-part3/) is also capable of doing that across repositories!
+
+![](./temporal-coupling-analysis.png)
 
 ## Going further with chunking
 
