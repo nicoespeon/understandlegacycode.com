@@ -26,7 +26,7 @@ function Page() {
             <h1>
               Rescue your Legacy codebase <em>quickly and safely.</em> 
               <span role="img" aria-label="Rescue Helmet">
-                ⛑
+                ⛑️
               </span>
             </h1>
             <p>
@@ -575,23 +575,27 @@ export const FirstAidKitCallout = () => {
 
   return isFrench ? (
     <Callout>
-      Trop de code Legacy à maintenir et pas assez de temps pour le nettoyer ?
+      <em>
+        Trop de code Legacy à maintenir et pas assez de temps pour le nettoyer ?
+      </em>
       <br />
       <span role="img" aria-label="Rescue Worker Helmet">
-        ⛑
+        ⛑️️
       </span>{" "}
       <strong>
-        <Link to="premiers-soins">Mon kit de Premiers Soins</Link>
+        <Link to="premiers-soins">Mon kit Premiers Soins</Link>
       </strong>{" "}
-      vous aidera à secourir votre code <strong>rapidement</strong> et{" "}
+      peut secourir votre code <strong>rapidement</strong> et{" "}
       <strong>sereinement</strong> !
     </Callout>
   ) : (
     <Callout>
-      Are you struggling with Legacy Code and not enough time to clean it up?
+      <em>
+        Are you struggling with Legacy Code and not enough time to clean it up?
+      </em>
       <br />
       <span role="img" aria-label="Rescue Worker Helmet">
-        ⛑
+        ⛑️️
       </span>{" "}
       <strong>
         <Link to="first-aid-kit">My First Aid Kit</Link>
@@ -615,9 +619,19 @@ const colors = {
 
 const Callout = styled.div`
   margin: 3rem 0;
-  padding: 1rem;
-  border: 3px ${colors.primary} solid;
+  padding: 0.75rem 0 0.75rem 1rem;
+  border-left: 5px ${colors.primary} solid;
+  border-radius: 0 0.5rem 0.5rem 0;
   background: ${colors.backgroundLightest};
+
+  a {
+    box-shadow: inset 0 -2px 0 ${colors.primary};
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    box-shadow: inset 0 -1.3em 0 ${colors.backgroundLightest};
+  }
 `
 
 const Layout = styled.div`
