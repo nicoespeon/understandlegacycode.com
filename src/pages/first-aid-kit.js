@@ -353,7 +353,10 @@ function Page() {
                     <li>
                       <PriceListIcon />
                       <PriceListItem>
-                        <span role="img">🇫🇷</span> La version Française du guide
+                        <span role="img" aria-label="Drapeau français">
+                          🇫🇷
+                        </span>{" "}
+                        La version Française du guide
                       </PriceListItem>
                     </li>
                   </ul>
