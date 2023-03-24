@@ -60,7 +60,7 @@ Advice on working with existing and untested codebase are scattered around. I've
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f3B8CqL1Pbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-If you are looking for more, I've written a survival kit with 14 detailed techniques for when tests are missing and deadlines are short: [understandlegacycode.com/first-aid-kit](https://understandlegacycode.com/first-aid-kit) ⛑
+If you are looking for more, I've written a survival kit with 14 detailed techniques for when tests are missing and deadlines are short: [understandlegacycode.com/first-aid-kit](https://understandlegacycode.com/first-aid-kit) ⛑️
 
 ## Refactoring Superpowers
 

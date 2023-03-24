@@ -26,7 +26,7 @@ function Page() {
             <h1>
               Secourez votre Legacy <em>rapidement et sereinement.</em> 
               <span role="img" aria-label="Rescue Helmet">
-                ⛑
+                ⛑️
               </span>
             </h1>
             <p>

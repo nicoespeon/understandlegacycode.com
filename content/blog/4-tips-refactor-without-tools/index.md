@@ -95,7 +95,7 @@ Tools like [approvaltests.com](https://approvaltests.com/) and [Touca](https://t
 
 Putting the code under test is usually a challenge. To find safe ways in doing so, I recommend you to read [Working Effectively with Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code/).
 
-My own ⛑ [First Aid Kit](https://understandlegacycode.com/first-aid-kit) also contains a few techniques to do so.
+My own ⛑️ [First Aid Kit](https://understandlegacycode.com/first-aid-kit) also contains a few techniques to do so.
 
 #### But what if there's a regression _elsewhere_?
 
@@ -165,7 +165,7 @@ I think that being able to migrate a running codebase to a cleaner state is a va
 
 **It's not easy to do**. Usually, the code isn't tested and deadlines are short. This pressure prevents most teams from getting out of their comfort zone to improve the situation.
 
-That's the main focus of my ⛑ [First Aid Kit](https://understandlegacycode.com/first-aid-kit): provide developers with concrete techniques they can apply when facing legacy systems. If that's you, I'm convinced it will be useful.
+That's the main focus of my ⛑️ [First Aid Kit](https://understandlegacycode.com/first-aid-kit): provide developers with concrete techniques they can apply when facing legacy systems. If that's you, I'm convinced it will be useful.
 
 Besides learning the techniques, taking some time to practice also helps. If you're looking for some exercises, I've put a list of [5 coding katas you can practice on](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code/).
 
