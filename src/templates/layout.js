@@ -1,9 +1,9 @@
-import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import React from "react"
 import Helmet from "react-helmet"
+import styled from "styled-components"
 
-import { rhythm, scale, colors } from "../utils/typography"
+import { colors, rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
@@ -13,29 +13,27 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <>
-          <h1
+        <h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
+          }}
+        >
+          <Link
             style={{
-              ...scale(1.5),
-              marginBottom: rhythm(1.5),
-              marginTop: 0,
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
             }}
+            to="/"
           >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to="/"
-            >
-              <small style={{ color: colors.primary }}>Understand</small>
-              <br />
-              Legacy Code
-              <Description>{description}</Description>
-            </Link>
-          </h1>
-        </>
+            <small style={{ color: colors.primary }}>Understand</small>
+            <br />
+            Legacy Code
+            <Description>{description}</Description>
+          </Link>
+        </h1>
       )
     } else {
       header = (
