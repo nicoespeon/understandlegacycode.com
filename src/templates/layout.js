@@ -8,56 +8,7 @@ import { colors, rhythm, scale } from "../utils/typography"
 class Layout extends React.Component {
   render() {
     const { location, description, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to="/"
-          >
-            <small style={{ color: colors.primary }}>Understand</small>
-            <br />
-            Legacy Code
-            <Description>{description}</Description>
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to="/"
-          >
-            <span style={{ color: colors.primary }}>Understand</span> Legacy
-            Code
-            <Description>{description}</Description>
-          </Link>
-        </h3>
-      )
-    }
     return (
       <Wrapper>
         <Helmet>
@@ -76,7 +27,9 @@ class Layout extends React.Component {
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
-          <header>{header}</header>
+          <header>
+            <Title location={location} description={description} />
+          </header>
           <main>{children}</main>
         </div>
         <Footer>
@@ -85,6 +38,57 @@ class Layout extends React.Component {
       </Wrapper>
     )
   }
+}
+
+function Title({ location, description }) {
+  const rootPath = `${__PATH_PREFIX__}/`
+
+  if (location.pathname === rootPath) {
+    return (
+      <h1
+        style={{
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
+        }}
+      >
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+          to="/"
+        >
+          <small style={{ color: colors.primary }}>Understand</small>
+          <br />
+          Legacy Code
+          <Description>{description}</Description>
+        </Link>
+      </h1>
+    )
+  }
+
+  return (
+    <h3
+      style={{
+        fontFamily: `Montserrat, sans-serif`,
+        marginTop: 0,
+      }}
+    >
+      <Link
+        style={{
+          boxShadow: `none`,
+          textDecoration: `none`,
+          color: `inherit`,
+        }}
+        to="/"
+      >
+        <span style={{ color: colors.primary }}>Understand</span> Legacy Code
+        <Description>{description}</Description>
+      </Link>
+    </h3>
+  )
 }
 
 const Description = styled.small`
