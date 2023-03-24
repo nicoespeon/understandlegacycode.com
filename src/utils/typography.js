@@ -24,6 +24,10 @@ export const scale = typography.scale
 export const colors = {
   white: "#fff",
   primary: "hsla(280, 85%, 55%, 1)",
+  primaryLight: "hsla(280, 85%, 55%, 0.5)",
   background: "hsla(280, 85%, 65%, 0.25)",
   backgroundLightest: "hsla(280, 85%, 65%, 0.15)",
+
+  firstAid: "hsla(354.6, 85.4%, 51.8%, 1)",
+  firstAidLight: "hsla(354.6, 85.4%, 51.8%, 0.5)",
 }

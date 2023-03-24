@@ -5,8 +5,7 @@ import Bio from "../components/bio"
 import CTA from "../components/cta"
 import SEO from "../components/seo"
 import Layout from "../templates/layout"
-import { rhythm } from "../utils/typography"
-import { FirstAidKitCallout } from "./first-aid-kit"
+import { colors, rhythm } from "../utils/typography"
 
 class IndexPage extends React.Component {
   render() {
@@ -29,20 +28,22 @@ class IndexPage extends React.Component {
             "documentation",
           ]}
         />
-        <FirstAidKitCallout />
-        <p>
-          When I say "Legacy Code" I mean{" "}
-          <Link to={"/blog/what-is-legacy-code-is-it-code-without-tests/"}>
-            valuable code you're afraid to change
-          </Link>
-          .
-        </p>
-        <p>We all have to deal with Legacy Code. But it's damn hard to!</p>
-        <p>
-          Here you'll find answers to your questions. I'm sharing{" "}
-          <strong>useful tips and concrete advice</strong> that will help you
-          tame the legacy codebase you've inherited.
-        </p>
+        <Disclaimer className="title-font">
+          <p>
+            When I say "Legacy Code" I mean{" "}
+            <Link to={"/blog/what-is-legacy-code-is-it-code-without-tests/"}>
+              valuable code you're afraid to change
+            </Link>
+            .
+          </p>
+          <p>We all have to deal with Legacy Code. But it's damn hard to!</p>
+          <p>
+            Here you'll find answers to your questions. I'm sharing{" "}
+            <strong>useful tips and concrete advice</strong> that will help you
+            tame the legacy codebase you've inherited. 😉
+          </p>
+          <p>— Nicolas</p>
+        </Disclaimer>
         <h2>
           <span role="img" aria-label="Open book">
             📖
@@ -248,6 +249,17 @@ class IndexPage extends React.Component {
     )
   }
 }
+
+const Disclaimer = styled.section`
+  padding: 0.75rem 0.5rem 0.75rem 1rem;
+  border-left: 5px ${colors.primary} solid;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: ${colors.backgroundLightest};
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+`
 
 const Li = styled.li`
   &&::before {

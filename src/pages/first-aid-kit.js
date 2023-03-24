@@ -575,7 +575,7 @@ export const FirstAidKitCallout = () => {
 
   return isFrench ? (
     <Callout>
-      <em>
+      <em className="title-font">
         Trop de code Legacy à maintenir et pas assez de temps pour le nettoyer ?
       </em>
       <br />
@@ -590,8 +590,8 @@ export const FirstAidKitCallout = () => {
     </Callout>
   ) : (
     <Callout>
-      <em>
-        Are you struggling with Legacy Code and not enough time to clean it up?
+      <em className="title-font">
+        Struggling with Legacy Code and not enough time to clean it up?
       </em>
       <br />
       <span role="img" aria-label="Rescue Worker Helmet">

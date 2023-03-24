@@ -132,7 +132,11 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = this.props.data.site.siteMetadata.description
 
     return (
-      <Layout location={this.props.location} description={siteDescription}>
+      <Layout
+        location={this.props.location}
+        description={siteDescription}
+        hideTitle
+      >
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}

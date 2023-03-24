@@ -7,7 +7,8 @@ import { colors, rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, description, children } = this.props
+    const { location, description, hideTitle, children } = this.props
+    const showTitle = !Boolean(hideTitle)
 
     return (
       <Wrapper>
@@ -18,6 +19,12 @@ class Layout extends React.Component {
             title="Understand Legacy Code"
             href="https://understandlegacycode.com/rss.xml"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
         </Helmet>
         <div
           style={{
@@ -27,9 +34,34 @@ class Layout extends React.Component {
             padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           }}
         >
-          <header>
-            <Title location={location} description={description} />
-          </header>
+          <Nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/all-articles">Articles</Link>
+              </li>
+              {/* <li>
+                <Link to="/">Services</Link>
+              </li> */}
+              <li className="first-aid">
+                <a
+                  href="/first-aid-kit"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  ⛑️ First Aid Kit
+                </a>
+              </li>
+            </ul>
+          </Nav>
+
+          {showTitle && (
+            <header>
+              <Title location={location} description={description} />
+            </header>
+          )}
           <main>{children}</main>
         </div>
         <Footer>
@@ -40,6 +72,87 @@ class Layout extends React.Component {
   }
 }
 
+const Nav = styled.nav`
+  margin-bottom: ${rhythm(1)};
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+
+  ul,
+  li,
+  ol {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul,
+  ul > li {
+    margin-left: 0 !important;
+  }
+
+  ul > li::before {
+    display: none !important;
+  }
+
+  ul > li::after {
+    content: "~";
+    color: ${colors.primary};
+    font-weight: 600;
+    position: relative;
+  }
+  ul > li:last-of-type::after {
+    content: "";
+  }
+
+  ul > li > a {
+    box-shadow: none !important;
+    position: relative;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-decoration: none;
+
+    &:after {
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      content: "";
+      height: 3px;
+      position: absolute;
+      transform: translateZ(0) scaleX(0);
+      transform-origin: left center;
+      transition: all 0.15s ease-in-out;
+      background-image: linear-gradient(
+        to left,
+        ${colors.primary},
+        ${colors.primaryLight}
+      );
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::after {
+        transform: translateZ(0) scale(1);
+      }
+    }
+  }
+
+  ul > li.first-aid > a {
+    color: ${colors.firstAid};
+    font-weight: 500;
+
+    &:after {
+      background-image: linear-gradient(
+        to left,
+        ${colors.firstAid},
+        ${colors.firstAidLight}
+      );
+    }
+  }
+`
+
 function Title({ location, description }) {
   const rootPath = `${__PATH_PREFIX__}/`
 
@@ -48,6 +161,7 @@ function Title({ location, description }) {
       <h1
         style={{
           ...scale(1.5),
+          fontFamily: `Montserrat, sans-serif`,
           marginBottom: rhythm(1.5),
           marginTop: 0,
         }}
@@ -61,9 +175,10 @@ function Title({ location, description }) {
           to="/"
         >
           <small style={{ color: colors.primary }}>Understand</small>
-          <br />
-          Legacy Code
-          <Description>{description}</Description>
+          <div style={{ marginTop: "-1rem" }}>Legacy Code</div>
+          <Description style={{ marginTop: "1.5rem" }}>
+            {description}
+          </Description>
         </Link>
       </h1>
     )
@@ -85,7 +200,7 @@ function Title({ location, description }) {
         to="/"
       >
         <span style={{ color: colors.primary }}>Understand</span> Legacy Code
-        <Description>{description}</Description>
+        <Description style={{ marginTop: "0.5rem" }}>{description}</Description>
       </Link>
     </h3>
   )
@@ -93,7 +208,6 @@ function Title({ location, description }) {
 
 const Description = styled.small`
   display: block;
-  margin-top: 1.5rem;
   font-weight: 200;
   line-height: 1;
   letter-spacing: -0.05rem;
@@ -104,6 +218,15 @@ const Wrapper = styled.div`
   min-height: 100vh;
   border-top: 5px solid hsla(280, 85%, 55%, 1);
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  h1,
+  h2,
+  h3,
+  blockquote,
+  .title-font {
+    font-family: "Space Grotesk", "Open Sans", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+  }
 
   code {
     background-color: ${colors.backgroundLightest};
