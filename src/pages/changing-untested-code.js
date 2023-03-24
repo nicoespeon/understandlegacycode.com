@@ -1,9 +1,9 @@
-import React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 
-import Guide from "../components/guide"
 import SEO from "../components/seo"
 import Title from "../components/title"
+import Guide from "../templates/guide"
 
 function Page(props) {
   return (

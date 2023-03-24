@@ -1,10 +1,10 @@
-import React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 
-import Guide from "../components/guide"
-import SEO from "../components/seo"
 import ExtLink from "../components/ext-link"
+import SEO from "../components/seo"
 import Title from "../components/title"
+import Guide from "../templates/guide"
 
 function Page(props) {
   return (
@@ -113,9 +113,7 @@ function Page(props) {
           is also a great (and versatile) one for JavaScript developers
         </li>
         <li>
-          <ExtLink href="https://www.sapling-extension.com/">
-            Sapling
-          </ExtLink>{" "}
+          <ExtLink href="https://www.sapling-extension.com/">Sapling</ExtLink>{" "}
           is useful if you work with React in VS Code
         </li>
       </ul>

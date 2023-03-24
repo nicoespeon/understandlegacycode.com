@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Guide from "../components/guide"
+import Guide from "../templates/guide"
 import SEO from "../components/seo"
 import ExtLink from "../components/ext-link"
 import Title from "../components/title"

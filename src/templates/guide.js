@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
+import Bio from "../components/bio"
+import CTA from "../components/cta"
 import { rhythm } from "../utils/typography"
-import Bio from "./bio"
-import CTA from "./cta"
 import Layout from "./layout"
 
 function Guide({ data, location, children }) {

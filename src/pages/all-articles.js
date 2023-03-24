@@ -1,10 +1,10 @@
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Bio from "../components/bio"
+import SEO from "../components/seo"
+import Layout from "../templates/layout"
 import { rhythm } from "../utils/typography"
 
 class IndexPage extends React.Component {

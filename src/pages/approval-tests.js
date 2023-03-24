@@ -1,10 +1,10 @@
-import React from "react"
 import { graphql } from "gatsby"
+import React from "react"
 
-import Guide from "../components/guide"
-import SEO from "../components/seo"
 import ExtLink from "../components/ext-link"
+import SEO from "../components/seo"
 import Title from "../components/title"
+import Guide from "../templates/guide"
 
 function Page(props) {
   return (
@@ -119,10 +119,8 @@ function Page(props) {
           in many, many languages
         </li>
         <li>
-          <ExtLink href="https://touca.io/">
-            Touca
-          </ExtLink>{" "}
-          is a continuous regression testing tool that help you do that!
+          <ExtLink href="https://touca.io/">Touca</ExtLink> is a continuous
+          regression testing tool that help you do that!
         </li>
       </ul>
     </Guide>
