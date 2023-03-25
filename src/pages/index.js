@@ -79,7 +79,7 @@ class IndexPage extends React.Component {
           <Li key="approval-tests">
             {" "}
             <ImgLink to="approval-tests">
-              <img src="/assets/approval-testing.png" />
+              <img alt="" src="/assets/approval-testing.png" />
             </ImgLink>
             <Link className="title-font" to="approval-tests">
               Approval Testing
@@ -92,7 +92,7 @@ class IndexPage extends React.Component {
           <Li key="behavioral-analysis">
             {" "}
             <ImgLink to="behavioral-analysis">
-              <img src="/assets/behavioral-analysis.png" />
+              <img alt="" src="/assets/behavioral-analysis.png" />
             </ImgLink>
             <Link className="title-font" to="behavioral-analysis">
               Behavioral Analysis
@@ -105,7 +105,7 @@ class IndexPage extends React.Component {
           <Li key="dependency-graphs">
             {" "}
             <ImgLink to="dependency-graphs">
-              <img src="/assets/draw-dependency-graph.png" />
+              <img alt="" src="/assets/draw-dependency-graph.png" />
             </ImgLink>
             <Link className="title-font" to="dependency-graphs">
               Draw Dependency Graphs
@@ -143,7 +143,7 @@ class IndexPage extends React.Component {
         <GridUl>
           <Li key="getting-into-large-codebase">
             <ImgLink to="getting-into-large-codebase">
-              <img src="/assets/getting-into-large-codebases.png" />
+              <img alt="" src="/assets/getting-into-large-codebases.png" />
             </ImgLink>
             <Link className="title-font" to="getting-into-large-codebase">
               Getting into a large codebase
@@ -155,7 +155,7 @@ class IndexPage extends React.Component {
           </Li>
           <Li key="best-practice-or-code-smell">
             <ImgLink to="best-practice-or-code-smell">
-              <img src="/assets/best-practice-or-code-smell.png" />
+              <img alt="" src="/assets/best-practice-or-code-smell.png" />
             </ImgLink>
             <Link className="title-font" to="best-practice-or-code-smell">
               Best practice or a code smell?
@@ -167,7 +167,7 @@ class IndexPage extends React.Component {
           </Li>
           <Li key="changing-untested-code">
             <ImgLink to="changing-untested-code">
-              <img src="/assets/changing-untested-code.png" />
+              <img alt="" src="/assets/changing-untested-code.png" />
             </ImgLink>
             <Link className="title-font" to="changing-untested-code">
               Changing untested code without breaking it
@@ -179,7 +179,7 @@ class IndexPage extends React.Component {
           </Li>
           <Li key="code-feels-impossible-to-maintain">
             <ImgLink to="code-feels-impossible-to-maintain">
-              <img src="/assets/impossible-to-maintain.png" />
+              <img alt="" src="/assets/impossible-to-maintain.png" />
             </ImgLink>
             <Link className="title-font" to="code-feels-impossible-to-maintain">
               Code feels impossible to maintain
@@ -192,7 +192,7 @@ class IndexPage extends React.Component {
           </Li>
           <Li key="making-others−care-about-it">
             <ImgLink to="making-others−care-about-it">
-              <img src="/assets/making-others-care.png" />
+              <img alt="" src="/assets/making-others-care.png" />
             </ImgLink>
             <Link className="title-font" to="making-others−care-about-it">
               Making others care about it
