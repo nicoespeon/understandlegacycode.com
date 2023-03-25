@@ -45,90 +45,6 @@ class IndexPage extends React.Component {
           <p>— Nicolas</p>
         </Disclaimer>
         <h2>
-          <span role="img" aria-label="Open book">
-            📖
-          </span>{" "}
-          Helpful Guides
-        </h2>
-        <Ul>
-          <Li key="getting-into-large-codebase">
-            <LargeLink to={`getting-into-large-codebase`}>
-              Getting into a large codebase
-            </LargeLink>
-            <p>
-              Diving into a large, undocumented codebase is overwhelming. Let's
-              see some techniques to approach it.
-            </p>
-          </Li>
-          <Li key="best-practice-or-code-smell">
-            <LargeLink to={`best-practice-or-code-smell`}>
-              Is it a best practice or a code smell?
-            </LargeLink>
-            <p>
-              Not sure if a pattern will make the code more maintainable? Here
-              are a few resources that will help.
-            </p>
-          </Li>
-          <Li key="changing-untested-code">
-            <LargeLink to={`changing-untested-code`}>
-              Changing untested code without breaking it
-            </LargeLink>
-            <p>
-              Without tests, every code change is risky. But how to put tests on
-              a code that wasn't design for it?
-            </p>
-          </Li>
-          <Li key="code-feels-impossible-to-maintain">
-            <LargeLink to={`code-feels-impossible-to-maintain`}>
-              Code feels impossible to maintain
-            </LargeLink>
-            <p>
-              Sometimes, you seem to hit a point of no return and that the best
-              strategy would be to burn it all and start over. Are there
-              alternatives?
-            </p>
-          </Li>
-          <Li key="making-others−care-about-it">
-            <LargeLink to={`making-others−care-about-it`}>
-              Making others care about it
-            </LargeLink>
-            <p>
-              What you can do when it seems that no-one cares about the
-              technical debt that's piling up.
-            </p>
-          </Li>
-        </Ul>
-        <h2>
-          <span role="img" aria-label="Kimono">
-            🥋
-          </span>{" "}
-          Specific techniques
-        </h2>
-        <Ul>
-          <Li key="approval-tests">
-            <LargeLink to={`approval-tests`}>Approval Testing</LargeLink>
-            <p>
-              A technique to quickly put tests on Legacy Code, so you can
-              refactor safely.
-            </p>
-          </Li>
-          <Li key="behavioral-analysis">
-            <LargeLink to={`behavioral-analysis`}>
-              Behavioral Analysis
-            </LargeLink>
-            <p>
-              A technique to get insights from large codebases, using VCS
-              information.
-            </p>
-          </Li>
-          <Li key="dependency-graphs">
-            <LargeLink to={`dependency-graphs`}>
-              Draw Dependency Graphs
-            </LargeLink>
-            <p>A technique to understand the structure of a codebase.</p>
-          </Li>
-        </Ul>
-        <h2>
           <span role="img" aria-label="Lightbulb">
             💡
           </span>{" "}
@@ -153,6 +69,140 @@ class IndexPage extends React.Component {
             <Link to={`all-articles`}>all my published articles</Link>
           </Li>
         </Ul>
+        <h2>
+          <span role="img" aria-label="Kimono">
+            🥋
+          </span>{" "}
+          Specific techniques
+        </h2>
+        <GridUl>
+          <Li key="approval-tests">
+            {" "}
+            <ImgLink to="approval-tests">
+              <img src="/assets/approval-testing.png" />
+            </ImgLink>
+            <Link className="title-font" to="approval-tests">
+              Approval Testing
+            </Link>
+            <p>
+              A technique to quickly put tests on Legacy Code, so you can
+              refactor safely.
+            </p>
+          </Li>
+          <Li key="behavioral-analysis">
+            {" "}
+            <ImgLink to="behavioral-analysis">
+              <img src="/assets/behavioral-analysis.png" />
+            </ImgLink>
+            <Link className="title-font" to="behavioral-analysis">
+              Behavioral Analysis
+            </Link>
+            <p>
+              A technique to get insights from large codebases, using VCS
+              information.
+            </p>
+          </Li>
+          <Li key="dependency-graphs">
+            {" "}
+            <ImgLink to="dependency-graphs">
+              <img src="/assets/draw-dependency-graph.png" />
+            </ImgLink>
+            <Link className="title-font" to="dependency-graphs">
+              Draw Dependency Graphs
+            </Link>
+            <p>A technique to understand the structure of a codebase.</p>
+          </Li>
+        </GridUl>
+        <h2 id="books">
+          <span role="img" aria-label="Books">
+            📚
+          </span>{" "}
+          Useful books on Legacy Code
+        </h2>
+        <Ul>
+          {books.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Li key={node.fields.slug}>
+                <LargeLink to={`blog${node.fields.slug}`}>{title}</LargeLink>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </Li>
+            )
+          })}
+        </Ul>
+        <h2>
+          <span role="img" aria-label="Open book">
+            📖
+          </span>{" "}
+          Helpful Guides
+        </h2>
+        <GridUl>
+          <Li key="getting-into-large-codebase">
+            <ImgLink to="getting-into-large-codebase">
+              <img src="/assets/getting-into-large-codebases.png" />
+            </ImgLink>
+            <Link className="title-font" to="getting-into-large-codebase">
+              Getting into a large codebase
+            </Link>
+            <p>
+              Diving into a large, undocumented codebase is overwhelming. Let's
+              see some techniques to approach it.
+            </p>
+          </Li>
+          <Li key="best-practice-or-code-smell">
+            <ImgLink to="best-practice-or-code-smell">
+              <img src="/assets/best-practice-or-code-smell.png" />
+            </ImgLink>
+            <Link className="title-font" to="best-practice-or-code-smell">
+              Best practice or a code smell?
+            </Link>
+            <p>
+              Not sure if a pattern will make the code more maintainable? Here
+              are a few resources that will help.
+            </p>
+          </Li>
+          <Li key="changing-untested-code">
+            <ImgLink to="changing-untested-code">
+              <img src="/assets/changing-untested-code.png" />
+            </ImgLink>
+            <Link className="title-font" to="changing-untested-code">
+              Changing untested code without breaking it
+            </Link>
+            <p>
+              Without tests, every code change is risky. But how to put tests on
+              a code that wasn't design for it?
+            </p>
+          </Li>
+          <Li key="code-feels-impossible-to-maintain">
+            <ImgLink to="code-feels-impossible-to-maintain">
+              <img src="/assets/impossible-to-maintain.png" />
+            </ImgLink>
+            <Link className="title-font" to="code-feels-impossible-to-maintain">
+              Code feels impossible to maintain
+            </Link>
+            <p>
+              Sometimes, you seem to hit a point of no return and that the best
+              strategy would be to burn it all and start over. Are there
+              alternatives?
+            </p>
+          </Li>
+          <Li key="making-others−care-about-it">
+            <ImgLink to="making-others−care-about-it">
+              <img src="/assets/making-others-care.png" />
+            </ImgLink>
+            <Link className="title-font" to="making-others−care-about-it">
+              Making others care about it
+            </Link>
+            <p>
+              What you can do when it seems that no-one cares about the
+              technical debt that's piling up.
+            </p>
+          </Li>
+        </GridUl>
         <h2>
           <span role="img" aria-label="Headphones">
             🎧
@@ -215,33 +265,12 @@ class IndexPage extends React.Component {
             )
           })}
         </Ul>
-        <h2 id="books">
-          <span role="img" aria-label="Books">
-            📚
-          </span>{" "}
-          Useful books on Legacy Code
-        </h2>
-        <Ul>
-          {books.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <Li key={node.fields.slug}>
-                <LargeLink to={`blog${node.fields.slug}`}>{title}</LargeLink>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </Li>
-            )
-          })}
-        </Ul>
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(1.5),
           }}
         />
-        <div id="subscribe">
+        <div style={{ marginBottom: rhythm(2) }} id="subscribe">
           <CTA />
         </div>
         <Bio />
@@ -267,10 +296,93 @@ const Li = styled.li`
   }
 `
 
+const GridUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  grid-row-gap: 1.5rem;
+  margin-left: 0 !important;
+
+  & > li {
+    grid-column: span 2;
+    margin-left: 0 !important;
+  }
+
+  & > li:last-child:nth-child(2n + 1) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  & > li::before {
+    display: none !important;
+  }
+
+  img {
+    margin-bottom: 0.75rem;
+    border: 1px solid ${colors.background};
+    border-radius: 1rem;
+    box-shadow: -0.5rem 0.75rem 0 ${colors.background};
+  }
+  & > li:nth-of-type(2n) {
+    img {
+      box-shadow: 0.5rem -0.75rem 0 ${colors.background};
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+      img {
+        box-shadow: 0.5rem -0.75rem 0 ${colors.primary};
+      }
+    }
+  }
+
+  & a {
+    font-size: 1.2rem;
+    line-height: 0.5rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      transition: all 0.2s ease-in-out;
+
+      img {
+        box-shadow: -0.5rem 0.75rem 0 ${colors.primary};
+      }
+    }
+  }
+
+  & p {
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    margin-left: -4rem !important;
+    margin-right: -4rem;
+    grid-gap: 1.5rem;
+  }
+
+  @media (max-width: 500px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+
+    & > li {
+      grid-column: span 1;
+    }
+
+    & > li:last-child:nth-child(2n + 1) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+`
+
 const Ul = styled.ul`
   margin: "20px 0 40px";
 `
 
+const ImgLink = props => <Link style={{ boxShadow: "none" }} {...props} />
 const LargeLink = props => <Link style={{ fontSize: "21px" }} {...props} />
 const LargeExternalLink = props => (
   <a

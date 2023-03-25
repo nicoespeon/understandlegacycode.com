@@ -75,7 +75,10 @@ export default props => (
                   />
                 </Link>
                 <Content>
-                  <p style={{ fontWeight: "bold", marginBottom: "0.5em" }}>
+                  <p
+                    className="title-font"
+                    style={{ fontWeight: "bold", marginBottom: "0.5em" }}
+                  >
                     <Link to={`blog${article.fields.slug}`}>
                       {article.frontmatter.title}
                     </Link>
