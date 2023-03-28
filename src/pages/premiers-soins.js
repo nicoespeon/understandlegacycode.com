@@ -449,7 +449,7 @@ function Page() {
       <Content>
         <h2>À propos de l’auteur</h2>
         <Author>
-          <img src="/assets/profile.jpg" alt="Nicolas Carlo" />
+          <img src="/assets/profile.png" alt="Nicolas Carlo" />
           <div
             style={{
               lineHeight: "2rem",
