@@ -90,6 +90,18 @@ The gist of it is: you should be able to test all the different behavior of your
 
 This is theory and all, but let's get back to our reality: existing code that's not tested.
 
+### I/O-Free and I/O-Dependent tests
+
+👍 I really like [Ted M. Young's nomenclature](https://ted.dev/articles/2023/04/02/i-m-done-with-unit-and-integration-tests/) of "I/O-Free tests" and "I/O-Dependent" tests.
+
+"I/O" is everything that is external to your application code at runtime (eg. database, 3rd parties, system's clock…). It is what I called the "Infrastructure" earlier. "Infrastructure" comes from the Domain-Driven Design world, but it's often confused with DevOps/Docker/containers stuff. I/O may work best. It depends on who you are talking to.
+
+### What good tests look like?
+
+Kent Beck came up with [a list of characteristics](https://kentbeck.github.io/TestDesiderata/) of what make tests useful.
+
+Beyond the nomenclature, I often find myself go back to this list to ask myself how existing tests can be improved, and what traits we should strive for.
+
 ## Back to Legacy Code 🦄 🌈
 
 I think this view on testing can guide you. You shouldn't mock a lot. But dealing with Legacy Code, you will have to. Temporarily. Because the code is a tangled mess of things that are hard to test (Infrastructure) and business logic (Domain).
