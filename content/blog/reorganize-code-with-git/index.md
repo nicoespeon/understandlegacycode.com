@@ -3,7 +3,7 @@ title: Find how to (re)organize code with git
 date: 2023-04-19T21:24:00.000Z
 image: /assets/change-coupling.jpg
 description: >-
-  Does your codebase feel like a tote bage of "shared" and "utils" folder? Git may help you find a better structure.
+  Does your codebase feel like a tote bag of "shared" and "utils" folder? Git may help you find a better structure.
 tags:
   - code feels impossible to maintain
   - not sure where to start refactoring
