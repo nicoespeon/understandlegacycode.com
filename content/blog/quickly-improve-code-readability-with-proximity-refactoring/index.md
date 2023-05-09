@@ -61,7 +61,7 @@ Here are the things you should keep close together:
 
 In general, everything that _changes_ together is best kept together.
 
-That's what Adam Tornhill calls the **Principle of Proximity** in [Software Design X-Rays](../key-points-of-software-design-x-rays):
+That's what Adam Tornhill calls the **Principle of Proximity** in [Software Design X-Rays](https://understandlegacycode.com/blog/key-points-of-software-design-x-rays):
 
 > Functions that are changed together should be moved closer together.
 

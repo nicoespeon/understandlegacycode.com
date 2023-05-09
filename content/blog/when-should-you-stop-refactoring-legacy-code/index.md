@@ -132,7 +132,7 @@ Sure, developers would still have to think about cleaning up the DB themselves. 
 
 ## Happy ending
 
-I was able to ship this change before the deadline and even tackle other topics in the remaining time. The end result wasn't the one I announced, but I explained my findings and the decisions I had taken. I also [documented all that in an ADR](../earn-maintainers-esteem-with-adrs), so we can easily revisit this decision in the future.
+I was able to ship this change before the deadline and even tackle other topics in the remaining time. The end result wasn't the one I announced, but I explained my findings and the decisions I had taken. I also [documented all that in an ADR](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs), so we can easily revisit this decision in the future.
 
 Was it wasted time? I think not:
 
@@ -149,7 +149,7 @@ To be honest, this could have easily turned into a nightmare if it wasn't for th
 
 Here's my recap' of the things that helped me win the day when the odds were against me. They can help you too:
 
-1. **Have a clear goal in mind before starting refactoring**. I like using [the Mikado Method](../a-process-to-do-safe-changes-in-a-complex-codebase) for that. Or simply dropping my thoughts on a piece of paper, to keep track of what I'm doing.
+1. **Have a clear goal in mind before starting refactoring**. I like using [the Mikado Method](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase/) for that. Or simply dropping my thoughts on a piece of paper, to keep track of what I'm doing.
 2. **Timebox yourself**. Especially when you're not familiar with what you're about to do. Decide to go for one hour. Then stop, go have a drink, and think about your problem again. Are you heading in a good direction? What if you retried? Would you have a better way?
 3. **Don't be afraid to throw away what you did and start over**. Timebox helps with that!
 4. **Do the best you can in the allocated time**. Be mindful of your deadline.

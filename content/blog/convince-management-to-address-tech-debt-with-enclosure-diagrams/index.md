@@ -18,11 +18,11 @@ It's always about **new features** and **short deadlines**. As they say:
 
 > "Clients won't give money for replacing something that works with something else that may work!"
 
-Managers and developers have different drivers, but they're working for the same company. These conflicting points of view can be solved with better communication and [a few arguments can help](../5-arguments-to-make-managers-care-about-technical-debt/).
+Managers and developers have different drivers, but they're working for the same company. These conflicting points of view can be solved with better communication and [a few arguments can help](https://understandlegacycode.com/blog/5-arguments-to-make-managers-care-about-technical-debt/).
 
 If only you could come up with a plan to make your team faster than ever, you'll get management support for sure! But measuring technical debt is hard and they don't understand technical details anyway…
 
-Hopefully, there is one simple and efficient way to prioritize which tech debt to address first: [Hotspots analysis](../focus-refactoring-with-hotspots-analysis/).
+Hopefully, there is one simple and efficient way to prioritize which tech debt to address first: [Hotspots analysis](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis/).
 
 The concept is simple enough for managers to understand the value. Some parts of the code are changed frequently. Keeping **these ones** clean has a major impact on your productivity. That's a great ROI for the business!
 
@@ -293,4 +293,4 @@ Picture yourself presenting clear diagrams to management and win their support f
 
 Now, open your eyes and go generate the Hotspots diagram of your Legacy codebase! 👍
 
-If you want to go further, run a [Knowledge Map analysis](../identify-who-to-ask-with-knowledge-maps/) to find out who to ask for help for the refactoring work.
+If you want to go further, run a [Knowledge Map analysis](https://understandlegacycode.com/blog/identify-who-to-ask-with-knowledge-maps/) to find out who to ask for help for the refactoring work.

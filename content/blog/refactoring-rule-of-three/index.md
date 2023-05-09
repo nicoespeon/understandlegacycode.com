@@ -120,6 +120,6 @@ In doubt, it's fine to break the rule. **Wait for more duplication.**
 
 Prefer duplication over the wrong abstraction. Don't create an abstraction for the sake of it.
 
-If your abstraction is bad, you'll have to bend its implementation with [boolean parameters](../what-is-wrong-with-boolean-parameters) and `if` statements to cover new use cases. That's a hint, a warning that you're not going in the right direction.
+If your abstraction is bad, you'll have to bend its implementation with [boolean parameters](https://understandlegacycode.com/blog/what-is-wrong-with-boolean-parameters) and `if` statements to cover new use cases. That's a hint, a warning that you're not going in the right direction.
 
 It's also fine if you don't find the abstraction already. You can still refactor it later when you have more context. Just wait for it!

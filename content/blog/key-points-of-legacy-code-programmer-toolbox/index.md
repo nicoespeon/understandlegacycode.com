@@ -20,7 +20,7 @@ This is where [The Legacy Code Programmer's Toolbox](https://leanpub.com/legacyc
 
 In his book, [Jonathan Boccara](https://twitter.com/JoBoccara) focuses on techniques to _understand_ a legacy codebase. He gives you concrete techniques to get into the code.
 
-I think it's a useful complement to the must-read [Working Effectively with Legacy Code](../key-points-of-working-effectively-with-legacy-code) from M. Feathers. Let me share with you what stroke me the most, to give you a glimpse of what's inside the book.
+I think it's a useful complement to the must-read [Working Effectively with Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code) from M. Feathers. Let me share with you what stroke me the most, to give you a glimpse of what's inside the book.
 
 ## First, adopt a productive attitude
 
@@ -54,16 +54,16 @@ Briefly, the 10 techniques are:
 
    ![Example of a Fog of War in a video game](./fog-of-war.png)
 
-2. **Start from the inputs and outputs of the program**. The program must take inputs and produce outputs somewhere. Find them. They can become your stronghold. I described this technique [in another blog post](../dive-into-an-unfamiliar-codebase-from-its-edges).
+2. **Start from the inputs and outputs of the program**. The program must take inputs and produce outputs somewhere. Find them. They can become your stronghold. I described this technique [in another blog post](https://understandlegacycode.com/blog/dive-into-an-unfamiliar-codebase-from-its-edges).
 3. **Analyze well-chosen stacks**. Use a debugger and put a breakpoint deep in the stack of a typical use-case of the app. The call stack will give you a good picture of what's being executed. Flame charts can help you see the dependencies.
 
    ![Example of a flame chart](./flame-chart.png)
 
 4. **Work your way backward from the function's outputs**. It resonates with previous advice: start from the outputs of the system. If your system is a complex function, start from the `return` statements. Look for the side-effects.
-5. **Identify the terms that occur frequently**. It will quickly give you insights about what the function is about. Highlight these words in your IDE and see if you can identify patterns. [I also wrote about this technique in detail](../reveal-long-methods-structure-with-online-word-counter) after learning it from the book.
+5. **Identify the terms that occur frequently**. It will quickly give you insights about what the function is about. Highlight these words in your IDE and see if you can identify patterns. [I also wrote about this technique in detail](https://understandlegacycode.com/blog/reveal-long-methods-structure-with-online-word-counter) after learning it from the book.
 6. **Filter on control flow**. Just focus on the flow keywords (e.g. `if`, `else`, `switch`, `try`, etc.). It quickly reveals the high-level structure of the code.
 7. **Distinguish the main action of the function**. Copy the function in a draft and play with it. Remove lines that don't look to be the main action. It doesn't have to compile, the idea is for you to quickly understand the critical part of the function.
-8. **Use practice functions to improve your code-reading skills**. These are big functions with complex implementations, but almost no dependency. They are easier because they're self-contained, even if the code is dirty. Use [one of the refactoring katas I recommend](../5-coding-exercises-to-practice-refactoring-legacy-code) to practice that!
+8. **Use practice functions to improve your code-reading skills**. These are big functions with complex implementations, but almost no dependency. They are easier because they're self-contained, even if the code is dirty. Use [one of the refactoring katas I recommend](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code) to practice that!
 9. **Decouple the code**. Extract methods from a big function. Rename variables. Interacting with the code teaches you a lot about it because you're not passively reading it.
 10. **Team up with other people**. Bringing someone else also brings a different point of view. Explain to them what you've learned, it will help you connect the dots. Also, working with a peer makes you less distractable, which I find really helpful on Legacy Code—big lumps of spaghetti code can be a real motivation drainer 🐌
 

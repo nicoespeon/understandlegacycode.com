@@ -38,7 +38,7 @@ But if you tried a couple of katas, you might have realized they have one shortc
 
 That's true, the vast majority of katas make you code from scratch…
 
-However, there are a few which are specifically tailored for practicing refactoring Legacy Code. Katas where [Michael Feathers' techniques](../key-points-of-working-effectively-with-legacy-code) would shine.
+However, there are a few which are specifically tailored for practicing refactoring Legacy Code. Katas where [Michael Feathers' techniques](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code) would shine.
 
 Here's my shortlist of katas you should try out.
 
@@ -74,7 +74,7 @@ I like how [the requirements](https://github.com/emilybache/GildedRose-Refactori
 2. Refactor the code
 3. Implement the new feature
 
-It's also a great kata to try [the approval tests technique](../3-steps-to-add-tests-on-existing-code-when-you-have-short-deadlines/).
+It's also a great kata to try [the approval tests technique](https://understandlegacycode.com/blog/3-steps-to-add-tests-on-existing-code-when-you-have-short-deadlines/).
 
 ### 2. The Tennis
 

@@ -46,7 +46,7 @@ Let's see that on a concrete example.
 
 ## Practice it on the Trip Service kata
 
-[I told you](../5-coding-exercises-to-practice-refactoring-legacy-code) this coding exercise is great because it simulates problematic dependencies. Databases, HTTP, randomness… you name it.
+[I told you](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code) this coding exercise is great because it simulates problematic dependencies. Databases, HTTP, randomness… you name it.
 
 The source code is available online:
 
@@ -89,7 +89,7 @@ class TripService {
 }
 ```
 
-By doing so, you are creating [a Seam](../key-points-of-working-effectively-with-legacy-code#identify-seams-to-break-your-code-dependencies): an entry point to change the behavior of the code in your tests.
+By doing so, you are creating [a Seam](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code#identify-seams-to-break-your-code-dependencies): an entry point to change the behavior of the code in your tests.
 
 ### 2. Subclass the class you're testing
 

@@ -75,7 +75,7 @@ Then, take another subtask and continue. As you achieve subtasks, you make the m
 
 Just like the Brain Dump, you'll feel less stressed and you'll have a better view of your progress. You'll be able to push intermediate Pull Requests that will progressively make the main goal easier to achieve.
 
-If you want to learn more, I've dedicated [a full post on this](../a-process-to-do-safe-changes-in-a-complex-codebase) and [there's a book on that](https://www.manning.com/books/the-mikado-method).
+If you want to learn more, I've dedicated [a full post on this](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase) and [there's a book on that](https://www.manning.com/books/the-mikado-method).
 
 ## 3. Over-committing ➿
 
@@ -128,7 +128,7 @@ Make a habit to write these ADRs. It's a little investment that quickly pays off
 
 Finally, I'd recommend you use [the adr-tools CLI](https://github.com/npryce/adr-tools). It makes all of this so easy that you won't have any excuse not to write them.
 
-If you want to learn more about ADRs, [I wrote a detailed post on this topic](../earn-maintainers-esteem-with-adrs) too.
+If you want to learn more about ADRs, [I wrote a detailed post on this topic](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs) too.
 
 ## 5. Approval Testing ✅
 
@@ -242,7 +242,7 @@ Thanks to CodeClimate, I know where I'd start if I really wanted to improve Reac
 
 ![](./code-climate.png)
 
-If you need to convince non-technical people about refactoring work, I've detailed [how you can generate visual graphs of your Hotspots](../convince-management-to-address-tech-debt-with-enclosure-diagrams).
+If you need to convince non-technical people about refactoring work, I've detailed [how you can generate visual graphs of your Hotspots](https://understandlegacycode.com/blog/convince-management-to-address-tech-debt-with-enclosure-diagrams).
 
 ## 7. Katas 🥋
 

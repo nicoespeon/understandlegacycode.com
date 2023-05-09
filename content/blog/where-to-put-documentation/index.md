@@ -76,7 +76,7 @@ You don't need a validation stamp from the Tech Lead to update the doc. Anyone s
 
 Following these 3 traits, I'd recommend keeping your documentation in 2 places:
 
-1. **Everything that is codebase specific should be versioned along with the source code**. Instructions to help people work with the codebase should be here, in some README. I recommend you to [document your architectural decisions here, with ADRs](../earn-maintainers-esteem-with-adrs).
+1. **Everything that is codebase specific should be versioned along with the source code**. Instructions to help people work with the codebase should be here, in some README. I recommend you to [document your architectural decisions here, with ADRs](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs).
 2. **Everything else should be in a single place**. The exact solution doesn't matter. What matters is that it's consistent.
 
 That is, if your company uses Confluence, then use Confluence. If there's no company standard on this, then make a decision for your team. Make it clear that all the documentation would be here.

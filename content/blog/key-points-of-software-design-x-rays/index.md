@@ -51,8 +51,8 @@ That's why you should use the time dimension to identify **Hotspots**: places wh
 
 If you want to learn how to generate and use these, I presented the technique in details:
 
-- [Focus refactoring on what matters with Hotspots Analysis](../focus-refactoring-with-hotspots-analysis)
-- [Convince managers to address Tech Debt with Enclosure Diagrams](../convince-management-to-address-tech-debt-with-enclosure-diagrams)
+- [Focus refactoring on what matters with Hotspots Analysis](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis)
+- [Convince managers to address Tech Debt with Enclosure Diagrams](https://understandlegacycode.com/blog/convince-management-to-address-tech-debt-with-enclosure-diagrams)
 
 Interestingly, hotspots tend to stay here because people are afraid to tackle them. So they attract even more complexity and become problematic bottlenecks.
 
@@ -222,7 +222,7 @@ You can generate an enclosure diagram to identify bottlenecks in your large code
 
 ### Keep a decision log
 
-[Architecture Decision Record (ADR)](../earn-maintainers-esteem-with-adrs) are very useful to simply keep track of architectural decisions in the project.
+[Architecture Decision Record (ADR)](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs) are very useful to simply keep track of architectural decisions in the project.
 
 They help people understand why and how decisions were taken in the past. This is useful to re-evaluate them later in the project, as well as spreading knowledge.
 
@@ -284,7 +284,7 @@ The limit of this analysis depends on your commit strategy. **If you can't trust
 
 If you want to learn how to generate these, I presented the technique in details:
 
-- [Identify who to ask for help with Knowledge Maps](../identify-who-to-ask-with-knowledge-maps/)
+- [Identify who to ask for help with Knowledge Maps](https://understandlegacycode.com/blog/identify-who-to-ask-with-knowledge-maps/)
 
 ## Conclusion
 

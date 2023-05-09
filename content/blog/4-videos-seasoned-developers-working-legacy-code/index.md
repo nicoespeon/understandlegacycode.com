@@ -13,7 +13,7 @@ tags:
 
 Ooooh I feel you. That is a very, very common thought to have my friend 😃
 
-In fact, most developers are only exposed to Legacy Code at work. You have to maintain an existing codebase because that's what is bringing money to the company. After all, [Legacy Code is _valuable_ code you're afraid to change](../what-is-legacy-code-is-it-code-without-tests#code-youre-not-comfortable-changing).
+In fact, most developers are only exposed to Legacy Code at work. You have to maintain an existing codebase because that's what is bringing money to the company. After all, [Legacy Code is _valuable_ code you're afraid to change](https://understandlegacycode.com/blog/what-is-legacy-code-is-it-code-without-tests#code-youre-not-comfortable-changing).
 
 If you are lucky enough, you'll be working with seasoned developers who can teach you their tricks. But this is not very common.
 
@@ -35,7 +35,7 @@ We, developers, spend most of our time performing. Little time is dedicated to a
 
 Let's briefly cover the few questions that are popping in your head:
 
-- _Where to practice?_ On coding exercises that are designed for this. [Here's the list of 5 refactoring katas](../5-coding-exercises-to-practice-refactoring-legacy-code) I recommend.
+- _Where to practice?_ On coding exercises that are designed for this. [Here's the list of 5 refactoring katas](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code) I recommend.
 - _When to practice?_ We don't all have the luxury to take on our personal time to do so. But your employer certainly has to train you every year. They have a budget to spend on this! Use it to develop skills that will help you in the long run 😉
 - _What to practice?_ This is a very good question. Practicing is good, but it's better if someone can show you the moves…
 

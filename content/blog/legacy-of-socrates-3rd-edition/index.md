@@ -26,7 +26,7 @@ Without further ado, let me tell you how each talk can help you deal with your e
 
 I like this talk because it shows the technique in action, on concrete code.
 
-Also, [Gilded Rose is an exercise I recommend doing](../5-coding-exercises-to-practice-refactoring-legacy-code/#1-the-gilded-rose) if you want to get better at refactoring existing code.
+Also, [Gilded Rose is an exercise I recommend doing](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code/#1-the-gilded-rose) if you want to get better at refactoring existing code.
 
 Watch him get the code under test in no-time:
 
@@ -52,7 +52,7 @@ Did you noticed she uses a similar definition of Legacy code of mine:
 
 ## 7 Techniques to understand Legacy Code
 
-This time, [these techniques are not from me](../7-techniques-to-regain-control-of-legacy/) 😁
+This time, [these techniques are not from me](https://understandlegacycode.com/blog/7-techniques-to-regain-control-of-legacy/) 😁
 
 [Jonathan Boccara](https://twitter.com/JoBoccara) is the author of [The Legacy Code Programmer's Toolbox](https://leanpub.com/legacycode). It's one of the rare books that give you practical skills when you have to deal with Legacy code.
 
@@ -62,7 +62,7 @@ In this talk, Jonathan presents 7 techniques that can be handy:
 2. Find a stronghold
 3. Analyze call stacks
 4. Start reading from the outputs
-5. Count words (I wrote [about this one in details](../reveal-long-methods-structure-with-online-word-counter/))
+5. Count words (I wrote [about this one in details](https://understandlegacycode.com/blog/reveal-long-methods-structure-with-online-word-counter/))
 6. Filter on control flow
 7. Scan for the main action
 

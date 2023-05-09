@@ -25,7 +25,7 @@ I met Tobias when he came to facilitate the SoCraTes Canada unconference I also 
 
 The so-called "Strangler Fig" (aka "Strangler") pattern is a much-cited strategy for replacing legacy systems with new, often microservice-based architectures.
 
-[I even wrote about it myself](../avoid-rewriting-a-legacy-system-from-scratch-by-strangling-it)!
+[I even wrote about it myself](https://understandlegacycode.com/blog/avoid-rewriting-a-legacy-system-from-scratch-by-strangling-it)!
 
 However, it's not actually a microservice pattern, and there are several - quite different - ways to implement it. Are you confused yet?
 
@@ -41,7 +41,7 @@ This talk looks at different definitions of code quality and then focuses on one
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Zo4lfiKc8yA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[I also wrote about the topic of Hotspots Analysis](../focus-refactoring-with-hotspots-analysis) with concrete tools you can use to prioritize technical debt, even if you're not using Ruby.
+[I also wrote about the topic of Hotspots Analysis](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis) with concrete tools you can use to prioritize technical debt, even if you're not using Ruby.
 
 ## Improving Legacy
 

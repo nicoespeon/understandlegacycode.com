@@ -39,7 +39,7 @@ When you feel stuck because you don't understand what the code is doing, here's 
 5. **Throw away your changes** when the timer rings! Just do it: `git reset --hard`
 6. **Take a break**, go drink some water and _think_ about what you just learned
 
-This is described by Michael Feathers as "Exploratory Refactoring" in [Working Effectively with Legacy Code](../key-points-of-working-effectively-with-legacy-code).
+This is described by Michael Feathers as "Exploratory Refactoring" in [Working Effectively with Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code).
 
 It's not really a refactoring process, but a learning one. Your goal here is to **understand Legacy Code**.
 

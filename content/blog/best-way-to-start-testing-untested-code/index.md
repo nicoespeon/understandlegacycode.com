@@ -31,7 +31,7 @@ In practice though, I find they take a lot of time to set up if you don't have s
 
 **Their feedback is too long to be useful during development**.
 
-"Unit tests" definition is more debatable. I've found that people think differently about what a unit is. I prefer to talk about [isolated tests](../if-you-mock-are-you-even-testing/#isolated-tests). Nevertheless, I'm referring to the tests that are closer to the code, run fast, and are reliable.
+"Unit tests" definition is more debatable. I've found that people think differently about what a unit is. I prefer to talk about [isolated tests](https://understandlegacycode.com/blog/if-you-mock-are-you-even-testing/#isolated-tests). Nevertheless, I'm referring to the tests that are closer to the code, run fast, and are reliable.
 
 Such tests are great while developing. Done properly, they don't focus on implementation details and help you guide the design of the code. They provide you with extremely quick feedback on the code. At first sight, they seem the companion you need to deal with this legacy!
 

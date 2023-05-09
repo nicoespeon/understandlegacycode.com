@@ -33,13 +33,13 @@ And I have good news for you: **you can generate this map for your project in ab
 
 ## Drawing a Knowledge Map
 
-I've discovered the concept of Knowledge Maps in [Software Design X-Rays](../key-points-of-software-design-x-rays).
+I've discovered the concept of Knowledge Maps in [Software Design X-Rays](https://understandlegacycode.com/blog/key-points-of-software-design-x-rays).
 
 The idea is to leverage git metadata to retrieve the information you need about contributors. Then, you visualize this data with a useful enclosure diagram:
 
 ![](./knowledge-map.png)
 
-If you didn't, I suggest you first read [how we generated the Hotspots diagrams to convince managers to address Tech Debt](../convince-management-to-address-tech-debt-with-enclosure-diagrams/#using-code-forensics-to-generate-hotspots-enclosure-diagrams).
+If you didn't, I suggest you first read [how we generated the Hotspots diagrams to convince managers to address Tech Debt](https://understandlegacycode.com/blog/convince-management-to-address-tech-debt-with-enclosure-diagrams/#using-code-forensics-to-generate-hotspots-enclosure-diagrams).
 
 In fact, we'll use [code-forensics](https://github.com/smontanari/code-forensics) again to generate a Knowledge Map of any codebase in a matter of minutes.
 
@@ -65,7 +65,7 @@ Let's draw the Knowledge Map to find out!
 
 ### Getting started
 
-First, follow [the 7 steps detailed in the Hotspots analysis](../convince-management-to-address-tech-debt-with-enclosure-diagrams/#diving-in-step-by-step) to get started with `code-forensics`.
+First, follow [the 7 steps detailed in the Hotspots analysis](https://understandlegacycode.com/blog/convince-management-to-address-tech-debt-with-enclosure-diagrams/#diving-in-step-by-step) to get started with `code-forensics`.
 
 When you're ready, here's what your `package.json` should look like:
 

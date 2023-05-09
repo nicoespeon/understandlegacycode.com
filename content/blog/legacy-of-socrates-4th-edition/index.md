@@ -36,13 +36,13 @@ I'd recommend you watch this one in multiple 10-15min shots to get most of it:
 
 If you want to practice on the same kata, here it is: [github.com/SoftwareCraftsmanshipGrenoble/elections](https://github.com/SoftwareCraftsmanshipGrenoble/elections)
 
-If you are looking for more coding exercises to work on Legacy Code, [I've compiled a list for you](../5-coding-exercises-to-practice-refactoring-legacy-code/).
+If you are looking for more coding exercises to work on Legacy Code, [I've compiled a list for you](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code/).
 
 ## Refactoring Large Objects with the Strangler Fig pattern
 
 I **love** this one.
 
-First of all, [I've written about the Strangler Fig pattern](../avoid-rewriting-a-legacy-system-from-scratch-by-strangling-it/) because it's such a useful technique to avoid big-bang rewrites.
+First of all, [I've written about the Strangler Fig pattern](https://understandlegacycode.com/blog/avoid-rewriting-a-legacy-system-from-scratch-by-strangling-it/) because it's such a useful technique to avoid big-bang rewrites.
 
 But in this talk, [Adrianna Chang](https://twitter.com/adriannakchang) goes further: she gives you her feedback **from Shopify's trenches**! Real, concrete, technical examples. Stories from production. And a smart 7-steps process to follow 🌈
 
@@ -66,7 +66,7 @@ With his advice, you'll be able to see small but tangible improvements every 2 d
 
 Among this great advice, you'll find gems as:
 
-- **Naming things**, which can be done incrementally. I wrote [a recap of these steps in a previous post](../improving-legacy-function-names/#its-fine-to-use-and-but-your-journey-doesnt-stop-here)
+- **Naming things**, which can be done incrementally. I wrote [a recap of these steps in a previous post](https://understandlegacycode.com/blog/improving-legacy-function-names/#its-fine-to-use-and-but-your-journey-doesnt-stop-here)
 - **Extract & Inline things**. You can often find these refactorings automated in your IDE and I can only recommend you to practice these!
 
 ## A discussion on Legacy Code and Symmathesy
@@ -83,7 +83,7 @@ In short: you are part of a system and you mutually influence each other. Your t
 
 Finally, I had the pleasure to host [David Bernstein](https://twitter.com/ToBeAgile)!
 
-David is the author of "Beyond Legacy Code", a great book [for which I did a summary of the salient points](../key-points-of-beyond-legacy-code/).
+David is the author of "Beyond Legacy Code", a great book [for which I did a summary of the salient points](https://understandlegacycode.com/blog/key-points-of-beyond-legacy-code/).
 
 David trains teams to work more efficiently with existing software. This talk is an excerpt of his wisdom that you could find in his book or courses. He goes back to the basics of unit testing and shows how you can leverage it not just to prevent regressions, but to drive future changes you have to do!
 

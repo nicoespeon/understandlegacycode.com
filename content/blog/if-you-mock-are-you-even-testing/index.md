@@ -12,7 +12,7 @@ Have you ever felt like you're making the code harder to read for the sake of te
 
 Imagine, you have this existing code and it's not tested. It does a bunch of side-effects. People say you should put that code under tests before touching it.
 
-So you begin to follow advice like [passing globals as parameters](../best-way-to-handle-global-variables) or [extracting problematic side-effects to mock them in tests](../quick-way-to-add-tests-when-code-does-side-effects).
+So you begin to follow advice like [passing globals as parameters](https://understandlegacycode.com/blog/best-way-to-handle-global-variables) or [extracting problematic side-effects to mock them in tests](https://understandlegacycode.com/blog/quick-way-to-add-tests-when-code-does-side-effects).
 
 But the more you go, the more it feels off. You end up with a lot of mocked states and data so you can write your _fast and reliable_ unit tests. In the end, it looks like you've created an entirely different class that doesn't accurately represent the actual code.
 
@@ -120,7 +120,7 @@ How do you know the DB implementation works correctly? Because you'll still writ
 
 Here's a process to approach Legacy Code:
 
-1. **Use the [Extend & Override technique](../quick-way-to-add-tests-when-code-does-side-effects/) to break painful dependencies**. It's a good first step that works. Cut the Infrastructure part from the rest of the code so you can start writing tests.
+1. **Use the [Extend & Override technique](https://understandlegacycode.com/blog/quick-way-to-add-tests-when-code-does-side-effects/) to break painful dependencies**. It's a good first step that works. Cut the Infrastructure part from the rest of the code so you can start writing tests.
 2. **Invert the dependency between the code and the extracted Infrastructure**. You do that by using Dependency Injection. This is where you need to make design decisions: can you group some methods you extracted into a coherent class? E.g. group things that are related to storing/retrieving stored data. This is your **Infrastructure adapter**.
 3. **If your language is statically typed, extract the interface from the class you've created**. It's a simple and safe refactoring. It allows you to finalize the dependency inversion: make your code depends on the interface and not the concrete implementation that you extracted.
 4. **In your tests, provide a fake implementation to this interface**. Typically, this implementation will store things in memory. It should follow the same interface and behave similarly to the production implementation you've extracted.
@@ -146,7 +146,7 @@ But all of this is important. Testing, software architecture, and Legacy Code: a
 
 You might feel it's a lot of work and you won't do that right now because you don't have time.
 
-I say it's a lot of practice. If you need to, [here are exercises you can use](../5-coding-exercises-to-practice-refactoring-legacy-code/).
+I say it's a lot of practice. If you need to, [here are exercises you can use](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code/).
 
 But here's the final relief: **you don't have to do all 6 steps at once.** You can do that iteratively. It takes a bit of faith in the process (that's why it's good to practice), but it works. If you are worried about wasting time by mocking too much, that's because you're still at step 1. Push further! You should have fewer mocks and more confidence that your tests are accurate.
 

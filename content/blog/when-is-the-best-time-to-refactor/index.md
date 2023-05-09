@@ -43,7 +43,7 @@ Instead, make refactoring part of implementing the feature or fixing the bug. It
 
 > Refactor continuously. But only refactor what needs to be.
 
-What if you don't know the code enough to see what needs to be refactored? I suggest you first do some [Exploratory Refactoring](../demine-codebase-with-exploratory-refactoring) to learn more about it. You won't keep these changes. You do that so you have a clearer idea about what actually needs to be changed.
+What if you don't know the code enough to see what needs to be refactored? I suggest you first do some [Exploratory Refactoring](https://understandlegacycode.com/blog/demine-codebase-with-exploratory-refactoring) to learn more about it. You won't keep these changes. You do that so you have a clearer idea about what actually needs to be changed.
 
 Wouldn't that make the code inconsistent if you only refactor a part of it? It probably will and that's fine. Your team can keep track of ongoing refactorings in a Markdown file, versioned with the source code.
 

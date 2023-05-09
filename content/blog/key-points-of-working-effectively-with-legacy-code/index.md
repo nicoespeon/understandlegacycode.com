@@ -15,7 +15,7 @@ ctaId: 93abb108c5
 
 If you've come across that definition, it's from Michael Feathers' book: [Working Effectively with Legacy Code](https://www.google.com/search?q=working+effectively+with+legacy+code).
 
-While I have [a slightly extended definition](../what-is-legacy-code-is-it-code-without-tests/), this is a very valid and useful one!
+While I have [a slightly extended definition](https://understandlegacycode.com/blog/what-is-legacy-code-is-it-code-without-tests/), this is a very valid and useful one!
 
 Feathers' book is from 2004. Yet, its content doesn't get outdated. There is a reason for that and [this CommitStrip](http://www.commitstrip.com/en/2019/03/13/like-a-good-wine) puts it best:
 
@@ -152,7 +152,7 @@ This is very powerful because:
 
 This technique is also called "_Approval Testing_", "_Snapshot Testing_" or "_Golden Master_" in the wild. Same stuff.
 
-And I also blogged about it: [the 3 steps to add tests on Legacy Code when you have short deadlines](../3-steps-to-add-tests-on-existing-code-when-you-have-short-deadlines).
+And I also blogged about it: [the 3 steps to add tests on Legacy Code when you have short deadlines](https://understandlegacycode.com/blog/3-steps-to-add-tests-on-existing-code-when-you-have-short-deadlines).
 
 Having short deadlines is a very common situation. When you are in a hurry, it's hard to take the time not to make things worse. Hopefully, there's something you can do…
 

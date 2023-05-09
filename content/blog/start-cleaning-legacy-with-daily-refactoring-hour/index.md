@@ -15,7 +15,7 @@ If that's you, you're not alone.
 
 It's not common for teams to be able to freeze development so they can refactor the code.
 
-Sometimes [you may manage to convince management](../5-arguments-to-make-managers-care-about-technical-debt) to invest some time in cleaning up the code before you implement more features. But usually, you simply don't get enough time to clean up everything.
+Sometimes [you may manage to convince management](https://understandlegacycode.com/blog/5-arguments-to-make-managers-care-about-technical-debt) to invest some time in cleaning up the code before you implement more features. But usually, you simply don't get enough time to clean up everything.
 
 My current team is migrating our codebase from JavaScript to TypeScript. The codebase has a few hundred thousand lines of code. This is a quite large refactoring task!
 

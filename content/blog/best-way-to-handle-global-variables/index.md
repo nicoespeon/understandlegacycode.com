@@ -74,7 +74,7 @@ This code is a challenge to test because you need to get control over `$storage`
 
 Also, you probably don't want to write on your actual filesystem when testing. Maybe you can get around that, but what if you deal with database updates? With 3rd party APIs?
 
-There are ways to solve this problem with clever hijacks of the `$storage` global reference (it's [a Seam](../key-points-of-working-effectively-with-legacy-code#identify-seams-to-break-your-code-dependencies) after all). But:
+There are ways to solve this problem with clever hijacks of the `$storage` global reference (it's [a Seam](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code#identify-seams-to-break-your-code-dependencies) after all). But:
 
 1. When you hijack a reference, you're coupling to everything using it—that is your production code and your tests.
 2. Therefore, you should not forget to "reset" the state of this reference after you're done. Failing to do so can cause unexpected test failures that are tricky to debug.

@@ -99,7 +99,7 @@ Find out what are the critical parts of the application:
 - what is critical for the business?
 - what parts are often impacted by bugs?
 - what parts will be impacted by incoming features?
-- where are [the Hotspots](../focus-refactoring-with-hotspots-analysis) of the system?
+- where are [the Hotspots](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis) of the system?
 
 Writing these tests is a great investment for your future work. Not only, but it will pay off later, it's also a great way to understand how the system works and discover the most important quirks you'll have to deal with.
 

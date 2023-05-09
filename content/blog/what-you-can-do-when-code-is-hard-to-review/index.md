@@ -30,7 +30,7 @@ First, if you feel the change is so difficult that you won't have time to review
 
 "Merge and cross fingers nothing bad happens" is a notoriously bad idea. When doing so, you rely on luck. When you're out of luck, you fail. Some day, you fail badly.
 
-Think about it: if the code is hard to review now, it will be harder to maintain in 6 months! You'll lose the context around the decisions that were taken here. Changes without context stay untouched because we're afraid of unintended consequences! Hopefully, [there's a simple solution for that](../earn-maintainers-esteem-with-adrs).
+Think about it: if the code is hard to review now, it will be harder to maintain in 6 months! You'll lose the context around the decisions that were taken here. Changes without context stay untouched because we're afraid of unintended consequences! Hopefully, [there's a simple solution for that](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs).
 
 Yet, it's hard to come up with a different approach when you're under the pressure to ship.
 
