@@ -28,13 +28,13 @@ However, this active learning phase is **invisible work**. In most companies, it
 
 Therefore, code writers won't invest time into making this process easier for the next person. They may have spent 3 days learning how to run the backend on their local machine. Once it's working, they won't spend more time documenting the missing bits or automating the process, because it's not what is rewarded.
 
-Code writers’ “failures” to document or transfer knowledge were not driven by laziness or lack of care. Rather, [environmental pressures] pushed them to navigate complex tensions between performance and learning goals. And when making learning visible does not feel safe, performance culture wins.
+> Code writers’ “failures” to document or transfer knowledge were not driven by laziness or lack of care. Rather, [environmental pressures] pushed them to navigate complex tensions between performance and learning goals. And when making learning visible does not feel safe, performance culture wins.
 
 This contributes to the problem, and each individual just has to "figure it out" by themselves.
 
 This is something I've witnessed a few times when struggling with the existing code is perceived as part of the onboarding:
 
-Lack of documentation, frustration with invisible decisions, and lack of mentorship for junior teammates were frequently treated like rites of passage, perhaps even the inevitable consequence of high-quality code work.
+> Lack of documentation, frustration with invisible decisions, and lack of mentorship for junior teammates were frequently treated like rites of passage, perhaps even the inevitable consequence of high-quality code work.
 
 If you are looking for solutions to this specifically, I would recommend Dr. Felienne Hermans's work on "The Programmer's Brain". I summarized some of it [in this article](https://understandlegacycode.com/blog/key-points-of-programmer-brain/#better-onboarding-for-developers):
 
