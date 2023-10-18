@@ -59,7 +59,7 @@ Interestingly, even in environments where people talk about ideals regarding col
 
 ## After review, everyone gets back to solo work
 
-“It’s like coding in the dark. Every once in a while someone comes in to turn on the lights and stare at you, like review, but then you feel like you have to defend something. But mostly I feel like I’m just sitting here with all the lights off.”
+> “It’s like coding in the dark. Every once in a while someone comes in to turn on the lights and stare at you, like review, but then you feel like you have to defend something. But mostly I feel like I’m just sitting here with all the lights off.”
 
 Does that sound accurate to you? It does look like a lot of places and cultures I've worked with, regardless of the quality of the code.
 
