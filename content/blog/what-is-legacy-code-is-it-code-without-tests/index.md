@@ -7,66 +7,85 @@ description: Here's a useful definition of "Legacy Code" you can refer to.
 
 _"Legacy Code"_.
 
-If you work in IT, that's a term you'll hear often in your career. Developers talk about it _a lot_. Usually with a lot of negative connotations.
+When developers talk about it, it usually has a lot of negative connotations. But what exactly do they call "Legacy Code"?
 
-But what exactly do they call "Legacy Code"? Is it just old code? Or someone else's code? In any case, you understood that it's not "good code".
+Is it any old code? Or someone else’s code? Is it just crappy code? In general, it doesn't rhyme with good code.
 
-Now, if you've been in the game for some time, you might have realized that everyone has a different opinion on what good code looks like. So, is there a useful definition of "Legacy Code" you can refer to?
+If you’ve been in the game for some time, you might have noticed that everyone has a different opinion on what good code looks like. In this context, is there a useful definition of “Legacy Code” you can refer to?
 
-## Code without tests
+Well, you may have heard about this one:
 
-If you looked around before reading this, you may have come across this description.
+## "Code without tests"
 
-In his book [Working Effectively With Legacy Code](https://www.goodreads.com/book/show/44919.Working_Effectively_with_Legacy_Code), Michael Feathers gives a clear definition of what Legacy Code means to him:
+In his book [Working Effectively With Legacy Code](https://understandlegacycode.com/blog/key-points-of-working-effectively-with-legacy-code), Michael Feathers defines Legacy Code like so:
 
 > To me, legacy code is simply code without tests.
 
 This is an insight from years of experience.
 
-Why is Feathers saying that? Because without tests, it's usually very hard to know everything a code can do.
+But why is Feathers saying that? Well, it turns out that without automated tests, it’s very hard to know what some piece of code can do. You would need to read it carefully, play the computer in your head, and envision all the possible scenarios.
 
-If you need to understand what the code is doing, you need to read it carefully, play the computer in your head and envision all the possible scenarios. You can also test it manually to see what it does. Generally, code without tests is tricky to change without introducing a regression somewhere.
+You may also test it manually to see what it does.
 
-I like this definition. It's a working one. More often than not, tests are missing. So that's a good start.
+In general, code without tests is tricky to change without introducing a regression somewhere.
 
-But I think it's not complete.
+Therefore, I like this definition. It works. More often than not, tests are missing, so that’s a good place to get started.
 
-2 aspects are missing:
+However, I don't think it's the best definition.
 
-1. **Code with tests can also be Legacy Code**. Poorly written tests get in the way. Yes, code can be harder to change because the tests suck! If you read the tests but can't understand what the code is supposed to do, they suck. Tested code can be as difficult to change than if it had no test, maybe even more!
-2. **Code may not have tests and still be easy to change**. Maybe you're maintaining a small codebase that's not tested but that's easy to understand and change—although in my experience, that's a rare animal. This codebase could be tested. But the lack of automated tests might not qualify it as Legacy Code.
+In my opinion, two aspects are missing:
 
-## Code you're not comfortable changing
+1. **Code with tests can also be Legacy Code**. Poorly written tests get in the way of refactoring. Yes, code can be harder to change because the tests are terrible! Ever read tests without understanding what the code is supposed to do? Code with tests can be even more difficult to change than if it wasn't tested!
+2. **Code may not have tests and still be easy to change**. Maybe you’re maintaining a small codebase that’s not tested, but it is easy for you to understand and change. In this context, would you qualify it as Legacy Code, even though tests are lacking?
 
-This is my definition of Legacy Code. Let me repeat that differently:
+Now, what about…
 
-**Legacy Code is valuable code you're afraid to change.**
+## "Code you're not comfortable changing"
 
-Maybe you're looking for the root cause of a bug. Or maybe you're figuring out where to insert your feature. You want to change the code, but you have a hard time doing so because you don't know how not to break existing behavior. _This is Legacy Code._
+OK. Let me put it differently:
 
-You need to realize a few things:
+**Legacy Code is _valuable_ code that _you're afraid_ to change.**
 
-- **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn't write is Legacy Code. Or that code you wrote because you can't remember the hell you had in mind when you did. Yes, our past self often does silly mistakes. Don't tell your future self 🤫
+This definition introduces two important nuances.
+
+First of all, Legacy Code is **valuable** code. If the system is crap but is barely used, you can just throw it away and start over. This is not something you can do with valuable code that is being used in production.
+
+Valuable code often pays for our salary. In fact, Legacy Code may be the reason why you have been hired and are working on your application today. In a sense, this legacy you are dealing with has been successful. It got your company here. Now, some of the wheel is in your hand to keep going further.
+
+![](./worst-codebase.jpg)
+
+Second, when you work on this **valuable** code, I bet you spend a considerable amount of time looking for the root cause of a bug, or figuring out where to insert some new feature. You want to change the code, but you have a hard time doing so because you don’t know how NOT to break the existing behavior!
+
+This is the painful part: you are **afraid** to change this code.
+
+There are a couple of important facts here:
+
+- **Unfamiliarity with the code plays a lot**. We overestimate the complexity of unfamiliar code. This is why you think this code you didn’t write is Legacy Code. Or that code you wrote because you can’t remember the hell you had in mind when you did. Yes, our past selves often make silly mistakes. Don’t tell your future self 🤫
 - **Good tests make you comfortable changing unfamiliar code**. Hence Feathers' definition. But poor tests won't.
-- **It gets better after a few months**. Keep that in mind if you started on working on a legacy project and you're struggling. I'm not saying the code is great—most of the code is terrible. But you'll get used to it and understand its quirks and specificities better. Exciting isn't it? Not feeling excited? Alright, let's move on.
-- **Most of the code is terrible** because it's the result of many people working on it, over a long period of time, with conflicting requirements, under time pressure. Legacy Code Recipe™. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That's VERY common. Eventually, you'll reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
+- **It gets better after a few months**. Keep that in mind when you start working on a legacy project and you are feeling miserable. I’m not saying the code is great—I trust you it's terrible. But you’ll get used to it. You will get to understand its quirks and specificities better. Exciting isn’t it?… Not feeling excited? Alright, let’s move on.
+
+Why is this code terrible? Often, it is the result of many people working on it, over a long period, with conflicting requirements, under time pressure. Knowledge is imperfect and shortcuts are taken to meet the deadlines. That’s VERY common.
+
+You may even reach a state where every move introduces a bug and any feature takes forever to be implemented. Meh.
 
 Hear me out again:
 
-> Legacy Code is the code you need to change and you struggle to understand.
+> Legacy Code is the code you need to change, but you struggle to understand.
 
-Why is that definition useful? Because it states something people fail to realize: **Legacy Code is a personal point of view**.
+Why is that definition useful? It states something people often fail to realize: **Legacy Code is a personal point of view**.
 
-It depends on **your** understanding of the code. And **your** feeling about changing it.
+It depends on **your** understanding of the code. And **your** feelings about changing it.
 
-Some code might be a challenge for every developer of the team. Some code might feel complex to you because _you_ don't understand it yet. Some code you might understand, but you still don't feel comfortable changing. 🤷
-
-Hopefully, there are techniques to get familiar with Legacy Code faster!
-
-**Learning to understand Legacy Code is essential to be productive.**
+Some code might be a challenge for every developer on the team. Some code might only feel complex to you because you don’t understand it (yet). And some code you might understand, but you still don’t feel comfortable changing 🤷
 
 ![Legacy Code, Legacy Code everywhere](/assets/legacy-code-everywhere.jpg)
 
 There is a lot of Legacy Code out there! Every codebase you'll work on will mostly be Legacy. You can try to avoid it and feel bad when you're stuck with it…
 
 Or you can see this as an opportunity to develop valuable skills that will make you stand out as a _great_ developer.
+
+Remember:
+
+**Legacy Code is _valuable_ code that _you're afraid_ to change.**
+
+Hopefully, there are techniques to get familiar with Legacy Code faster! And this is what you will find around here and in my newsletter. You are not alone 😉
