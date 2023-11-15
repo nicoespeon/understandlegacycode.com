@@ -11,7 +11,7 @@ tags:
 
 _🇫🇷 Si tu souhaites lire cet article en français, je l’ai écris à l’origine [en tant qu’article invité sur jesuisundev.com](https://www.jesuisundev.com/7-techniques-pour-reprendre-le-controle-de-ton-legacy-code/)._
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/f3B8CqL1Pbg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6KUUbV0NcA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 _☝ Here's the recorded talk. If you prefer to read, go ahead with the article._
 
