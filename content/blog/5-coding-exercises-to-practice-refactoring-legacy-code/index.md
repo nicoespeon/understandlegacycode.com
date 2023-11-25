@@ -10,17 +10,15 @@ tags:
   - changing untested code
 ---
 
-It's great to learn how to write clean code… but in my current job, I'm often battling against Legacy Code!
+Learning to write clean code from scratch is great… but learning to deal with existing, undocumented, untested code may be even more useful.
 
-I get a lot of practice while I'm at work. But I feel the pressure to get things done. So I don't explore much and I fall back to the techniques I know. In my comfort zone.
+**Problem: your daily job is not the best place to learn these skills**. You see, you can’t explore much when you are operating under short deadlines and pressure to ship. You fall back to the techniques you know, your comfort zone.
 
-Do you feel the same?
+How can you get better at breaking dependencies and splitting huge classes that do far too much?
 
-> I'd like to hone my skills until I can quickly see how to break dependencies and split huge classes that do far too much!
+By practicing with Coding Katas! 🥋
 
-Yeah! But how can you sharpen your skills?
-
-## Coding katas: repeatable exercises to practice your coding-fu
+## Exercises to practice your coding-fu
 
 You may have come across coding katas.
 
@@ -42,7 +40,7 @@ However, there are a few which are specifically tailored for practicing refactor
 
 Here's my shortlist of katas you should try out.
 
-## 5 katas to help you practice working with existing code
+## 5 katas to practice refactoring
 
 Real-life codebases generally have so many issues at the same time, it's overwhelming. Where should you start when you're dealing with 500k lines of spaghetti code?! You just want to _start_ cleaning the code, but you're already playing in hardcore mode.
 
@@ -52,13 +50,15 @@ It should still be complex, or you wouldn't practice much. But it should be mana
 
 Whether you're done or you're stuck, you can throw it away and start over! No deadline. Nothing to ship. Just a playground to try things 👌
 
+I sorted these katas in increasing difficulty order.
+
 ### 1. The Gilded Rose
 
 ![](./gilded-rose.jpg)
 
 This one is my favorite.
 
-It's **the perfect first kata** to practice refactoring Legacy Code.
+It's **the perfect kata to get started** with refactoring Legacy Code.
 
 👉 [github.com/emilybache/GildedRose-Refactoring-Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata)
 
@@ -115,7 +115,19 @@ This kata is great because you'll learn **how to break dependencies** when you d
 
 I recommend you practice this one again and again. Practice until you feel confident enough to break a problematic dependency.
 
-### 4. The Trivia Game
+### 4. The Expense Report
+
+![](./expense-report.jpg)
+
+Similar to the Trip Service kata, this one adds annoying elements to the code.
+
+👉 [​github.com/christianhujer/expensereport​](https://​github.com/christianhujer/expensereport)
+
+You will quickly realize that the code is printing directly into stdout, which makes it painful to test—at best, you would have noisy logs in the middle of your test reports.
+
+It's a good playground to learn how to break that kind of dependencies, so you can focus on refactoring the core logic.
+
+### 5. The Trivia Game
 
 ![](./trivia-game.jpg)
 
@@ -139,7 +151,15 @@ Unless you have a mentor.
 
 If you don't, practice the previous exercises. Multiple times. When you can comfortably test, refactor and redesign existing code, then it's a good time to tackle this one.
 
-### 5. The "baby steps" timer (front-end)
+## 2 bonus "realistic" Katas
+
+The coding katas I presented you so far are good sandboxes to practice your refactoring skills. However, they are simplified playgrounds. In my experience, they don't look too much like code you would actually face in production—which is fine.
+
+Except maybe for the Trivia kata.
+
+Thus, if you are looking for more, I have two more coding exercises for you.
+
+### 1. The “Baby Steps” Timer (front-end)
 
 ![](./baby-steps-timer.jpg)
 
@@ -161,6 +181,40 @@ Therefore, if you try the TypeScript version, you'll have to deal with the brows
 How do you write tests on such code? How can you break the dependency on the browser with minimal changes? Can you separate the pure logic from the browser stuff?
 
 I'm sure you'll learn a lot about modeling a front-end application, without relying on a modern framework—you won't need it.
+
+### 2. The Lift Pass Pricing (API)
+
+![](./lift-pass-pricing.jpg)
+
+Finally, this is a one to practice refactoring back-end APIs.
+
+👉 [​github.com/martinsson/Refactoring-Kata-Lift-Pass-Pricing​](https://​github.com/martinsson/Refactoring-Kata-Lift-Pass-Pricing)
+
+It exposes 2 routes and involves an actual (MariaDB) database. The app calculates the pricing for ski lift passes. There's some intricate logic linked to what kind of lift pass you want, your age, and the specific date on which you'd like to ski.
+
+There's a new feature request: be able to get the price for several lift passes, not just one.
+
+There typically are a few steps, you could do any of them:
+
+1. Cover with high-level tests.
+2. Refactor the code to maximize unit testability and reuse for the new feature
+3. Pull down most of the high-level tests
+4. Implement the new feature using unit tests and 1 or 2 high-level tests.
+
+#### 💡 Tips for solving this one
+
+Pretty much like the other ones involving annoying dependencies, the key here is to separate the core logic from its adherence to the HTTP/REST framework and from the SQL specificities. This is sometimes called **Hexagonal Architecture** and it facilitates respecting the **Testing Pyramid** which is not currently possible - there can be only top-level tests.
+
+The typical workflow would be:
+
+1. Cover everything from the HTTP layer, use a real DB
+2. Separate request data extraction and sending the response from the logic
+3. Extract a method with pure logic, move that method to an object (ex `PricingLogic`)
+4. Now extract the SQL stuff from `PricingLogic`, first to some method with a signature that has nothing to do with SQL, then move these methods to a new class (ex `PricingDao`)
+5. There should be ~3/4 elements, the HTTP layer should have the `PricingLogic` as an injected dependency and the `PricingLogic` should have the `PricingDao` as an injected dependency.
+6. Move the bulk of the high-level tests down onto `PricingLogic` using a fake dao, and write some focused integration tests for the `PricingDao` using a real DB, there should be only a handful.
+
+Now the HTTP layer and the integration of the parts can be tested with very few (one or two) high-level tests.
 
 ---
 
