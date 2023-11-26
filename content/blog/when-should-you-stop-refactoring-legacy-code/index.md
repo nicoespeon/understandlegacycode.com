@@ -9,11 +9,13 @@ tags:
 
 When you work with Legacy Code, things can quickly get out-of-hand.
 
-Sometimes you dive into the code with a clear goal in mind… 3 hours later you're still trying to break a problematic dependency and have completely lost track of why you were here in the first place!
+Sometimes you dive into the code with a clear goal in mind…
+
+3 hours later you're still trying to break a problematic dependency and have completely lost track of why you were here in the first place!
 
 ![](/assets/lost-in-field.jpg)
 
-I recently experienced such a situation. Fortunately, I was mindful enough to apply the great advice I learned from others. It saved me a lot of time. I thought it would be a good story to share 🍷
+I have been in this situation before. Fortunately, I learned to apply the great advice I got from others. It saved me a lot of time. I thought it would be a good story to share 🍷
 
 ## Have a plan
 
@@ -35,7 +37,9 @@ We had roughly 5,200 integrated tests for this codebase. Most of them involve th
 
 Cleaning up the database can be tricky because of foreign key constraints: you have to clean up the tables in a specific order. I noticed that each developer was trying to figure it out for the tests they wrote. What a waste of time!
 
-My plan was simple: **automatically clean up the database between each test**. That would have 3 benefits:
+My plan was simple: **automatically clean up the database between each test**.
+
+That would have 3 benefits:
 
 1. People wouldn't have to think about it, faster development!
 2. Each test would be independent, less time spent in debugging failures!
@@ -45,7 +49,7 @@ I knew that execution shouldn't be too hard: we were using [mocha](https://mocha
 
 I had a plan. It was great. I presented it and everybody was excited to see the results 🌈
 
-## "Everybody has a plan until they get punched in the mouth"
+## Your plan may fall apart
 
 On the first day, I started executing my plan. Everything went fine:
 
@@ -91,15 +95,15 @@ describe("some API call", function() {
 
 The code was executed in the `before()` hook. Then, assertions were spread across `it()`.
 
-On paper, it may look nice. It works and there's kind of a relationship between the "execution" and the remaining `it()`. Also, code was executed once, so it was faster. And for integration tests, that surely makes a difference, right?
+On paper, it may look nice. It works and there's kind of a relationship between the "execution" and the remaining `it()`. Also, the code was executed once, so it was faster. And for integration tests, that surely makes a difference, right?
 
 Well, the problem is this is preventing more ambitious optimizations:
 
 - Now you couldn't "just parallelize" the tests anymore
 - You couldn't wipe out the database between each test
-- In fact, tests were now coupled, and you couldn't easily tell that statically. You had to read the code in details.
+- In fact, tests were now coupled, and you couldn't easily tell that statically. You had to read the code in detail.
 
-## Stop, think and revise
+## Stop, think, and revise
 
 My first thought was:
 
@@ -130,7 +134,7 @@ In fact, providing a helper function to only "clean up the database" would solve
 
 Sure, developers would still have to think about cleaning up the DB themselves. But doing so would be easy. Also, there would be only one function to maintain if the database structure ever changes.
 
-## Happy ending
+## Happy end
 
 I was able to ship this change before the deadline and even tackle other topics in the remaining time. The end result wasn't the one I announced, but I explained my findings and the decisions I had taken. I also [documented all that in an ADR](https://understandlegacycode.com/blog/earn-maintainers-esteem-with-adrs), so we can easily revisit this decision in the future.
 
@@ -157,4 +161,4 @@ Here's my recap' of the things that helped me win the day when the odds were aga
 6. **Know when to stop**. Especially if you've already invested long hours. This is when you need to take a step back and think again. Can you bring 80% of the value in time, even if it's not perfect?
 7. **Some refactorings aren't worth it**. Legacy Code isn't perfect and that's fine. The game is about making it better, even if it's just a little bit.
 
-I don't think there is such a thing as "over-quality" because, to me, the best quality is when you find the perfect balance to keep solving people problem fast, without creating new ones. [The 4 rules of simple design](https://martinfowler.com/bliki/BeckDesignRules.html) are a concrete way to achieve that.
+I don't believe "over-quality" exists if you consider the best quality is when you find the perfect balance to keep solving people's problems fast, without creating new ones. [The 4 rules of simple design](https://martinfowler.com/bliki/BeckDesignRules.html) are a concrete way to achieve that.
