@@ -202,6 +202,15 @@ class IndexPage extends React.Component {
               technical debt that's piling up.
             </p>
           </Li>
+          <Li key="ai-support">
+            <ImgLink to="ai-support">
+              <img alt="" src="/assets/ai-support.png" />
+            </ImgLink>
+            <Link className="title-font" to="ai-support">
+              AI Support
+            </Link>
+            <p>Can you leverage AI to tame legacy codebases? Let's explore…</p>
+          </Li>
         </GridUl>
         <h2>
           <span role="img" aria-label="Headphones">
