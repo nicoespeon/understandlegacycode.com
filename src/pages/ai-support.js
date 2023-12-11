@@ -32,7 +32,7 @@ function Page(props) {
       </p>
 
       <h2>
-        <span role="img" aria-label="toolbox">
+        <span role="img" aria-label="camera">
           🎥
         </span>
         &nbsp;Talks
@@ -53,8 +53,8 @@ function Page(props) {
         &nbsp;Tools
       </h2>
       <p>
-        There are many tools popping up around, here are some that I contributed
-        to:
+        There are many tools popping up around, here are some I want to
+        highlight:
       </p>
       <ul>
         <li>
@@ -68,6 +68,10 @@ function Page(props) {
           </ExtLink>
           . I also contributed to this one. It's an open-source extension that
           can be an helpful assistant.
+        </li>
+        <li>
+          <ExtLink href="https://denigma.app/">Denigma</ExtLink> which seems to
+          be really good at explaining what spaghetti code is doing.
         </li>
       </ul>
     </Guide>
