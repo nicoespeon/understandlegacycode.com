@@ -29,6 +29,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "dev": "npm run develop",
     "serve": "gatsby serve"
   },
   "engines": {
