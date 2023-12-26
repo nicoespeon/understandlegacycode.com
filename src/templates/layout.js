@@ -42,9 +42,9 @@ class Layout extends React.Component {
               <li>
                 <Link to="/all-articles">Articles</Link>
               </li>
-              {/* <li>
-                <Link to="/">Need help?</Link>
-              </li> */}
+              <li>
+                <Link to="/bookshelf">Books</Link>
+              </li>
               <li className="first-aid">
                 <a
                   href="/first-aid-kit"

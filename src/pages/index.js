@@ -6,13 +6,13 @@ import CTA from "../components/cta"
 import SEO from "../components/seo"
 import Layout from "../templates/layout"
 import { colors, rhythm } from "../utils/typography"
+import { LegacyCodeBooks } from "./bookshelf"
 
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const siteDescription = data.site.siteMetadata.description
     const posts = data.articles.edges
-    const books = data.books.edges
     const talks = data.talks.edges
 
     return (
@@ -119,21 +119,7 @@ class IndexPage extends React.Component {
           </span>{" "}
           Useful books on Legacy Code
         </h2>
-        <Ul>
-          {books.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <Li key={node.fields.slug}>
-                <LargeLink to={`blog${node.fields.slug}`}>{title}</LargeLink>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </Li>
-            )
-          })}
-        </Ul>
+        <LegacyCodeBooks />
         <h2>
           <span role="img" aria-label="Open book">
             📖
@@ -416,24 +402,6 @@ export const pageQuery = graphql`
     articles: allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 5
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-    books: allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: ["book review"] } } }
     ) {
       edges {
         node {
