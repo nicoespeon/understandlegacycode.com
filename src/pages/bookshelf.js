@@ -135,7 +135,7 @@ export function LegacyCodeBooks() {
         ones do.
       </p>
       <p>
-        Here is my personal bookshelf. For each book, I've wrote a high-level
+        Here is my personal bookshelf. For each book, I've written a high-level
         overview of what you can expect from it. Their salient points, according
         to me.
       </p>
