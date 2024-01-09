@@ -2,7 +2,7 @@
 title: >-
   The key points of Kill It with Fire
 date: 2023-12-19
-description: "Let's rewrite the whole thing on a modern stack! Or should we? Marianne Belotti offers a lot of wisdom in her book. Here are some examples…"
+description: "Let's rewrite the whole thing on a modern stack! Or should we? Marianne Bellotti offers a lot of wisdom in her book. Here are some examples…"
 image: /assets/kill-it-with-fire.jpg
 tags:
   - book review
@@ -16,7 +16,7 @@ If you ask developers what they would do with that tangled legacy codebase they 
 
 ![](./kill-it-with-fire.gif)
 
-But don’t be fooled. While [Marianne Belotti](https://twitter.com/bellmar) picked a provocative title for [her book](https://www.goodreads.com/book/show/54716655-kill-it-with-fire), she exhaustively explains why this is not the best approach and what to do instead.
+But don’t be fooled. While [Marianne Bellotti](https://twitter.com/bellmar) picked a provocative title for [her book](https://www.goodreads.com/book/show/54716655-kill-it-with-fire), she exhaustively explains why this is not the best approach and what to do instead.
 
 Should you grab a copy and benefit from her experience in the field? Certainly.
 
