@@ -75,6 +75,38 @@ function Page(props) {
           be really good at explaining what spaghetti code is doing.
         </li>
       </ul>
+      <h2>
+        <span role="img" aria-label="microscope">
+          🔬
+        </span>
+        &nbsp;Studies
+      </h2>
+      <p>
+        Here are interesting studies related to the usage of AI to deal with
+        existing codebases:
+      </p>
+      <ul>
+        <li>
+          <ExtLink href="https://codescene.com/hubfs/whitepapers/Refactoring-vs-Refuctoring-Advancing-the-state-of-AI-automated-code-improvements.pdf">
+            Refactoring vs. Refuctoring
+          </ExtLink>{" "}
+          by CodeScene. They figured that LLMs will generally introduce a
+          regression when attempting to refactor complex code. But coupled to a
+          fact-checking validation step, tooling could leverage these and only
+          suggest the ones that actually work. This is promising because it
+          would unlock more powerful automated refactorings.
+        </li>
+        <li>
+          <ExtLink href="https://arxiv.org/pdf/2312.12450.pdf">
+            Can It Edit? Evaluating the Ability of Large Language Models to
+            Follow Code Editing Instructions.
+          </ExtLink>
+          This one concludes that it's a good idea to train models on the
+          codebase commits. Also, closed and distilled models seem to be doing a
+          better job than open ones. Finally, the more specific the
+          instructions, the better.
+        </li>
+      </ul>
     </Guide>
   )
 }
