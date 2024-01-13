@@ -53,6 +53,19 @@ export function LegacyCodeBooks() {
       fontSize: "14px",
     },
     {
+      title: "Refactoring: Improving the Design of Existing Code",
+      yearOfPublication: 2018,
+      authors: ["Martin Fowler"],
+      summary:
+        "The first edition came out in 1999! This book is a classic reference for any professional developer. In particular, it will teach you how to change the structure of existing code without breaking it. It's a catalog of moves you can lean on in your day-to-day work.",
+      link: "/blog/key-points-of-refactoring",
+      coverUrl: "/assets/refactoring.jpg",
+      spineBackgroundColor: "#20191b",
+      spineForegroundColor: "#fff",
+      size: "md",
+      fontSize: "10px",
+    },
+    {
       title: "Software Design X-Rays",
       yearOfPublication: 2018,
       authors: ["Adam Tornhill"],
