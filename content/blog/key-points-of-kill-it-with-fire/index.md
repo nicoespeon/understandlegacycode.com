@@ -62,7 +62,7 @@ Marianne has a few recommendations to make it easier:
 3. **Spend some time trying to recover context**.
 4. **Use tools and automation to support your work**. E.g. static analysis of the codebase, maybe AI-based tools. They can help you go faster, but be careful of bad surprises if you just let them do the work.
 5. **Don’t underestimate the little performance gains**. 5, 10, or 20% here and there may compound and yield bigger changes.
-6. **Find a balance between coupling and complexity**. Loosen the coupling and the system becomes more complex. Increase the coupling to minimize the complexity.
+6. **Find a balance between coupling and complexity**. Loosen the coupling and the system becomes more complex. Increase the coupling to reduce the complexity. In other words: keep things simple until there is a benefit of decoupling them.
 
 A good way to track progress and determine when you are “done” is to define Success Criteria:
 
