@@ -16,7 +16,7 @@ Then this article is for you!
 
 In his popular “[Refactoring](https://refactoring.com/)” book, Martin Fowler collects an impressive catalog of moves that can transform the way you approach code maintenance and evolution.
 
-If you haven’t read it and you are not sure what to expect, I’ve written down a high-level summary of what you will find here. Hopefully, that gives you a better sense of what it is all about. Read on!
+If you haven’t read it and you are unsure what to expect, I’ve written down a high-level summary of what you will find here. Hopefully, that gives you a better sense of what it is all about. Read on!
 
 ![](/assets/refactoring.jpg)
 
@@ -55,7 +55,7 @@ He also mentions that you don’t need to clean up _everything_. Once you have l
 
 Focus on the behavior changes you need to make. Use refactoring moves to make these changes easy first. Don’t refactor for the sake of it.
 
-An interesting side-effect of mastering refactorings is that you feel more comfortable leaving duplication in code. Duplication is simple to solve, simpler than wrong abstractions. With practice, you will wait until you have found the proper abstraction before you refactor.
+An interesting side-effect of mastering refactorings is that you feel more comfortable leaving duplication in code. Duplication is simple to solve, simpler than wrong abstractions. With practice, you will wait until you find the proper abstraction before refactoring.
 
 ## When to refactor?
 
