@@ -375,9 +375,9 @@ function verifyCategories(numPassengers) {
 
 if (
   !PriceHelpers.validatePrices(
-    verifyCategories,
     sourcePassengers,
-    departure.prices
+    departure.prices,
+    verifyCategories
   )
 ) {
   throw new Error("Prices are invalid")
