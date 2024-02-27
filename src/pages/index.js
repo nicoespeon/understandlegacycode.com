@@ -205,6 +205,17 @@ class IndexPage extends React.Component {
           If you prefer podcasts
         </h2>
         <Ul>
+          <Li key="se-radio">
+            <LargeExternalLink to="https://se-radio.net/2024/02/se-radio-602-nicolas-carlo-on-improving-legacy-code/">
+              Improving Legacy Code
+            </LargeExternalLink>
+            <p>
+              I discuss with Sam Taggart about my book, Legacy Code: First Aid
+              Kit. We cover the tools and examples that I find most useful when
+              working with legacy code. We briefly touch on the role of AI and
+              other tools I've discovered since I wrote the book.
+            </p>
+          </Li>
           <Li key="rails-with-jason">
             <LargeExternalLink to="https://www.codewithjason.com/podcast/9478269-046-tips-for-working-with-legacy-code-with-nicolas-carlo/">
               Tips for Working with Legacy Code
