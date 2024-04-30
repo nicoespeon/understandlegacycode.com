@@ -3,7 +3,7 @@ title: >-
   The key points of Refactoring at Scale
 date: 2024-04-25
 description: "Maude Lemaire wrote a great book rooted from her experience in the trenches, at Slack. Let's see how it may help you lead large-scale refactoring projects."
-image: /assets/refactoring.jpg
+image: /assets/refactoring-at-scale.jpg
 tags:
   - book review
   - making others care about it
