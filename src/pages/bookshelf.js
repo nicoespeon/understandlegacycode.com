@@ -97,6 +97,15 @@ export function LegacyCodeBooks() {
       spineForegroundColor: "#d2aa4a",
     },
     {
+      title: "Refactoring at Scale",
+      yearOfPublication: 2020,
+      authors: ["Maude Lemaire"],
+      summary:
+        "Maude Lemaire wrote a great book rooted from her experience in the trenches, at Slack. Let's see how it may help you lead large-scale refactoring projects.",
+      link: "/blog/key-points-of-refactoring-at-scale",
+      coverUrl: "/assets/refactoring-at-scale.jpg",
+    },
+    {
       title: "Kill It with Fire",
       yearOfPublication: 2021,
       authors: ["Marianne Belotti"],
