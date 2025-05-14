@@ -224,7 +224,7 @@ end
 
 If the `tail` code consists of whole statements and doesn’t rely on references that are unique to the if or else clauses. See [this article](https://xp123.com/articles/refactoring-pull-common-code-conditional/) for more details.
 
-Hopefully, in my situation (VS Code + JavaScript), this refactoring can be automated. Not with Abracadabra, but [with p42](https://p42.ai/documentation/code-assist/move-last-statement-out-of-if-else) from Lars Grammel that I recommend you to use.
+Hopefully, in my situation (VS Code + JavaScript), this refactoring can be automated. Not with Abracadabra, but [with p42](https://web.archive.org/web/20221128081955/https://p42.ai/documentation/code-assist/move-last-statement-out-of-if-else) ([visual demo](https://github.com/p42ai/js-assistant/blob/01d9bce026eeea02efb17f2ce50a1fadb4fd6ba6/code-assist/move-last-statement-out-of-if-else/doc/vscode-example.gif?raw=true)) from Lars Grammel that I recommend you to use. It is unfortunately not maintained anymore, but it still has a few working refactorings like this.
 
 Let’s start doing that from the most nested if statement until we are done:
 
