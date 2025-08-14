@@ -1,7 +1,7 @@
 ---
-import Navigation from "../components/Navigation.astro"
 import { DarkMode, SkipLink } from "accessible-astro-components"
 import { Icon } from "astro-icon/components"
+import Navigation from "../components/Navigation.astro"
 
 /**
  * Header Component
@@ -16,6 +16,7 @@ import { Icon } from "astro-icon/components"
     <li class="menu-item">
       <a href="/">Home</a>
     </li>
+    <!--
     <li class="menu-item">
       <a href="/blog/">Blog</a>
     </li>
@@ -56,7 +57,7 @@ import { Icon } from "astro-icon/components"
         <Icon name="lucide:github" />
         <span class="sr-only">Go to the GitHub page</span>
       </a>
-    </li>
+    </li> -->
     <li class="menu-item type-icon animate-rotate">
       <DarkMode>
         <Icon name="lucide:moon" slot="light" />

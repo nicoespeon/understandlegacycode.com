@@ -1,48 +1,34 @@
 ---
-import { Icon } from "astro-icon/components"
-import { Image } from "astro:assets"
 
-/**
- * Hero Component
- *
- * @description A component that displays a hero section with a title, description, and image
- */
-interface Props {
-  /**
-   * The source URL for the image
-   */
-  src?: string
-}
-
-const { src = "/astronaut-hero-img.webp" }: Props = Astro.props
 ---
 
-<section class="hero my-24">
-  <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-      <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">My</span> Starter for Astro</slot>
-        </h1>
-        <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="https://github.com/incluud/accessible-astro-starter">
-            <Icon name="lucide:star" />
-            Star on GitHub
-          </a>
-          <a class="button has-icon color-secondary" href="https://accessible-astro.incluud.dev/">
-            <Icon name="lucide:bookmark" />
-            Read the docs
-          </a>
-        </div>
-      </div>
-      <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" />
-    </div>
-  </div>
+<section class="hero mb-10">
+  <h1 class="text-6xl font-extrabold md:text-left">
+    <slot>
+      <>
+        <span class="text-gradient block text-5xl">Understand</span>
+        <span class="-mt-2 block">Legacy Code</span>
+      </>
+    </slot>
+  </h1>
+  <p class="mt-6 text-3xl font-extralight -tracking-wide md:text-left">
+    <slot name="description"> Change messy code without breaking it. </slot>
+  </p>
 </section>
 
 <style lang="scss">
-  h1 {
+  .hero h1 {
+    font-stretch: 100%;
+    font-family: var(--font-hero);
+    font-kerning: normal;
+    font-size-adjust: none;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    text-rendering: optimizeLegibility;
     text-wrap: unset;
+  }
+
+  .hero p {
+    font-family: var(--font-hero);
   }
 
   .text-gradient {

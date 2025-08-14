@@ -1,16 +1,60 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Hero from "@components/Hero.astro"
-import Feature from "@components/Feature.astro"
-import Counter from "@components/Counter.astro"
-import ContentMedia from "@components/ContentMedia.astro"
-import ExternalLink from "@components/ExternalLink.astro"
-import { Accordion, AccordionItem, Avatar, AvatarGroup } from "accessible-astro-components"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+// import Feature from "@components/Feature.astro"
+// import Counter from "@components/Counter.astro"
+// import ContentMedia from "@components/ContentMedia.astro"
+// import ExternalLink from "@components/ExternalLink.astro"
+// import { Accordion, AccordionItem, Avatar, AvatarGroup } from "accessible-astro-components"
+
+const allPosts = (await Astro.glob("../../content/blog/**/*.md")) ?? []
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+)
+const lastFivePosts = sortedPosts.slice(0, 5)
 ---
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="my-64">
+
+  <section class="disclaimer title-font">
+    <p>
+      When I say "Legacy Code" I mean{" "}
+      <a href="/blog/what-is-legacy-code-is-it-code-without-tests"> valuable code you're afraid to change </a>
+      .
+    </p>
+    <p>We all have to deal with Legacy Code. But it's damn hard to!</p>
+    <p>
+      Here you'll find answers to your questions. I'm sharing{" "}
+      <strong>useful tips and concrete advice</strong> that will help you tame the legacy codebase you've inherited. 😉
+    </p>
+    <p>— Nicolas</p>
+  </section>
+
+  <h2 class="mt-14 mb-7 text-3xl font-extrabold">
+    <span role="img" aria-label="Lightbulb"> 💡 </span>{" "}
+    Latest articles
+  </h2>
+  <ul>
+    {
+      lastFivePosts.map((post) => {
+        // TODO: replace slug by the actual post slug
+        const title = post.frontmatter.title || "slug"
+        return (
+          <li>
+            <a href="/blog/slug">{title}</a>
+            <p>{post.frontmatter.description}</p>
+          </li>
+        )
+      })
+    }
+    <li>
+      If you want more, check{" "}
+      <a href="/all-articles">all my published articles</a>
+    </li>
+  </ul>
+
+  <!-- <section class="my-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Features</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -151,7 +195,7 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup } from "accessible-astro-
         <Counter count="48+" title="Months" sub="Since launch" />
       </div>
     </div>
-  </section>
+  </section> -->
 </DefaultLayout>
 
 <style>
@@ -159,5 +203,31 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup } from "accessible-astro-
     border: 1px solid var(--border-color-subtle);
     border-radius: var(--radius-md);
     padding: var(--space-s);
+  }
+
+  .disclaimer {
+    border-left: 5px var(--brand-primary) solid;
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: var(--brand-background);
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  ul {
+    margin: "20px 0 40px";
   }
 </style>

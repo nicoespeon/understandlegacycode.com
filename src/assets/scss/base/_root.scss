@@ -2,9 +2,10 @@
   color-scheme: light;
   interpolate-size: allow-keywords;
 
-  // brand colors (change these to your own brand colors)
-  --brand-primary: #d648ff;
-  --brand-secondary: #00d1b7;
+  // brand colors
+  --brand-primary: hsla(280, 85%, 55%, 1);
+  --brand-secondary: hsla(280, 85%, 55%, 1);
+  --brand-background: hsla(280, 85%, 65%, 0.15);
   --brand-neutral: #b9bec4;
 
   // pallet brand
@@ -46,12 +47,11 @@
   --radius-large: 6px;
   --gap-default: 2rem;
   --font-measure: 70ch;
-  --font-family-default: "Atkinson Hyperlegible", sans-serif;
-  --font-family-special: "Atkinson Hyperlegible", sans-serif;
 
   // font families
-  --font-heading: var(--font-family-special);
-  --font-body: var(--font-family-default);
+  --font-hero: "Montserrat", sans-serif;
+  --font-heading: "Space Grotesk", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   // font sizes
   // @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,18,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
