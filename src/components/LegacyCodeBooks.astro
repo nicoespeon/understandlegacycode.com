@@ -1,0 +1,200 @@
+---
+// LegacyCodeBooks component
+// Extracted from the old Gatsby bookshelf.js page
+
+const books = [
+  {
+    title: "Working Effectively with Legacy Code",
+    yearOfPublication: 2004,
+    authors: ["Michael Feathers"],
+    summary:
+      "This book is a reference. Feathers provides a wide range of strategies to help understand, refactor, and improve existing code. He emphasizes the importance of testing and shows various dependency-breaking techniques to facilitate the gradual transformation of legacy systems.",
+    link: "/blog/key-points-of-working-effectively-with-legacy-code",
+    coverUrl: "/assets/wewlc.jpeg",
+    spineBackgroundColor: "#1e2020",
+    spineForegroundColor: "#cccc68",
+    size: "lg",
+    fontSize: "14px",
+  },
+  {
+    title: "Refactoring: Improving the Design of Existing Code",
+    yearOfPublication: 2018,
+    authors: ["Martin Fowler"],
+    summary:
+      "The first edition came out in 1999! This book is a classic reference for any professional developer. In particular, it will teach you how to change the structure of existing code without breaking it. It's a catalog of moves you can lean on in your day-to-day work.",
+    link: "/blog/key-points-of-refactoring",
+    coverUrl: "/assets/refactoring.jpg",
+    spineBackgroundColor: "#20191b",
+    spineForegroundColor: "#fff",
+    size: "md",
+    fontSize: "10px",
+  },
+  {
+    title: "Software Design X-Rays",
+    yearOfPublication: 2018,
+    authors: ["Adam Tornhill"],
+    summary:
+      "This book presents the concept of Behavioral Analysis. Adam Tornhill shows how to use git logs to infer insights about the codebase. For instance, he explains how to identify hotspots or find coupling between apparently unrelated files.",
+    link: "/blog/key-points-of-software-design-x-rays",
+    coverUrl: "/assets/software-design-xrays.jpg",
+  },
+  {
+    title: "Legacy Code: First Aid Kit",
+    yearOfPublication: 2021,
+    authors: ["Nicolas Carlo (hey, itsa me! ⭐)"],
+    summary:
+      "I wrote this one. I detailed the techniques I use the most to tame legacy codebases. This is a book with concrete code examples, written from the trenches.",
+    link: "/first-aid-kit",
+    coverUrl: "/assets/first-aid-kit-cover.png",
+    spineBackgroundColor: "#ed1b2e",
+    spineForegroundColor: "#fff",
+  },
+  {
+    title: "The Programmer's Brain",
+    yearOfPublication: 2021,
+    authors: ["Dr. Felienne Hermans"],
+    summary:
+      "You will find here a mix of cognitive science and programming. Dr. Felienne Hermans explains how to best approach unfamiliar codebases, based on how your brain works.",
+    link: "/blog/key-points-of-programmer-brain",
+    coverUrl: "/assets/the-programmer-brain.png",
+    spineBackgroundColor: "#1c293d",
+    spineForegroundColor: "#d2aa4a",
+  },
+  {
+    title: "Refactoring at Scale",
+    yearOfPublication: 2020,
+    authors: ["Maude Lemaire"],
+    summary:
+      "Maude Lemaire wrote a great book rooted from her experience in the trenches, at Slack. Let's see how it may help you lead large-scale refactoring projects.",
+    link: "/blog/key-points-of-refactoring-at-scale",
+    coverUrl: "/assets/refactoring-at-scale.jpg",
+  },
+  {
+    title: "Kill It with Fire",
+    yearOfPublication: 2021,
+    authors: ["Marianne Belotti"],
+    summary:
+      "This is a great book for anyone involved modernization projects, and for tech leaders in particular. Marianne Belotti shares lessons she learned from personal experience.",
+    link: "/blog/key-points-of-kill-it-with-fire",
+    coverUrl: "/assets/kill-it-with-fire.jpg",
+    spineBackgroundColor: "#244565",
+    spineForegroundColor: "#db664b",
+    size: "md",
+  },
+  {
+    title: "Beyond Legacy Code",
+    yearOfPublication: 2015,
+    authors: ["David Bernstein"],
+    summary:
+      "David Bernstein shares nine concepts and strategies to help you manage legacy code, from automating your tests suite to setting up a Buddy program.",
+    link: "/blog/key-points-of-beyond-legacy-code",
+    coverUrl: "/assets/beyond-legacy-code.jpg",
+  },
+  {
+    title: "The Legacy Code Programmer's Toolbox",
+    yearOfPublication: 2019,
+    authors: ["Jonathan Boccara"],
+    summary:
+      "In this book, Jonathan Boccara shares a collection of techniques he recommends using on legacy codebases. From chosing a stronghold to setting up Dailies at work, it might inspire you.",
+    link: "/blog/key-points-of-legacy-code-programmer-toolbox",
+    coverUrl: "/assets/legacy-code-progammer-toolbox.jpg",
+    fontSize: "12px",
+  },
+  {
+    title: "Re-Engineering Legacy Software",
+    yearOfPublication: 2016,
+    authors: ["Chris Birchall"],
+    summary:
+      "I particularly like the fact that Chris Birchall not only shares techniques to improve Legacy Code, but also how to address the Legacy Culture.",
+    link: "/blog/key-points-reengineering-legacy-software",
+    coverUrl: "/assets/re-engineering-legacy-software.png",
+    spineBackgroundColor: "#17191e",
+    spineForegroundColor: "#d73639",
+    fontSize: "14px",
+  },
+]
+---
+
+<div class="books-grid">
+  {
+    books.map((book) => (
+      <div class="book-item">
+        <a href={book.link} class="book-link">
+          <img src={book.coverUrl} alt={`Cover of ${book.title}`} class="book-cover" />
+        </a>
+        <div class="book-info">
+          <a href={book.link} class="book-title title-font">
+            {book.title}
+          </a>
+          <p class="book-authors">
+            by {book.authors.join(", ")} ({book.yearOfPublication})
+          </p>
+          <p class="book-summary">{book.summary}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .books-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .book-item {
+    display: flex;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    background: var(--brand-background-lightest, #f9f9f9);
+    padding: 1rem;
+  }
+
+  .book-cover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    width: 120px;
+    height: auto;
+  }
+
+  .book-info {
+    flex: 1;
+  }
+
+  .book-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .book-title:hover {
+    text-decoration: underline;
+  }
+
+  .book-authors {
+    margin-bottom: 0.75rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .book-summary {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .book-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .book-cover {
+      margin: 0 auto;
+      width: 100px;
+    }
+  }
+</style>

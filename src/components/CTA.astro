@@ -1,0 +1,80 @@
+---
+// CTA component for email signup forms
+// Converted from the old Gatsby cta.js component
+// Props:
+// - uid: string (optional) - The ConvertKit form UID
+// - variant: 'regular' | 'tilted' | 'coming-soon' | 'first-aid-kit' (default: 'regular')
+
+interface Props {
+  uid?: string
+  variant?: "regular" | "tilted" | "coming-soon" | "first-aid-kit"
+}
+
+const { uid = "1c42a88117", variant = "regular" } = Astro.props
+
+// Set the appropriate UID based on variant
+let formUid = uid
+if (variant === "coming-soon") {
+  formUid = "ee438164c6"
+} else if (variant === "first-aid-kit") {
+  formUid = "084305275e"
+}
+
+const isTilted = variant === "tilted"
+---
+
+<div class={`cta-form ${isTilted ? "tilted-form" : "regular-form"}`} id={`cta-${formUid}`}>
+  <!-- The ConvertKit script will be loaded and form will be injected here -->
+</div>
+
+<script define:vars={{ formUid, isTilted }}>
+  // Load ConvertKit form script
+  function loadCTAForm() {
+    const container = document.getElementById(`cta-${formUid}`)
+    if (!container) return
+
+    const script = document.createElement("script")
+    script.async = true
+    script.src = `https://understandlegacycode.ck.page/${formUid}/index.js`
+    script.setAttribute("data-uid", formUid)
+    container.appendChild(script)
+  }
+
+  // Load the form when the page is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadCTAForm)
+  } else {
+    loadCTAForm()
+  }
+</script>
+
+<style>
+  .regular-form {
+    @media (min-width: 1100px) {
+      margin: auto;
+      width: 740px;
+    }
+  }
+
+  .tilted-form :global(.formkit-form) {
+    transform: rotate(-1.5deg);
+  }
+
+  .tilted-form :global([data-style="minimal"]) {
+    transform: rotate(1.5deg);
+    padding: 20px 40px !important;
+  }
+
+  .tilted-form :global(.formkit-modal) {
+    transform: rotate(1.5deg);
+  }
+
+  .tilted-form :global(.formkit-background) {
+    opacity: 0.25;
+  }
+
+  .tilted-form :global(.formkit-header h1),
+  .tilted-form :global(.formkit-subheader p) {
+    color: black !important;
+  }
+</style>

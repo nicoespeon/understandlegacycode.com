@@ -1,20 +1,21 @@
 ---
+import Bio from "@components/Bio.astro"
+import CTA from "@components/CTA.astro"
 import Hero from "@components/Hero.astro"
+import LegacyCodeBooks from "@components/LegacyCodeBooks.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
-// import Feature from "@components/Feature.astro"
-// import Counter from "@components/Counter.astro"
-// import ContentMedia from "@components/ContentMedia.astro"
-// import ExternalLink from "@components/ExternalLink.astro"
-// import { Accordion, AccordionItem, Avatar, AvatarGroup } from "accessible-astro-components"
 
 const allPosts = (await Astro.glob("../../content/blog/**/*.md")) ?? []
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
 )
 const lastFivePosts = sortedPosts.slice(0, 5)
+
+// TODO: This will need to be replaced with actual talks data when available
+const talks = []
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="Understand Legacy Code" description="Change messy code without breaking it.">
   <Hero />
 
   <section class="disclaimer title-font">
@@ -31,28 +32,207 @@ const lastFivePosts = sortedPosts.slice(0, 5)
     <p>— Nicolas</p>
   </section>
 
-  <h2 class="mt-14 mb-7 text-3xl font-extrabold">
-    <span role="img" aria-label="Lightbulb"> 💡 </span>{" "}
+  <h2>
+    <span role="img" aria-label="Lightbulb">💡</span>{" "}
     Latest articles
   </h2>
   <ul>
     {
       lastFivePosts.map((post) => {
-        // TODO: replace slug by the actual post slug
-        const title = post.frontmatter.title || "slug"
+        const title = post.frontmatter.title || "Untitled"
+        // Extract slug from file path
+        const pathParts = post.file.split("/")
+        const slug = pathParts[pathParts.length - 2] // Get the directory name
         return (
-          <li>
-            <a href="/blog/slug">{title}</a>
-            <p>{post.frontmatter.description}</p>
+          <li class="article-item">
+            <a href={`/blog/${slug}`} class="large-link">
+              {title}
+            </a>
+            <p set:html={post.frontmatter.description} />
           </li>
         )
       })
     }
     <li>
       If you want more, check{" "}
-      <a href="/all-articles">all my published articles</a>
+      <a href="/blog">all my published articles</a>
     </li>
   </ul>
+
+  <h2>
+    <span role="img" aria-label="Kimono">🥋</span>{" "}
+    Specific techniques
+  </h2>
+  <ul class="grid-ul">
+    <li>
+      <a href="/approval-tests" class="img-link">
+        <img alt="" src="/assets/approval-testing.png" />
+      </a>
+      <a class="title-font" href="/approval-tests"> Approval Testing </a>
+      <p>A technique to quickly put tests on Legacy Code, so you can refactor safely.</p>
+    </li>
+    <li>
+      <a href="/behavioral-analysis" class="img-link">
+        <img alt="" src="/assets/behavioral-analysis.png" />
+      </a>
+      <a class="title-font" href="/behavioral-analysis"> Behavioral Analysis </a>
+      <p>A technique to get insights from large codebases, using VCS information.</p>
+    </li>
+    <li>
+      <a href="/dependency-graphs" class="img-link">
+        <img alt="" src="/assets/draw-dependency-graph.png" />
+      </a>
+      <a class="title-font" href="/dependency-graphs"> Draw Dependency Graphs </a>
+      <p>A technique to understand the structure of a codebase.</p>
+    </li>
+  </ul>
+
+  <h2 id="books">
+    <span role="img" aria-label="Books">📚</span>{" "}
+    Useful books on Legacy Code
+  </h2>
+  <LegacyCodeBooks />
+
+  <h2>
+    <span role="img" aria-label="Open book">📖</span>{" "}
+    Helpful Guides
+  </h2>
+  <ul class="grid-ul">
+    <li>
+      <a href="/getting-into-large-codebase" class="img-link">
+        <img alt="" src="/assets/getting-into-large-codebases.png" />
+      </a>
+      <a class="title-font" href="/getting-into-large-codebase"> Getting into a large codebase </a>
+      <p>Diving into a large, undocumented codebase is overwhelming. Let's see some techniques to approach it.</p>
+    </li>
+    <li>
+      <a href="/best-practice-or-code-smell" class="img-link">
+        <img alt="" src="/assets/best-practice-or-code-smell.png" />
+      </a>
+      <a class="title-font" href="/best-practice-or-code-smell"> Best practice or a code smell? </a>
+      <p>Not sure if a pattern will make the code more maintainable? Here are a few resources that will help.</p>
+    </li>
+    <li>
+      <a href="/changing-untested-code" class="img-link">
+        <img alt="" src="/assets/changing-untested-code.png" />
+      </a>
+      <a class="title-font" href="/changing-untested-code"> Changing untested code without breaking it </a>
+      <p>Without tests, every code change is risky. But how to put tests on a code that wasn't design for it?</p>
+    </li>
+    <li>
+      <a href="/code-feels-impossible-to-maintain" class="img-link">
+        <img alt="" src="/assets/impossible-to-maintain.png" />
+      </a>
+      <a class="title-font" href="/code-feels-impossible-to-maintain"> Code feels impossible to maintain </a>
+      <p>
+        Sometimes, you seem to hit a point of no return and that the best strategy would be to burn it all and start
+        over. Are there alternatives?
+      </p>
+    </li>
+    <li>
+      <a href="/making-others−care-about-it" class="img-link">
+        <img alt="" src="/assets/making-others-care.png" />
+      </a>
+      <a class="title-font" href="/making-others−care-about-it"> Making others care about it </a>
+      <p>What you can do when it seems that no-one cares about the technical debt that's piling up.</p>
+    </li>
+    <li>
+      <a href="/ai-support" class="img-link">
+        <img alt="" src="/assets/ai-support.png" />
+      </a>
+      <a class="title-font" href="/ai-support"> AI Support </a>
+      <p>Can you leverage AI to tame legacy codebases? Let's explore…</p>
+    </li>
+  </ul>
+
+  <h2>
+    <span role="img" aria-label="Headphones">🎧</span>{" "}
+    If you prefer podcasts
+  </h2>
+  <ul>
+    <li>
+      <a
+        href="https://se-radio.net/2024/02/se-radio-602-nicolas-carlo-on-improving-legacy-code/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="large-link"
+      >
+        Improving Legacy Code
+      </a>
+      <p>
+        I discuss with Sam Taggart about my book, Legacy Code: First Aid Kit. We cover the tools and examples that I
+        find most useful when working with legacy code. We briefly touch on the role of AI and other tools I've
+        discovered since I wrote the book.
+      </p>
+    </li>
+    <li>
+      <a
+        href="https://www.codewithjason.com/podcast/9478269-046-tips-for-working-with-legacy-code-with-nicolas-carlo/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="large-link"
+      >
+        Tips for Working with Legacy Code
+      </a>
+      <p>
+        I talk with Jason Swett about working with legacy code, adding tests to legacy code, how to safely make changes
+        to legacy applications, and more.
+      </p>
+    </li>
+    <li>
+      <a
+        href="https://maintainable.fm/episodes/nicolas-carlo-changing-messy-software-without-breaking-it"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="large-link"
+      >
+        Changing Messy Software Without Breaking It
+      </a>
+      <p>
+        I talk with Robby Russell about practices like feature toggling or sustainability weeks to work on improving
+        things. I also give advice for listeners who struggle to get stakeholder buy-in on dealing with technical debt
+        challenges.
+      </p>
+    </li>
+  </ul>
+
+  <h2>
+    <span role="img" aria-label="Mic">🎤</span>{" "}
+    If you prefer talks
+  </h2>
+  <ul>
+    <li>
+      <a href="https://youtu.be/6KUUbV0NcA8" target="_blank" rel="noopener noreferrer" class="large-link">
+        7 techniques to tame a Legacy Codebase
+      </a>
+      <p>
+        You spend most of our time changing existing code that is not documented, nor tested! It's painful because
+        you're always in a hurry to ship new features and bug fixes… What if you had a secret weapon to make things
+        better as you go? Here are 7 concrete techniques that will help you regain control of your Legacy.
+      </p>
+    </li>
+    {
+      talks.map((talk) => {
+        const title = talk.frontmatter.title || talk.fields.slug
+        return (
+          <li>
+            <a href={`/blog${talk.fields.slug}`} class="large-link">
+              {title}
+            </a>
+            <p set:html={talk.frontmatter.description || talk.excerpt} />
+          </li>
+        )
+      })
+    }
+  </ul>
+
+  <hr class="my-12" />
+
+  <div class="my-8" id="subscribe">
+    <CTA />
+  </div>
+
+  <Bio />
 
   <!-- <section class="my-64">
     <div class="container">
@@ -199,12 +379,6 @@ const lastFivePosts = sortedPosts.slice(0, 5)
 </DefaultLayout>
 
 <style>
-  .avatar {
-    border: 1px solid var(--border-color-subtle);
-    border-radius: var(--radius-md);
-    padding: var(--space-s);
-  }
-
   .disclaimer {
     border-left: 5px var(--brand-primary) solid;
     border-radius: 0 0.5rem 0.5rem 0;
@@ -228,6 +402,101 @@ const lastFivePosts = sortedPosts.slice(0, 5)
   }
 
   ul {
-    margin: "20px 0 40px";
+    margin: 20px 0 40px;
+  }
+
+  .article-item::before {
+    top: 16px;
+  }
+
+  .grid-ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    grid-row-gap: 1.5rem;
+    margin-left: 0 !important;
+
+    & > li {
+      grid-column: span 2;
+      margin-left: 0 !important;
+    }
+
+    & > li:last-child:nth-child(2n + 1) {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+
+    & > li::before {
+      display: none !important;
+    }
+
+    img {
+      margin-bottom: 0.75rem;
+      box-shadow: -0.5rem 0.75rem 0 var(--brand-background);
+      border: 1px solid var(--brand-background);
+      border-radius: 1rem;
+    }
+
+    & > li:nth-of-type(2n) {
+      img {
+        box-shadow: 0.5rem -0.75rem 0 var(--brand-background);
+      }
+
+      a:hover,
+      a:active,
+      a:focus {
+        img {
+          box-shadow: 0.5rem -0.75rem 0 var(--brand-primary);
+        }
+      }
+    }
+
+    & a {
+      font-size: 1.2rem;
+      line-height: 0.5rem;
+
+      &:hover,
+      &:active,
+      &:focus {
+        transition: all 0.2s ease-in-out;
+
+        img {
+          box-shadow: -0.5rem 0.75rem 0 var(--brand-primary);
+        }
+      }
+    }
+
+    & p {
+      margin-top: 0.5rem;
+    }
+
+    @media (min-width: 1000px) {
+      margin-right: -4rem;
+      margin-left: -4rem !important;
+      grid-gap: 1.5rem;
+    }
+
+    @media (max-width: 500px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+
+      & > li {
+        grid-column: span 1;
+      }
+
+      & > li:last-child:nth-child(2n + 1) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+    }
+  }
+
+  .img-link {
+    box-shadow: none;
+  }
+
+  .large-link {
+    font-size: 21px;
   }
 </style>
