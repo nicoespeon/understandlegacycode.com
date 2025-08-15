@@ -1,0 +1,131 @@
+---
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import Bio from "@components/Bio.astro"
+import CTA from "@components/CTA.astro"
+
+interface Props {
+  title: string
+  description: string
+  tag?: string
+}
+
+const { title, description, tag } = Astro.props
+
+// Get related articles if a tag is provided
+let relatedPosts: any[] = []
+if (tag) {
+  const allPosts = await Astro.glob("../../content/blog/**/index.md")
+  relatedPosts = allPosts
+    .filter((post) => post.frontmatter.tags && post.frontmatter.tags.includes(tag))
+    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+}
+
+// Helper function to extract slug from file path
+function getSlugFromFile(filePath: string): string {
+  const pathParts = filePath.split("/")
+  return pathParts[pathParts.length - 2] // Get the directory name
+}
+---
+
+<DefaultLayout title={title} description={description}>
+  <article class="my-12">
+    <div class="container">
+      <div class="guide-content">
+        <slot />
+      </div>
+
+      {
+        relatedPosts.length > 0 && (
+          <section class="related-articles">
+            <h2>
+              <span role="img" aria-label="mortar board">
+                🎓
+              </span>
+              &nbsp;Related articles
+            </h2>
+            <ul class="related-list">
+              {relatedPosts.map((post) => {
+                const title = post.frontmatter.title || "Untitled"
+                const slug = getSlugFromFile(post.file)
+                return (
+                  <li class="related-item">
+                    <a href={`/blog/${slug}`} class="related-link">
+                      {title}
+                    </a>
+                    <p set:html={post.frontmatter.description} />
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        )
+      }
+
+      <div class="my-12">
+        <CTA />
+      </div>
+
+      <hr class="my-12" />
+
+      <Bio />
+    </div>
+  </article>
+</DefaultLayout>
+
+<style>
+  .container {
+    margin: auto;
+    padding: 2rem;
+    max-width: 768px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .guide-content {
+    margin-bottom: 3rem;
+  }
+
+  .related-articles {
+    margin: 3rem 0;
+  }
+
+  .related-articles h2 {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .related-list {
+    margin: 20px 0 40px;
+  }
+
+  .related-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .related-item::before {
+    top: 16px;
+  }
+
+  .related-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+  }
+
+  .related-link:hover {
+    text-decoration: underline;
+  }
+
+  .related-item p {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+</style>

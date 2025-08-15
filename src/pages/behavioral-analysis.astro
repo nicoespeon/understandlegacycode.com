@@ -1,0 +1,44 @@
+---
+import GuideLayout from "@layouts/GuideLayout.astro"
+---
+
+<GuideLayout
+  title="Behavioral Analysis"
+  description="A technique to get insights from large codebases, using VCS information"
+  tag="behavioral analysis"
+>
+  <h1>Behavioral Analysis</h1>
+
+  <blockquote>
+    <p>How do you analyze a very large Legacy codebase?</p>
+  </blockquote>
+
+  <p>
+    If you're using a Version Control System (VCS), you're sitting on a gold mine! You can leverage it to get useful
+    insights from any codebase, based on <em>how</em> people interact with it.
+  </p>
+
+  <p>This approach has been detailed by Adam Tornhill in his books:</p>
+  <ul>
+    <li>
+      <a href="https://www.google.com/search?q=your+code+as+a+crime+scene" target="_blank" rel="noopener noreferrer">
+        Your Code as a Crime Scene
+      </a>
+    </li>
+    <li>
+      <a href="https://www.google.com/search?q=software+design+x-rays" target="_blank" rel="noopener noreferrer">
+        Software Design X-Rays
+      </a>
+    </li>
+  </ul>
+
+  <p>There are many information you can get from Behavioral Analysis:</p>
+  <ol>
+    <li>Identify Hotspots and prioritize Tech Debt</li>
+    <li>Find actual code duplication</li>
+    <li>Proactively detect potential bugs, based on empirical behavior</li>
+    <li>Prioritize knowledge transfer</li>
+    <li>Spot coordination bottlenecks</li>
+    <li>Find misalignments between your organization and software architecture</li>
+  </ol>
+</GuideLayout>
