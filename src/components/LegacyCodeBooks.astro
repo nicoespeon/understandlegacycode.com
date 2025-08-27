@@ -1,7 +1,5 @@
 ---
-// LegacyCodeBooks component
-// Extracted from the old Gatsby bookshelf.js page
-
+// Size sm => ~200 pages / lg => 400+ pages
 const books = [
   {
     title: "Working Effectively with Legacy Code",
@@ -115,6 +113,15 @@ const books = [
 ]
 ---
 
+<div class="space-y-4">
+  <p>Few books dig into the challenges of working with legacy systems. These ones do.</p>
+  <p>
+    Here is my personal bookshelf. For each book, I've written a high-level overview of what you can expect from it.
+    Their salient points, according to me.
+  </p>
+  <p>Click the ones that intrigue you to get more details. I put the ones that were the most insightful to me first.</p>
+</div>
+
 <div class="books-grid">
   {
     books.map((book) => (
@@ -136,54 +143,330 @@ const books = [
   }
 </div>
 
-<style>
-  .books-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
+<!-- Interactive Book Gallery -->
+<div class="books-gallery" style="margin-top: 50px; margin-bottom: 60px;">
+  <svg class="paper">
+    <defs>
+      <filter id="paper" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="8" result="noise"></feTurbulence>
+        <feDiffuseLighting in="noise" lighting-color="white" surfaceScale="1" result="diffLight">
+          <feDistantLight azimuth="45" elevation="35"></feDistantLight>
+        </feDiffuseLighting>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Inspired from https://alexandru.so/experiments/book-gallery -->
+  <div class="book-list" role="list">
+    {
+      books.map((book) => {
+        const bookWidth = book.size === "lg" ? 62 : book.size === "md" ? 44 : 28
+
+        return (
+          <button
+            class="book-cover"
+            role="listitem"
+            data-book-title={book.title}
+            data-book-width={bookWidth}
+            style={`flex-basis: ${50 + bookWidth}px;`}
+          >
+            <div
+              class="book-cover-side"
+              style={`
+                background-color: ${book.spineBackgroundColor ?? "#ccc"};
+                color: ${book.spineForegroundColor ?? "#474545"};
+                width: ${bookWidth}px;
+              `}
+            >
+              <span aria-hidden="true" />
+              <h2 style={`font-size: ${book.fontSize ?? "16px"};`}>{book.title}</h2>
+            </div>
+            <div class="book-cover-front">
+              <span class="right" aria-hidden="true" />
+              <span class="left" aria-hidden="true" />
+              <img src={book.coverUrl} alt={book.title} />
+            </div>
+          </button>
+        )
+      })
+    }
+  </div>
+
+  <div class="selected" id="selected-book" style="display: none;">
+    <dl>
+      <dt>Title</dt>
+      <dd id="selected-title" style="font-size: 18px; font-style: italic;"></dd>
+    </dl>
+    <dl>
+      <dt>Publication</dt>
+      <dd id="selected-year"></dd>
+    </dl>
+    <dl>
+      <dt id="authors-label">Author</dt>
+      <dd id="selected-authors"></dd>
+    </dl>
+    <dl>
+      <dt>What to expect?</dt>
+      <dd id="selected-summary"></dd>
+    </dl>
+
+    <p style="font-size: 18px;">
+      Intrigued? <a id="selected-link" href="#">Read my detailed notes</a>.
+    </p>
+  </div>
+</div>
+
+<script define:vars={{ books }} is:inline>
+  let selectedBook = null
+
+  function selectBook(book) {
+    const selectedDiv = document.getElementById("selected-book")
+    const titleEl = document.getElementById("selected-title")
+    const yearEl = document.getElementById("selected-year")
+    const authorsEl = document.getElementById("selected-authors")
+    const authorsLabelEl = document.getElementById("authors-label")
+    const summaryEl = document.getElementById("selected-summary")
+    const linkEl = document.getElementById("selected-link")
+
+    if (selectedBook === book) {
+      // Deselect if clicking the same book
+      selectedBook = null
+      if (selectedDiv) selectedDiv.style.display = "none"
+
+      // Remove is-selected class from all buttons
+      document.querySelectorAll(".book-cover").forEach((btn) => {
+        const htmlBtn = btn
+        htmlBtn.classList.remove("is-selected")
+        const bookWidth = parseInt(htmlBtn.getAttribute("data-book-width") || "28")
+        htmlBtn.style.setProperty("flex-basis", `${50 + bookWidth}px`)
+      })
+    } else {
+      // Select new book
+      selectedBook = book
+      if (selectedDiv) selectedDiv.style.display = "block"
+
+      if (titleEl) titleEl.textContent = book.title
+      if (yearEl) yearEl.textContent = book.yearOfPublication.toString()
+      if (authorsEl) authorsEl.textContent = book.authors.join(", ")
+      if (authorsLabelEl) authorsLabelEl.textContent = book.authors.length > 1 ? "Authors" : "Author"
+      if (summaryEl) summaryEl.textContent = book.summary
+      if (linkEl && linkEl instanceof HTMLAnchorElement) linkEl.href = book.link
+
+      // Update button states
+      document.querySelectorAll(".book-cover").forEach((btn) => {
+        const htmlBtn = btn
+        const isCurrentBook = htmlBtn.getAttribute("data-book-title") === book.title
+        const bookWidth = parseInt(htmlBtn.getAttribute("data-book-width") || "28")
+
+        if (isCurrentBook) {
+          htmlBtn.classList.add("is-selected")
+          htmlBtn.style.setProperty("flex-basis", "240px")
+        } else {
+          htmlBtn.classList.remove("is-selected")
+          htmlBtn.style.setProperty("flex-basis", `${50 + bookWidth}px`)
+        }
+      })
+    }
   }
 
-  .book-item {
+  function cleanup() {
+    selectedBook = null
+    const selectedDiv = document.getElementById("selected-book")
+    if (selectedDiv) selectedDiv.style.display = "none"
+
+    document.querySelectorAll(".book-cover").forEach((btn) => {
+      btn.classList.remove("is-selected")
+      const bookWidth = parseInt(btn.getAttribute("data-book-width") || "28")
+      btn.style.setProperty("flex-basis", `${50 + bookWidth}px`)
+    })
+  }
+
+  // Clean up when navigating away
+  document.addEventListener("astro:before-preparation", cleanup)
+
+  // Add click event listeners to all book buttons
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll(".book-cover").forEach((button) => {
+      button.addEventListener("click", () => {
+        const bookTitle = button.getAttribute("data-book-title")
+        const matchingBook = books.find((b) => b.title === bookTitle)
+        if (matchingBook) {
+          selectBook(matchingBook)
+        }
+      })
+    })
+  })
+</script>
+
+<style>
+  .books-grid {
+    display: none;
+  }
+
+  svg.paper {
+    position: absolute;
+    visibility: hidden;
+    inset: 0;
+  }
+
+  .book-list {
     display: flex;
-    gap: 1rem;
-    border-radius: 0.5rem;
-    background: var(--brand-background-lightest, #f9f9f9);
-    padding: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .selected {
+    margin-top: 40px;
+
+    & > dl {
+      display: flex;
+      margin-bottom: 0;
+
+      & > dt {
+        flex-shrink: 0;
+        flex-basis: 160px;
+        font-weight: 600;
+      }
+
+      & dd {
+        margin-bottom: 1.75rem;
+      }
+    }
   }
 
   .book-cover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 0.25rem;
-    width: 120px;
-    height: auto;
+    display: flex;
+    flex-shrink: 0;
+
+    flex-basis: 100px;
+    flex-direction: row;
+    align-items: center;
+
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    appearance: button;
+    -webkit-appearance: button;
+    transition-duration: 500ms;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: auto;
+    cursor: pointer;
+    outline: 2px solid transparent !important;
+    outline-offset: 2px;
+    border: 0;
+    background-image: none;
+    background-color: transparent;
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-16px);
+    }
   }
 
-  .book-info {
-    flex: 1;
+  .book-cover-side {
+    flex-shrink: 0;
+
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(-10deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-origin: right;
+    transform-style: preserve-3d;
+    z-index: 50;
+    filter: contrast(2) brightness(0.8);
+    transition-duration: 500ms;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: 288px;
+    .is-selected & {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(-70deg) rotateZ(0deg)
+        skew(0deg, 0deg);
+    }
+
+    & > span {
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      z-index: 50;
+      filter: url(#paper);
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    & > h2 {
+      margin: auto;
+      font-weight: 500;
+      line-height: 1.1;
+      writing-mode: vertical-lr;
+    }
   }
 
-  .book-title {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-  }
+  .book-cover-front {
+    position: relative;
+    flex-shrink: 0;
 
-  .book-title:hover {
-    text-decoration: underline;
-  }
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(80deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-origin: left;
+    transform-style: preserve-3d;
+    z-index: 10;
+    filter: contrast(2) brightness(0.8);
+    transition-duration: 500ms;
 
-  .book-authors {
-    margin-bottom: 0.75rem;
-    color: #666;
-    font-size: 0.9rem;
-  }
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: auto;
+    height: 288px;
+    overflow: hidden;
+    .is-selected & {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(20deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
 
-  .book-summary {
-    margin-bottom: 0;
-    line-height: 1.5;
+    & > span {
+      top: 0;
+      z-index: 50;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    & > span.right {
+      position: fixed;
+      right: 0;
+      opacity: 0.4;
+      filter: url(#paper);
+    }
+
+    & > span.left {
+      position: absolute;
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 2px,
+        rgba(255, 255, 255, 0.5) 3px,
+        rgba(255, 255, 255, 0.25) 4px,
+        rgba(255, 255, 255, 0.25) 6px,
+        transparent 7px,
+        transparent 9px,
+        rgba(255, 255, 255, 0.25) 9px,
+        transparent 12px
+      );
+    }
+
+    & > img {
+      transition-duration: 500ms;
+
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: auto;
+      background-size: cover;
+      width: 192px;
+      height: 100%;
+    }
   }
 
   @media (max-width: 768px) {
@@ -195,6 +478,59 @@ const books = [
     .book-cover {
       margin: 0 auto;
       width: 100px;
+    }
+  }
+
+  @media (max-width: 1536px) {
+    .books-gallery {
+      display: none;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .book-item {
+      display: flex;
+      gap: 1rem;
+      border-radius: 0.5rem;
+      background: var(--brand-background-lightest, #f9f9f9);
+      padding: 1rem;
+    }
+
+    a.book-link {
+      box-shadow: none;
+    }
+
+    .book-cover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      width: 120px;
+      height: auto;
+    }
+
+    .book-info {
+      flex: 1;
+    }
+
+    .book-title {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .book-authors {
+      margin-bottom: 0.75rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .book-summary {
+      margin-bottom: 0;
+      line-height: 1.5;
     }
   }
 </style>

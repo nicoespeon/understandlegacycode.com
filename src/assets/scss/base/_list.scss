@@ -1,5 +1,72 @@
 @use "breakpoint" as *;
 
+ul,
+ol {
+  margin-left: 1.75rem;
+}
+
+p + ul,
+p + ol {
+  margin-top: -0.75rem;
+}
+
+ul > li,
+ol > li {
+  position: relative;
+  margin-left: 20px;
+  list-style-type: none;
+}
+
+ol {
+  counter-reset: step-counter;
+  padding-left: 20px;
+}
+
+ol > li {
+  counter-increment: step-counter;
+}
+
+ul > li::before {
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: -26px;
+  transform: rotate(-5deg);
+  background: var(--brand-primary, #ed1b2e);
+  width: 14px;
+  height: 5px;
+  content: " ";
+}
+
+ol > li::before {
+  display: block;
+  position: absolute;
+  top: 8px;
+  box-sizing: border-box;
+  margin-top: -3px;
+  margin-right: 1em;
+  margin-left: -62px;
+  box-shadow: 0.2em 0.2em 0 rgba(128, 128, 128, 0.2);
+  background-color: var(--brand-primary, #ed1b2e);
+  padding: 2px 0;
+  width: 2.7em;
+  height: 1.2em;
+  content: counter(step-counter);
+  color: white;
+  font-style: normal;
+  font-size: 0.9em;
+  line-height: 1;
+  font-family: sharp-sans, sans-serif;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+  text-align: center;
+}
+
+ul > li:nth-of-type(2n + 1)::before,
+ol > li:nth-of-type(2n + 1)::before {
+  transform: rotate(4deg);
+}
+
 ul:not([class]),
 ol:not([class]) {
   margin-inline-start: var(--space-s);
@@ -10,12 +77,8 @@ ol:not([class]) {
   }
 
   li {
-    margin-block-end: var(--space-xs);
+    margin-block-end: var(--space-s);
   }
-}
-
-ul:not([class]) {
-  list-style-type: disc;
 }
 
 ol.incremented {

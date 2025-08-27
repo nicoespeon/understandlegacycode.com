@@ -1,15 +1,15 @@
-<section class="hero mb-10">
-  <h1 class="text-6xl font-extrabold md:text-left">
-    <span class="text-gradient block text-5xl">Understand</span>
-    <span class="-mt-2 block">Legacy Code</span>
-  </h1>
-  <p class="mt-6 text-3xl font-extralight -tracking-wide md:text-left">
-    <slot name="description"> Change messy code without breaking it. </slot>
-  </p>
+<section class="hero -mt-4 mb-10">
+  <h3 class="mt-0 font-extrabold">
+    <a class="no-underline" href="/">
+      <span class="text-gradient text-2xl">Understand</span>
+      <span class="text-2xl">Legacy Code</span>
+      <div class="text-3xl font-extralight -tracking-wide md:text-left">Change messy code without breaking it.</div>
+    </a>
+  </h3>
 </section>
 
 <style lang="scss">
-  .hero h1 {
+  .hero h3 {
     font-stretch: 100%;
     font-family: var(--font-hero);
     font-kerning: normal;
@@ -17,6 +17,10 @@
     font-feature-settings: "kern", "liga", "clig", "calt";
     text-rendering: optimizeLegibility;
     text-wrap: unset;
+
+    a {
+      box-shadow: none;
+    }
   }
 
   .hero p {

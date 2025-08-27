@@ -5,14 +5,28 @@ import Hero from "@components/Hero.astro"
 import LegacyCodeBooks from "@components/LegacyCodeBooks.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
 
-const allPosts = (await Astro.glob("../../content/blog/**/*.md")) ?? []
+const allPosts = await Astro.glob("../../content/blog/**/index.md")
 const sortedPosts = allPosts.sort(
   (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
 )
 const lastFivePosts = sortedPosts.slice(0, 5)
 
-// TODO: This will need to be replaced with actual talks data when available
-const talks = []
+// Filter posts with "conference" tag and create talks structure
+const talks = sortedPosts
+  .filter((post) => post.frontmatter.tags && post.frontmatter.tags.includes("conference"))
+  .map((post) => {
+    // Extract slug from file path
+    const pathParts = post.file.split("/")
+    const slug = pathParts[pathParts.length - 2]
+
+    return {
+      frontmatter: post.frontmatter,
+      fields: {
+        slug: `/${slug}`,
+      },
+      excerpt: post.frontmatter.description || "",
+    }
+  })
 ---
 
 <DefaultLayout title="Understand Legacy Code" description="Change messy code without breaking it.">
@@ -21,8 +35,7 @@ const talks = []
   <section class="disclaimer title-font">
     <p>
       When I say "Legacy Code" I mean{" "}
-      <a href="/blog/what-is-legacy-code-is-it-code-without-tests"> valuable code you're afraid to change </a>
-      .
+      <a href="/blog/what-is-legacy-code-is-it-code-without-tests">valuable code you're afraid to change</a>.
     </p>
     <p>We all have to deal with Legacy Code. But it's damn hard to!</p>
     <p>
@@ -40,11 +53,11 @@ const talks = []
     {
       lastFivePosts.map((post) => {
         const title = post.frontmatter.title || "Untitled"
-        // Extract slug from file path
         const pathParts = post.file.split("/")
-        const slug = pathParts[pathParts.length - 2] // Get the directory name
+        const slug = pathParts[pathParts.length - 2]
+
         return (
-          <li class="article-item">
+          <li>
             <a href={`/blog/${slug}`} class="large-link">
               {title}
             </a>
@@ -68,21 +81,21 @@ const talks = []
       <a href="/approval-tests" class="img-link">
         <img alt="" src="/assets/approval-testing.png" />
       </a>
-      <a class="title-font" href="/approval-tests"> Approval Testing </a>
+      <a class="title-font" href="/approval-tests">Approval Testing </a>
       <p>A technique to quickly put tests on Legacy Code, so you can refactor safely.</p>
     </li>
     <li>
       <a href="/behavioral-analysis" class="img-link">
         <img alt="" src="/assets/behavioral-analysis.png" />
       </a>
-      <a class="title-font" href="/behavioral-analysis"> Behavioral Analysis </a>
+      <a class="title-font" href="/behavioral-analysis">Behavioral Analysis </a>
       <p>A technique to get insights from large codebases, using VCS information.</p>
     </li>
     <li>
       <a href="/dependency-graphs" class="img-link">
         <img alt="" src="/assets/draw-dependency-graph.png" />
       </a>
-      <a class="title-font" href="/dependency-graphs"> Draw Dependency Graphs </a>
+      <a class="title-font" href="/dependency-graphs">Draw Dependency Graphs </a>
       <p>A technique to understand the structure of a codebase.</p>
     </li>
   </ul>
@@ -102,45 +115,45 @@ const talks = []
       <a href="/getting-into-large-codebase" class="img-link">
         <img alt="" src="/assets/getting-into-large-codebases.png" />
       </a>
-      <a class="title-font" href="/getting-into-large-codebase"> Getting into a large codebase </a>
+      <a class="title-font" href="/getting-into-large-codebase">Getting into a large codebase </a>
       <p>Diving into a large, undocumented codebase is overwhelming. Let's see some techniques to approach it.</p>
     </li>
     <li>
       <a href="/best-practice-or-code-smell" class="img-link">
         <img alt="" src="/assets/best-practice-or-code-smell.png" />
       </a>
-      <a class="title-font" href="/best-practice-or-code-smell"> Best practice or a code smell? </a>
+      <a class="title-font" href="/best-practice-or-code-smell">Best practice or a code smell? </a>
       <p>Not sure if a pattern will make the code more maintainable? Here are a few resources that will help.</p>
     </li>
     <li>
       <a href="/changing-untested-code" class="img-link">
         <img alt="" src="/assets/changing-untested-code.png" />
       </a>
-      <a class="title-font" href="/changing-untested-code"> Changing untested code without breaking it </a>
+      <a class="title-font" href="/changing-untested-code">Changing untested code without breaking it </a>
       <p>Without tests, every code change is risky. But how to put tests on a code that wasn't design for it?</p>
     </li>
     <li>
       <a href="/code-feels-impossible-to-maintain" class="img-link">
         <img alt="" src="/assets/impossible-to-maintain.png" />
       </a>
-      <a class="title-font" href="/code-feels-impossible-to-maintain"> Code feels impossible to maintain </a>
+      <a class="title-font" href="/code-feels-impossible-to-maintain">Code feels impossible to maintain </a>
       <p>
         Sometimes, you seem to hit a point of no return and that the best strategy would be to burn it all and start
         over. Are there alternatives?
       </p>
     </li>
     <li>
-      <a href="/making-others−care-about-it" class="img-link">
+      <a href="/making-others-care-about-it" class="img-link">
         <img alt="" src="/assets/making-others-care.png" />
       </a>
-      <a class="title-font" href="/making-others−care-about-it"> Making others care about it </a>
+      <a class="title-font" href="/making-others-care-about-it">Making others care about it </a>
       <p>What you can do when it seems that no-one cares about the technical debt that's piling up.</p>
     </li>
     <li>
       <a href="/ai-support" class="img-link">
         <img alt="" src="/assets/ai-support.png" />
       </a>
-      <a class="title-font" href="/ai-support"> AI Support </a>
+      <a class="title-font" href="/ai-support">AI Support </a>
       <p>Can you leverage AI to tame legacy codebases? Let's explore…</p>
     </li>
   </ul>
@@ -226,156 +239,13 @@ const talks = []
     }
   </ul>
 
-  <hr class="my-12" />
+  <hr class="my-8" />
 
-  <div class="my-8" id="subscribe">
-    <CTA />
+  <div class="mb-12">
+    <CTA variant="tilted" />
   </div>
 
   <Bio />
-
-  <!-- <section class="my-64">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="lucide:accessibility" title="Accessible by default">
-          Keyboard navigation, focus indicators, ARIA labels, semantic HTML, and more. This theme is designed to be
-          inclusive.
-        </Feature>
-        <Feature icon="lucide:puzzle" title="A11Y components">
-          25+ components and counting, all tried and tested for the most optimal accessible experience for your
-          visitors.
-        </Feature>
-        <Feature icon="lucide:moon" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
-        </Feature>
-        <Feature icon="lucide:paintbrush" title="Tailwind 4.0">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
-        </Feature>
-        <Feature icon="lucide:sparkles" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
-        </Feature>
-        <Feature icon="lucide:code" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
-        </Feature>
-        <Feature icon="lucide:bookmark" title="Blog & portfolio">
-          This theme comes with a fully integrated blog and portfolio, dynamic pages and SEO optimization.
-        </Feature>
-        <Feature icon="lucide:file-text" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature icon="lucide:blocks" title="Design system">
-          The theme offers some very handy utilities to help you build your website faster.
-        </Feature>
-      </div>
-    </div>
-  </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible components</h2>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <ExternalLink href="https://github.com/incluud/accessible-astro-components"
-        >separate package</ExternalLink
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.2 AA compliant</h2>
-    <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
-    </p>
-  </ContentMedia>
-  <section class="my-64">
-    <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
-      <div class="flex flex-col items-start gap-4">
-        <h2 class="text-6xl">FAQ</h2>
-        <p class="text-2xl">
-          This section demonstrates how to effectively use the Accordion component to organize and display frequently
-          asked questions in an accessible and user-friendly way.
-        </p>
-        <a class="button" href="/faq">Contact support team</a>
-      </div>
-      <div class="space-content">
-        <Accordion>
-          <AccordionItem name="exclusive" title="What is WCAG and why is it important?" open>
-            <p>
-              WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
-              accessibility. Following WCAG ensures your website is usable by people with various disabilities,
-              including visual, auditory, physical, and cognitive impairments. It's important not just for
-              accessibility, but also for legal compliance, SEO, and reaching a wider audience.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="What's the difference between ARIA labels and alt text?">
-            <p>
-              Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
-              aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative
-              text for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and
-              advanced UI controls more accessible.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="Why is keyboard navigation important?">
-            <p>
-              Keyboard navigation is essential for users who can't use a mouse, including people with motor
-              disabilities, visual impairments, or those who simply prefer keyboard controls. A website should be fully
-              operable using only a keyboard, with visible focus indicators and logical tab order. This includes being
-              able to access all interactive elements and navigate through content efficiently.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="What is a sufficient color contrast ratio?">
-            <p>
-              According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its
-              background for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons
-              or buttons, a minimum ratio of 3:1 is required. This ensures content is readable for users with visual
-              impairments or color blindness.
-            </p>
-          </AccordionItem>
-          <AccordionItem name="exclusive" title="How do I make custom components accessible?">
-            <p>
-              To make custom components accessible, focus on these key aspects: use semantic HTML where possible,
-              implement proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure
-              adequate color contrast. Always test with screen readers and keyboard navigation. Consider using
-              established design patterns from the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
-                >ARIA Authoring Practices Guide</a
-              >.
-            </p>
-          </AccordionItem>
-        </Accordion>
-      </div>
-    </div>
-  </section>
-  <section class="my-64">
-    <div class="space-content container">
-      <h2 class="text-6xl">Our community</h2>
-      <p class="text-2xl">
-        We're a community of developers who are passionate about making the web more accessible. We're always looking
-        for new ways to improve the accessibility of the web.
-      </p>
-      <AvatarGroup display="grid" gridItemsSize="300px" gridGap="2rem">
-        <Avatar initials="RJ" title="Robert Johnson" subtitle="Manager" />
-        <Avatar initials="MT" title="Maria Torres" subtitle="Developer" />
-        <Avatar initials="AK" title="Alex Kim" subtitle="Designer" />
-        <Avatar initials="SL" title="Sarah Lee" subtitle="Content Strategist" />
-        <Avatar initials="JP" title="James Peterson" subtitle="QA Engineer" />
-        <Avatar initials="LW" title="Lisa Wong" subtitle="Product Owner" />
-        <Avatar initials="DM" title="David Martinez" subtitle="UX Researcher" />
-        <Avatar initials="EB" title="Emma Brown" subtitle="Accessibility Specialist" />
-        <Avatar initials="TC" title="Thomas Chen" subtitle="Frontend Developer" />
-      </AvatarGroup>
-    </div>
-  </section>
-  <section class="mt-64 mb-32">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Impact in numbers</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="900+" title="Stars" sub="On GitHub" />
-        <Counter count="25+" title="Accessible" sub="Components" />
-        <Counter count="400+" title="Commits" sub="Merged" />
-        <Counter count="48+" title="Months" sub="Since launch" />
-      </div>
-    </div>
-  </section> -->
 </DefaultLayout>
 
 <style>
@@ -403,10 +273,11 @@ const talks = []
 
   ul {
     margin: 20px 0 40px;
-  }
 
-  .article-item::before {
-    top: 16px;
+    & > li > a + p {
+      margin: 0.25rem 0;
+      line-height: 1.65;
+    }
   }
 
   .grid-ul {
@@ -431,7 +302,7 @@ const talks = []
     }
 
     img {
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
       box-shadow: -0.5rem 0.75rem 0 var(--brand-background);
       border: 1px solid var(--brand-background);
       border-radius: 1rem;

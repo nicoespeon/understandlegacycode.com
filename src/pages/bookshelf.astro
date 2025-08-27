@@ -1,45 +1,22 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Bio from "@components/Bio.astro"
 import CTA from "@components/CTA.astro"
+import HeroSmall from "@components/HeroSmall.astro"
 import LegacyCodeBooks from "@components/LegacyCodeBooks.astro"
+import Title from "@components/Title.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
 ---
 
 <DefaultLayout
   title="Books on Legacy Code - Understand Legacy Code"
   description="My collection of books that can help you tame legacy codebases"
 >
-  <article class="my-12">
-    <div class="container">
-      <header class="mb-8">
-        <h1 class="mb-4 text-4xl font-bold">Books on Legacy Code</h1>
-        <p class="text-xl text-gray-700">My collection of books that can help you tame legacy codebases</p>
-      </header>
+  <HeroSmall />
 
-      <LegacyCodeBooks />
+  <Title>Books on Legacy Code</Title>
+  <LegacyCodeBooks />
 
-      <div class="my-12">
-        <CTA />
-      </div>
-
-      <hr class="my-12" />
-
-      <Bio />
-    </div>
-  </article>
+  <CTA variant="tilted" />
+  <hr class="my-7" />
+  <Bio />
 </DefaultLayout>
-
-<style>
-  .container {
-    margin: auto;
-    padding: 2rem;
-    max-width: 768px;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
-</style>

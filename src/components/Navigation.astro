@@ -9,7 +9,7 @@ import ResponsiveToggle from "./ResponsiveToggle.astro"
  */
 ---
 
-<div id="main-navigation" class="py-8">
+<div id="main-navigation" class="pt-6">
   <div class="wrapper w-full">
     <nav class="desktop-menu w-full" aria-label="Main navigation desktop">
       <ul class="menu">
@@ -19,7 +19,7 @@ import ResponsiveToggle from "./ResponsiveToggle.astro"
     <ResponsiveToggle />
   </div>
   <nav class="mobile-menu" aria-label="Main navigation mobile">
-    <ul class="menu">
+    <ul class="menu align-start flex flex-col justify-between space-y-2 pt-5">
       <slot />
     </ul>
   </nav>
@@ -211,10 +211,108 @@ import ResponsiveToggle from "./ResponsiveToggle.astro"
 </script>
 
 <style lang="scss" is:global>
-  @use "../assets/scss/base/mixins" as *;
-  @use "../assets/scss/base/breakpoint" as *;
+  .mobile-menu {
+    ul,
+    li,
+    ol {
+      list-style: none;
+    }
+
+    ul > li,
+    ul > li > button {
+      margin-left: 0 !important;
+    }
+
+    ul > li::before {
+      display: none !important;
+    }
+
+    a {
+      box-shadow: none;
+    }
+  }
+
+  .desktop-menu {
+    ul,
+    li,
+    ol {
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul,
+    ul > li {
+      margin-left: 0 !important;
+    }
+
+    ul > li::before {
+      display: none !important;
+    }
+
+    ul > li::after {
+      position: relative;
+      content: "~";
+      color: var(--brand-primary);
+      font-weight: 600;
+    }
+    ul > li:last-of-type::after {
+      content: "";
+    }
+
+    ul > li > a {
+      position: relative;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      box-shadow: none !important;
+      height: fit-content;
+      text-decoration: none;
+
+      &:after {
+        position: absolute;
+        right: 0;
+        bottom: -2px;
+        left: 0;
+        transform: translateZ(0) scaleX(0);
+        transform-origin: left center;
+        transition: all 0.15s ease-in-out;
+        background-image: linear-gradient(to left, var(--brand-primary), var(--brand-primary-light));
+        height: 3px;
+        content: "";
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        &::after {
+          transform: translateZ(0) scale(1);
+        }
+      }
+    }
+
+    ul > li.first-aid > a {
+      color: var(--first-aid-primary);
+      font-weight: 500;
+
+      &:after {
+        background-image: linear-gradient(to left, var(--first-aid-primary), var(--first-aid-primary-light));
+      }
+    }
+  }
 
   #main-navigation {
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     // Mobile-first: show mobile menu by default
     .mobile-menu {
       display: none;
@@ -222,20 +320,26 @@ import ResponsiveToggle from "./ResponsiveToggle.astro"
       &.show {
         display: block;
       }
+
+      ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
     }
 
     .responsive-toggle {
       display: flex;
       align-items: center;
-      gap: var(--space-2xs);
+      gap: 0.5rem;
     }
 
     .desktop-menu {
       display: none;
     }
 
-    // Desktop: switch to desktop menu at nav breakpoint
-    @include breakpoint("nav") {
+    // Desktop: switch to desktop menu at larger screens
+    @media (min-width: 768px) {
       .mobile-menu {
         display: none;
       }
@@ -249,171 +353,18 @@ import ResponsiveToggle from "./ResponsiveToggle.astro"
       }
     }
 
-    .wrapper {
-      display: flex;
-      align-items: center;
-      gap: var(--space-m);
-    }
-
-    a,
-    button {
-      color: var(--foreground-color);
-    }
-
-    nav {
-      > ul {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--space-m);
-        list-style-type: none;
-
-        li {
-          align-content: center;
-        }
-
-        a:hover,
-        a:focus-visible,
-        .is-active,
-        button[aria-expanded="true"],
-        .has-dropdown > button:hover,
-        .has-dropdown > button:focus-visible {
-          text-decoration: underline;
-          text-decoration-style: wavy;
-          text-decoration-thickness: 1px;
-          text-underline-offset: 7px;
-        }
-
-        .is-active {
-          font-weight: bold;
-        }
-
-        .highlight a {
-          display: inline-flex;
-          align-items: center;
-          gap: var(--space-2xs);
-          transition: all var(--animation-speed-fast) var(--cubic-bezier);
-          margin-block-start: calc(var(--space-4xs) * -1);
-          border: 1px solid var(--foreground-color);
-          border-radius: var(--radius-large);
-          padding: var(--space-4xs) var(--space-2xs);
-          text-decoration: none;
-
-          &:where(:hover, :focus-visible) {
-            background-color: var(--foreground-color);
-            color: var(--background-color) !important;
-          }
-        }
-      }
-    }
-
-    .mobile-menu {
-      flex-basis: 100%;
-      margin-block-start: var(--space-m);
-      border: 1px solid var(--border-color-subtle);
-      border-radius: var(--radius-l);
-      padding: var(--space-m);
-
-      > ul {
-        flex-direction: column;
-        align-items: flex-start;
-
-        ul {
-          position: relative;
-          margin-block-start: var(--space-m);
-        }
-      }
-
-      a,
-      button {
-        display: block;
-        padding: var(--space-2xs) 0;
-        inline-size: 100%;
-      }
-    }
-
-    .has-dropdown {
-      position: relative;
-
-      > button {
-        display: flex;
-        align-items: center;
-        gap: var(--space-4xs);
-        margin-block-start: -1px;
-
-        svg {
-          transition: all var(--animation-speed-instant) var(--cubic-bezier);
-        }
-
-        &.show {
-          svg {
-            scale: -1;
-          }
-        }
-      }
-
-      ul {
-        display: none;
-        position: absolute;
-        flex-direction: column;
-        gap: var(--space-2xs);
-        translate: 0 1rem;
-        opacity: 0;
-        z-index: 100;
-        inset-block-start: 125%;
-        inset-inline-end: 0;
-        inset-inline-start: 0;
-        box-shadow: var(--elevation-4);
-        border: 2px solid var(--border-color-subtle);
-        border-radius: var(--radius-l);
-        background-color: var(--background-color);
-        padding: var(--space-m);
-        min-inline-size: 275px;
-
-        @media (prefers-reduced-motion: no-preference) {
-          transition-behavior: allow-discrete;
-          transition-duration: var(--animation-speed-fast);
-          transition-property: display, opacity, translate;
-          transition-timing-function: var(--cubic-bezier);
-        }
-      }
-
-      > button.show ~ ul {
-        display: flex;
-        translate: 0;
-        opacity: 1;
-
-        @starting-style {
-          translate: 0 1rem;
-          opacity: 0;
-        }
-      }
-    }
-
     .darkmode-toggle {
+      margin-left: 1rem;
       border: none;
       padding: 0;
 
-      @include breakpoint("nav") {
-        // Align with the menu items
-        margin-block-start: 7px;
-      }
-
       .icon {
-        inline-size: 30px;
-        block-size: 30px;
+        width: 30px;
+        height: 30px;
       }
 
       &:where(:hover, :focus-visible) {
         box-shadow: none;
-      }
-
-      &:focus {
-        @include outline;
-
-        &:not(:focus-visible) {
-          outline: none;
-          box-shadow: none;
-        }
       }
     }
   }
