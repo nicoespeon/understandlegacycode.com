@@ -4,32 +4,14 @@ import CTA from "@components/CTA.astro"
 import Hero from "@components/Hero.astro"
 import LegacyCodeBooks from "@components/LegacyCodeBooks.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
+import { getAllBlogPosts } from "@lib/blog"
 
-const allPosts = await Astro.glob("../../content/blog/**/index.md")
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
-)
-const lastFivePosts = sortedPosts.slice(0, 5)
-
-// Filter posts with "conference" tag and create talks structure
-const talks = sortedPosts
-  .filter((post) => post.frontmatter.tags && post.frontmatter.tags.includes("conference"))
-  .map((post) => {
-    // Extract slug from file path
-    const pathParts = post.file.split("/")
-    const slug = pathParts[pathParts.length - 2]
-
-    return {
-      frontmatter: post.frontmatter,
-      fields: {
-        slug: `/${slug}`,
-      },
-      excerpt: post.frontmatter.description || "",
-    }
-  })
+const allPosts = await getAllBlogPosts()
+const lastFivePosts = allPosts.slice(0, 5)
+const talks = allPosts.filter((post) => post.tags.includes("conference"))
 ---
 
-<DefaultLayout title="Understand Legacy Code" description="Change messy code without breaking it.">
+<DefaultLayout>
   <Hero />
 
   <section class="disclaimer title-font">
@@ -51,20 +33,14 @@ const talks = sortedPosts
   </h2>
   <ul>
     {
-      lastFivePosts.map((post) => {
-        const title = post.frontmatter.title || "Untitled"
-        const pathParts = post.file.split("/")
-        const slug = pathParts[pathParts.length - 2]
-
-        return (
-          <li>
-            <a href={`/blog/${slug}`} class="large-link">
-              {title}
-            </a>
-            <p set:html={post.frontmatter.description} />
-          </li>
-        )
-      })
+      lastFivePosts.map((post) => (
+        <li>
+          <a href={`/blog/${post.slug}`} class="text-xl">
+            {post.title}
+          </a>
+          <p set:html={post.description} />
+        </li>
+      ))
     }
     <li>
       If you want more, check{" "}
@@ -168,7 +144,7 @@ const talks = sortedPosts
         href="https://se-radio.net/2024/02/se-radio-602-nicolas-carlo-on-improving-legacy-code/"
         target="_blank"
         rel="noopener noreferrer"
-        class="large-link"
+        class="text-xl"
       >
         Improving Legacy Code
       </a>
@@ -183,7 +159,7 @@ const talks = sortedPosts
         href="https://www.codewithjason.com/podcast/9478269-046-tips-for-working-with-legacy-code-with-nicolas-carlo/"
         target="_blank"
         rel="noopener noreferrer"
-        class="large-link"
+        class="text-xl"
       >
         Tips for Working with Legacy Code
       </a>
@@ -197,7 +173,7 @@ const talks = sortedPosts
         href="https://maintainable.fm/episodes/nicolas-carlo-changing-messy-software-without-breaking-it"
         target="_blank"
         rel="noopener noreferrer"
-        class="large-link"
+        class="text-xl"
       >
         Changing Messy Software Without Breaking It
       </a>
@@ -215,7 +191,7 @@ const talks = sortedPosts
   </h2>
   <ul>
     <li>
-      <a href="https://youtu.be/6KUUbV0NcA8" target="_blank" rel="noopener noreferrer" class="large-link">
+      <a href="https://youtu.be/6KUUbV0NcA8" target="_blank" rel="noopener noreferrer" class="text-xl">
         7 techniques to tame a Legacy Codebase
       </a>
       <p>
@@ -225,17 +201,14 @@ const talks = sortedPosts
       </p>
     </li>
     {
-      talks.map((talk) => {
-        const title = talk.frontmatter.title || talk.fields.slug
-        return (
-          <li>
-            <a href={`/blog${talk.fields.slug}`} class="large-link">
-              {title}
-            </a>
-            <p set:html={talk.frontmatter.description || talk.excerpt} />
-          </li>
-        )
-      })
+      talks.map((talk) => (
+        <li>
+          <a href={`/blog${talk.slug}`} class="text-xl">
+            {talk.title}
+          </a>
+          <p set:html={talk.description} />
+        </li>
+      ))
     }
   </ul>
 
@@ -273,11 +246,6 @@ const talks = sortedPosts
 
   ul {
     margin: 20px 0 40px;
-
-    & > li > a + p {
-      margin: 0.25rem 0;
-      line-height: 1.65;
-    }
   }
 
   .grid-ul {
@@ -365,9 +333,5 @@ const talks = sortedPosts
 
   .img-link {
     box-shadow: none;
-  }
-
-  .large-link {
-    font-size: 21px;
   }
 </style>

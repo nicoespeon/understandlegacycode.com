@@ -1,96 +1,34 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Bio from "@components/Bio.astro"
+import HeroSmall from "@components/HeroSmall.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import { getAllBlogPosts } from "@lib/blog"
 
-// Get all blog posts from the content/blog directory
-const allPosts = await Astro.glob("../../content/blog/**/index.md")
-
-// Sort posts by date (newest first)
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
-)
-
-// Helper function to extract slug from file path
-function getSlugFromFile(filePath: string): string {
-  const pathParts = filePath.split("/")
-  return pathParts[pathParts.length - 2] // Get the directory name
-}
+const allPosts = await getAllBlogPosts()
 ---
 
-<DefaultLayout title="Understand Legacy Code (all articles)" description="Change messy code without breaking it.">
-  <article class="my-12">
-    <div class="container">
-      <header class="mb-8">
-        <h2 class="mb-4 text-3xl font-bold">
-          <span role="img" aria-label="Lightbulb">💡</span>{" "}
-          All articles
-        </h2>
-      </header>
+<DefaultLayout title="Understand Legacy Code (all articles)">
+  <HeroSmall />
 
-      <ul class="articles-list">
-        {
-          sortedPosts.map((post) => {
-            const title = post.frontmatter.title || "Untitled"
-            const slug = getSlugFromFile(post.file)
-            return (
-              <li class="article-item">
-                <a href={`/blog/${slug}`} class="large-link">
-                  {title}
-                </a>
-                <p set:html={post.frontmatter.description || post.compiledContent()} />
-              </li>
-            )
-          })
-        }
-      </ul>
+  <h2 class="mt-14 mb-7 text-3xl font-extrabold">
+    <span role="img" aria-label="Lightbulb">💡</span>{" "}
+    All articles
+  </h2>
 
-      <hr class="my-12" />
-
-      <Bio />
-    </div>
-  </article>
-</DefaultLayout>
-
-<style>
-  .container {
-    margin: auto;
-    padding: 2rem;
-    max-width: 768px;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      padding-right: 0;
-      padding-left: 0;
+  <ul>
+    {
+      allPosts.map((post) => (
+        <li class="mb-3.5">
+          <a href={`/blog/${post.slug}`} class="text-xl">
+            {post.title}
+          </a>
+          <p set:html={post.description} />
+        </li>
+      ))
     }
-  }
+  </ul>
 
-  .articles-list {
-    margin: 20px 0 40px;
-  }
+  <hr class="my-7" />
 
-  .article-item {
-    margin-bottom: 2rem;
-  }
-
-  .article-item::before {
-    top: 16px;
-  }
-
-  .large-link {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-size: 21px;
-    text-decoration: none;
-  }
-
-  .large-link:hover {
-    text-decoration: underline;
-  }
-
-  .article-item p {
-    margin-bottom: 0;
-    line-height: 1.6;
-  }
-</style>
+  <Bio />
+</DefaultLayout>

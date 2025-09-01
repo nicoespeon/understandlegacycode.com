@@ -10,6 +10,10 @@ p + ol {
   margin-top: -0.75rem;
 }
 
+ul > li > a + p {
+  margin: 0.25rem 0;
+}
+
 ul > li,
 ol > li {
   position: relative;
