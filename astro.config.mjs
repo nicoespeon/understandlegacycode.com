@@ -10,7 +10,22 @@ import { fileURLToPath } from "url"
 export default defineConfig({
   compressHTML: true,
   site: "https://understandlegacycode.com",
-  integrations: [mdx(), icon(), compress()],
+  integrations: [
+    mdx(),
+    icon(),
+    compress({
+      css: true,
+      html: true,
+      js: true,
+      img: true,
+      svg: true,
+      logger: 1,
+      csso: {
+        // Don't restructure, it messes up my @media rules
+        restructure: false,
+      },
+    }),
+  ],
   markdown: {
     shikiConfig: {
       theme: "github-dark",
@@ -20,11 +35,6 @@ export default defineConfig({
   },
   vite: {
     css: {
-      lightningcss: {
-        drafts: { nesting: true },
-        // Prevent overly aggressive minifaciton that messes up my @media rules
-        minify: false,
-      },
       preprocessorOptions: {
         scss: {
           logger: {
