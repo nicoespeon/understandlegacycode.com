@@ -20,6 +20,11 @@ export default defineConfig({
   },
   vite: {
     css: {
+      lightningcss: {
+        drafts: { nesting: true },
+        // Prevent overly aggressive minifaciton that messes up my @media rules
+        minify: false,
+      },
       preprocessorOptions: {
         scss: {
           logger: {
