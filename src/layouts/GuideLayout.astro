@@ -1,0 +1,98 @@
+---
+import Bio from "@components/Bio.astro"
+import CTA from "@components/CTA.astro"
+import HeroSmall from "@components/HeroSmall.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import { getAllBlogPosts } from "@lib/blog"
+
+interface Props {
+  title: string
+  description: string
+  tag?: string
+}
+
+const { title, description, tag } = Astro.props
+
+const allPosts = await getAllBlogPosts()
+const relatedPosts = tag ? allPosts.filter((post) => post.tags.includes(tag)) : []
+---
+
+<DefaultLayout title={title} description={description}>
+  <HeroSmall />
+
+  <div class="guide-content">
+    <slot />
+  </div>
+
+  {
+    relatedPosts.length > 0 && (
+      <section class="related-articles">
+        <h2>
+          <span role="img" aria-label="mortar board">
+            🎓
+          </span>
+          &nbsp;Related articles
+        </h2>
+        <ul>
+          {relatedPosts.map((post) => (
+            <li class="mb-3.5">
+              <a href={`/blog/${post.slug}`} class="text-xl">
+                {post.title}
+              </a>
+              <p set:html={post.description} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <CTA variant="tilted" />
+  <hr class="my-7" />
+  <Bio />
+</DefaultLayout>
+
+<style lang="scss">
+  .guide-content {
+    margin-bottom: 3rem;
+  }
+
+  .related-articles {
+    margin: 3rem 0;
+  }
+
+  .related-articles h2 {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .related-list {
+    margin: 20px 0 40px;
+  }
+
+  .related-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .related-item::before {
+    top: 16px;
+  }
+
+  .related-link {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 19px;
+    text-decoration: none;
+  }
+
+  .related-link:hover {
+    text-decoration: underline;
+  }
+
+  .related-item p {
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+</style>

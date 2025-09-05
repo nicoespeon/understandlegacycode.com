@@ -1,0 +1,40 @@
+<section class="hero -mt-4 mb-10">
+  <h3 class="mt-0 font-extrabold">
+    <a class="no-underline" href="/">
+      <span class="text-gradient text-2xl">Understand</span>
+      <span class="text-2xl">Legacy Code</span>
+      <div class="text-3xl font-extralight -tracking-wide md:text-left">Change Messy Software Without Breaking It.</div>
+    </a>
+  </h3>
+</section>
+
+<style lang="scss">
+  .hero h3 {
+    font-stretch: 100%;
+    font-family: var(--font-hero);
+    font-kerning: normal;
+    font-size-adjust: none;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    text-rendering: optimizeLegibility;
+    text-wrap: unset;
+
+    a {
+      box-shadow: none;
+    }
+  }
+
+  .hero p {
+    font-family: var(--font-hero);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

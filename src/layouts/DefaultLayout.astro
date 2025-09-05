@@ -1,0 +1,59 @@
+---
+import "@fontsource/montserrat/200.css"
+import "@fontsource/montserrat/800.css"
+import { ClientRouter } from "astro:transitions"
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
+import SiteMeta from "../components/SiteMeta.astro"
+
+// Import styles in defined order (use new lines to prevent auto-sorting)
+import "../styles/tailwind.css"
+
+import "../assets/scss/index.scss"
+
+const {
+  title = "Understand Legacy Code",
+  description = "Change Messy Software Without Breaking It.",
+  url = Astro.site,
+  image = "social-preview-image.png",
+  author = "Nicolas Carlo",
+} = Astro.props
+---
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Understand Legacy Code"
+      href="https://understandlegacycode.com/rss.xml"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <SiteMeta title={title} description={description.substring(0, 100)} url={url} image={image} author={author} />
+
+    <!-- Enable Astro View Transitions for all browsers -->
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="mx-auto max-w-2xl p-5">
+      <Header />
+      <main id="main-content" transition:animate="fade">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

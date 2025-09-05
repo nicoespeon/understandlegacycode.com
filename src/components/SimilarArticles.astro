@@ -1,0 +1,70 @@
+---
+import { getAllBlogPosts } from "@lib/blog"
+
+interface Props {
+  tags?: string[]
+  slug: string
+}
+
+const { tags = [], slug } = Astro.props
+
+const allPosts = await getAllBlogPosts()
+
+const relatedArticles = allPosts
+  .filter((otherArticle) => otherArticle.tags.some((tag) => tags.includes(tag)))
+  .filter((article) => article.slug !== slug)
+  // Shuffle to get random suggestions
+  .map((article) => ({
+    sort: Math.random(),
+    value: article,
+  }))
+  .sort((a, b) => a.sort - b.sort)
+  .map((item) => item.value)
+  // Keep only the first 4
+  .slice(0, 4)
+---
+
+{
+  relatedArticles.length > 0 && (
+    <section class="my-12">
+      <h2 class="mb-6 text-2xl font-bold">Similar articles that will help you…</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4 xl:gap-6">
+        {relatedArticles.map((article) => (
+          <article class="related-article md:mb-4">
+            <a href={`/blog/${article.slug}`} class="flex">
+              <div class="mb-2 h-48 w-full overflow-hidden rounded-lg bg-gray-200">
+                <img src={article.image} alt="" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+            </a>
+            <div class="content">
+              <p class="title-font mb-2 font-bold">
+                <a href={`/blog/${article.slug}`} class="hover:underline">
+                  {article.title}
+                </a>
+              </p>
+              <p class="text-gray-700" set:html={article.description} />
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style lang="scss">
+  .related-article {
+    width: 100%;
+
+    > a {
+      box-shadow: none;
+    }
+  }
+
+  .content {
+    display: block;
+
+    @media (min-width: 600px) {
+      min-height: 170px;
+    }
+  }
+</style>

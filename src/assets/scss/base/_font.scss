@@ -1,0 +1,76 @@
+@use "breakpoint" as *;
+
+// @import "@fontsource/monteserrat";
+
+@layer base {
+  p {
+    margin-bottom: 1.75rem;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  .title-font {
+    font-family: var(--font-heading);
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-body);
+    text-wrap: balance;
+  }
+
+  h1,
+  h2 {
+    font-weight: 600;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: var(--font-size-4);
+    line-height: var(--font-size-6);
+  }
+
+  h2 {
+    font-size: var(--font-size-3);
+    line-height: var(--font-size-5);
+  }
+
+  h3 {
+    font-size: var(--font-size-2);
+    line-height: var(--font-size-4);
+  }
+
+  h4 {
+    font-size: var(--font-size-2);
+    line-height: var(--font-size-3);
+  }
+
+  h5 {
+    font-size: var(--font-size-1);
+    line-height: var(--font-size-2);
+  }
+
+  h6 {
+    font-size: var(--font-size-1);
+    line-height: var(--font-size-2);
+  }
+}

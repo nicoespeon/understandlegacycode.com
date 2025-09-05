@@ -1,0 +1,33 @@
+---
+import Bio from "@components/Bio.astro"
+import HeroSmall from "@components/HeroSmall.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import { getAllBlogPosts } from "@lib/blog"
+
+const allPosts = await getAllBlogPosts()
+---
+
+<DefaultLayout title="Understand Legacy Code (all articles)">
+  <HeroSmall />
+
+  <h2 class="mt-14 mb-7 text-3xl font-extrabold">
+    <span role="img" aria-label="Lightbulb">💡</span>{" "}
+    All articles
+  </h2>
+
+  <ul>
+    {
+      allPosts.map((post) => (
+        <li class="mb-3.5">
+          <a href={`/blog/${post.slug}`} class="text-xl">
+            {post.title}
+          </a>
+          <p set:html={post.description} />
+        </li>
+      ))
+    }
+  </ul>
+
+  <hr class="my-7" />
+  <Bio />
+</DefaultLayout>

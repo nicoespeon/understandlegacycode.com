@@ -1,85 +1,73 @@
 {
   "name": "understandlegacycode.com",
+  "version": "1.0.0",
   "private": true,
   "description": "Change Messy Software Without Breaking It",
-  "version": "1.0.0",
-  "author": "Nicolas Carlo <nicolascarlo.espeon@gmail.com>",
-  "license": "MIT",
-  "main": "n/a",
-  "homepage": "https://github.com/nicoespeon/understandlegacycode.com#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nicoespeon/understandlegacycode.com.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nicoespeon/understandlegacycode.com/issues"
-  },
   "keywords": [
     "legacy code",
     "technical debt",
     "refactoring",
     "documentation"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+  "homepage": "https://github.com/nicoespeon/understandlegacycode.com#readme",
+  "bugs": {
+    "url": "https://github.com/nicoespeon/understandlegacycode.com/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoespeon/understandlegacycode.com.git"
+  },
+  "license": "MIT",
+  "author": "Nicolas Carlo <nicolascarlo.espeon@gmail.com>",
+  "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "dev": "npm run develop",
-    "serve": "gatsby serve"
+    "build": "astro build",
+    "dev": "astro dev",
+    "prepare": "husky",
+    "preview": "astro preview",
+    "start": "astro dev"
   },
-  "engines": {
-    "node": "~13.7.0"
-  },
-  "devDependencies": {
-    "husky": "^3.1.0",
-    "prettier": "^1.17.0",
-    "pretty-quick": "^2.0.1"
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.1",
-    "@mdx-js/react": "^1.5.1",
-    "babel-plugin-styled-components": "^1.10.0",
+    "@fontsource/montserrat": "5.2.6",
+    "@tailwindcss/vite": "4.1.11",
+    "accessible-astro-components": "4.1.3"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "4.3.3",
+    "@astrojs/rss": "4.0.12",
+    "@eslint/eslintrc": "3.3.1",
+    "@eslint/js": "9.32.0",
+    "@iconify-json/lucide": "1.2.60",
+    "@shikijs/transformers": "3.12.2",
+    "@typescript-eslint/eslint-plugin": "8.39.0",
+    "@typescript-eslint/parser": "8.39.0",
+    "astro": "5.12.8",
+    "astro-compress": "2.3.8",
+    "astro-eslint-parser": "1.2.2",
+    "astro-icon": "1.1.5",
     "book-cover-3d": "1.1.2",
-    "color-hash": "1.0.3",
-    "copee": "^1.0.6",
-    "gatsby": "^2.3.25",
-    "gatsby-image": "^2.0.39",
-    "gatsby-plugin-client-side-redirect": "^1.0.0",
-    "gatsby-plugin-feed-mdx": "^1.0.0",
-    "gatsby-plugin-google-analytics": "^2.0.18",
-    "gatsby-plugin-manifest": "^2.0.29",
-    "gatsby-plugin-mdx": "1.0.71",
-    "gatsby-plugin-netlify-cms": "^4.0.0",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.0.35",
-    "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-plugin-typography": "^2.2.13",
-    "gatsby-remark-autolink-headers": "^2.2.3",
-    "gatsby-remark-copy-linked-files": "^2.0.11",
-    "gatsby-remark-images": "^2.0.6",
-    "gatsby-remark-images-native-lazy-load": "^1.0.0",
-    "gatsby-remark-responsive-iframe": "^2.1.1",
-    "gatsby-remark-smartypants": "^2.0.9",
-    "gatsby-remark-vscode": "2.1.2",
-    "gatsby-source-filesystem": "^2.0.29",
-    "gatsby-transformer-sharp": "^2.1.18",
-    "netlify-cms-app": "^2.9.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0",
-    "react-social-sharing": "3.0.1",
-    "react-switch": "^5.0.0",
-    "react-typography": "^0.16.19",
-    "styled-components": "^4.2.0",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.54",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "eslint": "9.32.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-astro": "1.3.1",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "globals": "16.3.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.4",
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-css-order": "2.1.2",
+    "prettier-plugin-curly": "0.3.2",
+    "prettier-plugin-packagejson": "2.5.19",
+    "prettier-plugin-sh": "0.18.0",
+    "prettier-plugin-tailwindcss": "0.6.14",
+    "pretty-quick": "4.2.2",
+    "sass": "1.89.2",
+    "tailwindcss": "4.1.11"
+  },
+  "engines": {
+    "node": "~23.10.0"
   }
 }

@@ -1,0 +1,160 @@
+---
+import FirstAidKitCallout from "@components/FirstAidKitCallout.astro"
+import Title from "@components/Title.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import Bio from "@components/Bio.astro"
+import CTA from "@components/CTA.astro"
+import SimilarArticles from "@components/SimilarArticles.astro"
+import CodeBlock from "@components/CodeBlock.astro"
+import { getAllBlogPosts } from "@lib/blog"
+
+export async function getStaticPaths() {
+  const allPosts = await getAllBlogPosts()
+
+  return allPosts.map((post) => ({
+    params: { post: post.slug },
+    props: { post },
+  }))
+}
+
+const { title, description, tags, slug, Content } = Astro.props.post
+---
+
+<DefaultLayout title={title} description={description}>
+  <article class="my-12">
+    <Title class="mb-4 text-4xl font-bold">{title}</Title>
+    <FirstAidKitCallout />
+
+    <div class="blog-content">
+      <Content />
+    </div>
+
+    <!-- Enhance code blocks with copy buttons and language labels -->
+    <CodeBlock />
+
+    <CTA variant="tilted" />
+    <hr class="my-8" />
+    <Bio />
+    <hr class="my-8" />
+    <SimilarArticles tags={tags} slug={slug} />
+    <a href="/">← Find more tips to work with Legacy Code</a>
+  </article>
+</DefaultLayout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const headings = document.querySelectorAll(".blog-content h2, .blog-content h3")
+    headings.forEach((heading) => {
+      const anchor = document.createElement("a")
+      anchor.classList.add("title-anchor")
+      anchor.href = `#${heading.id}`
+      anchor.innerHTML = `<svg aria-hidden="true" version="1.1" viewBox="0 0 511.997 511.997" width="22" height="22"><path d="M212.26,390.24l-60.331,60.331c-25.012,25.012-65.517,25.012-90.508,0.005c-24.996-24.996-24.996-65.505-0.005-90.496 l120.683-120.683c24.991-24.992,65.5-24.992,90.491,0c8.331,8.331,21.839,8.331,30.17,0c8.331-8.331,8.331-21.839,0-30.17 c-41.654-41.654-109.177-41.654-150.831,0L31.247,329.909c-41.654,41.654-41.654,109.177,0,150.831 c41.649,41.676,109.177,41.676,150.853,0l60.331-60.331c8.331-8.331,8.331-21.839,0-30.17S220.591,381.909,212.26,390.24z"/><path d="M480.751,31.24c-41.654-41.654-109.199-41.654-150.853,0l-72.384,72.384c-8.331,8.331-8.331,21.839,0,30.17 c8.331,8.331,21.839,8.331,30.17,0l72.384-72.384c24.991-24.992,65.521-24.992,90.513,0c24.991,24.991,24.991,65.5,0,90.491 L317.845,284.638c-24.992,24.992-65.5,24.992-90.491,0c-8.331-8.331-21.839-8.331-30.17,0s-8.331,21.839,0,30.17 c41.654,41.654,109.177,41.654,150.831,0l132.736-132.736C522.405,140.418,522.405,72.894,480.751,31.24z"/></svg>`
+      heading.insertAdjacentElement("afterbegin", anchor)
+    })
+  })
+</script>
+
+<style lang="scss" is:global>
+  .blog-content {
+    h3 {
+      color: var(--brand-primary);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-rendering: optimizeLegibility;
+      text-transform: uppercase;
+    }
+
+    .title-anchor {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 2em;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 0.25s linear;
+      transition-delay: 0;
+      box-shadow: none !important;
+    }
+
+    h2,
+    h3 {
+      position: relative;
+      transition: all 0.25s linear;
+      transition-delay: 0.15s;
+    }
+
+    h2:hover,
+    h3:hover {
+      transition-delay: 0;
+      padding-left: 1em;
+
+      & .title-anchor {
+        opacity: 1;
+        transition-delay: 0.15s;
+        margin-left: -2.2em !important;
+
+        &:hover svg,
+        &:focus svg,
+        &:active svg {
+          fill: var(--brand-primary);
+        }
+      }
+    }
+
+    code {
+      font-size: 1em;
+    }
+
+    img,
+    iframe {
+      margin: auto;
+    }
+
+    iframe {
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      p,
+      li {
+        font-size: 19px;
+      }
+
+      blockquote p {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      h1,
+      h2 {
+        position: relative;
+      }
+
+      h1::after {
+        position: absolute;
+        bottom: 0;
+        left: -3em;
+        background: var(--brand-background);
+        width: calc(100% + 3em);
+        height: 0.3em;
+        content: "";
+      }
+
+      h2::after {
+        position: absolute;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -4.5em;
+        background: var(--brand-background);
+        width: 4em;
+        content: "";
+      }
+    }
+  }
+</style>

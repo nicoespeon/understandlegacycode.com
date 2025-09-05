@@ -1,0 +1,25 @@
+---
+import HeroSmall from "@components/HeroSmall.astro"
+import Title from "@components/Title.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+---
+
+<DefaultLayout description="You've opted out these emails!">
+  <HeroSmall />
+  <Title>
+    You have unsubscribed from the First Aid Kit launch{" "}
+    <span role="img" aria-label="Empty mailbox"> 📭 </span>
+  </Title>
+  <p>You won't receive emails about it anymore! No more noise.</p>
+  <p>
+    But <strong>you'll still receive my monthly tips & tricks</strong> to deal with Legacy Code! Of course, you can unsubscribe
+    anytime too.{" "}
+    <span role="img" aria-label="Thumbs up"> 👍 </span>
+  </p>
+  <p class="mb-12">
+    <em>
+      P.S: if you change your mind, the "Legacy Code: First Aid Kit" will be{" "}
+      <a href="./">available here</a>.
+    </em>
+  </p>
+</DefaultLayout>

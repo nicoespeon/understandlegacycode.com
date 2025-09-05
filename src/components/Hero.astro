@@ -1,0 +1,36 @@
+<section class="hero mb-10">
+  <h1 class="text-6xl font-extrabold md:text-left">
+    <span class="text-gradient block text-5xl">Understand</span>
+    <span class="-mt-2 block">Legacy Code</span>
+  </h1>
+  <p class="mt-6 text-3xl font-extralight -tracking-wide md:text-left">
+    <slot name="description"> Change Messy Software Without Breaking It. </slot>
+  </p>
+</section>
+
+<style lang="scss">
+  .hero h1 {
+    font-stretch: 100%;
+    font-family: var(--font-hero);
+    font-kerning: normal;
+    font-size-adjust: none;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    text-rendering: optimizeLegibility;
+    text-wrap: unset;
+  }
+
+  .hero p {
+    font-family: var(--font-hero);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-300), var(--color-primary-200))
+    );
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
