@@ -1,0 +1,12 @@
+---
+import { getAllBlogPosts } from "@lib/blog"
+
+const allPosts = await getAllBlogPosts()
+const mostRecentPost = allPosts[0]
+if (mostRecentPost) {
+  return Astro.redirect(`/blog/${mostRecentPost.slug}`)
+}
+
+// Fallback if no posts are found (shouldn't happen)
+return Astro.redirect("/")
+---

@@ -1,0 +1,25 @@
+---
+import HeroSmall from "@components/HeroSmall.astro"
+import Title from "@components/Title.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+---
+
+<DefaultLayout description="Hooray!! Almost there, just one last step…">
+  <HeroSmall />
+
+  <Title>
+    Check your emails!{" "}
+    <span role="img" aria-label="Wink"> 😉 </span>
+  </Title>
+  <p>
+    If you're reading this, it means you have subscribed to my newsletter, but I can't send you articles until you{" "}
+    <strong>check your emails and confirm your subscription.</strong>
+  </p>
+  <p>
+    Now, go check that. I'll send you a confirmation email when you're all set{" "}
+    <span role="img" aria-label="Thumbs up"> 👍 </span>
+  </p>
+  <p class="mb-12">
+    <em>P.S: if you're using GMail, check the "Promotions" tab!</em>
+  </p>
+</DefaultLayout>

@@ -9,7 +9,7 @@ import { fileURLToPath } from "url"
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: "https://accessible-astro-starter.incluud.dev",
+  site: "https://understandlegacycode.com",
   integrations: [mdx(), icon(), compress()],
   markdown: {
     shikiConfig: {

@@ -1,24 +1,19 @@
 ---
-// CTA component for email signup forms
-// Converted from the old Gatsby cta.js component
-// Props:
-// - uid: string (optional) - The ConvertKit form UID
-// - variant: 'regular' | 'tilted' | 'coming-soon' | 'first-aid-kit' (default: 'regular')
-
 interface Props {
-  uid?: string
-  variant?: "regular" | "tilted" | "coming-soon" | "first-aid-kit"
+  variant?: "regular" | "tilted" | "coming-soon" | "first-aid-kit" | "premiers-soins"
 }
 
-const { uid = "1c42a88117", variant = "regular" } = Astro.props
+const { variant = "regular" } = Astro.props
 
 // Set the appropriate UID based on variant
-let formUid = uid
-if (variant === "coming-soon") {
-  formUid = "ee438164c6"
-} else if (variant === "first-aid-kit") {
-  formUid = "084305275e"
-}
+const formUid =
+  variant === "coming-soon"
+    ? "ee438164c6"
+    : variant === "first-aid-kit"
+      ? "084305275e"
+      : variant === "premiers-soins"
+        ? "45bef52aca"
+        : "1c42a88117"
 
 const isTilted = variant === "tilted"
 ---

@@ -29,6 +29,7 @@ export async function getAllBlogPosts() {
     description: post.frontmatter.description || post.compiledContent(),
     tags: post.frontmatter.tags ?? [],
     image: post.frontmatter.image || "/assets/legacy-code-everywhere.jpg",
+    date: post.frontmatter.date,
     Content: post.Content,
   }))
 }

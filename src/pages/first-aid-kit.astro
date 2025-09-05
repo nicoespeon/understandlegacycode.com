@@ -1,19 +1,73 @@
 ---
 import CTA from "@components/CTA.astro"
-import DefaultLayout from "@layouts/DefaultLayout.astro"
+import SiteMeta from "@components/SiteMeta.astro"
+import { ClientRouter } from "astro:transitions"
+// @ts-expect-error - book-cover-3d is not typed
+import { getCssForSettings } from "book-cover-3d"
 
-// This is the English version of the First Aid Kit landing page
+import "@fontsource/montserrat/200.css"
+import "@fontsource/montserrat/800.css"
+
+// Import styles in defined order (use new lines to prevent auto-sorting)
+import "../styles/tailwind.css"
+
+import PriceListIcon from "@components/PriceListIcon.astro"
+import "../assets/scss/index.scss"
+
+const {
+  title = "Legacy Code: First Aid Kit",
+  description = "Rescue your Legacy codebase quickly and safely.",
+  url = `${Astro.site}/first-aid-kit`,
+  image = "first-aid-kit-cover.png",
+  author = "Nicolas Carlo",
+} = Astro.props
+
+const bookId = "lcfak"
+const bookCss = getCssForSettings(bookId, {
+  rotate: 30,
+  rotateHover: 0,
+  perspective: 600,
+  transitionDuration: 1,
+  radius: 2,
+  thickness: 50,
+  bgColor: "#01060f",
+  height: 480,
+  width: 300,
+  pagesOffset: 3,
+})
 ---
 
-<DefaultLayout title="Legacy Code: First Aid Kit" description="Rescue your Legacy codebase quickly and safely.">
-  <div class="first-aid-kit-page">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <div class="hero-text">
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Understand Legacy Code"
+      href="https://understandlegacycode.com/rss.xml"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <SiteMeta title={title} description={description} url={url} image={image} author={author} />
+
+    <!-- Enable Astro View Transitions for all browsers -->
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="section-alt px-4 py-20 md:px-12">
+      <header class="header">
+        <div class="header-text">
           <h1>
             Rescue your Legacy codebase <em>quickly and safely.</em>
             <span role="img" aria-label="Rescue Helmet">⛑️</span>
@@ -27,142 +81,585 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
             <strong>a free chapter preview</strong> on performing incremental refactorings so you can stop and ship at any
             time.
           </p>
-          <CTA variant="first-aid-kit" uid="45bef52aca" />
+          <CTA variant="first-aid-kit" />
           <p>
             Or <a href="#buy">buy it now</a> if you're already convinced!
           </p>
         </div>
-        <div class="hero-book">
-          <div class="book-container">
+        <div class="header-book">
+          <div class={`book-container-${bookId}`}>
             <div class="book">
               <img src="/assets/first-aid-kit-cover.png" alt="Legacy Code: First Aid Kit" />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </header>
+    </div>
 
-    <!-- Content Section -->
-    <section class="content-section">
+    <div class="content">
+      <h2 class="quote">I wish we had more time to refactor this code!</h2>
+      <p>
+        Every week it's the same story: you <em>have</em> to change that codebase. Maybe it's to fix a bug, to tweak some
+        behavior, or to implement a new shiny feature.
+      </p>
+      <p>You didn't write that code!</p>
+      <p>
+        It's an undocumented tangled mess. You would love to refactor this code before you change it. <strong
+          >But it has no test!</strong
+        >{" "}
+        Without tests, you're afraid to break something while you refactor—you got burned already, not twice!
+      </p>
+      <p>
+        OK, so you <em>could</em> start by writing the tests. But you're worried that won't have enough time to meet "the
+        deadline" that was imposed on you…
+      </p>
+      <p>
+        And there you are: paralyzed because you don't know where to start. Should you begin a huge cleanup and risk the
+        deadline? How can you add tests on a code that was definitely not written to be testable?!
+      </p>
+      <h2 class="quote">Wherever I start refactoring, it pulls the rest of the app!</h2>
+      <p>You try to unwind the mess and the string just keeps on coming.</p>
+      <p>
+        It is getting better, but you can't stop because{" "}
+        <em>it is not working yet</em>… but it's 9pm now, and your loved ones are mad at you! 
+        <span role="img" aria-label="Angry face"> 😡 </span>
+      </p>
+      <p>You know what happens next…</p>
+      <p>
+        You stop trying to make sense out of this mayhem. You just Make It Work™. It's not pretty. It's not that bad.
+        There are worse hacks in this spaghetti! You get the job done while making the code worse.
+      </p>
+      <p>
+        You wish you could just start everything over, but you can't.{" "}
+        <strong>No time, no budget.</strong>
+      </p>
+      <p>
+        You are not proud of this code—how could you? But you're getting used to it. Clients are pressing you for "more
+        features" and your colleagues don't seem to care.
+      </p>
+      <p>
+        Your boss doesn't understand <em>why</em> it takes you longer and longer to finish tasks. You raised the point already,
+        but deadlines are still too short and the focus is always on cost and time. No-one cares that your eyes bleed while
+        reading the code!
+      </p>
+      <p>
+        Exhausting! 
+        <span role="img" aria-label="Tired face"> 😫 </span>
+      </p>
+      <h2>If you could at least stop the bleed…</h2>
+      <p>You know what would be great? Working with clean, well-tested code. That would be a breeze to work with…</p>
+      <p>
+        But this codebase is a minefield. How could you stop making it worse when it would take YEARS to address the
+        Technical Debt!?
+      </p>
+      <p>What if there was a way to refactor the code AND consistently meeting the deadlines?</p>
+      <p>
+        Imagine you could refactor as you go, steadily turning the codebase into a testable, easy-to-read, well-designed
+        system! 
+        <span role="img" aria-label="Seed"> 🌱 </span>
+      </p>
+      <p>
+        <strong>If you know the moves</strong>, you can give your code first aid that will stop its hemorrhage. How
+        proud and relieved would you feel as you put it back into a healthier shape?
+      </p>
+      <p>
+        Sure, this system you're maintaining is broken everywhere. It seems to work, but it only really survives with
+        heavy machinery and clever hacks. It looks like it would better to let it go and build a fresh one instead…
+      </p>
+      <p>But what if you knew the techniques to rescue it?</p>
+      <h2>Imagine cleaning up Legacy Code as you go.</h2>
+      <p>
+        Regardless of the state of your codebase, you will always know where to start. Consistently applying the proper
+        techniques, you can stop the carnage and <strong>avoid a costly rewrite</strong>.
+      </p>
+      <p>Most of all, you will keep shipping bug fixes and features as you go.</p>
+      <p>
+        <strong> You don't need to ask permission to refactor when you can do it on the fly! </strong>
+      </p>
+      <p>
+        Refactoring would become second nature to you. Your reflexes will make you clean up Legacy Code in no time! You
+        will consistently meet clients' expectations and inspire your peers.
+      </p>
+      <p>
+        You can start making this codebase a better place the very next time you touch it. 
+        <span role="img" aria-label="Sparkles"> ✨ </span>
+      </p>
+      <p>
+        When you have short deadlines, trying to refactor the code is a risky move… unless you know <u>exactly</u> what you're
+        doing.
+      </p>
+      <h2>
+        Refactor code in <em>no time</em> with this First Aid Kit.
+      </h2>
+      <p>
+        I've built a toolbox of techniques that will help you get your Legacy Code under control. These are the tricks
+        that work the best for me when working with a real-life codebase, with missing tests and short deadlines—sounds
+        familiar, right?
+      </p>
+      <p>These 14 moves will help you:</p>
+      <ul class="checked">
+        <li>optimize your work to have the maximum impact</li>
+        <li>
+          identify <strong>what makes code difficult to test</strong>
+        </li>
+        <li>
+          <strong>quickly deploy a safety net</strong> around the code you need to touch
+        </li>
+        <li>
+          raise up code quality <strong>incrementally</strong>
+        </li>
+        <li>ship anytime!</li>
+      </ul>
+    </div>
+
+    <div class="section-alt">
       <div class="content">
-        <h2 class="quote">I wish we had more time to refactor this code!</h2>
-        <p>
-          Every week it's the same story: you <em>have</em> to change that codebase. Maybe it's to fix a bug, to tweak some
-          behavior, or to implement a new shiny feature.
-        </p>
-        <p>You didn't write that code!</p>
-        <p>
-          It's an undocumented tangled mess. You would love to refactor this code before you change it. <strong
-            >But it has no test!</strong
-          >{" "}
-          Without tests, you're afraid to break something while you refactor—you got burned already, not twice!
-        </p>
-        <p>
-          OK, so you <em>could</em> start by writing the tests. But you're worried that won't have enough time to meet "the
-          deadline" that was imposed on you…
-        </p>
-        <p>
-          And there you are: paralyzed because you don't know where to start. Should you begin a huge cleanup and risk
-          the deadline? How can you add tests on a code that was definitely not written to be testable?!
-        </p>
-
-        <h2 class="quote">Wherever I start refactoring, it pulls the rest of the app!</h2>
-        <p>You try to unwind the mess and the string just keeps on coming.</p>
-        <p>
-          It is getting better, but you can't stop because{" "}
-          <em>it is not working yet</em>… but it's 9pm now, and your loved ones are mad at you!
-          <span role="img" aria-label="Angry face">😡</span>
-        </p>
-        <p>You know what happens next…</p>
-        <p>
-          You stop trying to make sense out of this mayhem. You just Make It Work™. It's not pretty. It's not that bad.
-          There are worse hacks in this spaghetti! You get the job done while making the code worse.
-        </p>
-        <p>
-          You wish you could just start everything over, but you can't.{" "}
-          <strong>No time, no budget.</strong>
-        </p>
-        <p>
-          You are not proud of this code—how could you? But you're getting used to it. Clients are pressing you for
-          "more features" and your colleagues don't seem to care.
-        </p>
-        <p>
-          Your boss doesn't understand <em>why</em> it takes you longer and longer to finish tasks. You raised the point
-          already, but deadlines are still too short and the focus is always on cost and time. No-one cares that your eyes
-          bleed while reading the code!
-        </p>
-        <p>
-          Exhausting!
-          <span role="img" aria-label="Tired face">😫</span>
-        </p>
-
-        <h2>If you could at least stop the bleed…</h2>
-        <p>You know what would be great? Working with clean, well-tested code. That would be a breeze to work with…</p>
-        <p>
-          But this codebase is a minefield. How could you stop making it worse when it would take YEARS to address the
-          Technical Debt!?
-        </p>
-        <p>What if there was a way to refactor the code AND consistently meeting the deadlines?</p>
-        <p>
-          Imagine you could refactor as you go, steadily turning the codebase into a testable, easy-to-read,
-          well-designed system!
-          <span role="img" aria-label="Seed">🌱</span>
-        </p>
-        <p>
-          <strong>If you know the moves</strong>, you can give your code first aid that will stop its hemorrhage. How
-          proud and relieved would you feel as you put it back into a healthier shape?
-        </p>
-        <p>
-          Sure, this system you're maintaining is broken everywhere. It seems to work, but it only really survives with
-          heavy machinery and clever hacks. It looks like it would better to let it go and build a fresh one instead…
-        </p>
-        <p>But what if you knew the techniques to rescue it?</p>
-
-        <h2>Imagine cleaning up Legacy Code as you go.</h2>
-        <p>
-          Regardless of the state of your codebase, you will always know where to start. Consistently applying the
-          proper techniques, you can stop the carnage and <strong>avoid a costly rewrite</strong>.
-        </p>
-        <p>Most of all, you will keep shipping bug fixes and features as you go.</p>
-        <p>
-          <strong> You don't need to ask permission to refactor when you can do it on the fly! </strong>
-        </p>
-        <p>
-          Refactoring would become second nature to you. Your reflexes will make you clean up Legacy Code in no time!
-          You will consistently meet clients' expectations and inspire your peers.
-        </p>
-        <p>
-          You can start making this codebase a better place the very next time you touch it.
-          <span role="img" aria-label="Sparkles">✨</span>
-        </p>
-        <p>
-          When you have short deadlines, trying to refactor the code is a risky move… unless you know <u>exactly</u> what
-          you're doing.
-        </p>
-
         <h2>
-          Refactor code in <em>no time</em> with this First Aid Kit.
+          What's inside the <em class="highlight">Legacy Code: First Aid Kit</em>?
         </h2>
+        <p>It's an e-book of approximately 200 pages. It comes with a light and a dark theme.</p>
         <p>
-          I've built a toolbox of techniques that will help you get your Legacy Code under control. These are the tricks
-          that work the best for me when working with a real-life codebase, with missing tests and short
-          deadlines—sounds familiar, right?
+          It's a collection of <strong>14 techniques</strong> to work with Legacy Code:
         </p>
-        <p>These 14 moves will help you:</p>
-        <ul class="benefits-list">
-          <li>optimize your work to have the maximum impact</li>
-          <li>identify <strong>what makes code difficult to test</strong></li>
-          <li><strong>quickly put a safety net</strong> on the code you need to change</li>
-          <li>improve code quality <strong>incrementally</strong></li>
-          <li>ship at any time!</li>
-        </ul>
+        <ol>
+          <li>Identify Hotspots</li>
+          <li>Draw Dependency Graphs</li>
+          <li>The Mikado Method & The Parking</li>
+          <li>Micro-committing</li>
+          <li>Exploratory Refactoring</li>
+          <li>3 Automated Refactorings</li>
+          <li>Incremental Refactorings</li>
+          <li>Proximity Refactoring</li>
+          <li>Decouple Core from Infrastructure</li>
+          <li>Approval Testing</li>
+          <li>Subclass & Override</li>
+          <li>Move Function to Delegate</li>
+          <li>Wrap & Sprout</li>
+          <li>Progressive Naming</li>
+        </ol>
+        <p>
+          Each technique comes with concrete examples for when and how to use it. On top of that, I detail <em
+            >why it works</em
+          >: the philosophy behind each approach, so you can adapt to any situation.
+        </p>
+        <p>Finally, the kit comes with a few printable sheets you can keep next to you.</p>
       </div>
-    </section>
-  </div>
-</DefaultLayout>
+    </div>
 
-<style>
-  .first-aid-kit-page {
+    <div class="content">
+      <h2>This kit is designed for the battlefield.</h2>
+      <p>Go through the book to get a sense of what's inside.</p>
+      <p>
+        Then, keep it within easy reach. The next time you touch your legacy codebase, pick a technique and try it.{" "}
+        <strong>Soon enough, you'll make that code a better place!</strong>
+      </p>
+      <p>
+        Working with your codebase should become an exciting challenge again: how much can you improve now? What will
+        you leave for later? How can you make this code a little bit better AND deliver value now? Can you feel the code
+        becoming easier to work with?
+      </p>
+      <p>
+        Finally, you'll start turning a spaghetti codebase into a testable, easy-to-read, well-designed system — while
+        shipping features and fixes{" "}
+        <span role="img" aria-label="Cheers"> 😉🍷 </span>
+      </p>
+      <p>
+        … and these precious skills will make you VERY valuable. 
+        <span role="img" aria-label="Gem"> 💎 </span>
+      </p>
+    </div>
+
+    <div class="section-alt px-4 py-20 md:px-12">
+      <div class="content">
+        <div class="quote-background">
+          <svg
+            style={{
+              position: "absolute",
+              top: "100%",
+              right: "100%",
+              transform: "translateX(95%) translateY(-100%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+          <svg
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "100%",
+              transform: "translateX(-90%) translateY(5%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+          }}
+        >
+          <img class="quote-media" src="/assets/avatar-tof.jpg" alt="Christophe Thibaut" />
+          <blockquote class="quote-content">
+            <p>
+              It's a survival kit. It doesn't exist elsewhere. People don't read books, but a survival kit is fine. I
+              hang out with teams that could use this kit right away and benefit from it.
+            </p>
+            <footer>
+              <a href="https://www.linkedin.com/in/christophe-thibaut-35b4657" rel="noopener noreferrer">
+                Christophe Thibaut
+              </a>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-colored">
+      <div class="content">
+        <h2 id="buy">Get the book</h2>
+        <div class="pricing-container">
+          <div class="pricing">
+            <div class="price-card">
+              <div class="price-card-top">
+                <div>
+                  <h3 class="price-card-title">First Aid Kit</h3>
+                </div>
+                <div class="price">
+                  $39
+                  <span class="currency">USD</span>
+                </div>
+              </div>
+              <div class="price-card-content">
+                <ul>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">
+                      <strong>14 techniques</strong> to quickly and safely rescue a codebase
+                    </p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">PDF, ePub, and Kindle formats</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">~200 pages of content</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">Light & Dark themes</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">3 printable cheatsheets</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">1 printable exercise sheet</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">
+                      <span role="img" aria-label="Drapeau français"> 🇫🇷 </span>{" "}
+                      La version Française du guide
+                    </p>
+                  </li>
+                </ul>
+                <div>
+                  <a class="price-link" href="https://understandlegacycode.ck.page/products/legacy-code-first-aid-kit">
+                    Get your First Aid Kit
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-alt px-4 py-20 md:px-12">
+      <div class="content">
+        <div class="quote-background">
+          <svg
+            style={{
+              position: "absolute",
+              top: "100%",
+              right: "100%",
+              transform: "translateX(95%) translateY(-100%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+          <svg
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "100%",
+              transform: "translateX(-90%) translateY(5%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+          }}
+        >
+          <img class="quote-media" src="/assets/avatar-chris-hartjes.jpg" alt="Chris Hartjes" />
+          <blockquote class="quote-content">
+            <p>
+              I just bought @nicoespeon’s “Legacy Code: First Aid Kit” — his newsletter is great and his tips have
+              helped tame some code in my work at UFSC.
+            </p>
+            <footer>
+              <a href="https://bsky.app/profile/grmpyprogrammer.phpc.social.ap.brid.gy" rel="noopener noreferrer">
+                Chris Hartjes
+              </a>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>About the author</h2>
+      <div class="author">
+        <img src="/assets/profile.png" alt="Nicolas Carlo" />
+        <div
+          style={{
+            lineHeight: "2rem",
+          }}
+        >
+          <p>
+            Hey, I'm{" "}
+            <a href="https://bsky.app/profile/nicoespeon.com" target="_blank" rel="noreferrer noopener">
+              Nicolas Carlo
+            </a>
+
+            <span role="img" aria-label="Waving hand"> 👋 </span>
+          </p>
+          <p>
+            I have been a web developer, freelancer, consultant, and Tech Lead. Every single time, I had to work with
+            existing code I was afraid to change. I realized that Legacy Code runs the world… but developers aren't
+            prepared to maintain it!
+          </p>
+          <p>
+            I collect tips & tricks to deal with legacy systems on{" "}
+            <a href="https://understandlegacycode.com"> understandlegacycode.com </a>
+          </p>
+          <p>
+            I also develop{" "}
+            <a href="https://github.com/sponsors/nicoespeon"> open-source tools </a>{" "}
+            to help developers work with legacy codebases.
+          </p>
+          <p>— Nicolas</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-alt px-4 py-20 md:px-12">
+      <div class="content">
+        <div class="quote-background">
+          <svg
+            style={{
+              position: "absolute",
+              top: "100%",
+              right: "100%",
+              transform: "translateX(95%) translateY(-100%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+          <svg
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "100%",
+              transform: "translateX(-90%) translateY(5%)",
+              color: "hsla(354.6, 90%, 60%, 0.8)",
+            }}
+            width="192"
+            height="192"
+            fill="none"
+            viewBox="0 0 192 192"
+            role="img"
+          >
+            <defs>
+              <pattern id="quote-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="hsla(354.6, 90%, 60%, 0.8)"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="404" fill="url(#quote-pattern)"></rect>
+          </svg>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyItems: "center",
+          }}
+        >
+          <img class="quote-media" src="/assets/avatar-gul.jpg" alt="Guillaume Lagorce" />
+          <blockquote class="quote-content">
+            <p>Every developer should work with this First Aid Kit next to them.</p>
+            <footer>
+              <a href="https://www.linkedin.com/in/glagorce" rel="noopener noreferrer"> Guillaume Lagorce </a>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>Frequently Asked Questions</h2>
+      <dl class="mb-20">
+        <div>
+          <dt>How long is the book?</dt>
+          <dd>
+            <p>The book is 201 pages long.</p>
+          </dd>
+        </div>
+        <div>
+          <dt>What's the format of the book?</dt>
+          <dd>
+            <p>
+              When you purchase, you get a zip file containing PDF, EPUB, and MOBI formats. You also get printable cheat
+              sheets to practice the techniques.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>Are the techniques specific to a programming language?</dt>
+          <dd>
+            <p>
+              11 techniques are valid regardless of the language you are working with. 3 of them have better tooling
+              support in statically typed languages.
+            </p>
+            <p>
+              3 techniques are presented with object-oriented JavaScript code. For these, I also show you what to do if
+              the code was functional.
+            </p>
+            <p>
+              The concepts are valid independently of the language. I use JavaScript for the examples so I can
+              illustrate both OOP and FP styles.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>Can I pay with PayPal?</dt>
+          <dd>
+            <p>
+              Sure! It's not automated yet but reach me out at nicolas@understandlegacycode.com and I'll create a PayPal
+              invoice for you.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>What if I buy it and don't like it? Can I get my money back?</dt>
+          <dd>
+            <p>Sure. I offer a 100% no-questions-asked money-back guarantee.</p>
+            <p>
+              My goal is to help you work with Legacy codebases. I wish this book saves you time, money, and sanity.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>Can I share this book with my team?</dt>
+          <dd>
+            <p>
+              You can buy multiple copies of the guide. It's a way to tell me "thank you Nicolas", and I appreciate
+              that!
+            </p>
+            <p>
+              Now, there is nothing preventing you from sharing the guide with your colleagues. Maybe also your
+              client/employer could cover the cost as a professional expense.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>What if I have another question?</dt>
+          <dd>
+            <p>Send me an email at nicolas@understandlegacycode.com</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </body>
+</html>
+
+<style lang="scss" is:global>
+  body {
+    // #ed1b2e
+    --primary: hsla(354.6, 85.4%, 51.8%, 1);
+    --dark: hsla(354.6, 70%, 20%, 1);
+    --background: hsla(354.6, 85.4%, 51.8%, 0.3);
+    --backgroundLight: hsla(354.6, 90%, 60%, 0.8);
+    --backgroundLightest: hsla(354.6, 90%, 70%, 0.15);
+    --gray: rgb(78, 97, 108);
+    --grayLight: rgb(107, 114, 128);
+
+    border-top: 0.5rem solid var(--primary);
+    background-image: none !important;
     color: rgb(12, 30, 41);
     font-family:
       system-ui,
@@ -180,177 +677,448 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
     -webkit-font-smoothing: antialiased;
   }
 
-  .first-aid-kit-page a {
+  a {
     transition: box-shadow 0.2s;
     box-shadow: none;
-    background-image: linear-gradient(180deg, transparent 70%, hsla(354.6, 85.4%, 51.8%, 0.3) 0);
+    background-image: linear-gradient(180deg, transparent 70%, var(--background) 0);
     color: rgb(12, 30, 41);
     font-weight: 600;
     text-decoration: none;
   }
 
-  .first-aid-kit-page a:hover,
-  .first-aid-kit-page a:focus,
-  .first-aid-kit-page a:active {
-    box-shadow: inset 0 -1.3em 0 hsla(354.6, 85.4%, 51.8%, 0.3);
+  a:hover,
+  a:focus,
+  a:active {
+    box-shadow: inset 0 -1.3em 0 var(--background);
     background: 0 0;
   }
 
-  .first-aid-kit-page h1,
-  .first-aid-kit-page h2,
-  .first-aid-kit-page h3,
-  .first-aid-kit-page h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 3.5rem;
     font-family: Montserrat, sans-serif;
-  }
 
-  .first-aid-kit-page h1 em,
-  .first-aid-kit-page h2 em,
-  .first-aid-kit-page .highlight {
-    color: hsla(354.6, 85.4%, 51.8%, 1);
-    font-style: normal;
-  }
-
-  .top-bar {
-    background-color: hsla(354.6, 85.4%, 51.8%, 1);
-    height: 0.5rem;
-  }
-
-  .hero-section {
-    background-color: #f3f7f9;
-    padding: 5rem 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .hero-section {
-      padding: 5rem 3rem;
+    & .highlight {
+      color: var(--primary);
+      font-style: normal;
     }
   }
 
-  .hero-container {
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    text-rendering: optimizeLegibility;
+  }
+
+  h2.quote {
+    position: relative;
+    font-style: italic;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: -60px;
+      opacity: 0.75;
+      z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z' fill='%23ed1b2e' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+      width: 72px;
+      height: 72px;
+      content: "";
+    }
+  }
+
+  form {
+    margin: 0;
+    margin-bottom: 1.75rem;
+    padding: 0;
+  }
+
+  .section-alt {
+    position: relative;
+    background-color: #f3f7f9;
+    // overflow: hidden;
+  }
+
+  .section-colored {
+    background-color: var(--backgroundLight);
+    padding: 5rem 3rem;
+
+    h2 {
+      margin-top: 1rem;
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+
+  .header {
     display: flex;
     flex-direction: column;
     margin: auto;
     max-width: 1280px;
-  }
 
-  @media (min-width: 1100px) {
-    .hero-container {
+    @media (min-width: 1100px) {
       flex-direction: row;
       place-content: space-between;
     }
   }
 
-  .hero-text {
+  .header-text {
     flex-basis: 65%;
     margin-bottom: 4rem;
-  }
 
-  @media (min-width: 1100px) {
-    .hero-text {
+    h1 {
+      font-weight: 800;
+      font-size: 2.5rem;
+
+      em {
+        color: var(--primary);
+      }
+    }
+
+    p {
+      color: var(--gray);
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+    .formkit-form > div {
+      padding-left: 0 !important;
+    }
+
+    .formkit-input {
+      height: 50px !important;
+    }
+
+    @media (min-width: 1100px) {
       margin-bottom: 0;
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  @media (min-width: 1100px) {
-    .hero-text h1 {
-      font-size: 3rem;
-    }
-  }
-
-  .hero-text p {
-    color: rgb(78, 97, 108);
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-  }
-
-  .hero-book {
+  .header-book {
     flex-basis: 30%;
-  }
-
-  .book-container {
-    perspective: 600px;
-  }
-
-  .book {
-    transform: rotateY(30deg);
-    transform-style: preserve-3d;
-    transition: transform 1s;
-  }
-
-  .book:hover {
-    transform: rotateY(0deg);
-  }
-
-  .book img {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
-    border-radius: 2px;
-    width: 300px;
-    height: 480px;
-  }
-
-  .content-section {
-    padding: 2rem;
   }
 
   .content {
     margin: auto;
+    padding: 2rem;
     max-width: 768px;
     font-size: 1rem;
-  }
 
-  @media (min-width: 768px) {
-    .content {
+    @media (min-width: 768px) {
       padding-right: 0;
       padding-left: 0;
       font-size: 1.25rem;
     }
   }
 
-  .quote {
-    position: relative;
-    font-style: italic;
-  }
-
-  .quote::before {
-    display: block;
-    position: absolute;
-    top: -30px;
-    left: -60px;
-    opacity: 0.75;
-    z-index: -1;
-    background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z' fill='%23ed1b2e' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-    width: 72px;
-    height: 72px;
-    content: "";
-  }
-
-  .benefits-list {
+  ul.checked {
     margin-top: 0;
-    padding-left: 0;
-    list-style-type: none;
+    list-style-type: "none";
+
+    li {
+      position: relative;
+      margin-bottom: calc(1.75rem / 2);
+      margin-left: 1rem;
+      padding-left: 26px;
+      color: var(--gray);
+
+      &::before {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiNDNkY2RDUiLz4KICAgIDxwYXRoIGZpbGw9IiMzOEExNjkiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTEuNzA0NDU1NDUsNC41ODg5MTA4OSBMMy42MDczMjY3Myw2Ljc4OTIwNzkyIEw5LjE2NzMyNjczLDAuMTg4NDE1ODQyIEM5LjU4MzQ3NTI1LC0wLjI1NzUxNDg1MSAxMC4yMzc4MjE4LDAuMjE4MTk2MDQgOS45MTA2NzMyNywwLjcyMzY4MzE2OCBMNC40Mzk5ODAyLDkuMDc4NDM1NjQgQzQuMDIzODMxNjgsOS42MTM3MDI5NyAzLjQ1ODc3MjI4LDkuNjczMjY3MzMgMi45ODMwNDk1LDkuMTM3OTk2MDQgTDAuMjE3NzAyOTcsNS44Mzc3OTgwMiBDLTAuMzE3NTY0MzU2LDUuMDY0NjY5MzEgMS4wNTAzOTYwNCwzLjk2NDcyODcxIDEuNzA0NDM1NjQsNC41ODg5ODYxNCBMMS43MDQ0NTU0NSw0LjU4ODkxMDg5IFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUgNSkiLz4KICA8L2c+Cjwvc3ZnPgo=");
+        background-repeat: no-repeat;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        content: "";
+      }
+    }
   }
 
-  .benefits-list li {
-    position: relative;
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
-    padding-left: 26px;
-    color: rgb(78, 97, 108);
+  ol {
+    margin-bottom: 1.75rem;
+
+    @media (min-width: 600px) {
+      margin-left: 2rem;
+      padding-left: 2rem;
+    }
+
+    & > li {
+      position: relative;
+      counter-increment: step-counter;
+      margin-left: 2rem;
+      font-weight: 600;
+      list-style-type: none;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 8px;
+        box-sizing: border-box;
+        margin-top: -3px;
+        margin-right: 1em;
+        margin-left: -62px;
+        box-shadow: 0.2em 0.2em 0 rgba(128, 128, 128, 0.2);
+        background-color: var(--primary);
+        padding: 2px 0;
+        width: 2.7em;
+        height: 1.2em;
+        content: counter(step-counter);
+        color: white;
+        font-style: normal;
+        font-size: 0.9em;
+        line-height: 1;
+        font-family: sharp-sans, sans-serif;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: "lnum";
+        text-align: center;
+      }
+    }
+
+    & > li:nth-of-type(2n + 1)::before {
+      transform: rotate(4deg);
+    }
   }
 
-  .benefits-list li::before {
-    position: absolute;
-    top: 8px;
-    left: 0;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiNDNkY2RDUiLz4KICAgIDxwYXRoIGZpbGw9IiMzOEExNjkiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTEuNzA0NDU1NDUsNC41ODg5MTA4OSBMMy42MDczMjY3Myw2Ljc4OTIwNzkyIEw5LjE2NzMyNjczLDAuMTg4NDE1ODQyIEM5LjU4MzQ3NTI1LC0wLjI1NzUxNDg1MSAxMC4yMzc4MjE4LDAuMjE4MTk2MDQgOS45MTA2NzMyNywwLjcyMzY4MzE2OCBMNC40Mzk5ODAyLDkuMDc4NDM1NjQgQzQuMDIzODMxNjgsOS42MTM3MDI5NyAzLjQ1ODc3MjI4LDkuNjczMjY3MzMgMi45ODMwNDk1LDkuMTM3OTk2MDQgTDAuMjE3NzAyOTcsNS44Mzc3OTgwMiBDLTAuMzE3NTY0MzU2LDUuMDY0NjY5MzEgMS4wNTAzOTYwNCwzLjk2NDcyODcxIDEuNzA0NDM1NjQsNC41ODg5ODYxNCBMMS43MDQ0NTU0NSw0LjU4ODkxMDg5IFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUgNSkiLz4KICA8L2c+Cjwvc3ZnPgo=");
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    content: "";
+  .quote-background {
+    display: none;
+
+    @media (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  img.quote-media {
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 9999px;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  blockquote.quote-content {
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    p {
+      padding: 0 0.5rem;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.25em;
+      text-align: center;
+    }
+
+    footer {
+      font-style: normal;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 600px) {
+      p {
+        padding: 0 1.5rem;
+        font-size: 2rem;
+        line-height: 1.25em;
+      }
+    }
+  }
+
+  .pricing-container {
+    margin: auto;
+    margin-top: 4rem;
+    max-width: 1280px;
+  }
+
+  .pricing {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .price-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 10%),
+      0 4px 6px -2px rgb(0 0 0 / 5%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .price-card-top {
+    background: white;
+    padding: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .price-card-title {
+    display: inline-flex;
+    margin-top: 0;
+    border-radius: 9999px;
+    background-color: var(--background);
+    padding: 0.25rem 1rem;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.875em;
+    font-family:
+      Inter var,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Helvetica Neue,
+      Arial,
+      Noto Sans,
+      sans-serif,
+      Apple Color Emoji,
+      Segoe UI Emoji,
+      Segoe UI Symbol,
+      Noto Color Emoji;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  .price {
+    display: flex;
+    align-items: baseline;
+    margin-top: 1rem;
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .currency {
+    color: var(--grayLight);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .price-card-content {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: rgb(249, 250, 251);
+    padding: 2.5rem;
+    padding-top: 1.5rem;
+
+    ul,
+    ol {
+      margin: 0;
+      margin-bottom: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        background: none !important;
+      }
+    }
+  }
+
+  .price-list-item {
+    margin-left: 0.75rem;
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .price-link {
+    display: block;
+    border-width: 1px;
+    border-color: transparent;
+    background: var(--primary);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      box-shadow: none !important;
+      background: var(--backgroundLight) !important;
+    }
+  }
+
+  .author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+
+    img {
+      max-width: 350px;
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      padding: 0;
+
+      img {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  dl {
+    > div {
+      margin-top: 1rem;
+    }
+
+    dt {
+      margin-top: 2rem;
+      color: #111223;
+      font-weight: 500;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+
+    dd {
+      margin: 0;
+      margin-top: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      > div {
+        margin-top: 0;
+      }
+    }
   }
 </style>
+
+<!-- Inject the computed book CSS -->
+<style is:global set:html={bookCss}></style>
