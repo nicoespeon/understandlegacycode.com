@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx"
+import { transformerMetaHighlight, transformerNotationHighlight } from "@shikijs/transformers"
 import tailwindcss from "@tailwindcss/vite"
 import compress from "astro-compress"
 import icon from "astro-icon"
@@ -10,6 +11,13 @@ export default defineConfig({
   compressHTML: true,
   site: "https://accessible-astro-starter.incluud.dev",
   integrations: [mdx(), icon(), compress()],
+  markdown: {
+    shikiConfig: {
+      theme: "github-dark",
+      wrap: true,
+      transformers: [transformerNotationHighlight(), transformerMetaHighlight()],
+    },
+  },
   vite: {
     css: {
       preprocessorOptions: {

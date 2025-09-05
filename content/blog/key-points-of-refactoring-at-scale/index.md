@@ -153,7 +153,7 @@ In my experience, **this is not just about legacy code, but about legacy culture
 
 - Mention refactoring efforts during internal Sprint demos.
 - Give kudos to the people who upgraded the dependencies.
-- Work with HR to reward code maintenance**.**
+- Work with HR to reward code maintenance.
 
 ### Building the right team
 

@@ -5,6 +5,7 @@ type BlogPost = MarkdownInstance<{
   title: string
   description?: string
   tags?: string[]
+  image?: string
 }>
 
 export async function getAllBlogPosts() {
@@ -27,6 +28,8 @@ export async function getAllBlogPosts() {
     slug: getSlugFromFile(post.file),
     description: post.frontmatter.description || post.compiledContent(),
     tags: post.frontmatter.tags ?? [],
+    image: post.frontmatter.image || "/assets/legacy-code-everywhere.jpg",
+    Content: post.Content,
   }))
 }
 

@@ -1,7 +1,9 @@
 ---
-import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Bio from "@components/Bio.astro"
 import CTA from "@components/CTA.astro"
+import HeroSmall from "@components/HeroSmall.astro"
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import { getAllBlogPosts } from "@lib/blog"
 
 interface Props {
   title: string
@@ -11,81 +13,46 @@ interface Props {
 
 const { title, description, tag } = Astro.props
 
-// Get related articles if a tag is provided
-let relatedPosts: any[] = []
-if (tag) {
-  const allPosts = await Astro.glob("../../content/blog/**/index.md")
-  relatedPosts = allPosts
-    .filter((post) => post.frontmatter.tags && post.frontmatter.tags.includes(tag))
-    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
-}
-
-// Helper function to extract slug from file path
-function getSlugFromFile(filePath: string): string {
-  const pathParts = filePath.split("/")
-  return pathParts[pathParts.length - 2] // Get the directory name
-}
+const allPosts = await getAllBlogPosts()
+const relatedPosts = tag ? allPosts.filter((post) => post.tags.includes(tag)) : []
 ---
 
 <DefaultLayout title={title} description={description}>
-  <article class="my-12">
-    <div class="container">
-      <div class="guide-content">
-        <slot />
-      </div>
+  <HeroSmall />
 
-      {
-        relatedPosts.length > 0 && (
-          <section class="related-articles">
-            <h2>
-              <span role="img" aria-label="mortar board">
-                🎓
-              </span>
-              &nbsp;Related articles
-            </h2>
-            <ul class="related-list">
-              {relatedPosts.map((post) => {
-                const title = post.frontmatter.title || "Untitled"
-                const slug = getSlugFromFile(post.file)
-                return (
-                  <li class="related-item">
-                    <a href={`/blog/${slug}`} class="related-link">
-                      {title}
-                    </a>
-                    <p set:html={post.frontmatter.description} />
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
-        )
-      }
+  <div class="guide-content">
+    <slot />
+  </div>
 
-      <div class="my-12">
-        <CTA />
-      </div>
+  {
+    relatedPosts.length > 0 && (
+      <section class="related-articles">
+        <h2>
+          <span role="img" aria-label="mortar board">
+            🎓
+          </span>
+          &nbsp;Related articles
+        </h2>
+        <ul>
+          {relatedPosts.map((post) => (
+            <li class="mb-3.5">
+              <a href={`/blog/${post.slug}`} class="text-xl">
+                {post.title}
+              </a>
+              <p set:html={post.description} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 
-      <hr class="my-12" />
-
-      <Bio />
-    </div>
-  </article>
+  <CTA variant="tilted" />
+  <hr class="my-7" />
+  <Bio />
 </DefaultLayout>
 
-<style>
-  .container {
-    margin: auto;
-    padding: 2rem;
-    max-width: 768px;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
-
+<style lang="scss">
   .guide-content {
     margin-bottom: 3rem;
   }

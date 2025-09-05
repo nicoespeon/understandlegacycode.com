@@ -103,7 +103,7 @@ require("code-forensics").configure({
 
 Add this `knowledge-map` script to your `package.json`:
 
-```json{9}
+```json
 {
   "name": "code-forensics-analysis",
   "version": "1.0.0",
@@ -112,7 +112,7 @@ Add this `knowledge-map` script to your `package.json`:
   "scripts": {
     "start": "gulp webserver",
     "hotspot": "gulp hotspot-analysis --dateFrom=2019-06-01 --dateTo=2020-06-01",
-    "knowledge-map": "gulp knowledge-map-analysis --dateFrom=2019-06-01 --dateTo=2020-06-01"
+    "knowledge-map": "gulp knowledge-map-analysis --dateFrom=2019-06-01 --dateTo=2020-06-01" // [!code highlight]
   },
   "keywords": [],
   "author": "",
