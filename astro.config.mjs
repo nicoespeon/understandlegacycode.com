@@ -14,16 +14,8 @@ export default defineConfig({
     mdx(),
     icon(),
     compress({
-      css: true,
-      html: true,
-      js: true,
-      img: true,
-      svg: true,
-      logger: 1,
-      csso: {
-        // Don't restructure, it messes up my @media rules
-        restructure: false,
-      },
+      // Don't compress HTML, it messes up my @media rules in <style>
+      HTML: false,
     }),
   ],
   markdown: {
