@@ -368,7 +368,7 @@ const bookCss = getCssForSettings(bookId, {
             <div class="price-card">
               <div class="price-card-top">
                 <div>
-                  <h3 class="price-card-title">Premiers Soins</h3>
+                  <h3 class="price-card-title">E-book</h3>
                 </div>
                 <div class="price">39 €</div>
               </div>
@@ -410,8 +410,58 @@ const bookCss = getCssForSettings(bookId, {
                 </ul>
                 <div>
                   <a class="price-link" href="https://understandlegacycode.ck.page/products/legacy-code-premiers-soins">
-                    Récupérez votre kit de survie
+                    Prenez votre kit de survie
                   </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="price-card">
+              <div class="price-card-top">
+                <div>
+                  <h3 class="price-card-title">Imprimé</h3>
+                </div>
+                <div class="price">
+                  $45
+                  <span class="currency">USD</span>
+                </div>
+              </div>
+              <div class="price-card-content">
+                <ul>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">
+                      <strong>Livre imprimé</strong> livré à votre porte
+                    </p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">
+                      <strong>Version anglaise</strong> uniquement
+                    </p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">Les mêmes 14 techniques que la version numérique</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">~200 pages de contenu</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">Parfait pour la lecture hors ligne</p>
+                  </li>
+                  <li>
+                    <PriceListIcon />
+                    <p class="price-list-item">Disponible dans le monde entier via Amazon</p>
+                  </li>
+                </ul>
+                <div>
+                  <button id="amazon-buy-button" class="amazon-buy-button">
+                    <img src="/assets/amazon-icon.svg" alt="Amazon" class="amazon-icon" />
+                    <span class="buy-text">Achetez-le sur Amazon</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -666,6 +716,87 @@ const bookCss = getCssForSettings(bookId, {
     </div>
   </body>
 </html>
+
+<script>
+  const amazonStores = {
+    US: "amazon.com",
+    UK: "amazon.co.uk",
+    DE: "amazon.de",
+    FR: "amazon.fr",
+    ES: "amazon.es",
+    IT: "amazon.it",
+    NL: "amazon.nl",
+    PL: "amazon.pl",
+    SE: "amazon.se",
+    JP: "amazon.co.jp",
+    CA: "amazon.ca",
+    AU: "amazon.com.au",
+  }
+  type CountryCode = keyof typeof amazonStores
+
+  function detectLocationAndRedirect() {
+    const amazonUrl = pickBestAmazonStore()
+    window.open(amazonUrl, "_blank", "noopener,noreferrer")
+  }
+
+  function pickBestAmazonStore() {
+    // Method 1: Try to extract country from navigator.language
+    if (navigator.language) {
+      const locale = navigator.language.split("-")
+      if (locale.length > 1) {
+        const potentialCountry = locale[1].toUpperCase()
+        if (potentialCountry in amazonStores) {
+          return getAmazonUrl(potentialCountry)
+        }
+      }
+    }
+
+    // Method 2: Try to use timezone to guess location with basic mapping
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    const timezoneToCountry: Record<string, CountryCode> = {
+      // Note: don't list US ones since it's the default anyway
+      "America/Toronto": "CA",
+      "America/Montreal": "CA",
+      "America/Vancouver": "CA",
+      "Europe/London": "UK",
+      "Europe/Berlin": "DE",
+      "Europe/Paris": "FR",
+      "Europe/Rome": "IT",
+      "Europe/Madrid": "ES",
+      "Asia/Tokyo": "JP",
+      "Australia/Sydney": "AU",
+      "Europe/Amsterdam": "NL",
+      "Europe/Stockholm": "SE",
+      "Europe/Warsaw": "PL",
+    }
+    if (timezone in timezoneToCountry) {
+      return getAmazonUrl(timezoneToCountry[timezone])
+    }
+
+    return getAmazonUrl("US")
+  }
+
+  function getAmazonUrl(countryCode: string) {
+    const domain = amazonStores[countryCode as CountryCode] || amazonStores.US
+    return `https://www.${domain}/dp/B0FL1BSXNP`
+  }
+
+  // Add event listener when page loads
+  document.addEventListener("DOMContentLoaded", function () {
+    const amazonButton = document.getElementById("amazon-buy-button")
+    if (amazonButton) {
+      amazonButton.addEventListener("click", detectLocationAndRedirect)
+    }
+  })
+
+  // Also handle Astro page transitions
+  document.addEventListener("astro:page-load", function () {
+    const amazonButton = document.getElementById("amazon-buy-button")
+    if (amazonButton) {
+      amazonButton.addEventListener("click", detectLocationAndRedirect)
+    }
+  })
+</script>
 
 <style lang="scss" is:global>
   body {
@@ -962,17 +1093,29 @@ const bookCss = getCssForSettings(bookId, {
 
   .pricing {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
   }
 
   .price-card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     box-shadow:
       0 10px 15px -3px rgb(0 0 0 / 10%),
       0 4px 6px -2px rgb(0 0 0 / 5%);
     border-radius: 0.5rem;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+      max-width: 400px;
+    }
   }
 
   .price-card-top {
@@ -1083,6 +1226,51 @@ const bookCss = getCssForSettings(bookId, {
       cursor: pointer;
       box-shadow: none !important;
       background: var(--backgroundLight) !important;
+    }
+  }
+
+  .amazon-buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+    border: 1px solid #a88734;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    padding: 1rem 1.5rem;
+    width: 100%;
+    min-height: 60px;
+    color: #111 !important;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.4) inset,
+        0 1px 3px rgba(0, 0, 0, 0.15);
+      border-color: #a88734;
+      background: linear-gradient(to bottom, #f5d78e, #eeb933);
+    }
+
+    &:active {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+      background: linear-gradient(to bottom, #eeb933, #f5d78e);
+    }
+
+    .amazon-icon {
+      filter: brightness(0) saturate(100%);
+      margin-right: 0.5rem;
+      width: 24px;
+      height: 24px;
+    }
+
+    .buy-text {
+      font-weight: 400;
     }
   }
 
