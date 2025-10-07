@@ -38,13 +38,15 @@ let subtitle = "Change Messy Software Without Breaking It"
 <meta name="author" content={author} />
 
 <!-- open graph -->
+<meta property="og:site_name" content="Understand Legacy Code" />
 <meta property="og:title" content={`${title} - ${subtitle}`} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={`${Astro.site}${image}`} />
 
-<!-- twitter card -->
+<!-- canonical link -->
+<link rel="canonical" href={url} />
 
 <!-- page title -->
 <title>{title}</title>

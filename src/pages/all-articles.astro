@@ -7,7 +7,7 @@ import { getAllBlogPosts } from "@lib/blog"
 const allPosts = await getAllBlogPosts()
 ---
 
-<DefaultLayout title="Understand Legacy Code (all articles)">
+<DefaultLayout title="Understand Legacy Code (all articles)" url={`${Astro.site}/all-articles`}>
   <HeroSmall />
 
   <h2 class="mt-14 mb-7 text-3xl font-extrabold">

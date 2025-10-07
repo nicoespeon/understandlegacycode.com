@@ -9,15 +9,16 @@ interface Props {
   title: string
   description: string
   tag?: string
+  url?: string
 }
 
-const { title, description, tag } = Astro.props
+const { title, description, tag, url = `${Astro.site}${Astro.url.pathname}` } = Astro.props
 
 const allPosts = await getAllBlogPosts()
 const relatedPosts = tag ? allPosts.filter((post) => post.tags.includes(tag)) : []
 ---
 
-<DefaultLayout title={title} description={description}>
+<DefaultLayout title={title} description={description} url={url}>
   <HeroSmall />
 
   <div class="guide-content">
