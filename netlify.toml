@@ -8,3 +8,11 @@
   to = "/blog/:slug/"
   status = 301
   force = true
+
+# Serve 200 OK to crawlers (LinkedIn, Slack, etc.)
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug/"
+  status = 200
+  force = true
+  conditions = { UserAgent = ["LinkedInBot", "Slackbot", "Discordbot", "Twitterbot", "facebookexternalhit"] }
