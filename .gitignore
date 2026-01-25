@@ -43,6 +43,9 @@ package-lock.json
 # Cursor rules
 .cursor/rules
 
+# Claude
+.claude
+
 # Runtime data
 pids
 *.pid
