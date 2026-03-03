@@ -132,4 +132,4 @@ Have you heard about another name for this technique?
 
 Have you used Approval Tests without knowing it had a name?
 
-[Let me know!](https://twitter.com/nicoespeon) 🤠
+[Let me know!](https://bsky.app/profile/nicoespeon.com) 🤠

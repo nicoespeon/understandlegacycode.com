@@ -155,6 +155,6 @@ Take a scary method in your legacy codebase. Create a playground branch where yo
 
 Spend 10-15min applying this technique and see what you learn from it… When you get something, share your findings with your coworkers!
 
-And [let me know](https://twitter.com/nicoespeon), I love to hear successes from the trenches 🤠
+And [let me know](https://bsky.app/profile/nicoespeon.com), I love to hear successes from the trenches 🤠
 
 [the-code]: https://github.com/DrKLO/Telegram/blob/ae0d24ebf214110f4e6691f54d5867331d7d9158/TMessagesProj/src/main/java/org/telegram/ui/ArticleViewer.java#L4379-L4587

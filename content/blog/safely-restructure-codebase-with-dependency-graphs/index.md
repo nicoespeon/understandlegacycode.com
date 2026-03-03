@@ -154,4 +154,4 @@ Here's a collection of tools I know that you can use in other languages:
 - If you're dealing with JavaScript/TypeScript, you're not so lucky. However, I found [Source Viz](https://github.com/cowchimp/source-viz), which is an attempt to build dependency matrixes. It has a [VS Code extension](https://marketplace.visualstudio.com/items?itemName=cowchimp.source-viz-vscode) and [an online playground](https://source-viz.netlify.app/) you can try out.
 - [GraphViz](https://graphviz.org/) uses a simple language to generate graphs. You can either use it manually or plug it with a script. Many tools in many languages are compatible with it.
 
-Would you recommend any other tool here? [Let me know on Twitter](https://twitter.com/nicoespeon) or by subscribing to my newsletter where you can reach me out!
+Would you recommend any other tool here? [Let me know on Bluesky](https://bsky.app/profile/nicoespeon.com) or by subscribing to my newsletter where you can reach me out!

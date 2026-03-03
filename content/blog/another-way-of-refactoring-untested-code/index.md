@@ -271,12 +271,7 @@ If we knew for sure that this call doesn’t cause any side-effect, and we don�
 app.get("/prices", async (req, res) => {
   const { type, date, age } = req.query
 
-  const basePrice = (
-    await connection.query(
-      "SELECT cost FROM `base_price` " + "WHERE `type` = ? ",
-      [type]
-    )
-  )[0][0]
+  const basePrice = (await connection.query("SELECT cost FROM `base_price` " + "WHERE `type` = ? ", [type]))[0][0]
   // If that was an acceptable change in code's behavior
   const holidays = (await connection.query("SELECT * FROM `holidays`"))[0]
 
@@ -434,12 +429,7 @@ To go further, the repository instantiation could be extracted in a factory func
 function createRepositoryUsingMySQL(connection) {
   return {
     async fetchBasePrice(type) {
-      return (
-        await connection.query(
-          "SELECT cost FROM `base_price` " + "WHERE `type` = ? ",
-          [type]
-        )
-      )[0][0]
+      return (await connection.query("SELECT cost FROM `base_price` " + "WHERE `type` = ? ", [type]))[0][0]
     },
     async fetchHolidays() {
       return (await connection.query("SELECT * FROM `holidays`"))[0]
@@ -464,12 +454,7 @@ class RepositoryUsingMySQL implements Repository {
   }
 
   async fetchBasePrice(type) {
-    return (
-      await this.connection.query(
-        "SELECT cost FROM `base_price` " + "WHERE `type` = ? ",
-        [type]
-      )
-    )[0][0]
+    return (await this.connection.query("SELECT cost FROM `base_price` " + "WHERE `type` = ? ", [type]))[0][0]
   }
 
   async fetchHolidays() {
@@ -548,4 +533,4 @@ Once we have these tests in place, we can refactor further if we need. We can al
 
 If your feature doesn’t touch the I/O much (like in this kata), it’s quite easy to do.
 
-I’ve presented you with 2 approaches to tackle untested legacy code. [In the next post](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/), I take a step back and compare of both (pros and cons, which to use and when…). Until then, try to practice this one, and [let me know how you feel about it](https://twitter.com/nicoespeon)!
+I’ve presented you with 2 approaches to tackle untested legacy code. [In the next post](https://understandlegacycode.com/blog/comparing-two-approaches-refactoring-untested-code/), I take a step back and compare of both (pros and cons, which to use and when…). Until then, try to practice this one, and [let me know how you feel about it](https://bsky.app/profile/nicoespeon.com)!

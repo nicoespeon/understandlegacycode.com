@@ -110,7 +110,7 @@ But still, it’s a book. It’s static. You may struggle to wrap your head arou
 
 I would also argue that you would learn refactoring moves better by actively _practicing_ them. For that, I recommend you use a coding kata. For that, I listed [5 katas tailored for refactorings](https://understandlegacycode.com/blog/5-coding-exercises-to-practice-refactoring-legacy-code/).
 
-As I mentioned earlier: the examples are in JavaScript. However, not all of these moves are relevant to this language. For JS specifically, I've figured a better learning path. I’ve even started working on a refactoring course that would be tailored for JavaScript developers, but I have paused it for now. If that sounds interesting to you, [ping me on LinkedIn](https://www.linkedin.com/in/nicolas-carlo-095b243b/) or [Twitter](https://twitter.com/nicoespeon) 😉
+As I mentioned earlier: the examples are in JavaScript. However, not all of these moves are relevant to this language. For JS specifically, I've figured a better learning path. I’ve even started working on a refactoring course that would be tailored for JavaScript developers, but I have paused it for now. If that sounds interesting to you, [ping me on LinkedIn](https://www.linkedin.com/in/nicolas-carlo-095b243b/) or [Bluesky](https://bsky.app/profile/nicoespeon.com) 😉
 
 You can also subscribe to my newsletter to receive regular tips on legacy code and be notified when my Refactoring JS course is out.
 

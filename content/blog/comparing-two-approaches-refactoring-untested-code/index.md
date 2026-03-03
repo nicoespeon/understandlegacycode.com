@@ -124,4 +124,4 @@ Both approaches can be practiced in coding katas like I’ve presented in the [T
 
 And you, what is your preferred approach? Do you have another?
 
-[Let me know!](https://twitter.com/nicoespeon)
+[Let me know!](https://bsky.app/profile/nicoespeon.com)

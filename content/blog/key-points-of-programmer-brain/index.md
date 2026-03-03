@@ -190,7 +190,7 @@ I'm writing this and I'm pleased to realize how [Centered](https://centered.app)
 
 If that sounds intriguing, give it a look.
 
-[Ping me](https://twitter.com/nicoespeon) if you have any questions. 👋
+[Ping me](https://bsky.app/profile/nicoespeon.com) if you have any questions. 👋
 
 ## Better onboarding for developers
 

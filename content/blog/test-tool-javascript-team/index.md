@@ -217,6 +217,6 @@ It's not just a legacy codebase you are working with: it's a legacy culture. The
 
 I know a lot of peers who dislike Jest for many reasons. I like Mocha a lot. Yet, in most contexts I have to work with, I think Jest is the best tool for the job.
 
-Does that resonate with you? Did you ever recommend something that would be considered harmful in other circumstances? [My DMs are open](https://twitter.com/nicoespeon) if you want to share your stories with me! 🍷
+Does that resonate with you? Did you ever recommend something that would be considered harmful in other circumstances? [My DMs are open](https://bsky.app/profile/nicoespeon.com) if you want to share your stories with me! 🍷
 
 Take care!
