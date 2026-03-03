@@ -75,7 +75,7 @@ Then, take another subtask and continue. As you achieve subtasks, you make the m
 
 Just like the Brain Dump, you'll feel less stressed and you'll have a better view of your progress. You'll be able to push intermediate Pull Requests that will progressively make the main goal easier to achieve.
 
-If you want to learn more, I've dedicated [a full post on this](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase) and [there's a book on that](https://www.manning.com/books/the-mikado-method).
+If you want to learn more, I've dedicated [a full post on this](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase) and [there's a book on that](https://www.manning.com/books/the-mikado-method). I also built **[Nikado](https://nikado.app/)** to create Mikado graphs visually, right in your browser.
 
 ## 3. Over-committing ➿
 
@@ -229,11 +229,11 @@ You already have Churn information… in your version control system! If you're 
 
 ```bash
 git log --format=format: --name-only --since=12.month \
- | egrep -v '^\$' \
- | sort \
- | uniq -c \
- | sort -nr \
- | head -50
+  | egrep -v '^\$' \
+  | sort \
+  | uniq -c \
+  | sort -nr \
+  | head -50
 ```
 
 This kind of analysis will make you make smart decisions and have fast results.

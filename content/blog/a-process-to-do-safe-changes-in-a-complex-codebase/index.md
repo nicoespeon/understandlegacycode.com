@@ -34,6 +34,8 @@ The project doesn't compile anymore. It has been a few hours since you committed
 
 And there's a way to avoid the quicksand. I'm about to teach you: _The Mikado Method_.
 
+> 👉 I built **[Nikado](https://nikado.app/)**, a free app to create Mikado graphs visually. No more pen and paper! Break down complex changes into manageable tasks, right in your browser!
+
 ## A structured way to make valuable changes
 
 The gist of it will sound like common sense:
@@ -53,16 +55,13 @@ Concretely, here's the _Mikado Method_ process you can follow:
 1. **Grab a piece of paper**. Sometimes low-tech is better. This is such a time.
 2. **Set a goal**. Write it down on paper. Put it at the top or at the center, it doesn't really matter. Just keep space for other items.
 3. **Try to achieve the goal within a timebox**. 5min, 10min, 15min, as you wish. Keep it relatively short.
-
    - If you failed:
-
      - **Revert your changes**. Undo what you did during the timebox. This is important to start fresh.
      - **Think about what's missing**. What do you need to change to make the goal easier? That's your subgoal.
      - **Write it down on your paper** and attach it to the goal you tried to achieve.
      - **Start over from 3) with your subgoal**.
 
    - If you succeeded:
-
      - **Commit**. You'll certainly finish before the end of the timebox, that's fine, stop the timer.
      - **Check the goal you achieved on paper**. Celebrate internally.
      - **Start over from 3) with the next unchecked subgoal available**. Start from the leaves of your Mikado graph. Iterate until you've checked your main goal.
@@ -140,3 +139,7 @@ There's even a book that goes deep in detailing this process: [The Mikado Method
 With a bit of practice, you'll become good at it.
 
 And you'll become **a much more efficient developer!**
+
+<div style="margin: 2rem 0; padding: 1.25rem 1.5rem; background: var(--brand-background); border-left: 4px solid var(--brand-primary); border-radius: 0 0.5rem 0.5rem 0;">
+<p style="margin: 0;"><strong>Want to try the Mikado Method?</strong> I built <a href="https://nikado.app/">Nikado</a> to make it easy for me to create, visualize, and share Mikado graphs. The whole graph lives in the URL, no account needed. <a href="https://nikado.app/#N4Ig5g9ghgNgkgExALhAUwEwHYCMAGLAMzwFpCAjAFkJMoDY0aAODQnEuqcphDATnIBjQXzwgANCAAuUAM4BrWSgDaoAJZJUmXAWJkqNeoxIs2HLj35CRYyTC5oYKEAFUADmABOUBGgAEAPIASgCyEiCyMlIArkqobmgAdghqiWAgAL7i6poghBhQdMKU7HiC5HS05Kwk5Fw0AMwNaL5oOEx8CNTh9uSOzgCiAB5S3oJSfgCK0WieAJ7hkVAxcSAIEIlomdkgGs6U5OT4OIJQJHyUaJUHOOQmWCwkDTx0dISCeJQlSHYOTqjDUZQcZ+AAi0QAtm5FlFYs4EslUuksjlnHQEIVCAgmHccJQsGhaJQmuc8HxKlhBEw0Hw+FA+OUEOQen9nABBDFuCanGAwWR+VJ+cgQCDyJEAehhyzhqHWm22qNQeCYDQArHw1RgyIQ6KraFgSvdqiQWm0cQhThg0JQWX1-iAOVAuX4eXyBYkXVBPFJJZIlitnHKthkALqSXwI3yJQRqNBxVR5TwQCHObT4IikCjUWgMZisdicbi8ATCUThKQQZz5QrFUrla7VGh1ciNZqtdqdbooxPJ1PYdN6LOGXMmfPmItWUu2aSV1AHI54E5nC5XKq3e6PZ4IV7vT7fBU9lOoatFQSGsoVKo1Zut01mzuEcuzkDozHY3H4wlfEmickkSnUrS9KMsy3aEEmR55AUp7nvWV5NvUTxtmg95dI+kgVs4ypqhqqpaoQOp6vihpMFgxqmu05AWlAVo2qGGRAA">Here's a live example!</a></p>
+</div>

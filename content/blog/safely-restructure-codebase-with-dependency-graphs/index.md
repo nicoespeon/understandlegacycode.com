@@ -50,6 +50,8 @@ The Mikado Graph is a sort of dependency graph: you are mapping the dependencies
 
 ![Example of a Mikado graph](./mikado-graph.png)
 
+> 👉 I built **[Nikado](https://nikado.app/)** to create Mikado graphs visually. The whole graph lives in the URL, so it's easy to share with your team!
+
 Why would you draw such a graph? **To get it out of your head!**
 
 A Dependency Graph of the code would have the same purpose: to help you visualize the interconnections of the things you aim to change. Chances are that you have more nodes in the graph than you would be able to keep in your mind.

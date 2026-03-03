@@ -16,7 +16,7 @@ Quickly, you feel like you have been sent to battle [the Hydra of Lerna](https:/
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AbSehcT19u0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Hopefully, there are techniques to get that under control. I can only recommend you to have a look at [the Mikado Method](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase/) if you don't know how to use it already.
+Hopefully, there are techniques to get that under control. I can only recommend you to have a look at [the Mikado Method](https://understandlegacycode.com/blog/a-process-to-do-safe-changes-in-a-complex-codebase/) if you don't know how to use it already. I also built **[Nikado](https://nikado.app/)**, a free app to create your Mikado graphs visually.
 
 But there's more. And this is where "[Re-Engineering Legacy Software](https://shortener.manning.com/E26o)" shines in my opinion! I like how [Chris Birchall](https://twitter.com/cbirchall), the author, focuses on _how to get started,_ concretely. It's not a well-known book, which is surprising considering how common and difficult working with Legacy systems is, and how few books exist to help you do that.
 
@@ -168,8 +168,8 @@ This is a good book on working with Legacy software.
 
 After I published this book review, Manning Publications proposed me to share with you a promo code. That should give you 35% off their books.
 
-If you want to [get a copy of "Re-Engineering Legacy Software"](https://shortener.manning.com/E26o), I think that will be handy. It also works with any of their products, in all formats. 
+If you want to [get a copy of "Re-Engineering Legacy Software"](https://shortener.manning.com/E26o), I think that will be handy. It also works with any of their products, in all formats.
 
-Here it is: `brnica35` 🏷 
+Here it is: `brnica35` 🏷
 
 Enjoy, read books, and take care of yourself!
