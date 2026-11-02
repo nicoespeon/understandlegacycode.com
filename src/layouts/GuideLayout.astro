@@ -1,6 +1,5 @@
 ---
 import Bio from "@components/Bio.astro"
-import CTA from "@components/CTA.astro"
 import HeroSmall from "@components/HeroSmall.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
 import { getAllBlogPosts } from "@lib/blog"
@@ -48,7 +47,6 @@ const relatedPosts = tag ? allPosts.filter((post) => post.tags.includes(tag)) : 
     )
   }
 
-  <CTA variant="tilted" />
   <hr class="my-7" />
   <Bio />
 </DefaultLayout>

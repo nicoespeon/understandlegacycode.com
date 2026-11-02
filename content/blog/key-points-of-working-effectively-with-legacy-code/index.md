@@ -8,7 +8,6 @@ tags:
   - book review
   - changing untested code
 ctaTitle: Receive more summaries of the best resources on Legacy Code!
-ctaId: 93abb108c5
 ---
 
 > "Legacy Code is code without tests"
@@ -411,9 +410,5 @@ But that's OK for 2 reasons:
 So, again: this summary gives you a good overview of what kind of advice are in the book. **But there are more!**
 
 The book goes in detail into _how_ you can apply these advice through different use-cases. If you liked this summary, you'll enjoy [the book](https://www.google.com/search?q=working+effectively+with+legacy+code).
-
-Aaaaand you'll _love_ the content I publish every week! 🤠
-
-Subscribe to my newsletter to receive my Legacy Code tips & tricks, directly in your inbox, every Wednesday.
 
 Take care out there!

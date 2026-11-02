@@ -1,28 +1,18 @@
 ---
 interface Props {
-  variant?: "regular" | "tilted" | "coming-soon" | "first-aid-kit" | "premiers-soins"
+  variant: "first-aid-kit" | "premiers-soins"
 }
 
-const { variant = "regular" } = Astro.props
+const { variant } = Astro.props
 
-// Set the appropriate UID based on variant
-const formUid =
-  variant === "coming-soon"
-    ? "ee438164c6"
-    : variant === "first-aid-kit"
-      ? "084305275e"
-      : variant === "premiers-soins"
-        ? "45bef52aca"
-        : "1c42a88117"
-
-const isTilted = variant === "tilted"
+const formUid = variant === "first-aid-kit" ? "084305275e" : "45bef52aca"
 ---
 
-<div class={`cta-form ${isTilted ? "tilted-form" : "regular-form"}`} id={`cta-${formUid}`}>
+<div class="cta-form regular-form" id={`cta-${formUid}`}>
   <!-- The ConvertKit script will be loaded and form will be injected here -->
 </div>
 
-<script define:vars={{ formUid, isTilted }}>
+<script define:vars={{ formUid }}>
   // Load ConvertKit form script
   function loadCTAForm() {
     const container = document.getElementById(`cta-${formUid}`)
@@ -49,27 +39,5 @@ const isTilted = variant === "tilted"
       margin: auto;
       width: 740px;
     }
-  }
-
-  .tilted-form :global(.formkit-form) {
-    transform: rotate(-1.5deg);
-  }
-
-  .tilted-form :global([data-style="minimal"]) {
-    transform: rotate(1.5deg);
-    padding: 20px 40px !important;
-  }
-
-  .tilted-form :global(.formkit-modal) {
-    transform: rotate(1.5deg);
-  }
-
-  .tilted-form :global(.formkit-background) {
-    opacity: 0.25;
-  }
-
-  .tilted-form :global(.formkit-header h1),
-  .tilted-form :global(.formkit-subheader p) {
-    color: black !important;
   }
 </style>

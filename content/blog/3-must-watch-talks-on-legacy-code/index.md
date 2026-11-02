@@ -23,11 +23,11 @@ The story behind "The Legacy of SoCraTes" edition is that I felt it was hard to 
 
 In March 2020, I was wrapping up the "SoCraTes Canada" conference, just before lockdown started in Canada (and around the world). Because the pandemic made the next IRL SoCraTes event very uncertain (spoiler: there was no edition in 2021). I decided to do something remotely. I reached out to Adrian Bolboaca, who also wanted to do something about Legacy Code, and we crafted "The Legacy of SoCraTes" from that.
 
-The Legacy of SoCraTes is a remote conference. It's probably more like a meetup, actually. The event is free. I find 4-5 diverse speakers to share their expertise on a topic that touches Legacy Code and voilà!
+The Legacy of SoCraTes was a remote conference. It was probably more like a meetup, actually. The event was free. I found 4-5 diverse speakers to share their expertise on a topic that touched Legacy Code and voilà!
 
-As of today, we had 8 editions. We will probably do the next one in March 2022. Since you are following my updates, you will know about it before anyone else 😉
+We had 8 editions. The conference is over now, so there won't be a new one.
 
-In the meantime, you can watch all previous editions [on the YouTube channel](https://www.youtube.com/c/TheLegacyofSoCraTes/videos).
+But you can still watch all previous editions [on the YouTube channel](https://www.youtube.com/c/TheLegacyofSoCraTes/videos).
 
 ## My top 3 🏆
 

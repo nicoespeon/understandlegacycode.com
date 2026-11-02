@@ -309,8 +309,4 @@ If you're mostly interested in trying this out, I have to mention that:
 
 I use these techniques to identify the best things to do when I approach a Legacy codebase. If you liked this summary, you'll enjoy [the book](https://www.google.com/search?q=software+design+x-rays).
 
-Aaaaand you'll _love_ the content I publish every week! 🤠
-
-Subscribe to my newsletter to receive my Legacy Code tips & tricks, directly in your inbox, every Wednesday.
-
 Take care out there!

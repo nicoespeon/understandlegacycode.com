@@ -1,6 +1,5 @@
 ---
 import Bio from "@components/Bio.astro"
-import CTA from "@components/CTA.astro"
 import Hero from "@components/Hero.astro"
 import LegacyCodeBooks from "@components/LegacyCodeBooks.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
@@ -213,10 +212,6 @@ const talks = allPosts.filter((post) => post.tags.includes("conference"))
   </ul>
 
   <hr class="my-8" />
-
-  <div class="mb-12">
-    <CTA variant="tilted" />
-  </div>
 
   <Bio />
 </DefaultLayout>

@@ -5,12 +5,9 @@ description: "A technique you can resort to when you need to make risky changes.
 image: /assets/overcommitting.png
 tags:
   - changing untested code
-ctaId: f6c53ee096
 ---
 
 ![Comic that recaps the content of this post](./overcommitting-preview.png)
-
-_Get this comic in SVG + high-res PNG by subscribing to my monthly newsletter at the bottom of this post 👇_
 
 <hr />
 

@@ -80,12 +80,6 @@ Let's dive into Long-Term Memory, Short-Term Memory, and other brain concepts:
 
 ## "These talks are really great! Can I have more?"
 
-Sure thing!
+Thanks! The Legacy of SoCraTes is over now, so there won't be a new edition.
 
-There's no fixed schedule, but I like to organize this short conference every few months. I reach out to a few speakers to build an interesting agenda, then we set up the event.
-
-Everything is FREE. Attending is the opportunity to directly ask questions to these speakers, from the comfort of your home.
-
-If that's something you want to hear about, **subscribe to my newsletter** below 👇
-
-I publish my monthly tips on Legacy Code here. I also tell my subscribers in advance about the conference and the agenda, so they don't miss out. Join them!
+But you can still watch all previous editions [on the YouTube channel](https://www.youtube.com/c/TheLegacyofSoCraTes/videos).

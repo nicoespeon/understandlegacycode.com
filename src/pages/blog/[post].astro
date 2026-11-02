@@ -3,7 +3,6 @@ import FirstAidKitCallout from "@components/FirstAidKitCallout.astro"
 import Title from "@components/Title.astro"
 import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Bio from "@components/Bio.astro"
-import CTA from "@components/CTA.astro"
 import SimilarArticles from "@components/SimilarArticles.astro"
 import CodeBlock from "@components/CodeBlock.astro"
 import { getAllBlogPosts } from "@lib/blog"
@@ -32,7 +31,6 @@ const { title, description, tags, slug, Content } = Astro.props.post
     <!-- Enhance code blocks with copy buttons and language labels -->
     <CodeBlock />
 
-    <CTA variant="tilted" />
     <hr class="my-8" />
     <Bio />
     <hr class="my-8" />

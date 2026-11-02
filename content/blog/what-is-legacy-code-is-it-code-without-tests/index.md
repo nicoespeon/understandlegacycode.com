@@ -88,4 +88,4 @@ Remember:
 
 **Legacy Code is _valuable_ code that _you're afraid_ to change.**
 
-Hopefully, there are techniques to get familiar with Legacy Code faster! And this is what you will find around here and in my newsletter. You are not alone 😉
+Hopefully, there are techniques to get familiar with Legacy Code faster! And this is what you will find around here. You are not alone 😉

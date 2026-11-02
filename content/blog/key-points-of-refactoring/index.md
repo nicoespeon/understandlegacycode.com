@@ -112,8 +112,6 @@ I would also argue that you would learn refactoring moves better by actively _pr
 
 As I mentioned earlier: the examples are in JavaScript. However, not all of these moves are relevant to this language. For JS specifically, I've figured a better learning path. I’ve even started working on a refactoring course that would be tailored for JavaScript developers, but I have paused it for now. If that sounds interesting to you, [ping me on LinkedIn](https://www.linkedin.com/in/nicolas-carlo-095b243b/) or [Bluesky](https://bsky.app/profile/nicoespeon.com) 😉
 
-You can also subscribe to my newsletter to receive regular tips on legacy code and be notified when my Refactoring JS course is out.
-
 Finally, I want to mention [Refactoring.guru](https://refactoring.guru/refactoring/techniques). It’s a good catalog of refactoring techniques that you can read online. It contains code examples in different languages. They also have a course. I’ve completed it and it’s ok—it lacks interactivity and it doesn’t have a great learning path, but the content is solid and the examples are helpful.
 
 ## This book is a reference

@@ -91,6 +91,4 @@ A remote conference has some advantages:
 
 This 1st edition of "The Legacy of SoCraTes" went really well, so we decided to do more!
 
-If you'd like me to tell you when I organize another session, you can **subscribe to my newsletter**. I'll also send you concrete tips and advice to deal with Legacy Code every Wednesday 😉
-
-Until then, take care of yourself and of your codebase!
+Take care of yourself and of your codebase!
