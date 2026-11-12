@@ -16,10 +16,10 @@ export async function getStaticPaths() {
   }))
 }
 
-const { title, description, tags, slug, Content } = Astro.props.post
+const { title, description, image, tags, slug, Content } = Astro.props.post
 ---
 
-<DefaultLayout title={title} description={description} url={`${Astro.site}/blog/${slug}`}>
+<DefaultLayout title={title} description={description} image={image} url={`${Astro.site}/blog/${slug}`}>
   <article class="my-12">
     <Title class="mb-4 text-4xl font-bold">{title}</Title>
     <FirstAidKitCallout />
